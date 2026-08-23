@@ -1,9 +1,28 @@
 import type { Metadata } from "next";
-import { ProductCard } from "@/components/ProductCard";
+import Link from "next/link";
 import { models } from "@/lib/models";
 
-export const metadata: Metadata = { title: "Electric Scooter Models", description: "Explore the complete GT Drive electric scooter catalogue." };
+export const metadata: Metadata = { title: "Electric scooter range" };
 
 export default function ModelsPage() {
-  return <><section className="page-hero"><div className="page-hero-copy"><span className="eyebrow">Electric scooter catalogue</span><h1>THE GT DRIVE<br />RANGE</h1><p>Browse every model in the current brochure. Each product page keeps its verified specifications, features, colors, and availability status together.</p></div></section><section className="section models-page"><div className="catalogue-grid">{models.map((model, index) => <ProductCard key={model.slug} model={model} priority={index < 4} />)}</div></section></>;
+  return (
+    <section className="mx-auto max-w-[var(--container-page)] px-6 py-24 md:px-10">
+      <h1 className="text-[clamp(48px,7vw,88px)]">The GT Drive range.</h1>
+      <p className="mt-6 max-w-xl text-[var(--color-body)]">
+        Nine confirmed models, presented with brochure-verified specifications, colours and features.
+      </p>
+      <ul className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {models.map((model) => (
+          <li key={model.slug}>
+            <Link
+              href={`/models/${model.slug}/`}
+              className="block text-lg font-semibold text-[var(--color-ink)] underline underline-offset-[6px] hover:text-[var(--color-green-deep)]"
+            >
+              {model.shortName}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo, Inter } from "next/font/google";
 import "./globals.css";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
 
 const display = Archivo({
   subsets: ["latin"],
@@ -29,7 +31,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Nav />
+        <main className="min-h-screen pt-11">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

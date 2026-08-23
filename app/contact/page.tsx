@@ -1,7 +1,50 @@
 import type { Metadata } from "next";
 import { EnvelopeSimple, Phone, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
-import { InquiryForm } from "@/components/InquiryForm";
 import { contact } from "@/lib/models";
 
-export const metadata: Metadata = { title: "Contact", description: "Contact GT Drive for product information and dealership enquiries." };
-export default function ContactPage() { return <><section className="page-hero"><div className="page-hero-copy"><span className="eyebrow">Product and partnership enquiries</span><h1>LET&apos;S<br />CONNECT</h1><p>Use the enquiry form, call, email, or WhatsApp the GT Drive team for information.</p></div></section><section className="contact-section"><div className="contact-copy"><span className="eyebrow">Direct contact</span><h2>Choose the channel<br />that works for you.</h2><div className="direct-contact-list"><a href={`https://wa.me/${contact.whatsapp}`} target="_blank" rel="noreferrer"><WhatsappLogo weight="fill" /><span><strong>WhatsApp</strong>{contact.phones[0]}</span></a>{contact.phones.map((phone) => <a href={`tel:${phone.replace(/\s/g, "")}`} key={phone}><Phone weight="fill" /><span><strong>Phone</strong>{phone}</span></a>)}<a href={`mailto:${contact.email}`}><EnvelopeSimple weight="fill" /><span><strong>Email</strong>{contact.email}</span></a></div></div><InquiryForm /></section></>; }
+export const metadata: Metadata = { title: "Contact" };
+
+export default function ContactPage() {
+  return (
+    <section className="mx-auto max-w-[var(--container-page)] px-6 py-24 md:px-10">
+      <h1 className="text-[clamp(48px,7vw,88px)]">Get in touch.</h1>
+      <p className="mt-6 max-w-xl text-[var(--color-body)]">
+        Reach out for product information or dealership enquiries.
+      </p>
+
+      <ul className="mt-16 space-y-4">
+        <li>
+          <a
+            href={`https://wa.me/${contact.whatsapp}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-3 text-[var(--color-ink)] hover:text-[var(--color-green-deep)]"
+          >
+            <WhatsappLogo size={22} weight="regular" />
+            <span>WhatsApp · {contact.phones[0]}</span>
+          </a>
+        </li>
+        {contact.phones.map((phone) => (
+          <li key={phone}>
+            <a
+              href={`tel:${phone.replace(/\s/g, "")}`}
+              className="inline-flex items-center gap-3 text-[var(--color-ink)] hover:text-[var(--color-green-deep)]"
+            >
+              <Phone size={22} weight="regular" />
+              <span>{phone}</span>
+            </a>
+          </li>
+        ))}
+        <li>
+          <a
+            href={`mailto:${contact.email}`}
+            className="inline-flex items-center gap-3 text-[var(--color-ink)] hover:text-[var(--color-green-deep)]"
+          >
+            <EnvelopeSimple size={22} weight="regular" />
+            <span>{contact.email}</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  );
+}
