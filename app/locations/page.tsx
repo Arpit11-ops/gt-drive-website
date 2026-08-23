@@ -27,14 +27,14 @@ export default function LocationsPage() {
         <ul className="grid gap-x-10 gap-y-2">
           {locations.map((location, index) => (
             <Reveal key={location.state} delay={index * 60}>
-              <li className="grid gap-6 border-b border-[var(--color-line)] py-10 md:grid-cols-[280px_1fr] md:gap-16 md:py-14">
-                <div className="flex items-baseline gap-4">
+              <li className="border-b border-[var(--color-line)] py-10 md:flex md:items-baseline md:gap-16 md:py-14">
+                <div className="flex items-baseline gap-4 md:w-[340px] md:shrink-0">
                   <MapPin weight="fill" className="h-6 w-6 shrink-0 translate-y-1 text-[var(--color-green)]" />
-                  <h2 className="text-[clamp(28px,3.4vw,52px)] leading-[0.95] tracking-[-0.02em]">
+                  <h2 className="text-[clamp(28px,3vw,44px)] leading-[0.95] tracking-[-0.02em]">
                     {location.state}
                   </h2>
                 </div>
-                <p className="max-w-xl text-[15px] leading-[1.65] text-[var(--color-body)] md:text-base">
+                <p className="mt-6 max-w-xl text-[15px] leading-[1.65] text-[var(--color-body)] md:mt-0 md:text-base">
                   {location.address}
                 </p>
               </li>

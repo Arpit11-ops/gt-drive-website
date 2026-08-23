@@ -1,11 +1,7 @@
 import { chromium } from "playwright";
 
+const BASE = process.env.SCREENSHOT_BASE ?? "http://127.0.0.1:3010";
 const browser = await chromium.launch();
-const ctx = await browser.newContext({
-  viewport: { width: 1920, height: 800 },
-  reducedMotion: "reduce",
-});
-const page = await ctx.newPage();
 
 const routes = [
   { path: "/", name: "home" },
@@ -19,24 +15,39 @@ const routes = [
   { path: "/contact/", name: "contact" },
 ];
 
-for (const { path, name } of routes) {
-  await page.goto(`http://127.0.0.1:3000${path}`, { waitUntil: "networkidle" });
-  await page.waitForTimeout(1500);
+async function scrollThroughAndSettle(page) {
   await page.evaluate(async () => {
     const total = document.documentElement.scrollHeight;
     for (let y = 0; y <= total; y += 400) {
       window.scrollTo(0, y);
-      await new Promise((r) => setTimeout(r, 100));
+      await new Promise((r) => setTimeout(r, 90));
     }
-    await new Promise((r) => setTimeout(r, 1000));
+    await new Promise((r) => setTimeout(r, 900));
     window.scrollTo(0, 0);
     await new Promise((r) => setTimeout(r, 300));
   });
-  await page.screenshot({
-    path: `artifacts/redesign/screenshots/page-${name}-full.png`,
-    fullPage: true,
+}
+
+for (const viewport of [
+  { name: "desktop-1920x800", width: 1920, height: 800 },
+  { name: "mobile-390", width: 390, height: 844 },
+]) {
+  const ctx = await browser.newContext({
+    viewport: { width: viewport.width, height: viewport.height },
+    reducedMotion: "reduce",
   });
-  console.log(`saved: ${name}`);
+  const page = await ctx.newPage();
+  for (const { path, name } of routes) {
+    await page.goto(`${BASE}${path}`, { waitUntil: "domcontentloaded" });
+    await page.waitForTimeout(1500);
+    await scrollThroughAndSettle(page);
+    await page.screenshot({
+      path: `artifacts/redesign/screenshots/${viewport.name}-${name}.png`,
+      fullPage: true,
+    });
+    console.log(`saved: ${viewport.name}-${name}`);
+  }
+  await ctx.close();
 }
 
 await browser.close();

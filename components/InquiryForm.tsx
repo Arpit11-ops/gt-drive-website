@@ -1,12 +1,14 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useId, useState } from "react";
 import { models } from "@/lib/models";
 
 type Props = { defaultModel?: string; defaultType?: string };
 
 export function InquiryForm({ defaultModel = "", defaultType = "product" }: Props) {
   const [submitted, setSubmitted] = useState(false);
+  const messageId = useId();
+  const consentId = useId();
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -39,27 +41,31 @@ export function InquiryForm({ defaultModel = "", defaultType = "product" }: Prop
         </SelectField>
       </div>
 
-      <label className="flex flex-col gap-3">
-        <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
+      <div className="flex flex-col gap-3">
+        <label htmlFor={messageId} className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
           Message
-        </span>
+        </label>
         <textarea
+          id={messageId}
           name="message"
           rows={4}
           required
           placeholder="How can we help?"
           className="border-b border-[var(--color-line)] bg-transparent py-2 text-base leading-[1.5] text-[var(--color-ink)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-green)]"
         />
-      </label>
+      </div>
 
-      <label className="flex items-center gap-3 text-sm text-[var(--color-body)]">
+      <div className="flex items-center gap-3">
         <input
+          id={consentId}
           type="checkbox"
           required
           className="h-4 w-4 accent-[var(--color-green)]"
         />
-        <span>I agree to be contacted regarding this enquiry.</span>
-      </label>
+        <label htmlFor={consentId} className="text-sm text-[var(--color-body)]">
+          I agree to be contacted regarding this enquiry.
+        </label>
+      </div>
 
       <div className="flex flex-wrap items-center gap-6">
         <button
@@ -91,18 +97,20 @@ function Field({
   autoComplete?: string;
   required?: boolean;
 }) {
+  const id = useId();
   return (
-    <label className="flex flex-col gap-3">
-      <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
+    <div className="flex flex-col gap-3">
+      <label htmlFor={id} className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
         {label}
-      </span>
+      </label>
       <input
+        id={id}
         name={name}
         type={type}
         {...props}
         className="border-b border-[var(--color-line)] bg-transparent py-2 text-base text-[var(--color-ink)] outline-none focus:border-[var(--color-green)]"
       />
-    </label>
+    </div>
   );
 }
 
@@ -117,18 +125,20 @@ function SelectField({
   defaultValue?: string;
   children: React.ReactNode;
 }) {
+  const id = useId();
   return (
-    <label className="flex flex-col gap-3">
-      <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
+    <div className="flex flex-col gap-3">
+      <label htmlFor={id} className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
         {label}
-      </span>
+      </label>
       <select
+        id={id}
         name={name}
         defaultValue={defaultValue}
         className="border-b border-[var(--color-line)] bg-transparent py-2 text-base text-[var(--color-ink)] outline-none focus:border-[var(--color-green)]"
       >
         {children}
       </select>
-    </label>
+    </div>
   );
 }
