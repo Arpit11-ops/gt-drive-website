@@ -5,6 +5,7 @@ import { Footprint } from "@/components/Footprint";
 import { Hero } from "@/components/Hero";
 import { ModelRange } from "@/components/ModelRange";
 import { ModelSpotlight } from "@/components/ModelSpotlight";
+import { TaglineMarquee } from "@/components/TaglineMarquee";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <ModelRange />
       <DealerBand />
       <Footprint />
+      <TaglineMarquee />
       <ContactClose />
     </>
   );

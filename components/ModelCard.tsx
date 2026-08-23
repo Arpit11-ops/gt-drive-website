@@ -8,14 +8,14 @@ export function ModelCard({ model, priority = false }: { model: ScooterModel; pr
       href={`/models/${model.slug}/`}
       className="group flex flex-col gap-4"
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-stage)]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-stage)] transition-colors duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:bg-[#eff2ef]">
         <Image
           src={model.image}
           alt={model.shortName}
           fill
           sizes="(min-width: 1024px) 32vw, (min-width: 640px) 50vw, 100vw"
           priority={priority}
-          className="object-contain transition-transform duration-[250ms] ease-[var(--ease-signature)] group-hover:-translate-y-1"
+          className="object-contain transition-transform duration-[500ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:-translate-y-2 group-hover:rotate-[-1.5deg]"
         />
         {model.status === "coming-soon" && (
           <span className="absolute left-4 top-4 rounded-sm bg-[var(--color-green-deep)] px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
