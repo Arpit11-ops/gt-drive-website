@@ -5,12 +5,12 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-tagline"
-      className="relative flex min-h-[calc(100svh-44px)] flex-col justify-between overflow-hidden bg-white"
+      className="relative flex min-h-[calc(100svh-44px)] flex-col overflow-hidden bg-white"
     >
       {/* UPPER ZONE — the scooter */}
-      <div className="relative mx-auto flex w-full max-w-[var(--container-page)] flex-1 items-center justify-center px-6 pt-6 md:px-10 md:pt-10">
+      <div className="relative mx-auto flex w-full max-w-[var(--container-page)] flex-1 items-center justify-center px-6 pt-4 md:px-10 md:pt-6">
         {/* Top-left identifier — desktop only */}
-        <div className="absolute left-6 top-6 z-10 hidden max-w-[240px] text-[14px] font-medium leading-[1.4] md:left-10 md:top-10 md:block">
+        <div className="absolute left-6 top-4 z-10 hidden max-w-[240px] text-[13px] font-medium leading-[1.4] md:left-10 md:top-6 md:block">
           <div className="text-[var(--color-ink)]">
             <span>G</span>
             <span className="italic text-[var(--color-green)]">T</span>
@@ -21,7 +21,7 @@ export function Hero() {
         </div>
 
         {/* Top-right featured mark — desktop only */}
-        <div className="absolute right-6 top-6 z-10 hidden text-[12px] text-[var(--color-muted)] md:right-10 md:top-10 md:block">
+        <div className="absolute right-6 top-4 z-10 hidden text-[11px] text-[var(--color-muted)] md:right-10 md:top-6 md:block">
           Model featured · GT — Drive Pro
         </div>
 
@@ -33,33 +33,33 @@ export function Hero() {
             width={1536}
             height={1024}
             priority
-            className="max-h-[52vh] w-auto max-w-full object-contain md:max-h-[58vh]"
+            className="h-auto max-h-[42vh] w-auto max-w-full object-contain md:max-h-[48vh]"
           />
         </div>
       </div>
 
       {/* Mobile-only featured mark (below scooter) */}
-      <div className="mx-auto w-full max-w-[var(--container-page)] px-6 pt-2 text-[11px] text-[var(--color-muted)] md:hidden">
+      <div className="mx-auto w-full max-w-[var(--container-page)] px-6 pt-1 text-[11px] text-[var(--color-muted)] md:hidden">
         Model featured · GT — Drive Pro
       </div>
 
       {/* LOWER ZONE — tagline + supporting */}
-      <div className="mx-auto grid w-full max-w-[var(--container-page)] shrink-0 gap-6 px-6 pb-8 pt-6 md:grid-cols-[1.5fr_1fr] md:items-end md:gap-16 md:px-10 md:pb-10 md:pt-4">
+      <div className="mx-auto grid w-full max-w-[var(--container-page)] shrink-0 gap-4 px-6 pb-6 pt-4 md:grid-cols-[1.5fr_1fr] md:items-end md:gap-12 md:px-10 md:pb-8 md:pt-4">
         <h1
           id="hero-tagline"
-          className="text-[clamp(44px,9vw,132px)] leading-[0.92]"
+          className="text-[clamp(38px,6.8vw,110px)] leading-[0.94]"
         >
           <span className="block text-[var(--color-ink)]">Drive Clean.</span>
           <span className="block text-[var(--color-green)]">Go Green.</span>
         </h1>
 
-        <div className="flex flex-col gap-5 md:pb-3">
-          <p className="max-w-md text-[14px] leading-[1.55] text-[var(--color-body)] md:text-[15px]">
+        <div className="flex flex-col gap-4 md:pb-2">
+          <p className="max-w-md text-[13px] leading-[1.55] text-[var(--color-body)] md:text-[14px]">
             The electric two-wheeler brand from Houstan Innovations LLP. Nine
             scooters, engineered and built in India, sold through a growing
             pan-India dealer network.
           </p>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-[13px]">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px]">
             <Link
               href="/models/"
               className="font-semibold text-[var(--color-green-deep)] underline underline-offset-[6px]"
