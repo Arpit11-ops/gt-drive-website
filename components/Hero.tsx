@@ -1,9 +1,56 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const scooterRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const scooter = scooterRef.current;
+    if (!section || !scooter) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(hover: none)").matches) return;
+
+    let rafId = 0;
+
+    const handleMove = (event: MouseEvent) => {
+      const rect = section.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const dx = (event.clientX - centerX) / (rect.width / 2);
+      const dy = (event.clientY - centerY) / (rect.height / 2);
+      const rotateX = -dy * 4;
+      const rotateY = dx * 6;
+      const translateX = dx * 6;
+
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        scooter.style.transform = `perspective(1400px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateX(${translateX.toFixed(2)}px)`;
+      });
+    };
+
+    const handleLeave = () => {
+      cancelAnimationFrame(rafId);
+      scooter.style.transform = "perspective(1400px) rotateX(0deg) rotateY(0deg) translateX(0px)";
+    };
+
+    section.addEventListener("mousemove", handleMove);
+    section.addEventListener("mouseleave", handleLeave);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      section.removeEventListener("mousemove", handleMove);
+      section.removeEventListener("mouseleave", handleLeave);
+    };
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="hero-tagline"
       className="relative flex min-h-[calc(100svh-44px)] flex-col overflow-hidden bg-white"
     >
@@ -25,8 +72,12 @@ export function Hero() {
           Model featured · GT — Drive Pro
         </div>
 
-        {/* The scooter */}
-        <div className="relative flex w-full items-center justify-center">
+        {/* The scooter (interactive tilt) */}
+        <div
+          ref={scooterRef}
+          className="relative flex w-full items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] will-change-transform"
+          style={{ transform: "perspective(1400px) rotateX(0deg) rotateY(0deg) translateX(0px)" }}
+        >
           <Image
             src="/assets/gt-drive/generated/hero-drive-pro.png"
             alt="GT Drive Pro electric scooter"
