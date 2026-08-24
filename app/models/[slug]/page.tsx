@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { ColorSwatchRow } from "@/components/ColorSwatchRow";
 import { ContactClose } from "@/components/ContactClose";
-import { FeatureList } from "@/components/FeatureList";
+import { ModelFeatureNavigator } from "@/components/ModelFeatureNavigator";
 import { ModelTechnicalTabs } from "@/components/ModelTechnicalTabs";
 import { RelatedModels } from "@/components/RelatedModels";
 import { Reveal } from "@/components/Reveal";
@@ -112,28 +112,8 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
       {/* D9 INTERACTIVE TECHNICAL TABS */}
       <ModelTechnicalTabs model={model} image={heroImage} />
 
-      {/* FEATURES */}
-      <section className="bg-[var(--color-stage)]">
-        <div className="mx-auto max-w-[var(--container-page)] px-6 py-24 md:grid md:grid-cols-[1fr_1.6fr] md:gap-16 md:px-10 md:py-32">
-          <div className="md:sticky md:top-24 md:self-start">
-            <Reveal>
-              <div className="text-sm font-medium text-[var(--color-green-deep)]">
-                Features shown in the brochure
-              </div>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="mt-6 text-[clamp(36px,4vw,64px)] leading-[0.95] tracking-[-0.03em]">
-                Built for everyday confidence.
-              </h2>
-            </Reveal>
-          </div>
-          <div className="mt-14 md:mt-0">
-            <Reveal>
-              <FeatureList features={model.features} />
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      {/* D6 STICKY FEATURE NAVIGATION */}
+      <ModelFeatureNavigator model={model} />
 
       <RelatedModels currentSlug={model.slug} />
       <ContactClose defaultModel={model.slug} />
