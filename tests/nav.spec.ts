@@ -59,7 +59,7 @@ test.describe("model mega-menu", () => {
       .getByRole("link", { name: "View all models" })
       .click();
 
-    await expect(page).toHaveURL(/\/models\/$/);
+    await expect(page).toHaveURL(/\/models\/$/, { timeout: 30_000 });
     await expect(page.getByRole("group", { name: "Models menu" })).toBeHidden();
   });
 

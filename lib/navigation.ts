@@ -4,12 +4,12 @@ export const primaryLinks = [
   { href: "/compare/", label: "Compare" },
   { href: "/dealers/", label: "For dealers" },
   { href: "/locations/", label: "Locations" },
-  { href: "/contact/", label: "Contact" },
 ] as const;
 
 export const mobileLinks = [
   { href: "/models/", label: "Models" },
   ...primaryLinks,
+  { href: "/contact/", label: "Contact" },
 ] as const;
 
 const featuredModelSlugs = [
