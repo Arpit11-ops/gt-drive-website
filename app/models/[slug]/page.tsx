@@ -6,9 +6,9 @@ import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { ColorSwatchRow } from "@/components/ColorSwatchRow";
 import { ContactClose } from "@/components/ContactClose";
 import { FeatureList } from "@/components/FeatureList";
+import { ModelTechnicalTabs } from "@/components/ModelTechnicalTabs";
 import { RelatedModels } from "@/components/RelatedModels";
 import { Reveal } from "@/components/Reveal";
-import { SpecTable } from "@/components/SpecTable";
 import { getModel, models } from "@/lib/models";
 
 export function generateStaticParams() {
@@ -109,34 +109,8 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
         </div>
       </section>
 
-      {/* SPECIFICATIONS */}
-      <section className="border-t border-[var(--color-line)] bg-white">
-        <div className="mx-auto max-w-[var(--container-page)] px-6 py-24 md:grid md:grid-cols-[1fr_1.6fr] md:gap-16 md:px-10 md:py-32">
-          <div className="md:sticky md:top-24 md:self-start">
-            <Reveal>
-              <div className="text-sm font-medium text-[var(--color-green-deep)]">
-                Brochure-verified
-              </div>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="mt-6 text-[clamp(36px,4vw,64px)] leading-[0.95] tracking-[-0.03em]">
-                Specifications.
-              </h2>
-            </Reveal>
-            <Reveal delay={160}>
-              <p className="mt-6 max-w-sm text-[15px] leading-[1.6] text-[var(--color-body)]">
-                These details are transcribed from the GT Drive brochure.
-                Unlisted performance figures have not been estimated or added.
-              </p>
-            </Reveal>
-          </div>
-          <div className="mt-14 md:mt-0">
-            <Reveal>
-              <SpecTable specs={model.specs} />
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      {/* D9 INTERACTIVE TECHNICAL TABS */}
+      <ModelTechnicalTabs model={model} image={heroImage} />
 
       {/* FEATURES */}
       <section className="bg-[var(--color-stage)]">
