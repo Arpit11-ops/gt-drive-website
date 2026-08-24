@@ -67,24 +67,40 @@ test.describe("model mega-menu", () => {
 
     const mobileNav = page.getByRole("navigation", { name: "Mobile" });
     await expect(mobileNav).toBeVisible();
-    await expect(mobileNav.getByRole("link", { name: /GT Drive Pro/i })).toBeVisible();
-    await expect(mobileNav.getByRole("link", { name: /GT Soul NXT/i })).toBeVisible();
-    await expect(mobileNav.getByRole("link", { name: /GT RYD Plus/i })).toBeVisible();
-    await expect(mobileNav.getByRole("link", { name: "Models", exact: true })).toBeVisible();
-    await expect(mobileNav.getByRole("link", { name: "Compare" })).toBeVisible();
-    await expect(mobileNav.getByRole("link", { name: "For dealers" })).toBeVisible();
-    await expect(mobileNav.getByRole("link", { name: "Locations" })).toBeVisible();
-    await expect(mobileNav.getByRole("link", { name: "Contact" })).toBeVisible();
-    await expect.poll(() => page.evaluate(() => document.body.style.overflow)).toBe("hidden");
 
-    await page.getByRole("button", { name: "Close menu" }).click();
-    await expect(mobileNav).toBeHidden();
-    await expect.poll(() => page.evaluate(() => document.body.style.overflow)).toBe("");
+    await test.step("content and route contracts", async () => {
+      const links = [
+        { name: /GT Drive Pro/i, href: "/models/gt-drive-pro/" },
+        { name: /GT Soul NXT/i, href: "/models/gt-soul-nxt/" },
+        { name: /GT RYD Plus/i, href: "/models/gt-ryd-plus/" },
+        { name: "Models", href: "/models/" },
+        { name: "Compare", href: "/compare/" },
+        { name: "For dealers", href: "/dealers/" },
+        { name: "Locations", href: "/locations/" },
+        { name: "Contact", href: "/contact/" },
+      ] as const;
 
-    await menuButton.click();
-    await page.keyboard.press("Escape");
-    await expect(mobileNav).toBeHidden();
-    await expect.poll(() => page.evaluate(() => document.body.style.overflow)).toBe("");
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
+      for (const link of links) {
+        await expect(mobileNav.getByRole("link", { name: link.name, exact: typeof link.name === "string" })).toHaveAttribute("href", link.href);
+      }
+    });
+
+    await test.step("scroll lock and open overflow", async () => {
+      await expect.poll(() => page.evaluate(() => document.body.style.overflow)).toBe("hidden");
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
+    });
+
+    await test.step("close control cleanup", async () => {
+      await page.getByRole("button", { name: "Close menu" }).click();
+      await expect(mobileNav).toBeHidden();
+      await expect.poll(() => page.evaluate(() => document.body.style.overflow)).toBe("");
+    });
+
+    await test.step("Escape cleanup", async () => {
+      await menuButton.click();
+      await page.keyboard.press("Escape");
+      await expect(mobileNav).toBeHidden();
+      await expect.poll(() => page.evaluate(() => document.body.style.overflow)).toBe("");
+    });
   });
 });
