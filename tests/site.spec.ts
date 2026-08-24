@@ -58,6 +58,12 @@ test("homepage renders every section and no console errors", async ({
   await expect(
     page.getByRole("heading", { name: /plants across five indian states\./i }),
   ).toBeVisible();
+  const footprint = page.getByTestId("active-location");
+  await page.getByRole("button", { name: "Show Telangana location" }).click();
+  await expect(
+    footprint.getByRole("heading", { name: "Telangana" }),
+  ).toBeVisible();
+  await expect(footprint).toContainText("IDA Cherlapally");
   await expect(
     page.getByRole("heading", { name: /get in touch\./i }),
   ).toBeVisible();
