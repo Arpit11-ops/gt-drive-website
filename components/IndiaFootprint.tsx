@@ -9,11 +9,11 @@ import { Reveal } from "@/components/Reveal";
 import { locations } from "@/lib/models";
 
 const markerPositions: Record<string, { left: string; top: string }> = {
-  "Uttar Pradesh": { left: "51%", top: "40%" },
-  Bihar: { left: "65%", top: "44%" },
-  Maharashtra: { left: "33%", top: "69%" },
-  "Madhya Pradesh": { left: "42%", top: "56%" },
-  Telangana: { left: "48%", top: "73%" },
+  "Uttar Pradesh": { left: "47%", top: "34%" },
+  Bihar: { left: "63%", top: "39%" },
+  Maharashtra: { left: "25%", top: "57%" },
+  "Madhya Pradesh": { left: "32%", top: "46%" },
+  Telangana: { left: "38%", top: "63%" },
 };
 
 type IndiaFootprintProps = {
@@ -81,13 +81,13 @@ export function IndiaFootprint({
           </Reveal>
 
           <Reveal delay={100} className="w-full lg:w-2/3">
-            <div className="relative min-h-[560px] overflow-hidden rounded-lg border border-[var(--color-line)] bg-[radial-gradient(circle_at_50%_45%,#ffffff_0%,#f7f9f7_68%,#eef2ef_100%)] shadow-[0_16px_45px_rgba(0,0,0,0.06)] md:min-h-[650px]">
-              <div className="absolute left-1/2 top-1/2 aspect-[666/777] w-[78%] -translate-x-1/2 -translate-y-1/2 md:w-[56%]">
+            <div className="relative min-h-[560px] overflow-hidden rounded-lg border border-[var(--color-line)] bg-[radial-gradient(circle_at_50%_45%,#ffffff_0%,#f7f9f7_68%,#eef2ef_100%)] shadow-[0_16px_45px_rgba(0,0,0,0.06)] md:min-h-[780px]">
+              <div className="absolute left-1/2 top-1/2 aspect-[690/830] w-[88%] -translate-x-1/2 -translate-y-1/2 md:h-[92%] md:w-auto">
                 <Image
-                  src="/assets/gt-drive/india-outline-premium.svg"
-                  alt="Outline map of India"
+                  src="/assets/gt-drive/india-states-premium.svg"
+                  alt="Map of India with state and union territory borders and names"
                   fill
-                  sizes="(min-width: 768px) 480px, 78vw"
+                  sizes="(min-width: 768px) 600px, 88vw"
                   className="object-contain"
                 />
 
@@ -133,12 +133,12 @@ export function IndiaFootprint({
               </div>
 
               <a
-                href="https://commons.wikimedia.org/wiki/File:India_outline.svg"
+                href="https://commons.wikimedia.org/wiki/File:States_of_India_(Survey_of_India).svg"
                 target="_blank"
                 rel="noreferrer"
                 className="absolute bottom-5 right-6 text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)]"
               >
-                India · outline source
+                Map source · Survey of India
               </a>
             </div>
           </Reveal>
