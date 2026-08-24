@@ -72,3 +72,17 @@ The current build maps library references to concrete source files:
 | Aura `#2270` | `components/ShowroomHero.tsx` and `components/Reveal.tsx` | GSAP entrance sequencing translated into a bright, AI-rendered automotive campaign banner with reduced-motion handling, a high-priority WebP hero image, and no nonfunctional media control. |
 
 Visual build reference: `assets/gt-drive/comps/homepage-full-comp-06-light-build-reference.png`.
+
+## 2026-08-24 Current implementation note
+
+The original plan above records the first component-library direction and is retained for history. The authoritative current implementation record is `docs/IMPLEMENTATION_STATUS_2026-08-24.md`.
+
+Since this plan was written, the approved homepage/global set was implemented through N8, P4, P5, C4, and F4. The inner-page set was also completed:
+
+- H2 on Contact
+- H3 and A3 on About
+- H4, R4, and R5 on Dealers
+- D9 and D6 on every model-detail route
+- X2 as the complete Compare experience
+
+F5 is the remaining selected pattern that is not present in current source; `RelatedModels.tsx` is still used. Do not treat old `Implemented Trace` entries for deleted or superseded components as the current route composition—check `HANDOFF_TO_CODEX.md` and the dated implementation record instead.
