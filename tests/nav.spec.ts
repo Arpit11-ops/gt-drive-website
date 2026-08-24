@@ -12,13 +12,16 @@ test.describe("model mega-menu", () => {
     await trigger.click();
 
     await expect(trigger).toHaveAttribute("aria-expanded", "true");
-    const menu = page.getByRole("navigation", { name: "Models menu" });
+    const menu = page.getByRole("group", { name: "Models menu" });
     await expect(menu).toBeVisible();
     await expect(menu.getByRole("link", { name: /GT Drive Pro/i })).toBeVisible();
     await expect(menu.getByRole("link", { name: /GT Soul NXT/i })).toBeVisible();
     await expect(menu.getByRole("link", { name: /GT RYD Plus/i })).toBeVisible();
     await expect(menu.getByRole("link", { name: "View all models" })).toHaveAttribute("href", "/models/");
     await expect(menu.getByRole("link", { name: "Compare models" })).toHaveAttribute("href", "/compare/");
+
+    await trigger.click();
+    await expect(trigger).toHaveAttribute("aria-expanded", "false");
   });
 
   test("Escape closes the menu and restores focus to Models", async ({ page }) => {
@@ -26,7 +29,7 @@ test.describe("model mega-menu", () => {
     await trigger.click();
     await page.keyboard.press("Escape");
 
-    await expect(page.getByRole("navigation", { name: "Models menu" })).toBeHidden();
+    await expect(page.getByRole("group", { name: "Models menu" })).toBeHidden();
     await expect(trigger).toBeFocused();
     await expect(trigger).toHaveAttribute("aria-expanded", "false");
   });
@@ -37,7 +40,9 @@ test.describe("model mega-menu", () => {
 
     await expect(trigger).toHaveAttribute("aria-expanded", "true");
     await page.keyboard.press("Tab");
-    await expect(page.getByRole("link", { name: /GT Drive Pro/i })).toBeFocused();
+    await expect(
+      page.getByRole("group", { name: "Models menu" }).getByRole("link", { name: /GT Drive Pro/i }),
+    ).toBeFocused();
   });
 
   test("clicking outside closes the menu", async ({ page }) => {
@@ -45,17 +50,17 @@ test.describe("model mega-menu", () => {
     await trigger.click();
     await page.getByRole("heading", { name: /Drive Clean\. Go Green\./i }).click();
 
-    await expect(page.getByRole("navigation", { name: "Models menu" })).toBeHidden();
+    await expect(page.getByRole("group", { name: "Models menu" })).toBeHidden();
   });
 
   test("choosing a utility route closes the menu", async ({ page }) => {
     await page.getByRole("button", { name: "Models" }).click();
-    await page.getByRole("navigation", { name: "Models menu" })
+    await page.getByRole("group", { name: "Models menu" })
       .getByRole("link", { name: "View all models" })
       .click();
 
     await expect(page).toHaveURL(/\/models\/$/);
-    await expect(page.getByRole("navigation", { name: "Models menu" })).toBeHidden();
+    await expect(page.getByRole("group", { name: "Models menu" })).toBeHidden();
   });
 
   test("mobile menu shows featured models, complete routes, and locks body scroll", async ({ page }) => {
@@ -100,6 +105,7 @@ test.describe("model mega-menu", () => {
       await menuButton.click();
       await page.keyboard.press("Escape");
       await expect(mobileNav).toBeHidden();
+      await expect(page.getByRole("button", { name: "Open menu" })).toBeFocused();
       await expect.poll(() => page.evaluate(() => document.body.style.overflow)).toBe("");
     });
   });

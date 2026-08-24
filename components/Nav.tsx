@@ -15,6 +15,8 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const modelsButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileButtonRef = useRef<HTMLButtonElement>(null);
+  const modelsOpenBeforePointerDownRef = useRef(false);
   const pathname = usePathname();
   const previousPathname = useRef(pathname);
 
@@ -24,7 +26,7 @@ export function Nav() {
   }, []);
 
   const closeAfterNavigation = useCallback(() => {
-    window.setTimeout(closeAll, 0);
+    window.setTimeout(closeAll, 100);
   }, [closeAll]);
 
   useEffect(() => {
@@ -45,11 +47,14 @@ export function Nav() {
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
 
-      if (modelsOpen) {
-        setModelsOpen(false);
-        requestAnimationFrame(() => modelsButtonRef.current?.focus());
-      }
+      const restoreModelsFocus = modelsOpen;
+      const restoreMobileFocus = mobileOpen;
+      setModelsOpen(false);
       setMobileOpen(false);
+      requestAnimationFrame(() => {
+        if (restoreModelsFocus) modelsButtonRef.current?.focus();
+        else if (restoreMobileFocus) mobileButtonRef.current?.focus();
+      });
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -64,31 +69,6 @@ export function Nav() {
     };
     window.addEventListener("pointerdown", onPointerDown);
     return () => window.removeEventListener("pointerdown", onPointerDown);
-  }, [modelsOpen]);
-
-  useEffect(() => {
-    if (!modelsOpen) return;
-
-    const backgroundModelLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('main a[href^="/models/"]'));
-    const previousAttributes = backgroundModelLinks.map((link) => ({
-      link,
-      ariaHidden: link.getAttribute("aria-hidden"),
-      tabIndex: link.getAttribute("tabindex"),
-    }));
-
-    backgroundModelLinks.forEach((link) => {
-      link.setAttribute("aria-hidden", "true");
-      link.setAttribute("tabindex", "-1");
-    });
-
-    return () => {
-      previousAttributes.forEach(({ link, ariaHidden, tabIndex }) => {
-        if (ariaHidden === null) link.removeAttribute("aria-hidden");
-        else link.setAttribute("aria-hidden", ariaHidden);
-        if (tabIndex === null) link.removeAttribute("tabindex");
-        else link.setAttribute("tabindex", tabIndex);
-      });
-    };
   }, [modelsOpen]);
 
   useEffect(() => {
@@ -119,43 +99,50 @@ export function Nav() {
           />
         </Link>
 
-        <nav aria-label="Primary" className="hidden flex-1 justify-center gap-8 md:flex">
-          <div
-            className="static"
-            onMouseEnter={() => setModelsOpen(true)}
-            onMouseLeave={() => setModelsOpen(false)}
-            onFocus={() => setModelsOpen(true)}
-            onBlur={(event) => {
-              const nextFocused = event.relatedTarget as Node | null;
-              if (nextFocused && event.currentTarget.contains(nextFocused)) return;
-              const wrapper = event.currentTarget;
-              requestAnimationFrame(() => {
-                if (!wrapper.contains(document.activeElement)) setModelsOpen(false);
-              });
-            }}
-          >
+        <nav
+          aria-label="Primary"
+          className="hidden h-full flex-1 items-center justify-center xl:flex"
+          onMouseEnter={() => setModelsOpen(true)}
+          onMouseLeave={() => setModelsOpen(false)}
+          onFocus={() => setModelsOpen(true)}
+          onBlur={(event) => {
+            const nextFocused = event.relatedTarget as Node | null;
+            if (nextFocused && event.currentTarget.contains(nextFocused)) return;
+            const wrapper = event.currentTarget;
+            requestAnimationFrame(() => {
+              if (!wrapper.contains(document.activeElement)) setModelsOpen(false);
+            });
+          }}
+        >
+          <div className="flex h-full items-center justify-center gap-8">
             <button
               ref={modelsButtonRef}
               type="button"
               aria-controls="models-mega-menu"
               aria-expanded={modelsOpen}
-              className="text-[13px] font-medium text-[var(--color-ink)] transition-colors hover:text-[var(--color-green-deep)]"
-              onClick={() => setModelsOpen(true)}
+              className="h-full text-[13px] font-medium text-[var(--color-ink)] transition-colors hover:text-[var(--color-green-deep)]"
+              onPointerDown={() => {
+                modelsOpenBeforePointerDownRef.current = modelsOpen;
+              }}
+              onClick={(event) => {
+                if (event.detail === 0) setModelsOpen((current) => !current);
+                else setModelsOpen(!modelsOpenBeforePointerDownRef.current);
+              }}
             >
               Models
             </button>
             <ModelMegaMenu id="models-mega-menu" open={modelsOpen} onNavigate={closeAfterNavigation} />
+            {primaryLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={closeAfterNavigation}
+                className="flex h-full items-center text-[13px] font-medium text-[var(--color-ink)] transition-colors hover:text-[var(--color-green-deep)]"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
-          {primaryLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={closeAfterNavigation}
-              className="text-[13px] font-medium text-[var(--color-ink)] transition-colors hover:text-[var(--color-green-deep)]"
-            >
-              {link.label}
-            </Link>
-          ))}
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
@@ -183,8 +170,9 @@ export function Nav() {
             Request information
           </Link>
           <button
+            ref={mobileButtonRef}
             type="button"
-            className="grid h-9 w-9 place-items-center rounded-full border border-[var(--color-line)] text-[var(--color-ink)] transition-colors hover:border-[var(--color-green-deep)] hover:text-[var(--color-green-deep)] md:hidden"
+            className="grid h-9 w-9 place-items-center rounded-full border border-[var(--color-line)] text-[var(--color-ink)] transition-colors hover:border-[var(--color-green-deep)] hover:text-[var(--color-green-deep)] xl:hidden"
             aria-controls="mobile-nav"
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -199,7 +187,7 @@ export function Nav() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="fixed inset-x-0 top-11 h-[calc(100dvh-2.75rem)] overflow-y-auto border-t border-[var(--color-line)] bg-white px-6 pb-10 pt-6 md:hidden"
+          className="fixed inset-x-0 top-11 h-[calc(100dvh-2.75rem)] overflow-y-auto border-t border-[var(--color-line)] bg-white px-6 pb-10 pt-6 xl:hidden"
         >
           <div className="mx-auto max-w-[var(--container-page)]">
             <h2 className="font-display text-[18px] font-semibold text-[var(--color-ink)]">Featured models</h2>

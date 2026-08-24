@@ -13,10 +13,11 @@ export function ModelMegaMenu({ id, open, onNavigate }: ModelMegaMenuProps) {
   if (!open) return null;
 
   return (
-    <nav
+    <div
       id={id}
+      role="group"
       aria-label="Models menu"
-      className="absolute left-0 right-0 top-11 hidden border-y border-[var(--color-line)] bg-white shadow-[0_24px_50px_rgba(17,17,17,0.08)] md:block"
+      className="absolute left-0 right-0 top-11 hidden border-y border-[var(--color-line)] bg-white shadow-[0_24px_50px_rgba(17,17,17,0.08)] xl:block"
     >
       <div className="mx-auto grid max-w-[var(--container-page)] grid-cols-[1fr_280px] gap-10 px-10 py-8">
         <div className="grid grid-cols-3 divide-x divide-[var(--color-line)]">
@@ -72,6 +73,6 @@ export function ModelMegaMenu({ id, open, onNavigate }: ModelMegaMenuProps) {
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 }
