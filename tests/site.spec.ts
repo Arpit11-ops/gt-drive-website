@@ -170,7 +170,7 @@ test("every model detail route responds and shows the model name", async ({
   }
 });
 
-test("compare page shows all nine models as table columns", async ({
+test("compare page lets each column select any of the nine models", async ({
   page,
 }) => {
   test.setTimeout(120_000);
@@ -190,9 +190,13 @@ test("compare page shows all nine models as table columns", async ({
     "GT Drive Pro",
     "GT Chetak",
   ];
+  const selectors = page.getByRole("combobox", { name: /choose model for column/i });
+  await expect(selectors).toHaveCount(3);
   for (const name of shortNames) {
-    await expect(page.getByRole("link", { name }).first()).toBeVisible();
+    await expect(selectors.first().locator("option", { hasText: name })).toHaveCount(1);
   }
+  await selectors.nth(1).selectOption({ label: "GT Champion" });
+  await expect(page.getByRole("link", { name: "GT Champion" })).toBeVisible();
 });
 
 test("inquiry form on contact page has all fields", async ({ page }) => {
