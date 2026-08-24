@@ -9,10 +9,10 @@ import { Reveal } from "@/components/Reveal";
 import { locations } from "@/lib/models";
 
 const markerPositions: Record<string, { left: string; top: string }> = {
-  "Uttar Pradesh": { left: "47%", top: "34%" },
-  Bihar: { left: "63%", top: "39%" },
-  Maharashtra: { left: "25%", top: "57%" },
-  "Madhya Pradesh": { left: "32%", top: "46%" },
+  "Uttar Pradesh": { left: "34%", top: "30%" },
+  Bihar: { left: "59%", top: "39%" },
+  Maharashtra: { left: "19%", top: "58%" },
+  "Madhya Pradesh": { left: "26%", top: "46%" },
   Telangana: { left: "38%", top: "63%" },
 };
 
