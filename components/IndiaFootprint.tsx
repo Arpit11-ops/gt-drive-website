@@ -12,7 +12,7 @@ const markerPositions: Record<string, { left: string; top: string }> = {
   "Uttar Pradesh": { left: "47%", top: "34%" },
   Bihar: { left: "59%", top: "39%" },
   Maharashtra: { left: "25%", top: "57%" },
-  "Madhya Pradesh": { left: "36%", top: "50%" },
+  "Madhya Pradesh": { left: "36%", top: "48%" },
   Telangana: { left: "38%", top: "63%" },
 };
 
