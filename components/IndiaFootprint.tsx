@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { MapPin } from "@phosphor-icons/react";
 import { useState } from "react";
@@ -8,11 +9,11 @@ import { Reveal } from "@/components/Reveal";
 import { locations } from "@/lib/models";
 
 const markerPositions: Record<string, { left: string; top: string }> = {
-  "Uttar Pradesh": { left: "47%", top: "31%" },
-  Bihar: { left: "63%", top: "35%" },
-  Maharashtra: { left: "32%", top: "58%" },
-  "Madhya Pradesh": { left: "43%", top: "48%" },
-  Telangana: { left: "46%", top: "67%" },
+  "Uttar Pradesh": { left: "51%", top: "40%" },
+  Bihar: { left: "65%", top: "44%" },
+  Maharashtra: { left: "33%", top: "69%" },
+  "Madhya Pradesh": { left: "42%", top: "56%" },
+  Telangana: { left: "48%", top: "73%" },
 };
 
 type IndiaFootprintProps = {
@@ -80,43 +81,15 @@ export function IndiaFootprint({
           </Reveal>
 
           <Reveal delay={100} className="w-full lg:w-2/3">
-            <div className="relative min-h-[560px] overflow-hidden rounded-lg border border-[var(--color-line)] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.04)] md:min-h-[650px]">
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 opacity-40 [background-image:linear-gradient(var(--color-line)_1px,transparent_1px),linear-gradient(90deg,var(--color-line)_1px,transparent_1px)] [background-size:48px_48px]"
-              />
-
-              <div className="absolute inset-8 md:inset-12">
-                <svg
-                  aria-label="Simplified map of India"
-                  role="img"
-                  viewBox="0 0 500 600"
-                  className="h-full w-full"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <path
-                    d="M185 37 215 49 239 38 264 56 294 50 319 69 350 67 378 82 404 103 430 110 417 128 440 144 426 163 397 170 385 193 363 208 341 221 329 250 316 274 306 307 297 340 286 376 273 414 256 451 238 487 217 529 200 503 188 474 178 444 164 420 152 389 136 360 120 335 103 310 88 287 67 267 84 243 101 221 99 198 80 182 61 163 53 142 69 125 93 117 112 101 139 95 151 74 175 65Z"
-                    fill="var(--color-stage)"
-                    stroke="var(--color-ink)"
-                    strokeWidth="3"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M360 208 Q405 188 438 144 M217 529 Q204 554 195 570"
-                    fill="none"
-                    stroke="var(--color-ink)"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M234 188 Q278 213 318 214 M318 214 Q260 275 220 291 M220 291 Q174 320 168 355 M220 291 Q228 355 230 402"
-                    fill="none"
-                    stroke="var(--color-green-deep)"
-                    strokeWidth="2"
-                    strokeDasharray="6 7"
-                    opacity="0.35"
-                  />
-                </svg>
+            <div className="relative min-h-[560px] overflow-hidden rounded-lg border border-[var(--color-line)] bg-[radial-gradient(circle_at_50%_45%,#ffffff_0%,#f7f9f7_68%,#eef2ef_100%)] shadow-[0_16px_45px_rgba(0,0,0,0.06)] md:min-h-[650px]">
+              <div className="absolute left-1/2 top-1/2 aspect-[666/777] w-[78%] -translate-x-1/2 -translate-y-1/2 md:w-[56%]">
+                <Image
+                  src="/assets/gt-drive/india-outline-premium.svg"
+                  alt="Outline map of India"
+                  fill
+                  sizes="(min-width: 768px) 480px, 78vw"
+                  className="object-contain"
+                />
 
                 {locations.map((location) => {
                   const position = markerPositions[location.state];
@@ -159,9 +132,14 @@ export function IndiaFootprint({
                 })}
               </div>
 
-              <span className="absolute bottom-5 right-6 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
-                India
-              </span>
+              <a
+                href="https://commons.wikimedia.org/wiki/File:India_outline.svg"
+                target="_blank"
+                rel="noreferrer"
+                className="absolute bottom-5 right-6 text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)]"
+              >
+                India · outline source
+              </a>
             </div>
           </Reveal>
         </div>
