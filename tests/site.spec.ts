@@ -12,7 +12,10 @@ async function scrollThrough(page: import("@playwright/test").Page) {
   });
 }
 
-test("homepage renders every section and no console errors", async ({ page, request }) => {
+test("homepage renders every section and no console errors", async ({
+  page,
+  request,
+}) => {
   const errors: string[] = [];
   page.on("console", (message) => {
     if (message.type() === "error") errors.push(message.text());
@@ -21,26 +24,65 @@ test("homepage renders every section and no console errors", async ({ page, requ
   await page.goto("/", { waitUntil: "networkidle" });
   await page.waitForTimeout(1200);
 
-  await expect(page.getByRole("heading", { name: /drive clean\. go green\./i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /nine models\. five states\. one india\./i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /gt — drive pro/i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /nine confirmed models\. one truth\./i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /grow with an indian ev brand\./i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /plants across five indian states\./i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /get in touch\./i })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: /drive clean\. go green\./i }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", {
+      name: /nine models\. five states\. one india\./i,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: /gt — drive pro/i }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: /shared features/i }),
+  ).toBeVisible();
+  await expect(page.getByRole("link", { name: /view model/i })).toHaveAttribute(
+    "href",
+    "/models/gt-drive-pro/",
+  );
+  await expect(
+    page.getByRole("link", { name: /explore all models/i }),
+  ).toHaveAttribute("href", "/models/");
+  await expect(
+    page.getByRole("heading", { name: /nine confirmed models\. one truth\./i }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: /grow with an indian ev brand\./i }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: /plants across five indian states\./i }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: /get in touch\./i }),
+  ).toBeVisible();
 
   await scrollThrough(page);
 
   const imageUrls = await page
     .locator("img")
     .evaluateAll((images) => [
-      ...new Set(images.map((image) => (image as HTMLImageElement).currentSrc || (image as HTMLImageElement).src)),
+      ...new Set(
+        images.map(
+          (image) =>
+            (image as HTMLImageElement).currentSrc ||
+            (image as HTMLImageElement).src,
+        ),
+      ),
     ]);
   for (const imageUrl of imageUrls) {
     if (!imageUrl) continue;
-    expect((await request.get(imageUrl)).ok(), `Image failed: ${imageUrl}`).toBe(true);
+    expect(
+      (await request.get(imageUrl)).ok(),
+      `Image failed: ${imageUrl}`,
+    ).toBe(true);
   }
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth + 1,
+    ),
+  ).toBe(true);
   expect(errors).toEqual([]);
 });
 
@@ -56,23 +98,44 @@ test("mobile hamburger reveals the primary navigation", async ({ page }) => {
   const mobileNav = page.getByRole("navigation", { name: "Mobile" });
   await expect(mobileNav.getByRole("link", { name: "Models" })).toBeVisible();
   await expect(mobileNav.getByRole("link", { name: "Compare" })).toBeVisible();
-  await expect(mobileNav.getByRole("link", { name: "For dealers" })).toBeVisible();
-  await expect(mobileNav.getByRole("link", { name: "Locations" })).toBeVisible();
+  await expect(
+    mobileNav.getByRole("link", { name: "For dealers" }),
+  ).toBeVisible();
+  await expect(
+    mobileNav.getByRole("link", { name: "Locations" }),
+  ).toBeVisible();
   await expect(mobileNav.getByRole("link", { name: "Contact" })).toBeVisible();
 
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth + 1,
+    ),
+  ).toBe(true);
 });
 
 test("every top-level route responds 200", async ({ page }) => {
   test.setTimeout(120_000);
-  const routes = ["/", "/models/", "/compare/", "/dealers/", "/about/", "/locations/", "/contact/"];
+  const routes = [
+    "/",
+    "/models/",
+    "/compare/",
+    "/dealers/",
+    "/about/",
+    "/locations/",
+    "/contact/",
+  ];
   for (const route of routes) {
-    const response = await page.goto(route, { waitUntil: "domcontentloaded", timeout: 60_000 });
+    const response = await page.goto(route, {
+      waitUntil: "domcontentloaded",
+      timeout: 60_000,
+    });
     expect(response?.ok(), `Route failed: ${route}`).toBe(true);
   }
 });
 
-test("every model detail route responds and shows the model name", async ({ page }) => {
+test("every model detail route responds and shows the model name", async ({
+  page,
+}) => {
   test.setTimeout(180_000);
   const models = [
     { slug: "gt-soul", name: "GT Soul" },
@@ -86,15 +149,25 @@ test("every model detail route responds and shows the model name", async ({ page
     { slug: "gt-chetak", name: "GT Chetak" },
   ];
   for (const model of models) {
-    const response = await page.goto(`/models/${model.slug}/`, { waitUntil: "domcontentloaded", timeout: 60_000 });
+    const response = await page.goto(`/models/${model.slug}/`, {
+      waitUntil: "domcontentloaded",
+      timeout: 60_000,
+    });
     expect(response?.ok(), `Detail failed: ${model.slug}`).toBe(true);
-    await expect(page.getByRole("heading", { level: 1, name: model.name })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 1, name: model.name }),
+    ).toBeVisible();
   }
 });
 
-test("compare page shows all nine models as table columns", async ({ page }) => {
+test("compare page shows all nine models as table columns", async ({
+  page,
+}) => {
   test.setTimeout(120_000);
-  await page.goto("/compare/", { waitUntil: "domcontentloaded", timeout: 60_000 });
+  await page.goto("/compare/", {
+    waitUntil: "domcontentloaded",
+    timeout: 60_000,
+  });
   await page.waitForTimeout(800);
   const shortNames = [
     "GT Soul",
@@ -114,7 +187,10 @@ test("compare page shows all nine models as table columns", async ({ page }) => 
 
 test("inquiry form on contact page has all fields", async ({ page }) => {
   test.setTimeout(120_000);
-  await page.goto("/contact/", { waitUntil: "domcontentloaded", timeout: 60_000 });
+  await page.goto("/contact/", {
+    waitUntil: "domcontentloaded",
+    timeout: 60_000,
+  });
   await expect(page.getByLabel("Full name")).toBeVisible();
   await expect(page.getByLabel("Phone number")).toBeVisible();
   await expect(page.getByLabel("Email address")).toBeVisible();
@@ -122,5 +198,7 @@ test("inquiry form on contact page has all fields", async ({ page }) => {
   await expect(page.getByLabel("Enquiry type")).toBeVisible();
   await expect(page.getByLabel("Model of interest")).toBeVisible();
   await expect(page.getByLabel("Message")).toBeVisible();
-  await expect(page.getByRole("button", { name: "Send enquiry" })).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Send enquiry" }),
+  ).toBeVisible();
 });

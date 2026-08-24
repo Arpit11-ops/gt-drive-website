@@ -4,7 +4,7 @@ import { DealerBand } from "@/components/DealerBand";
 import { Footprint } from "@/components/Footprint";
 import { Hero } from "@/components/Hero";
 import { ModelRange } from "@/components/ModelRange";
-import { ModelSpotlight } from "@/components/ModelSpotlight";
+import { StoryChapters } from "@/components/StoryChapters";
 import { TaglineMarquee } from "@/components/TaglineMarquee";
 
 export default function HomePage() {
@@ -12,7 +12,7 @@ export default function HomePage() {
     <>
       <Hero />
       <BrandStatement />
-      <ModelSpotlight />
+      <StoryChapters />
       <ModelRange />
       <DealerBand />
       <Footprint />
