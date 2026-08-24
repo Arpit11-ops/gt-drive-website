@@ -38,16 +38,20 @@ test("homepage renders every section and no console errors", async ({
   await expect(
     page.getByRole("heading", { name: /shared features/i }),
   ).toBeVisible();
-  await expect(page.getByRole("link", { name: /view model/i })).toHaveAttribute(
-    "href",
-    "/models/gt-drive-pro/",
-  );
+  await expect(
+    page.locator("#features").getByRole("link", { name: /view model/i }),
+  ).toHaveAttribute("href", "/models/gt-drive-pro/");
   await expect(
     page.getByRole("link", { name: /explore all models/i }),
   ).toHaveAttribute("href", "/models/");
   await expect(
     page.getByRole("heading", { name: /nine confirmed models\. one truth\./i }),
   ).toBeVisible();
+  await expect(page.getByTestId("model-story-card")).toHaveCount(9);
+  await expect(page.getByRole("button", { name: "Next models" })).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "View all models" }),
+  ).toHaveAttribute("href", "/models/");
   await expect(
     page.getByRole("heading", { name: /grow with an indian ev brand\./i }),
   ).toBeVisible();
