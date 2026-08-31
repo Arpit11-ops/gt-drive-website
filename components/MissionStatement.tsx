@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
+import { asset } from "@/lib/asset";
 
 export function MissionStatement() {
   return (
@@ -29,7 +30,7 @@ export function MissionStatement() {
         <Reveal delay={200} className="mt-20">
           <div className="overflow-hidden rounded-3xl border border-black/5 bg-[var(--color-stage)]">
             <Image
-              src="/assets/gt-drive/cover-scooter-lineup.webp"
+              src={asset("/assets/gt-drive/cover-scooter-lineup.webp")}
               alt="GT Drive electric scooter lineup"
               width={970}
               height={385}

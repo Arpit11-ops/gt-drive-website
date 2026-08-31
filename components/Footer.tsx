@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EnvelopeSimple, Phone, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 import { contact, models } from "@/lib/models";
+import { asset } from "@/lib/asset";
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-[var(--container-page)] gap-14 px-6 pt-20 pb-8 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Image
-            src="/assets/gt-drive/brand/gt-drive-logo-primary-lockup.png"
+            src={asset("/assets/gt-drive/brand/gt-drive-logo-primary-lockup.png")}
             alt="GT Drive · Drive Clean, Go Green"
             width={220}
             height={54}

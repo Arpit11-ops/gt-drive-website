@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react";
 import { featuredModels } from "@/lib/navigation";
+import { asset } from "@/lib/asset";
 
 type ModelMegaMenuProps = {
   id: string;
@@ -34,7 +35,7 @@ export function ModelMegaMenu({ id, open, onNavigate }: ModelMegaMenuProps) {
             >
               <span className="relative h-13 w-13 shrink-0 overflow-hidden rounded-xl border border-black/[0.05] bg-[var(--color-stage)] shadow-sm">
                 <Image
-                  src={model.image}
+                  src={asset(model.image)}
                   alt=""
                   fill
                   sizes="52px"
@@ -55,7 +56,7 @@ export function ModelMegaMenu({ id, open, onNavigate }: ModelMegaMenuProps) {
 
         <aside className="relative col-span-4 flex min-h-[246px] flex-col justify-between overflow-hidden border-l border-black/[0.05] bg-[#f4f7f4] p-6">
           <Image
-            src={featuredModels[0].image}
+            src={asset(featuredModels[0].image)}
             alt=""
             width={280}
             height={210}

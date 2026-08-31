@@ -11,6 +11,7 @@ import { RelatedModels } from "@/components/RelatedModels";
 import { Reveal } from "@/components/Reveal";
 import { ScooterReveal } from "@/components/motion/ScooterReveal";
 import { getModel, models } from "@/lib/models";
+import { asset } from "@/lib/asset";
 
 export function generateStaticParams() {
   return models.map((model) => ({ slug: model.slug }));
@@ -34,7 +35,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
         <div className="mx-auto grid max-w-[var(--container-page)] gap-12 px-6 pb-20 md:grid-cols-[1.3fr_1fr] md:gap-16 md:px-10 md:pb-28">
           <ScooterReveal className="relative flex items-center justify-center bg-[var(--color-stage)]">
             <Image
-              src={heroImage}
+              src={asset(heroImage)}
               alt={model.shortName}
               width={1536}
               height={1024}

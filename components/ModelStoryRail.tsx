@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { Reveal } from "@/components/Reveal";
 import { models } from "@/lib/models";
+import { asset } from "@/lib/asset";
 
 function Arrow({ reverse = false }: { reverse?: boolean }) {
   return (
@@ -98,7 +99,7 @@ export function ModelStoryRail() {
                     }`}
                   >
                     <Image
-                      src={model.image}
+                      src={asset(model.image)}
                       alt={model.shortName}
                       fill
                       sizes="(min-width: 768px) 350px, 82vw"

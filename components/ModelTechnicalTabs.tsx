@@ -11,6 +11,7 @@ import {
 } from "@phosphor-icons/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ScooterModel } from "@/lib/models";
+import { asset } from "@/lib/asset";
 
 type Props = {
   model: ScooterModel;
@@ -221,7 +222,7 @@ export function ModelTechnicalTabs({ model, image }: Props) {
                 <div aria-hidden="true" className="absolute inset-[12%] rounded-[28px] border border-black/5 bg-black/[0.02]" />
                 <div aria-hidden="true" className="absolute inset-[16%] rounded-[24px] border border-black/5 bg-[radial-gradient(circle_at_center,rgba(0,0,0,.04),transparent_70%)]" />
                 <Image
-                  src={image}
+                  src={asset(image)}
                   alt={`${model.shortName} technical view`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

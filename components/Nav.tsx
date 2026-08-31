@@ -8,6 +8,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ModelMegaMenu } from "@/components/ModelMegaMenu";
 import { contact } from "@/lib/models";
 import { featuredModels, mobileLinks, primaryLinks } from "@/lib/navigation";
+import { asset } from "@/lib/asset";
 
 const modelsMenuId = "models-mega-menu";
 
@@ -90,7 +91,7 @@ export function Nav() {
       >
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-6 px-6">
         <Link href="/" onClick={closeAfterNavigation} className="relative z-50 flex shrink-0 items-center" aria-label="GT Drive home">
-          <Image src="/assets/gt-drive/brand/gt-drive-logo-header.png" alt="GT Drive" width={150} height={29} priority />
+          <Image src={asset("/assets/gt-drive/brand/gt-drive-logo-header.png")} alt="GT Drive" width={150} height={29} priority />
         </Link>
 
         <nav aria-label="Primary" className="hidden h-full items-center gap-7 lg:flex">
@@ -203,7 +204,7 @@ export function Nav() {
         </button>
 
         <div className="relative z-[1] mx-auto flex min-h-dvh w-full max-w-md flex-col items-center justify-center px-6 py-20 text-center">
-          <Image src="/assets/gt-drive/brand/gt-drive-logo-header.png" alt="GT Drive" width={180} height={35} className="mb-10" />
+          <Image src={asset("/assets/gt-drive/brand/gt-drive-logo-header.png")} alt="GT Drive" width={180} height={35} className="mb-10" />
 
           <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-green-deep)]">
             Featured models

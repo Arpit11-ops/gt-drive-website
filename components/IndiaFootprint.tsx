@@ -7,6 +7,7 @@ import { useState } from "react";
 
 import { Reveal } from "@/components/Reveal";
 import { locations } from "@/lib/models";
+import { asset } from "@/lib/asset";
 
 const markerPositions: Record<string, { left: string; top: string }> = {
   "Uttar Pradesh": { left: "47%", top: "34%" },
@@ -75,7 +76,7 @@ export function IndiaFootprint({
             <div className="relative min-h-[560px] overflow-hidden rounded-lg border border-[var(--color-line)] bg-[radial-gradient(circle_at_50%_45%,#ffffff_0%,#f7f9f7_68%,#eef2ef_100%)] shadow-[0_16px_45px_rgba(0,0,0,0.06)] md:min-h-[780px]">
               <div className="absolute left-1/2 top-1/2 aspect-[690/830] w-[88%] -translate-x-1/2 -translate-y-1/2 md:h-[92%] md:w-auto">
                 <Image
-                  src="/assets/gt-drive/india-states-premium.svg"
+                  src={asset("/assets/gt-drive/india-states-premium.svg")}
                   alt="Map of India with state and union territory borders and names"
                   fill
                   sizes="(min-width: 768px) 600px, 88vw"

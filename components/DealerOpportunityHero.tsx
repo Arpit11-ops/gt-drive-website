@@ -5,6 +5,7 @@ import { ChargeLine } from "@/components/motion/ChargeLine";
 import { CountUp } from "@/components/motion/CountUp";
 import { MaskReveal } from "@/components/motion/MaskReveal";
 import { Reveal } from "@/components/Reveal";
+import { asset } from "@/lib/asset";
 
 const stats = [
   { value: "9", label: "Models in the range" },
@@ -18,7 +19,7 @@ export function DealerOpportunityHero() {
       <Reveal className="mx-auto max-w-[var(--container-page)]">
         <div className="group relative h-[680px] overflow-hidden rounded-[28px] bg-[var(--color-ink)] shadow-[0_24px_70px_rgba(17,17,17,0.16)] md:h-[600px]">
           <Image
-            src="/assets/gt-drive/gt-drive-pro-real.webp"
+            src={asset("/assets/gt-drive/gt-drive-pro-real.webp")}
             alt="GT Drive Pro electric scooter"
             fill
             priority
@@ -78,7 +79,7 @@ export function DealerOpportunityHero() {
           >
             <div className="relative h-36 overflow-hidden rounded-xl bg-[var(--color-stage)]">
               <Image
-                src="/assets/gt-drive/gt-flying-e4-real.webp"
+                src={asset("/assets/gt-drive/gt-flying-e4-real.webp")}
                 alt="GT Flying electric scooter"
                 fill
                 sizes="250px"

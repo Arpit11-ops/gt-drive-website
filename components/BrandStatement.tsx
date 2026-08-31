@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
+import { asset } from "@/lib/asset";
 
 export function BrandStatement() {
   return (
@@ -31,7 +32,7 @@ export function BrandStatement() {
         <Reveal delay={160} className="w-full md:ml-auto md:max-w-[520px]">
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
             <Image
-              src="/assets/gt-drive/one-india-atmosphere.webp"
+              src={asset("/assets/gt-drive/one-india-atmosphere.webp")}
               alt="Golden-hour Indian road with a lone electric scooter in the distance"
               fill
               sizes="(min-width: 768px) 520px, 100vw"

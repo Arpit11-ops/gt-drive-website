@@ -3,13 +3,14 @@ import Link from "next/link";
 import { ChargeLine } from "@/components/motion/ChargeLine";
 import { MaskReveal } from "@/components/motion/MaskReveal";
 import { Reveal } from "@/components/Reveal";
+import { asset } from "@/lib/asset";
 
 export function AboutImageHero() {
   return (
     <section className="relative flex h-screen min-h-[700px] items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/gt-drive/gt-drive-hero-showroom-ai-v1.webp"
+          src={asset("/assets/gt-drive/gt-drive-hero-showroom-ai-v1.webp")}
           alt="GT Drive electric scooter in a contemporary showroom setting"
           fill
           priority

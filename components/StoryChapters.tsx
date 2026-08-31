@@ -5,6 +5,7 @@ import { MaskReveal } from "@/components/motion/MaskReveal";
 import { ScooterReveal } from "@/components/motion/ScooterReveal";
 import { Reveal } from "@/components/Reveal";
 import { getModel, sharedFeatures } from "@/lib/models";
+import { asset } from "@/lib/asset";
 
 const linkClass =
   "group inline-flex w-fit items-center gap-5 text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-ink)] transition-colors hover:text-[var(--color-green-deep)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-green-deep)]";
@@ -73,7 +74,7 @@ export function StoryChapters() {
 
         <ScooterReveal className="group relative order-1 h-[60vh] min-h-[440px] overflow-hidden rounded-3xl bg-white md:order-2 md:col-span-7 md:h-[80vh] md:min-h-[660px]">
           <Image
-            src={drivePro.image}
+            src={asset(drivePro.image)}
             alt={drivePro.shortName}
             fill
             sizes="(min-width: 768px) 58vw, 100vw"
@@ -86,7 +87,7 @@ export function StoryChapters() {
       <article className="w-full grid grid-cols-1 border-x border-t border-[var(--color-line)] md:grid-cols-12">
         <ScooterReveal className="group relative order-1 h-[60vh] min-h-[440px] overflow-hidden rounded-3xl bg-white md:col-span-7 md:h-[80vh] md:min-h-[660px] md:border-r md:border-[var(--color-line)]">
           <Image
-            src="/assets/gt-drive/cover-scooter-lineup.webp"
+            src={asset("/assets/gt-drive/cover-scooter-lineup.webp")}
             alt="GT Drive electric scooter range"
             fill
             sizes="(min-width: 768px) 58vw, 100vw"

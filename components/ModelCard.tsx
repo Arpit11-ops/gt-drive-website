@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import type { ScooterModel } from "@/lib/models";
+import { asset } from "@/lib/asset";
 
 export function ModelCard({ model, priority = false }: { model: ScooterModel; priority?: boolean }) {
   return (
@@ -11,7 +12,7 @@ export function ModelCard({ model, priority = false }: { model: ScooterModel; pr
     >
       <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-[var(--color-stage)] transition-all duration-500 ease-[var(--ease-signature)] group-hover:bg-[#eff2ef] group-hover:shadow-[0_18px_40px_rgba(17,17,17,0.10)]">
         <Image
-          src={model.image}
+          src={asset(model.image)}
           alt={model.shortName}
           fill
           sizes="(min-width: 1024px) 32vw, (min-width: 640px) 50vw, 100vw"

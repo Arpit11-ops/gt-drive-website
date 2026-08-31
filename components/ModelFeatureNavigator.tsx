@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ScooterReveal } from "@/components/motion/ScooterReveal";
 import { Reveal } from "@/components/Reveal";
 import type { ScooterModel } from "@/lib/models";
+import { asset } from "@/lib/asset";
 
 type Props = {
   model: ScooterModel;
@@ -150,7 +151,7 @@ export function ModelFeatureNavigator({ model }: Props) {
                   <div className="relative min-h-[430px] overflow-hidden rounded-3xl border border-[var(--color-line)] bg-white shadow-[0_24px_70px_rgba(17,17,17,0.07)] md:min-h-[580px]">
                     <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(32,176,72,.12),transparent_42%)]" />
                     <Image
-                      src={image}
+                      src={asset(image)}
                       alt={`${model.shortName} ${chapter.label.toLowerCase()} multi-angle view`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 66vw"

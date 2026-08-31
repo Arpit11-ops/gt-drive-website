@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ChargeLine } from "@/components/motion/ChargeLine";
 import { MaskReveal } from "@/components/motion/MaskReveal";
+import { asset } from "@/lib/asset";
 
 const slides = [
   {
@@ -96,7 +97,7 @@ export function Hero() {
         {slides.map((s, index) => (
           <Image
             key={s.image}
-            src={s.image}
+            src={asset(s.image)}
             alt={s.title}
             fill
             priority={index === 0}

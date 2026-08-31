@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/Reveal";
 import { models } from "@/lib/models";
+import { asset } from "@/lib/asset";
 
 export function DealerRangeShowcase() {
   return (
@@ -43,7 +44,7 @@ export function DealerRangeShowcase() {
               >
                 <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white transition-colors group-hover:ring-1 group-hover:ring-[var(--color-green)]/40">
                   <Image
-                    src={model.image}
+                    src={asset(model.image)}
                     alt={model.shortName}
                     fill
                     sizes="(min-width: 1024px) 140px, (min-width: 640px) 30vw, 45vw"
