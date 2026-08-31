@@ -10,3 +10,6 @@ tsconfig.tsbuildinfo
 
 # Owner-supplied raw photo dump — kept locally, never shipped
 SCOOTER PHOTOS (1)/
+
+# Pre-existing user-owned shortlist doc — kept local per handoff
+GT_DRIVE_COMPONENT_SHORTLIST.html
