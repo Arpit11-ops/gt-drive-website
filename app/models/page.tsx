@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactClose } from "@/components/ContactClose";
+import { MaskReveal } from "@/components/motion/MaskReveal";
 import { ModelCard } from "@/components/ModelCard";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -18,11 +19,19 @@ export default function ModelsPage() {
         eyebrow="The GT Drive electric range"
         headline={
           <>
-            <span className="block">Nine confirmed models.</span>
-            <span className="block text-[var(--color-green)]">One truth.</span>
+            <MaskReveal as="span" className="block">
+              Nine electric scooters.
+            </MaskReveal>
+            <MaskReveal
+              as="span"
+              className="block text-[var(--color-green)]"
+              delay={140}
+            >
+              The full range.
+            </MaskReveal>
           </>
         }
-        lead="Every scooter here is drawn from the GT Drive brochure — full specifications, brochure-verified features, real colours, and honest Coming Soon flags where the brochure hasn't published yet."
+        lead="Every scooter here is drawn from the GT Drive brochure — full specifications, features, real colours, and Coming Soon where the brochure hasn't published yet."
       />
       <section className="mx-auto max-w-[var(--container-page)] px-6 py-20 md:px-10 md:py-28">
         <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">

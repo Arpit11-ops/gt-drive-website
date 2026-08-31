@@ -107,7 +107,6 @@ test("mobile hamburger reveals the primary navigation", async ({ page }) => {
 
   const mobileNav = page.getByRole("navigation", { name: "Mobile" });
   await expect(mobileNav.getByRole("link", { name: "Models" })).toBeVisible();
-  await expect(mobileNav.getByRole("link", { name: "Compare" })).toBeVisible();
   await expect(
     mobileNav.getByRole("link", { name: "For dealers" }),
   ).toBeVisible();
@@ -128,7 +127,6 @@ test("every top-level route responds 200", async ({ page }) => {
   const routes = [
     "/",
     "/models/",
-    "/compare/",
     "/dealers/",
     "/about/",
     "/locations/",
@@ -168,35 +166,6 @@ test("every model detail route responds and shows the model name", async ({
       page.getByRole("heading", { level: 1, name: model.name }),
     ).toBeVisible();
   }
-});
-
-test("compare page lets each column select any of the nine models", async ({
-  page,
-}) => {
-  test.setTimeout(120_000);
-  await page.goto("/compare/", {
-    waitUntil: "domcontentloaded",
-    timeout: 60_000,
-  });
-  await page.waitForTimeout(800);
-  const shortNames = [
-    "GT Soul",
-    "GT Soul NXT",
-    "GT RYD",
-    "GT RYD Plus",
-    "GT One Plus",
-    "GT Champion",
-    "GT Flying",
-    "GT Drive Pro",
-    "GT Chetak",
-  ];
-  const selectors = page.getByRole("combobox", { name: /choose model for column/i });
-  await expect(selectors).toHaveCount(3);
-  for (const name of shortNames) {
-    await expect(selectors.first().locator("option", { hasText: name })).toHaveCount(1);
-  }
-  await selectors.nth(1).selectOption({ label: "GT Champion" });
-  await expect(page.getByRole("link", { name: "GT Champion" })).toBeVisible();
 });
 
 test("inquiry form on contact page has all fields", async ({ page }) => {

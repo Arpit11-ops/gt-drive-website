@@ -94,8 +94,8 @@ export function ModelTechnicalTabs({ model, image }: Props) {
         description:
           "Available colour names are reproduced from the model information currently supplied by GT Drive.",
         icon: Palette,
-        details: model.colors.map((colour, index) => ({
-          label: model.colors.length > 1 ? `Colour ${String(index + 1).padStart(2, "0")}` : "Availability",
+        details: model.colors.map((colour) => ({
+          label: model.colors.length > 1 ? "Finish" : "Availability",
           value: colour,
         })),
       },
@@ -133,7 +133,7 @@ export function ModelTechnicalTabs({ model, image }: Props) {
               <span>Brochure-verified details</span>
             </div>
             <h2 className="mx-auto mt-4 max-w-4xl text-[clamp(40px,6vw,72px)] font-semibold leading-[0.94] tracking-[-0.05em] text-white">
-              Explore the engineering behind {model.shortName}.
+              Explore the <span className="text-[var(--color-green)]">engineering</span> behind {model.shortName}.
             </h2>
           </header>
 
@@ -193,7 +193,7 @@ export function ModelTechnicalTabs({ model, image }: Props) {
               <div>
                 <h3 className="text-[clamp(38px,5vw,62px)] font-semibold leading-[0.98] tracking-[-0.045em] text-white">
                   {activeTab.title}{" "}
-                  <span className="text-white/35">{activeTab.accent}</span>
+                  <span className="text-[var(--color-green)]">{activeTab.accent}</span>
                 </h3>
                 <p className="mt-5 max-w-xl text-base leading-relaxed text-white/60 md:text-lg">
                   {activeTab.description}
@@ -216,18 +216,18 @@ export function ModelTechnicalTabs({ model, image }: Props) {
                 </div>
               </div>
 
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d120f] shadow-lg aspect-[4/3]">
-                <div aria-hidden="true" className="absolute inset-0 opacity-30 [background-image:linear-gradient(0deg,rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:24px_24px]" />
-                <div aria-hidden="true" className="absolute inset-[12%] rounded-[28px] border border-white/10 bg-white/[0.025]" />
-                <div aria-hidden="true" className="absolute inset-[16%] rounded-[24px] border border-white/10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,.08),transparent_70%)]" />
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white shadow-lg aspect-[4/3]">
+                <div aria-hidden="true" className="absolute inset-0 opacity-30 [background-image:linear-gradient(0deg,rgba(0,0,0,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,.06)_1px,transparent_1px)] [background-size:24px_24px]" />
+                <div aria-hidden="true" className="absolute inset-[12%] rounded-[28px] border border-black/5 bg-black/[0.02]" />
+                <div aria-hidden="true" className="absolute inset-[16%] rounded-[24px] border border-black/5 bg-[radial-gradient(circle_at_center,rgba(0,0,0,.04),transparent_70%)]" />
                 <Image
                   src={image}
                   alt={`${model.shortName} technical view`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="relative z-10 object-contain p-7 drop-shadow-[0_24px_24px_rgba(0,0,0,.5)] md:p-10"
+                  className="relative z-10 object-contain p-7 mix-blend-multiply md:p-10"
                 />
-                <div aria-hidden="true" className="pointer-events-none absolute -inset-1 bg-[radial-gradient(60%_60%_at_70%_20%,rgba(32,176,72,.24),transparent_70%)] opacity-70 blur-xl" />
+                <div aria-hidden="true" className="pointer-events-none absolute -inset-1 bg-[radial-gradient(60%_60%_at_70%_20%,rgba(32,176,72,.15),transparent_70%)] opacity-70 blur-xl" />
               </div>
             </div>
           </div>

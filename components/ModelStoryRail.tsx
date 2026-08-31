@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Reveal } from "@/components/Reveal";
 import { models } from "@/lib/models";
@@ -27,6 +27,19 @@ function Arrow({ reverse = false }: { reverse?: boolean }) {
 
 export function ModelStoryRail() {
   const railRef = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const rail = railRef.current;
+    if (!rail) return;
+    const onScroll = () => {
+      const max = rail.scrollWidth - rail.clientWidth;
+      setProgress(max > 0 ? rail.scrollLeft / max : 0);
+    };
+    onScroll();
+    rail.addEventListener("scroll", onScroll, { passive: true });
+    return () => rail.removeEventListener("scroll", onScroll);
+  }, []);
 
   const moveRail = (direction: -1 | 1) => {
     const rail = railRef.current;
@@ -46,22 +59,16 @@ export function ModelStoryRail() {
       <div className="mx-auto max-w-[var(--container-page)]">
         <div className="flex flex-col items-start gap-16 lg:flex-row">
           <Reveal className="shrink-0 pt-8 lg:w-[390px]">
-            <div className="mb-8 flex items-center gap-4 font-mono text-xs text-[var(--color-muted)]">
-              <span>01</span>
-              <span className="h-px w-12 bg-[var(--color-line)]" />
-              <span>02 · 03 · 04 · 05 · 06 · 07 · 08 · 09</span>
-            </div>
-
             <h2
               id="model-story-title"
-              className="mb-8 text-[clamp(2.75rem,4.2vw,4.5rem)] font-medium leading-[0.98] tracking-[-0.05em]"
+              className="mb-8 text-[clamp(2.75rem,4.2vw,4.5rem)] font-medium leading-[0.98] tracking-[-0.05em] text-[var(--color-ink)]"
             >
-              Nine confirmed models. One truth.
+              Nine electric scooters. <span className="text-[var(--color-green)]">The full range.</span>
             </h2>
 
             <p className="mb-10 max-w-sm text-[15px] leading-7 text-[var(--color-muted)]">
-              Every scooter on the range is drawn from the GT Drive brochure —
-              nothing invented, nothing borrowed.
+              Every scooter here is drawn from the GT Drive brochure — nothing
+              invented, nothing borrowed.
             </p>
 
             <Link
@@ -134,18 +141,19 @@ export function ModelStoryRail() {
                       </div>
                     </div>
 
-                    <span
-                      aria-hidden="true"
-                      className="absolute bottom-7 right-7 font-serif text-6xl font-light italic text-white/20"
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
                   </article>
                 ))}
               </div>
             </div>
 
-            <div className="mt-8 hidden justify-end gap-4 pr-4 md:flex">
+            <div className="mt-6 h-px w-full overflow-hidden bg-[var(--color-line)]" aria-hidden="true">
+              <span
+                className="block h-full origin-left bg-[var(--color-green)] transition-transform duration-300 ease-[var(--ease-signature)]"
+                style={{ transform: `scaleX(${Math.max(0.02, progress)})` }}
+              />
+            </div>
+
+            <div className="mt-6 hidden justify-end gap-4 pr-4 md:flex">
               <button
                 type="button"
                 aria-label="Previous models"

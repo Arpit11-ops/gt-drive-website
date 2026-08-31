@@ -25,7 +25,6 @@ export function Footer() {
             Explore
           </h3>
           <Link href="/models/" className="text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Models</Link>
-          <Link href="/compare/" className="text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Compare</Link>
           <Link href="/dealers/" className="text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]">For dealers</Link>
           <Link href="/about/" className="text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]">About</Link>
           <Link href="/locations/" className="text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Plant locations</Link>

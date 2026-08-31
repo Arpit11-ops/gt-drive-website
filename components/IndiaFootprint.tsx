@@ -31,25 +31,25 @@ export function IndiaFootprint({
   return (
     <section
       aria-labelledby="india-footprint-title"
-      className="bg-[var(--color-stage)] py-20 md:py-28"
+      className="bg-[var(--color-stage)] py-20 md:py-16"
     >
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-10">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
           <Reveal className="w-full lg:w-1/3">
-            <span className="mb-3 block text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-green-deep)]">
-              Our locations
-            </span>
             <h2
               id="india-footprint-title"
-              className="mb-8 text-[clamp(2.75rem,4.5vw,4.75rem)] leading-[0.94] tracking-[-0.045em]"
+              className="mb-8 text-[clamp(2.75rem,4.5vw,4.75rem)] leading-[0.94] tracking-[-0.045em] text-[var(--color-ink)]"
             >
-              Plants across five Indian states.
+              Plants across{" "}
+              <span className="text-[var(--color-green)]">
+                five Indian states.
+              </span>
             </h2>
 
             <div
               id="active-location"
               data-testid="active-location"
-              className="mb-8 min-h-[238px] border-l-4 border-[var(--color-green)] bg-white p-8 shadow-[0_12px_35px_rgba(0,0,0,0.07)]"
+              className="mb-8 min-h-[238px] border-t border-[var(--color-line)] bg-white p-8"
               aria-live="polite"
             >
               <h3 className="flex items-center gap-2 text-xl font-bold leading-tight tracking-[-0.02em]">
@@ -64,19 +64,10 @@ export function IndiaFootprint({
               </p>
               <Link
                 href="/locations/"
-                className="mt-5 inline-block border-b-2 border-[var(--color-green)]/30 text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-green-deep)] transition-colors hover:border-[var(--color-green-deep)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-green-deep)]"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-green-deep)] transition-colors hover:text-[var(--color-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-green-deep)]"
               >
-                View all locations
+                View all locations →
               </Link>
-            </div>
-
-            <div>
-              <div className="text-5xl font-extrabold tracking-[-0.05em] text-[var(--color-ink)]">
-                05
-              </div>
-              <p className="mt-2 max-w-sm text-sm leading-6 text-[var(--color-muted)]">
-                Brochure-listed manufacturing locations across India.
-              </p>
             </div>
           </Reveal>
 
@@ -91,7 +82,7 @@ export function IndiaFootprint({
                   className="object-contain"
                 />
 
-                {locations.map((location) => {
+                {locations.map((location, index) => {
                   const position = markerPositions[location.state];
                   const active = activeState === location.state;
 
@@ -105,12 +96,9 @@ export function IndiaFootprint({
                       onClick={() => setActiveState(location.state)}
                       onFocus={() => setActiveState(location.state)}
                       onMouseEnter={() => setActiveState(location.state)}
-                      className="group absolute -translate-x-1/2 -translate-y-1/2 focus-visible:outline-none"
-                      style={position}
+                      className="group absolute -translate-x-1/2 -translate-y-1/2 focus-visible:outline-none motion-safe:animate-[pin-drop_500ms_cubic-bezier(0.16,1,0.3,1)_both]"
+                      style={{ ...position, animationDelay: `${300 + index * 90}ms` }}
                     >
-                      {active ? (
-                        <span className="absolute left-1/2 top-1/2 size-7 -translate-x-1/2 -translate-y-1/2 animate-ping rounded-full bg-[var(--color-green)]/40" />
-                      ) : null}
                       <span
                         className={`relative block size-4 rounded-full border-2 border-white shadow-[0_2px_8px_rgba(0,0,0,0.25)] transition-transform group-hover:scale-125 group-focus-visible:scale-125 ${
                           active

@@ -26,7 +26,11 @@
   --text-display-xl: 9rem;
 
   /* ---------- Motion ---------- */
-  --ease-signature: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-signature: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-routine: 220ms;
+  --dur-focal: 700ms;
+  --dur-reveal: 800ms;
 
   /* ---------- Layout ---------- */
   --container-page: 90rem; /* 1440px */
@@ -129,6 +133,98 @@
   }
 }
 
+@keyframes pin-drop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -80%) scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes step-number-in {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ---------- Motion primitives ---------- */
+
+/* Mask Reveal — headline words clipped from below, driven by --mr-progress 0→1 */
+.mr-word {
+  display: inline-block;
+  clip-path: inset(0 0 100% 0);
+  transform: translateY(0.25em);
+  opacity: 0;
+  transition:
+    clip-path var(--dur-reveal) var(--ease-signature),
+    transform var(--dur-reveal) var(--ease-signature),
+    opacity var(--dur-reveal) var(--ease-signature);
+  transition-delay: calc(var(--mr-i, 0) * 70ms);
+}
+.mr-on .mr-word {
+  clip-path: inset(0 0 0 0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Charge Line — draws a green horizontal line on scroll-in */
+.charge-line {
+  display: inline-block;
+  height: 2px;
+  width: 0;
+  background: var(--color-green);
+  transition: width var(--dur-focal) var(--ease-signature);
+}
+.charge-line.charge-on {
+  width: var(--charge-width, 96px);
+}
+
+/* Scooter Reveal — blur-clear + subtle scale settle on first entry */
+.scooter-reveal {
+  filter: blur(12px);
+  transform: scale(1.02);
+  opacity: 0;
+  transition:
+    filter var(--dur-reveal) var(--ease-signature),
+    transform var(--dur-reveal) var(--ease-signature),
+    opacity var(--dur-reveal) var(--ease-signature);
+  will-change: filter, transform;
+}
+.scooter-reveal.sr-on {
+  filter: blur(0);
+  transform: scale(1);
+  opacity: 1;
+  will-change: auto;
+}
+
+/* Nav link underline sweep */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: var(--color-green);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path var(--dur-routine) var(--ease-signature);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  clip-path: inset(0 0 0 0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -139,5 +235,14 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  .mr-word,
+  .scooter-reveal,
+  .charge-line {
+    clip-path: none !important;
+    filter: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    width: var(--charge-width, 96px) !important;
   }
 }

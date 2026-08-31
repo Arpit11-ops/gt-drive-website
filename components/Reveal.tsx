@@ -37,14 +37,7 @@ export function Reveal({ children, delay = 0, className = "" }: Props) {
       { threshold: 0.05, rootMargin: "0px 0px -20px 0px" },
     );
     observer.observe(node);
-
-    // Safety fallback: reveal after 2s regardless — some environments never fire IO
-    const fallback = window.setTimeout(() => setVisible(true), 2000);
-
-    return () => {
-      observer.disconnect();
-      window.clearTimeout(fallback);
-    };
+    return () => observer.disconnect();
   }, []);
 
   const style: CSSProperties = {

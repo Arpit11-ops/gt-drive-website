@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChargeLine } from "@/components/motion/ChargeLine";
+import { MaskReveal } from "@/components/motion/MaskReveal";
 import { Reveal } from "@/components/Reveal";
 
 export function AboutImageHero() {
@@ -20,10 +22,17 @@ export function AboutImageHero() {
 
       <div className="relative z-10 mx-auto w-full max-w-[var(--container-page)] px-6 pt-20 md:px-10">
         <Reveal className="max-w-3xl">
-          <div className="text-sm font-medium text-white/70">Houstan Innovations LLP</div>
-          <h1 className="mt-6 text-[clamp(48px,6.4vw,100px)] leading-[0.94] tracking-[-0.045em] text-white uppercase">
-            Driving a cleaner tomorrow.
-          </h1>
+          <div className="flex items-center gap-4 text-sm font-medium text-white/70">
+            <ChargeLine width={64} tone="green" />
+            Houstan Innovations LLP
+          </div>
+          <MaskReveal
+            as="h1"
+            className="mt-6 text-[clamp(48px,6.4vw,100px)] leading-[0.94] tracking-[-0.045em] text-white uppercase"
+            delay={120}
+          >
+            Engineered in <span className="text-[var(--color-green)]">Greater Noida.</span>
+          </MaskReveal>
           <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/78 md:text-lg">
             GT Drive is the electric two-wheeler brand of Houstan Innovations LLP,
             headquartered in Greater Noida and built around battery capability,

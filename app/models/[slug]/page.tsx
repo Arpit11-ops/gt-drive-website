@@ -9,6 +9,7 @@ import { ModelFeatureNavigator } from "@/components/ModelFeatureNavigator";
 import { ModelTechnicalTabs } from "@/components/ModelTechnicalTabs";
 import { RelatedModels } from "@/components/RelatedModels";
 import { Reveal } from "@/components/Reveal";
+import { ScooterReveal } from "@/components/motion/ScooterReveal";
 import { getModel, models } from "@/lib/models";
 
 export function generateStaticParams() {
@@ -24,26 +25,24 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
   const model = getModel((await params).slug);
   if (!model) notFound();
 
-  const heroImage =
-    model.slug === "gt-drive-pro"
-      ? "/assets/gt-drive/generated/hero-drive-pro.png"
-      : model.image;
+  const heroImage = model.image;
 
   return (
     <>
       {/* PRODUCT HERO */}
       <section className="relative overflow-hidden bg-white pt-24 md:pt-32">
         <div className="mx-auto grid max-w-[var(--container-page)] gap-12 px-6 pb-20 md:grid-cols-[1.3fr_1fr] md:gap-16 md:px-10 md:pb-28">
-          <Reveal className="relative flex items-center justify-center bg-[var(--color-stage)]">
+          <ScooterReveal className="relative flex items-center justify-center bg-[var(--color-stage)]">
             <Image
               src={heroImage}
               alt={model.shortName}
               width={1536}
               height={1024}
               priority
-              className="h-auto w-full max-w-[720px] object-contain"
+              sizes="(min-width: 768px) 720px, 100vw"
+              className="h-auto w-full max-w-[720px] object-contain mix-blend-multiply"
             />
-          </Reveal>
+          </ScooterReveal>
           <div className="flex flex-col justify-center">
             <Reveal className="text-xs">
               <Link
@@ -96,12 +95,6 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
                   className="inline-flex h-[52px] items-center justify-center gap-2 rounded-sm bg-[var(--color-green)] px-6 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-green-deep)]"
                 >
                   Request information <ArrowUpRight weight="bold" size={16} />
-                </Link>
-                <Link
-                  href="/compare/"
-                  className="text-sm font-semibold text-[var(--color-green-deep)] underline underline-offset-[6px]"
-                >
-                  Compare with the range
                 </Link>
               </div>
             </Reveal>

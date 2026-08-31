@@ -1,7 +1,6 @@
 import {
   GraduationCap,
   Handshake,
-  MapPin,
   Megaphone,
   Package,
   Wrench,
@@ -10,72 +9,80 @@ import { Reveal } from "@/components/Reveal";
 
 const benefits = [
   {
-    title: "Attractive dealership benefits",
-    body: "A structured opportunity for partners entering India’s growing electric mobility market.",
+    title: "Dealership benefits",
+    body: "A structured programme for partners entering the Indian electric two-wheeler market.",
     icon: Handshake,
   },
   {
-    title: "Marketing and branding support",
-    body: "Brand assets, campaign material, and showroom guidance in the GT Drive identity.",
+    title: "Marketing and branding",
+    body: "GT Drive brand assets, launch campaign material, and showroom identity guidance.",
     icon: Megaphone,
   },
   {
-    title: "Inventory and business support",
-    body: "Guidance for onboarding, inventory planning, and day-to-day dealership operations.",
+    title: "Inventory and business",
+    body: "Onboarding, inventory planning, and day-to-day dealership operations support.",
     icon: Package,
   },
   {
-    title: "Service and technical support",
-    body: "Technical resources for after-sales service, spare parts, and dependable rider support.",
+    title: "Service and technical",
+    body: "After-sales service, spare parts, and technical resources built for the range.",
     icon: Wrench,
   },
   {
-    title: "Training and operational guidance",
-    body: "Ongoing product, sales, service, and operational guidance for dealer teams.",
+    title: "Training and operations",
+    body: "Ongoing product, sales, service, and operational training for dealer teams.",
     icon: GraduationCap,
-  },
-  {
-    title: "Pan-India opportunity",
-    body: "Build a local GT Drive presence within an expanding Indian electric mobility network.",
-    icon: MapPin,
   },
 ];
 
 export function DealerBenefits() {
   return (
-    <section className="relative overflow-hidden bg-[var(--color-ink)] px-6 py-24 text-white md:px-10 md:py-32">
-      <div aria-hidden="true" className="absolute -right-48 -bottom-72 h-[620px] w-[620px] rounded-full bg-[var(--color-green)]/20 blur-[120px]" />
-      <div className="relative mx-auto max-w-[var(--container-page)]">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold tracking-[0.16em] text-[var(--color-green)] uppercase">
-            Partner benefits
-          </span>
-          <h2 className="mt-7 text-[clamp(42px,6vw,78px)] leading-[0.92] tracking-[-0.05em]">
-            Support built around the partnership.
+    <section className="bg-[var(--color-ink)] text-white">
+      <div className="mx-auto max-w-[var(--container-page)] px-6 pt-24 md:px-10 md:pt-32">
+        <Reveal className="max-w-4xl">
+          <h2 className="text-[clamp(42px,5.4vw,74px)] font-semibold leading-[0.94] tracking-[-0.04em]">
+            Five support areas,
+            <br />
+            <span className="text-white/55">from first day forward.</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/60 md:text-lg">
-            GT Drive&apos;s dealership programme identifies the business, marketing, technical, and operational support offered to prospective partners.
+        </Reveal>
+        <Reveal delay={120}>
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+            Every GT Drive dealership operates against the same brochure-listed
+            programme — business, marketing, technical, and operational.
           </p>
         </Reveal>
-
-        <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit, index) => {
-            const BenefitIcon = benefit.icon;
-            return (
-              <Reveal key={benefit.title} delay={(index % 3) * 80} className="h-full">
-                <article className="group relative h-full min-h-[280px] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] p-8 transition-colors duration-300 hover:bg-white/[0.075]">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-[var(--color-green)]">
-                    <BenefitIcon size={25} weight="duotone" />
-                  </div>
-                  <h3 className="mt-16 max-w-xs text-2xl leading-[1.02] tracking-[-0.035em]">{benefit.title}</h3>
-                  <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/55">{benefit.body}</p>
-                  <span aria-hidden="true" className="absolute right-7 bottom-7 h-2 w-2 rounded-full bg-[var(--color-green)] opacity-40 transition-all duration-300 group-hover:scale-[2] group-hover:opacity-100" />
-                </article>
-              </Reveal>
-            );
-          })}
-        </div>
       </div>
+
+      <div className="mx-auto mt-16 max-w-[var(--container-page)] border-t border-white/12 md:mt-20">
+        <ul className="grid grid-cols-1 divide-y divide-white/12 md:grid-cols-2 md:divide-y-0 md:divide-x lg:grid-cols-5">
+          {benefits.map(({ icon: Icon, title, body }, index) => (
+            <Reveal key={title} delay={100 + index * 70}>
+              <li className="flex h-full flex-col justify-between gap-14 px-6 py-10 md:px-6 md:py-14 lg:px-7 lg:py-16">
+                <div className="flex items-start justify-between gap-4">
+                  <Icon
+                    weight="light"
+                    className="h-10 w-10 text-[var(--color-green)]"
+                  />
+                  <span className="font-display text-2xl font-semibold leading-none tracking-tight text-white/25">
+                    {index + 1}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-medium tracking-tight text-white md:text-[22px]">
+                    {title}
+                  </h3>
+                  <p className="mt-4 text-[13px] leading-[1.6] text-white/60">
+                    {body}
+                  </p>
+                </div>
+              </li>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
+
+      <div className="h-24 md:h-32" />
     </section>
   );
 }

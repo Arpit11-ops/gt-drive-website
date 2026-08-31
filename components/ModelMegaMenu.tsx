@@ -38,7 +38,7 @@ export function ModelMegaMenu({ id, open, onNavigate }: ModelMegaMenuProps) {
                   alt=""
                   fill
                   sizes="52px"
-                  className="object-contain p-1.5 transition-transform duration-500 ease-[var(--ease-signature)] group-hover/item:scale-110"
+                  className="object-contain mix-blend-multiply p-1.5 transition-transform duration-500 ease-[var(--ease-signature)] group-hover/item:scale-110"
                 />
               </span>
               <span className="min-w-0">
@@ -69,7 +69,7 @@ export function ModelMegaMenu({ id, open, onNavigate }: ModelMegaMenuProps) {
               Find your ride.
             </h3>
             <p className="mt-2 max-w-[205px] text-[11px] font-medium leading-[1.55] text-[var(--color-muted)]">
-              Explore the complete electric scooter range and compare models side by side.
+              Explore the complete electric scooter range.
             </p>
           </div>
 
@@ -82,14 +82,6 @@ export function ModelMegaMenu({ id, open, onNavigate }: ModelMegaMenuProps) {
               <span className="absolute inset-0 origin-left scale-x-0 bg-[var(--color-green-deep)] transition-transform duration-300 group-hover/action:scale-x-100" />
               <span className="relative z-10">View all models</span>
               <ArrowRight className="relative z-10 transition-transform group-hover/action:translate-x-1" size={14} weight="bold" />
-            </Link>
-            <Link
-              href="/compare/"
-              onClick={onNavigate}
-              className="flex items-center justify-between rounded-xl border border-black/[0.08] bg-white/75 px-4 py-2.5 text-[12px] font-bold text-[var(--color-ink)] transition-colors hover:border-[var(--color-green-deep)] hover:text-[var(--color-green-deep)]"
-            >
-              Compare models
-              <ArrowRight size={14} weight="bold" />
             </Link>
           </div>
         </aside>

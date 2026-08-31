@@ -1,4 +1,6 @@
 import { ArrowRight, EnvelopeSimple, Phone, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import { ChargeLine } from "@/components/motion/ChargeLine";
+import { MaskReveal } from "@/components/motion/MaskReveal";
 import { Reveal } from "@/components/Reveal";
 import { contact } from "@/lib/models";
 
@@ -10,17 +12,27 @@ export function ContactChannelsHero() {
       <div className="mx-auto max-w-[var(--container-page)]">
         <Reveal>
           <div className="mb-12 flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <h1 className="max-w-4xl text-[clamp(54px,8vw,116px)] leading-[0.84] tracking-[-0.055em] uppercase">
-              Let&apos;s move
-              <br />
-              <span className="text-[var(--color-green)]">forward.</span>
-            </h1>
+            <div>
+              <ChargeLine width={80} tone="green-deep" className="mb-6" />
+              <h1 className="max-w-4xl text-[clamp(54px,8vw,116px)] leading-[0.84] tracking-[-0.055em] uppercase">
+                <MaskReveal as="span" className="block">
+                  Two ways to
+                </MaskReveal>
+                <MaskReveal
+                  as="span"
+                  className="block text-[var(--color-green)]"
+                  delay={140}
+                >
+                  reach GT Drive.
+                </MaskReveal>
+              </h1>
+            </div>
 
             <div className="max-w-sm pb-1">
               <p className="text-lg leading-snug font-medium text-[var(--color-body)]">
-                Product questions, dealership enquiries, and company information.
+                Product questions or dealership enquiries — whichever you&apos;re here for,
                 <span className="mt-1 block text-xl font-bold text-[var(--color-green-deep)]">
-                  Choose the channel that works for you.
+                  pick a channel and we&apos;ll answer.
                 </span>
               </p>
               <a
@@ -48,7 +60,7 @@ export function ContactChannelsHero() {
                 <WhatsappLogo size={34} weight="fill" className="mb-5 text-white" />
                 <h2 className="mb-3 text-4xl tracking-[-0.035em] text-white uppercase">WhatsApp</h2>
                 <p className="mb-6 max-w-[300px] text-sm leading-relaxed text-white/90">
-                  Start a direct conversation with GT Drive for product and general enquiries.
+                  Fastest for product questions. Message us and we&apos;ll pick it up on the primary line.
                 </p>
                 <a
                   href={`https://wa.me/${contact.whatsapp}`}
@@ -75,7 +87,7 @@ export function ContactChannelsHero() {
                 <Phone size={34} weight="fill" className="mb-5 text-white" />
                 <h2 className="mb-3 text-4xl tracking-[-0.035em] text-white uppercase">Call GT Drive</h2>
                 <p className="mb-6 text-sm leading-relaxed text-white/90">
-                  Speak directly with the team on the brochure-listed primary contact number.
+                  Prefer to talk? Reach the GT Drive team on the primary line.
                 </p>
                 <a
                   href={phoneHref}
@@ -110,7 +122,7 @@ export function ContactChannelsHero() {
                   Dealership enquiry
                 </h2>
                 <p className="mb-12 max-w-xs text-xs leading-relaxed text-white/65">
-                  Tell us where you want to build the next GT Drive partnership.
+                  Tell us where you want to open a GT Drive showroom.
                 </p>
                 <div className="absolute right-6 bottom-6 -rotate-6">
                   <a

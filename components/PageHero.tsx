@@ -1,3 +1,4 @@
+import { ChargeLine } from "@/components/motion/ChargeLine";
 import { Reveal } from "@/components/Reveal";
 import type { ReactNode } from "react";
 
@@ -22,9 +23,15 @@ export function PageHero({ eyebrow, headline, lead, children, theme = "light" }:
 
   return (
     <section className={`relative overflow-hidden ${bg}`}>
-      <div className="mx-auto max-w-[var(--container-page)] px-6 pb-20 pt-28 md:px-10 md:pb-28 md:pt-36">
+      <div className="mx-auto max-w-[var(--container-page)] px-6 pb-20 pt-20 md:px-10 md:pb-28 md:pt-24">
         {eyebrow && (
-          <Reveal className={`text-sm font-medium ${eyebrowColor}`}>{eyebrow}</Reveal>
+          <Reveal className={`flex items-center gap-4 text-sm font-medium ${eyebrowColor}`}>
+            <ChargeLine
+              width={56}
+              tone={theme === "light" ? "green-deep" : "green"}
+            />
+            {eyebrow}
+          </Reveal>
         )}
         <Reveal delay={80} className="mt-6">
           <h1 className="text-[clamp(48px,7vw,132px)] leading-[0.94] tracking-[-0.035em]">

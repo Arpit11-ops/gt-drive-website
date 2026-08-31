@@ -138,7 +138,7 @@ export function Nav() {
               key={link.href}
               href={link.href}
               onClick={closeAfterNavigation}
-              className="text-[14px] font-bold text-[var(--color-ink)] transition-colors hover:text-[var(--color-green-deep)]"
+              className="nav-link text-[14px] font-bold text-[var(--color-ink)] transition-colors hover:text-[var(--color-green-deep)]"
             >
               {link.label}
             </Link>

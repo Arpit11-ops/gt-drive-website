@@ -18,16 +18,11 @@ export function DealerBand() {
       <div className="mx-auto grid max-w-[var(--container-page)] gap-14 px-6 py-28 md:grid-cols-[1.2fr_1fr] md:gap-20 md:px-10 md:py-40">
         <div>
           <Reveal>
-            <div className="text-sm font-medium text-[var(--color-green)]">
-              Pan-India dealership opportunity
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
             <h2
               id="dealer-headline"
-              className="mt-6 text-[clamp(44px,6vw,96px)] leading-[0.94] tracking-[-0.03em] text-white"
+              className="text-[clamp(44px,6vw,96px)] leading-[0.94] tracking-[-0.03em] text-white"
             >
-              Grow with an <span className="text-[var(--color-green)]">Indian EV</span> brand.
+              Open a GT Drive <span className="text-[var(--color-green)]">showroom</span>, in your city.
             </h2>
           </Reveal>
           <Reveal delay={160}>

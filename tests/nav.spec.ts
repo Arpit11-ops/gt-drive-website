@@ -18,7 +18,6 @@ test.describe("model mega-menu", () => {
     await expect(menu.getByRole("link", { name: /GT Soul NXT/i })).toBeVisible();
     await expect(menu.getByRole("link", { name: /GT RYD Plus/i })).toBeVisible();
     await expect(menu.getByRole("link", { name: "View all models" })).toHaveAttribute("href", "/models/");
-    await expect(menu.getByRole("link", { name: "Compare models" })).toHaveAttribute("href", "/compare/");
 
     await trigger.click();
     await expect(trigger).toHaveAttribute("aria-expanded", "false");
@@ -79,7 +78,6 @@ test.describe("model mega-menu", () => {
         { name: /GT Soul NXT/i, href: "/models/gt-soul-nxt/" },
         { name: /GT RYD Plus/i, href: "/models/gt-ryd-plus/" },
         { name: "Models", href: "/models/" },
-        { name: "Compare", href: "/compare/" },
         { name: "For dealers", href: "/dealers/" },
         { name: "Locations", href: "/locations/" },
         { name: "Contact", href: "/contact/" },

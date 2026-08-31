@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Sparkle } from "@phosphor-icons/react";
+import { Check } from "@phosphor-icons/react";
 import { useEffect, useMemo, useState } from "react";
+import { ScooterReveal } from "@/components/motion/ScooterReveal";
 import { Reveal } from "@/components/Reveal";
 import type { ScooterModel } from "@/lib/models";
 
@@ -11,14 +12,14 @@ type Props = {
 };
 
 const galleryImages: Partial<Record<string, string>> = {
-  "gt-soul": "/assets/gt-drive/gallery/gt-soul-gallery.jpeg",
-  "gt-soul-nxt": "/assets/gt-drive/gallery/gt-soul-nxt-gallery.jpeg",
-  "gt-ryd": "/assets/gt-drive/gallery/gt-ryd-gallery.png",
-  "gt-ryd-plus": "/assets/gt-drive/gallery/gt-ryd-plus-gallery.jpeg",
-  "gt-one-plus": "/assets/gt-drive/gallery/gt-one-plus-gallery.jpg",
-  "gt-champion": "/assets/gt-drive/gallery/gt-champion-gallery.jpeg",
-  "gt-flying": "/assets/gt-drive/gallery/gt-flying-gallery.jpeg",
-  "gt-drive-pro": "/assets/gt-drive/gallery/gt-drive-pro-gallery.jpg",
+  "gt-soul": "/assets/gt-drive/gallery/gt-soul-gallery.webp",
+  "gt-soul-nxt": "/assets/gt-drive/gallery/gt-soul-nxt-gallery.webp",
+  "gt-ryd": "/assets/gt-drive/gallery/gt-ryd-gallery.webp",
+  "gt-ryd-plus": "/assets/gt-drive/gallery/gt-ryd-plus-gallery.webp",
+  "gt-one-plus": "/assets/gt-drive/gallery/gt-one-plus-gallery.webp",
+  "gt-champion": "/assets/gt-drive/gallery/gt-champion-gallery.webp",
+  "gt-flying": "/assets/gt-drive/gallery/gt-flying-gallery.webp",
+  "gt-drive-pro": "/assets/gt-drive/gallery/gt-drive-pro-gallery.webp",
 };
 
 const chapterDefinitions = [
@@ -101,10 +102,7 @@ export function ModelFeatureNavigator({ model }: Props) {
           <aside className="lg:w-1/3">
             <div className="lg:sticky lg:top-32">
               <div className="mb-8">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-[var(--color-green-deep)] uppercase">
-                  <Sparkle size={14} weight="fill" /> Brochure features
-                </div>
-                <h2 className="mt-5 max-w-sm text-[clamp(38px,4vw,60px)] leading-[0.94] tracking-[-0.045em]">
+                <h2 className="max-w-sm text-[clamp(38px,4vw,60px)] leading-[0.94] tracking-[-0.045em]">
                   Built for everyday confidence.
                 </h2>
               </div>
@@ -117,10 +115,10 @@ export function ModelFeatureNavigator({ model }: Props) {
                       type="button"
                       onClick={() => goToChapter(index)}
                       aria-current={active ? "true" : undefined}
-                      className={`block shrink-0 border-l-4 px-3 py-2 text-left text-base font-medium transition-all md:py-3 md:text-xl ${
+                      className={`block shrink-0 border-l px-4 py-2 text-left text-base font-medium transition-colors md:py-3 md:text-xl ${
                         active
-                          ? "border-[var(--color-green)] font-bold text-[var(--color-ink)] opacity-100"
-                          : "border-transparent text-[var(--color-body)] opacity-50 hover:text-[var(--color-ink)] hover:opacity-100"
+                          ? "border-[var(--color-green)] font-semibold text-[var(--color-ink)]"
+                          : "border-[var(--color-line)] text-[var(--color-body)] hover:text-[var(--color-ink)]"
                       }`}
                     >
                       {chapter.label}
@@ -140,10 +138,7 @@ export function ModelFeatureNavigator({ model }: Props) {
                 className="scroll-mt-28 space-y-6 md:min-h-[850px] md:space-y-8"
               >
                 <Reveal>
-                  <p className="text-xs font-semibold tracking-[0.15em] text-[var(--color-green-deep)] uppercase">
-                    0{index + 1} — {chapter.label}
-                  </p>
-                  <h3 className="mt-4 max-w-3xl text-[clamp(36px,5vw,68px)] font-normal leading-[0.95] tracking-[-0.045em]">
+                  <h3 className="max-w-3xl text-[clamp(36px,5vw,68px)] font-normal leading-[0.95] tracking-[-0.045em]">
                     {chapter.title}
                   </h3>
                   <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--color-body)] md:text-lg">
@@ -151,7 +146,7 @@ export function ModelFeatureNavigator({ model }: Props) {
                   </p>
                 </Reveal>
 
-                <Reveal delay={80}>
+                <ScooterReveal delay={80}>
                   <div className="relative min-h-[430px] overflow-hidden rounded-3xl border border-[var(--color-line)] bg-white shadow-[0_24px_70px_rgba(17,17,17,0.07)] md:min-h-[580px]">
                     <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(32,176,72,.12),transparent_42%)]" />
                     <Image
@@ -159,7 +154,7 @@ export function ModelFeatureNavigator({ model }: Props) {
                       alt={`${model.shortName} ${chapter.label.toLowerCase()} multi-angle view`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 66vw"
-                      className={`${imageTreatments[index] ?? "object-contain"} p-5 transition-transform duration-700 md:p-8`}
+                      className={`${imageTreatments[index] ?? "object-contain"} mix-blend-multiply p-5 transition-transform duration-700 md:p-8`}
                     />
                     <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/78 via-black/34 to-transparent px-5 pb-5 pt-24 md:px-8 md:pb-8">
                       <div className="flex flex-wrap gap-2">
@@ -171,7 +166,7 @@ export function ModelFeatureNavigator({ model }: Props) {
                       </div>
                     </div>
                   </div>
-                </Reveal>
+                </ScooterReveal>
               </article>
             ))}
           </div>
