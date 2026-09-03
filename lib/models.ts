@@ -70,7 +70,7 @@ export const models: ScooterModel[] = [
     slug: "gt-one-plus", name: "GT - ONE PLUS", shortName: "GT One Plus",
     image: "/assets/gt-drive/gt-one-plus-bmw-real.webp",
     lead: "The One Plus. Compact, contemporary, three-colour lineup.",
-    note: "The brochure model code is being confirmed before prominent publication.",
+    note: "Model code will be confirmed ahead of launch.",
     colors: ["Green", "Black", "Grey"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
@@ -88,13 +88,13 @@ export const models: ScooterModel[] = [
   {
     slug: "gt-drive-pro", name: "GT - DRIVE PRO", shortName: "GT Drive Pro",
     image: "/assets/gt-drive/gt-drive-pro-real.webp",
-    lead: "The flagship Drive Pro. The full GT Drive brochure feature set in one machine.",
+    lead: "The flagship Drive Pro. Every GT Drive feature, in a single machine.",
     colors: ["Color may vary depending on availability"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
     slug: "gt-chetak", name: "GT - CHETAK", shortName: "GT Chetak",
     image: "/assets/gt-drive/gt-chetak.webp",
-    lead: "The Chetak. Next on the road — full details when the brochure updates.", status: "coming-soon",
+    lead: "The Chetak. Next on the road — full details closer to launch.", status: "coming-soon",
     colors: ["Color may vary depending on availability"], specs: [],
     features: ["Eco Friendly", "Safe and Reliable", "Zero Pollution", "Long Range"],
   },

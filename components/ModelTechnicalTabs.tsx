@@ -44,7 +44,7 @@ export function ModelTechnicalTabs({ model, image }: Props) {
         title: "A planted everyday stance",
         accent: "starts at the road.",
         description:
-          "Brochure-listed tyre dimensions and construction for this GT Drive model.",
+          "Tyre dimensions and construction for this model.",
         icon: Gauge,
         details: [
           { label: "Front tyre", value: specValue(model, "Front tyre") ?? "To be confirmed" },
@@ -57,7 +57,7 @@ export function ModelTechnicalTabs({ model, image }: Props) {
         title: "Control designed for",
         accent: "everyday confidence.",
         description:
-          "The braking configuration below is transcribed directly from the GT Drive brochure.",
+          "Braking configuration for this model.",
         icon: ShieldCheck,
         details: [
           { label: "Braking technology", value: specValue(model, "Braking technology") ?? "To be confirmed" },
@@ -70,7 +70,7 @@ export function ModelTechnicalTabs({ model, image }: Props) {
         title: "The electric system",
         accent: "behind the ride.",
         description:
-          "Only the electrical information explicitly listed in the brochure is shown here.",
+          "Electrical specifications for this model. Any value not shown is still being confirmed.",
         icon: Lightning,
         details: [
           { label: "Controller", value: specValue(model, "Controller") ?? "To be confirmed" },
@@ -131,7 +131,7 @@ export function ModelTechnicalTabs({ model, image }: Props) {
           <header className="mb-8 text-center md:mb-10">
             <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-white/80">
               <Sparkle size={14} weight="fill" className="text-[var(--color-green)]" />
-              <span>Brochure-verified details</span>
+              <span>Verified specifications</span>
             </div>
             <h2 className="mx-auto mt-4 max-w-4xl text-[clamp(40px,6vw,72px)] font-semibold leading-[0.94] tracking-[-0.05em] text-white">
               Explore the <span className="text-[var(--color-green)]">engineering</span> behind {model.shortName}.

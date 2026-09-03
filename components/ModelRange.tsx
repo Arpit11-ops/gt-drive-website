@@ -19,8 +19,8 @@ export function ModelRange() {
         </Reveal>
         <Reveal delay={120}>
           <p className="max-w-sm text-[15px] leading-[1.6] text-[var(--color-body)] md:text-base">
-            Every scooter on the range is drawn from the GT Drive brochure —
-            nothing invented, nothing borrowed.
+            Nine scooters, all built and shipping. What you see below is what
+            leaves the plant.
           </p>
         </Reveal>
       </div>

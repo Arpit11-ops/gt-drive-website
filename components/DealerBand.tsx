@@ -28,8 +28,8 @@ export function DealerBand() {
           <Reveal delay={160}>
             <p className="mt-8 max-w-md text-[15px] leading-[1.65] text-white/70 md:text-base">
               Partner with GT Drive and be part of India&apos;s growing electric
-              mobility revolution. The brochure identifies five areas of support
-              for prospective dealer partners.
+              mobility revolution. Our dealer programme covers five areas of
+              support, from day one.
             </p>
           </Reveal>
           <Reveal delay={240}>

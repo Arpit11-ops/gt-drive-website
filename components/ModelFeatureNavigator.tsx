@@ -27,13 +27,13 @@ const chapterDefinitions = [
   {
     label: "Smart ride",
     title: "Everyday control, kept close.",
-    description: "Controls and conveniences listed in the brochure for a straightforward daily riding experience.",
+    description: "Controls and conveniences built for straightforward daily riding.",
     features: ["Vibrant Digital Display", "Variable Drive Modes", "Remote Lock", "Steering Lock"],
   },
   {
     label: "Road confidence",
     title: "Visibility, security, and comfort.",
-    description: "Brochure-listed equipment intended to support confident use across everyday Indian roads.",
+    description: "Equipment built to handle everyday Indian roads with confidence.",
     features: ["LED Projector Head Lamp", "Anti-Theft Alarm", "Hydraulic Suspensions"],
   },
   {

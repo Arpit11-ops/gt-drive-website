@@ -48,8 +48,8 @@ export function DealerBenefits() {
         </Reveal>
         <Reveal delay={120}>
           <p className="mt-8 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-            Every GT Drive dealership operates against the same brochure-listed
-            programme — business, marketing, technical, and operational.
+            Every GT Drive dealership runs on the same support programme —
+            business, marketing, technical and operational.
           </p>
         </Reveal>
       </div>

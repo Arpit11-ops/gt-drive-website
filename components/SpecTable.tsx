@@ -4,9 +4,8 @@ export function SpecTable({ specs }: { specs: ProductSpec[] }) {
   if (specs.length === 0) {
     return (
       <p className="max-w-md text-[15px] leading-[1.6] text-[var(--color-body)] md:text-base">
-        The GT Drive brochure does not publish tyre, brake, controller, battery
-        or motor details for this model yet. Full specifications land as soon
-        as they are confirmed.
+        Full specifications for this model — tyre, brake, controller, battery
+        and motor — will be published closer to launch.
       </p>
     );
   }

@@ -178,7 +178,7 @@ export function IndiaFootprint({
               })}
             </ul>
             <p className="mt-8 text-[13px] italic leading-6 text-[var(--color-muted)]">
-              Addresses shown as printed in the GT Drive brochure.
+              Registered plant addresses. Call the operations team to arrange a visit.
             </p>
           </div>
         ) : null}

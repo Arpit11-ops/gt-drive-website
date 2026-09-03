@@ -68,8 +68,8 @@ export function ModelStoryRail() {
             </h2>
 
             <p className="mb-10 max-w-sm text-[15px] leading-7 text-[var(--color-muted)]">
-              Every scooter here is drawn from the GT Drive brochure — nothing
-              invented, nothing borrowed.
+              Every scooter here is one we build and ship today. Real specs,
+              real colours.
             </p>
 
             <Link

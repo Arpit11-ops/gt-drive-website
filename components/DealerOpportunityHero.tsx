@@ -89,7 +89,7 @@ export function DealerOpportunityHero() {
             <div className="flex items-center justify-between gap-3 px-2 pb-1 pt-4">
               <div>
                 <div className="text-[11px] font-semibold tracking-[0.12em] text-[var(--color-green-deep)] uppercase">Explore the range</div>
-                <div className="mt-1 text-sm font-bold text-[var(--color-ink)]">Nine brochure-listed models</div>
+                <div className="mt-1 text-sm font-bold text-[var(--color-ink)]">Nine models in production</div>
               </div>
               <ArrowUpRight size={19} weight="bold" className="shrink-0 text-[var(--color-ink)]" />
             </div>

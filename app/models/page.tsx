@@ -9,7 +9,7 @@ import { models } from "@/lib/models";
 
 export const metadata: Metadata = {
   title: "Electric scooter range",
-  description: "Explore every GT Drive electric scooter with brochure-verified specifications, features and colours.",
+  description: "Explore every GT Drive electric scooter — full specifications, features and colour options across the range.",
 };
 
 export default function ModelsPage() {
@@ -31,7 +31,7 @@ export default function ModelsPage() {
             </MaskReveal>
           </>
         }
-        lead="Every scooter here is drawn from the GT Drive brochure — full specifications, features, real colours, and Coming Soon where the brochure hasn't published yet."
+        lead="The full GT Drive range. Nine scooters in production, one on the way — with complete specifications, features and real colour options for each."
       />
       <section className="mx-auto max-w-[var(--container-page)] px-6 py-20 md:px-10 md:py-28">
         <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">

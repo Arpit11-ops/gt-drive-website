@@ -19,8 +19,8 @@ export function DealerRangeShowcase() {
             <Reveal delay={120}>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-body)]">
                 A full product range from the entry-level Soul to the flagship
-                Drive Pro — with the upcoming Chetak next on the road. Every
-                model is brochure-listed and specified.
+                Drive Pro, with the Chetak next on the road. Every model ships
+                fully specified and ready to sell.
               </p>
             </Reveal>
           </div>
