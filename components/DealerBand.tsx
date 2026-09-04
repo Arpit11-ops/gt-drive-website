@@ -40,12 +40,6 @@ export function DealerBand() {
               >
                 Enquire about dealership
               </Link>
-              <Link
-                href="/locations/"
-                className="text-sm font-semibold text-white underline underline-offset-[6px] decoration-white/50 hover:decoration-white"
-              >
-                View plant locations
-              </Link>
             </div>
           </Reveal>
         </div>

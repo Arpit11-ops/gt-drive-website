@@ -4,7 +4,6 @@ export const primaryLinks = [
   { href: "/electric-scooters/", label: "Electric scooters" },
   { href: "/about/", label: "About" },
   { href: "/dealers/", label: "For dealers" },
-  { href: "/locations/", label: "Locations" },
 ] as const;
 
 export const mobileLinks = [
