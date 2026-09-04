@@ -2,16 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
-import { ColorSwatchRow } from "@/components/ColorSwatchRow";
-import { ContactClose } from "@/components/ContactClose";
-import { ModelFeatureNavigator } from "@/components/ModelFeatureNavigator";
-import { ModelTechnicalTabs } from "@/components/ModelTechnicalTabs";
-import { RelatedModels } from "@/components/RelatedModels";
-import { Reveal } from "@/components/Reveal";
-import { ScooterReveal } from "@/components/motion/ScooterReveal";
-import { getModel, models } from "@/lib/models";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ScootersFeatures } from "@/components/scooters/ScootersFeatures";
+import { ScootersHero } from "@/components/scooters/ScootersHero";
+import { ScootersSpecHighlight } from "@/components/scooters/ScootersSpecHighlight";
+import { ScootersSpecTable } from "@/components/scooters/ScootersSpecTable";
+import { ScootersTechnology } from "@/components/scooters/ScootersTechnology";
 import { asset } from "@/lib/asset";
+import { getModel, models } from "@/lib/models";
 
 export function generateStaticParams() {
   return models.map((model) => ({ slug: model.slug }));
@@ -26,91 +24,61 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
   const model = getModel((await params).slug);
   if (!model) notFound();
 
-  const heroImage = model.image;
-
-  return (
-    <>
-      {/* PRODUCT HERO */}
-      <section className="relative overflow-hidden bg-white pt-24 md:pt-32">
-        <div className="mx-auto grid max-w-[var(--container-page)] gap-12 px-6 pb-20 md:grid-cols-[1.3fr_1fr] md:gap-16 md:px-10 md:pb-28">
-          <ScooterReveal className="relative flex items-center justify-center bg-[var(--color-stage)]">
+  // Coming-soon models keep a minimal teaser page until they launch.
+  if (model.status === "coming-soon") {
+    return (
+      <section className="relative overflow-hidden bg-white pt-24 pb-20 md:pt-32 md:pb-28">
+        <div className="mx-auto grid max-w-[var(--container-page)] gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-10">
+          <div className="relative flex items-center justify-center bg-[var(--color-stage)]">
             <Image
-              src={asset(heroImage)}
+              src={asset(model.image)}
               alt={model.shortName}
-              width={1536}
-              height={1024}
+              width={1200}
+              height={800}
               priority
-              sizes="(min-width: 768px) 720px, 100vw"
-              className="h-auto w-full max-w-[720px] object-contain mix-blend-multiply"
+              className="h-auto w-full max-w-[560px] object-contain mix-blend-multiply"
             />
-          </ScooterReveal>
+          </div>
           <div className="flex flex-col justify-center">
-            <Reveal className="text-xs">
+            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--color-green-deep)]">
+              Coming Soon
+            </p>
+            <h1 className="mt-4 font-display text-[clamp(48px,6vw,88px)] font-extrabold uppercase leading-[0.95] tracking-[-0.04em] text-[var(--color-ink)]">
+              {model.shortName}.
+            </h1>
+            <p className="mt-8 max-w-md text-[15px] leading-relaxed text-[var(--color-body)]">
+              {model.lead}
+            </p>
+            <div className="mt-10">
               <Link
-                href="/models/"
-                className="font-medium uppercase tracking-wider text-[var(--color-muted)] hover:text-[var(--color-green-deep)]"
+                href="/contact/"
+                className="group inline-flex h-12 items-center gap-2 rounded-full bg-[var(--color-green)] px-6 text-[13px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)]"
               >
-                ← Range
+                Register your interest
+                <ArrowRight size={15} weight="bold" className="transition-transform group-hover:translate-x-1" />
               </Link>
-            </Reveal>
-            <Reveal delay={60}>
-              <div className="mt-6 text-sm font-medium text-[var(--color-green-deep)]">
-                {model.status === "coming-soon"
-                  ? "Coming soon"
-                  : model.code
-                  ? `Model ${model.code}`
-                  : "GT Drive model"}
-              </div>
-            </Reveal>
-            <Reveal delay={120}>
-              <h1 className="mt-4 text-[clamp(48px,6vw,108px)] leading-[0.94] tracking-[-0.035em]">
-                {model.shortName}
-              </h1>
-            </Reveal>
-            <Reveal delay={200}>
-              <p className="mt-8 max-w-md text-[15px] leading-[1.65] text-[var(--color-body)] md:text-base">
-                {model.lead}
-              </p>
-            </Reveal>
-            {model.note && (
-              <Reveal delay={260}>
-                <p className="mt-6 max-w-md border-l-2 border-[var(--color-line)] pl-4 text-[13px] italic leading-[1.6] text-[var(--color-muted)]">
-                  {model.note}
-                </p>
-              </Reveal>
-            )}
-            <Reveal delay={320}>
-              <div className="mt-10">
-                <div className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
-                  Available colours
-                </div>
-                <div className="mt-4">
-                  <ColorSwatchRow colors={model.colors} />
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delay={380}>
-              <div className="mt-10 flex flex-wrap items-center gap-6">
-                <Link
-                  href="/contact/"
-                  className="inline-flex h-[52px] items-center justify-center gap-2 rounded-sm bg-[var(--color-green)] px-6 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-green-deep)]"
-                >
-                  Request information <ArrowUpRight weight="bold" size={16} />
-                </Link>
-              </div>
-            </Reveal>
+            </div>
           </div>
         </div>
       </section>
+    );
+  }
 
-      {/* D9 INTERACTIVE TECHNICAL TABS */}
-      <ModelTechnicalTabs model={model} image={heroImage} />
-
-      {/* D6 STICKY FEATURE NAVIGATION */}
-      <ModelFeatureNavigator model={model} />
-
-      <RelatedModels currentSlug={model.slug} />
-      <ContactClose defaultModel={model.slug} />
+  return (
+    <>
+      <ScootersHero
+        name={model.shortName}
+        tagline={model.lead}
+        image={model.image}
+        alt={`${model.shortName} electric scooter`}
+        cta={{ href: "/contact/", label: "Book a Test Ride" }}
+        secondary={{ href: "/models/", label: "Explore All Models" }}
+        kicker={model.code ? `Model ${model.code}` : "Hero Product"}
+      />
+      <ScootersSpecHighlight image={model.image} alt={`${model.shortName} rear three-quarter view`} />
+      <ScootersSpecTable image={model.image} alt={`${model.shortName} side view`} />
+      <ScootersFeatures image={model.image} alt={`${model.shortName} features`} />
+      <ScootersTechnology />
     </>
   );
 }

@@ -58,7 +58,15 @@ const hotspots: Hotspot[] = [
   },
 ];
 
-export function ScootersFeatures() {
+type Props = {
+  image?: string;
+  alt?: string;
+};
+
+export function ScootersFeatures({
+  image = "/assets/gt-drive/gt-flying-e4-real.webp",
+  alt = "GT Drive features",
+}: Props = {}) {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   return (
@@ -87,8 +95,8 @@ export function ScootersFeatures() {
             <div className="relative aspect-[4/3] w-full">
               {/* scooter image */}
               <Image
-                src={asset("/assets/gt-drive/gt-flying-e4-real.webp")}
-                alt="GT Flying features"
+                src={asset(image)}
+                alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 66vw"
                 className="object-contain object-center"

@@ -21,7 +21,15 @@ const specs: Spec[] = [
   { Icon: PlugCharging, label: "Charging Time", value: "4-5 hrs", sub: "(0-100%)" },
 ];
 
-export function ScootersSpecHighlight() {
+type Props = {
+  image?: string;
+  alt?: string;
+};
+
+export function ScootersSpecHighlight({
+  image = "/assets/gt-drive/gt-flying-e4-real.webp",
+  alt = "GT Drive scooter",
+}: Props = {}) {
   return (
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-0">
@@ -36,8 +44,8 @@ export function ScootersSpecHighlight() {
 
             <div className="relative aspect-[5/4] w-full">
               <Image
-                src={asset("/assets/gt-drive/gt-flying-e4-real.webp")}
-                alt="GT Flying rear three-quarter view"
+                src={asset(image)}
+                alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-contain object-center"
