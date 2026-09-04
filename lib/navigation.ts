@@ -1,6 +1,7 @@
 import { getModel, type ScooterModel } from "@/lib/models";
 
 export const primaryLinks = [
+  { href: "/electric-scooters/", label: "Electric scooters" },
   { href: "/about/", label: "About" },
   { href: "/dealers/", label: "For dealers" },
   { href: "/locations/", label: "Locations" },
