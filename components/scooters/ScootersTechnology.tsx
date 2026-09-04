@@ -129,13 +129,18 @@ export function ScootersTechnology() {
             </p>
           </div>
 
-          {/* RIGHT — 3 tech cards */}
-          <div className="md:col-span-8">
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-              {cards.map((c) => (
+          {/* RIGHT — infinite marquee of the 3 tech cards */}
+          <div className="group/marquee relative overflow-hidden md:col-span-8">
+            {/* soft fade masks on the edges so cards enter/exit gracefully */}
+            <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent" />
+            <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent" />
+
+            <div className="flex w-max gap-5 motion-safe:animate-[marquee_28s_linear_infinite] group-hover/marquee:[animation-play-state:paused]">
+              {[...cards, ...cards].map((c, i) => (
                 <div
-                  key={c.title}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white p-5 shadow-[0_2px_10px_rgba(17,17,17,0.03)] transition-all hover:-translate-y-1 hover:border-[var(--color-green)]/40 hover:shadow-[0_18px_40px_rgba(17,17,17,0.08)]"
+                  key={`${c.title}-${i}`}
+                  aria-hidden={i >= cards.length}
+                  className="group flex w-[300px] shrink-0 flex-col overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white p-5 shadow-[0_2px_10px_rgba(17,17,17,0.03)]"
                 >
                   <div className="flex items-start gap-3">
                     <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-green)_10%,white)]">
