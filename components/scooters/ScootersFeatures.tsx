@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { asset } from "@/lib/asset";
+import { isPortraitProductImage } from "@/lib/productImage";
 
 type Hotspot = {
   id: string;
@@ -94,14 +95,14 @@ export function ScootersFeatures({
 
           {/* RIGHT — interactive feature explorer */}
           <div className="md:col-span-8">
-            <div className="relative aspect-[4/3] w-full">
+            <div className={`relative w-full overflow-hidden rounded-2xl bg-[var(--color-stage)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
               {/* scooter image */}
               <Image
                 src={asset(image)}
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 66vw"
-                className="object-contain object-center"
+                className="object-cover object-center"
               />
 
               {/* SVG connector lines from label to dot */}

@@ -6,6 +6,7 @@ import {
   PlugCharging,
 } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
+import { isPortraitProductImage } from "@/lib/productImage";
 
 type Spec = {
   Icon: typeof Gauge;
@@ -75,13 +76,13 @@ export function ScootersSpecTable({
               className="pointer-events-none absolute inset-y-8 left-0 hidden w-[3px] bg-[var(--color-green)] md:block"
             />
 
-            <div className="relative aspect-[5/4] w-full">
+            <div className={`relative w-full overflow-hidden rounded-2xl bg-[var(--color-stage)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
               <Image
                 src={asset(image)}
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-contain object-center"
+                className="object-cover object-center"
               />
             </div>
           </div>

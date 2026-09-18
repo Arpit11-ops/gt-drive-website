@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { asset } from "@/lib/asset";
+import { isPortraitProductImage } from "@/lib/productImage";
 
 type Props = {
   images: string[];
@@ -26,13 +27,13 @@ export function ScootersGallery({ images, name }: Props) {
         </div>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
           {images.map((image, index) => (
-            <div key={image} className={`relative overflow-hidden rounded-2xl bg-white ${index === 0 ? "col-span-2 row-span-2 aspect-square md:col-span-2 md:row-span-2" : "aspect-square"}`}>
+            <div key={image} className={`relative overflow-hidden rounded-2xl bg-white ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"} ${index === 0 ? "col-span-2 row-span-2 md:col-span-2 md:row-span-2" : ""}`}>
               <Image
                 src={asset(image)}
                 alt={`${name} view ${index + 1}`}
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-contain p-3 transition-transform duration-500 hover:scale-[1.03] md:p-5"
+                className="object-cover transition-transform duration-500 hover:scale-[1.02]"
               />
             </div>
           ))}

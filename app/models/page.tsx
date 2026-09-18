@@ -47,7 +47,7 @@ export default function ModelsPage() {
         <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-24">
           {models.map((model, index) => (
             <Reveal key={model.slug} delay={(index % 3) * 100} className={index === 0 ? "lg:col-span-2" : ""}>
-              <ModelCard model={model} index={index} featured={index === 0} priority={index < 3} />
+              <ModelCard model={model} featured={index === 0} priority={index < 3} />
             </Reveal>
           ))}
         </div>
