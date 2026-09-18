@@ -15,7 +15,8 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const flagship = getModel("gt-flying");
-  const image = flagship?.image ?? "/assets/gt-drive/gt-flying-e4-real.webp";
+  const views = flagship?.sectionImages;
+  const image = views?.hero ?? flagship?.image ?? "/assets/gt-drive/gt-flying-e4-real.webp";
   const name = flagship?.shortName ?? "GT Flying";
 
   return (
@@ -28,9 +29,9 @@ export default function HomePage() {
         alt={`${name} electric scooter`}
         cta={{ href: `/models/${flagship?.slug ?? "gt-flying"}/`, label: `Explore ${name}` }}
       />
-      <ScootersSpecHighlight image={image} alt={`${name} rear three-quarter view`} />
-      <ScootersSpecTable image={image} alt={`${name} side view`} />
-      <ScootersFeatures image={image} alt={`${name} features`} />
+      <ScootersSpecHighlight image={views?.specifications ?? image} alt={`${name} rear three-quarter view`} />
+      <ScootersSpecTable image={views?.details ?? image} alt={`${name} side view`} />
+      <ScootersFeatures image={views?.features ?? image} alt={`${name} features`} />
       <ScootersTechnology />
       <ContactClose />
     </>
