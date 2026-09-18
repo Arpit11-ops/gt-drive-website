@@ -15,7 +15,7 @@ const blocks: Block[] = [
     body: "A range of electric scooters designed for different customer needs.",
     visual: (
       <Image
-        src={asset("/assets/gt-drive/gt-flying-e4-real.webp")}
+        src={asset("/assets/gt-drive/cleaned/Flying_E4_IMG_4002_clean.webp")}
         alt="GT Drive scooter"
         fill
         sizes="(max-width: 768px) 100vw, 33vw"
@@ -107,20 +107,22 @@ export function DealerOpportunity() {
                     {/* full-bleed image — fills the parallelogram edge to edge */}
                     {b.visual}
 
-                    {/* text sitting directly on the image, inset from the
-                        diagonal edge so it doesn't clip */}
+                    {/* Contrast veil keeps the labels legible over product and landscape imagery. */}
+                    <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/10" />
+
+                    {/* Text sits in a translucent panel so it remains readable at every breakpoint. */}
                     <div
-                      className={`absolute top-0 max-w-[74%] px-6 py-6 md:py-7 ${
+                      className={`absolute top-5 z-[1] max-w-[84%] rounded-lg border border-white/15 bg-black/35 px-4 py-4 shadow-lg backdrop-blur-[2px] md:top-6 md:px-5 md:py-5 ${
                         i === 0 ? "left-0 md:pl-6" : "left-[10%] md:pl-4"
                       }`}
                     >
                       <span className="font-display text-[26px] font-extrabold italic text-[var(--color-green)] [text-shadow:0_1px_2px_rgba(255,255,255,0.6)]">
                         {b.n}
                       </span>
-                      <h3 className="mt-2 whitespace-pre-line font-display text-[15px] font-extrabold uppercase leading-[1.15] tracking-[-0.005em] text-[var(--color-ink)] [text-shadow:0_1px_2px_rgba(255,255,255,0.55)]">
+                      <h3 className="mt-2 whitespace-pre-line font-display text-[15px] font-extrabold uppercase leading-[1.15] tracking-[-0.005em] text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.55)]">
                         {b.title}
                       </h3>
-                      <p className="mt-3 max-w-[180px] text-[12.5px] leading-relaxed text-[var(--color-body)] [text-shadow:0_1px_2px_rgba(255,255,255,0.5)]">
+                      <p className="mt-3 max-w-[190px] text-[12.5px] leading-relaxed text-white/90 [text-shadow:0_1px_3px_rgba(0,0,0,0.55)]">
                         {b.body}
                       </p>
                     </div>
