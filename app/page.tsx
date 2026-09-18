@@ -23,6 +23,7 @@ export default function HomePage() {
         name={name}
         tagline={"Designed for the city.\nBuilt for the future."}
         image={image}
+        video="/assets/gt-drive/video/gt-flying-hero.mp4"
         alt={`${name} electric scooter`}
         cta={{ href: `/models/${flagship?.slug ?? "gt-flying"}/`, label: `Explore ${name}` }}
       />

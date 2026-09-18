@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HeartStraight, MapPin, Quotes, UserCircle, UsersThree, Wrench } from "@phosphor-icons/react/dist/ssr";
+import { HeartStraight, MapPin, Quotes, UsersThree, Wrench } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
 import { SectionKicker } from "@/components/about/SectionKicker";
 
@@ -72,16 +72,13 @@ export function AboutDirectorAndNetwork() {
               </p>
             </div>
 
-            {/* Portrait — placeholder until real photo lands */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[color-mix(in_srgb,var(--color-ink)_92%,white)] md:col-span-2 md:aspect-auto md:min-h-[360px]">
-              <div className="absolute inset-0 grid place-items-center">
-                <UserCircle size={110} weight="thin" className="text-white/25" />
-              </div>
-              <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/85">
-                <span>Md. Kaif Ahmad</span>
-                <span className="rounded-full border border-white/25 px-2 py-0.5 text-[9px] text-white/60">
-                  Photo pending
-                </span>
+            {/* Leadership profile card — kept typographic until an approved portrait is available. */}
+            <div className="relative flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-2xl bg-[color-mix(in_srgb,var(--color-ink)_92%,white)] p-6 md:col-span-2 md:aspect-auto md:min-h-[360px]">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-green)]">Leadership profile</span>
+              <div>
+                <div className="font-display text-[112px] font-extrabold leading-none tracking-[-0.08em] text-white/[0.12]">KA</div>
+                <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/85">Md. Kaif Ahmad</p>
+                <p className="mt-1 text-[11px] text-white/55">Director · Houstan Innovations LLP</p>
               </div>
             </div>
           </div>

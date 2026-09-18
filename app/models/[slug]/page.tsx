@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { ScootersFeatures } from "@/components/scooters/ScootersFeatures";
+import { ScootersGallery } from "@/components/scooters/ScootersGallery";
 import { ScootersHero } from "@/components/scooters/ScootersHero";
 import { ScootersSpecHighlight } from "@/components/scooters/ScootersSpecHighlight";
 import { ScootersSpecTable } from "@/components/scooters/ScootersSpecTable";
@@ -64,6 +65,15 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
     );
   }
 
+  const gallery = model.gallery ?? [model.image];
+  // Keep each section on a different angle. For the cleaned sets, gallery[1] is
+  // the second side profile, which keeps the feature hardware visible without
+  // reusing the hero image. The later views provide different detail and rear/front
+  // perspectives for the specification sections.
+  const specImage = gallery[2] ?? gallery[1] ?? model.image;
+  const tableImage = gallery[3] ?? gallery[1] ?? model.image;
+  const featureImage = gallery[1] ?? gallery[0] ?? model.image;
+
   return (
     <>
       <ScootersHero
@@ -74,11 +84,14 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
         cta={{ href: "/contact/", label: "Book a Test Ride" }}
         secondary={{ href: "/models/", label: "Explore All Models" }}
         kicker={model.code ? `Model ${model.code}` : "Hero Product"}
+        colors={model.colors}
+        featureCount={model.features.length}
       />
-      <ScootersSpecHighlight image={model.image} alt={`${model.shortName} rear three-quarter view`} />
-      <ScootersSpecTable image={model.image} alt={`${model.shortName} side view`} />
-      <ScootersFeatures image={model.image} alt={`${model.shortName} features`} />
-      <ScootersTechnology />
+      <ScootersSpecHighlight image={specImage} alt={`${model.shortName} specifications view`} />
+      <ScootersSpecTable image={tableImage} alt={`${model.shortName} side view`} />
+      <ScootersFeatures image={featureImage} alt={`${model.shortName} features view`} />
+      {model.gallery && <ScootersGallery images={model.gallery} name={model.shortName} />}
+      <ScootersTechnology step={model.gallery ? "05" : "04"} />
     </>
   );
 }

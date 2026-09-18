@@ -30,7 +30,7 @@ export function ContactHero() {
           </p>
         </div>
 
-        {/* RIGHT — office reception image (placeholder until real photo lands) */}
+        {/* RIGHT — office reception image */}
         <div className="relative col-span-1 min-h-[380px] md:col-span-7 md:min-h-0">
           <Image
             src={asset("/assets/gt-drive/gt-drive-hero-showroom-ai-v1.webp")}
@@ -45,10 +45,6 @@ export function ContactHero() {
             aria-hidden
             className="pointer-events-none absolute inset-y-0 left-0 hidden w-32 bg-gradient-to-r from-white to-transparent md:block"
           />
-          {/* placeholder chip */}
-          <div className="absolute right-4 top-4 rounded-full bg-[color-mix(in_srgb,var(--color-ink)_82%,transparent)] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
-            Office photo pending
-          </div>
         </div>
       </div>
     </section>

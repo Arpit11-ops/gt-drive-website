@@ -24,12 +24,12 @@ const plants: Plant[] = [
       "Khata No. 113, Mohi-Mohudinpur, Near Punpun River, (Opp. Bakhpur Bagicha) Sakraicha, P.O Punpun, Dist Patna, Bihar - 804453",
   },
   {
-    n: "4",
+    n: "3",
     name: "Madhya Pradesh Plant",
     address: "Khasra No. 246/12, Sanwer Indore, Madhya Pradesh - 453551",
   },
   {
-    n: "5",
+    n: "4",
     name: "Telangana Plant",
     address:
       "Plot No.17, Phase-V, Navodaya Society, IDA Cherlapally, Near Hindustan Cables Ltd. Uppal, Medchal Malkajgiri Hyderabad, Telangana - 500051",

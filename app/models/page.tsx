@@ -33,11 +33,21 @@ export default function ModelsPage() {
         }
         lead="The full GT Drive range. Nine scooters in production, one on the way — with complete specifications, features and real colour options for each."
       />
-      <section className="mx-auto max-w-[var(--container-page)] px-6 py-20 md:px-10 md:py-28">
-        <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-16 md:px-10 md:pb-36 md:pt-24">
+        <div className="mb-12 flex flex-col justify-between gap-8 border-y border-black/10 py-5 text-sm md:mb-16 md:flex-row md:items-center">
+          <p className="max-w-md leading-[1.55] text-[var(--color-body)]">
+            One range, tuned for different kinds of everyday movement.
+          </p>
+          <div className="flex items-center gap-8 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)]">
+            <span><strong className="mr-2 text-2xl font-semibold tracking-[-0.04em] text-[var(--color-ink)]">09</strong> models</span>
+            <span className="hidden h-4 w-px bg-black/15 sm:block" />
+            <span>2025 / 26 range</span>
+          </div>
+        </div>
+        <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-24">
           {models.map((model, index) => (
-            <Reveal key={model.slug} delay={(index % 3) * 100}>
-              <ModelCard model={model} priority={index < 3} />
+            <Reveal key={model.slug} delay={(index % 3) * 100} className={index === 0 ? "lg:col-span-2" : ""}>
+              <ModelCard model={model} index={index} featured={index === 0} priority={index < 3} />
             </Reveal>
           ))}
         </div>

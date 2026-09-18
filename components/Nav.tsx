@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CaretDown, List, Phone, WhatsappLogo, X } from "@phosphor-icons/react";
+import { ArrowRight, CaretDown, List, Phone, X } from "@phosphor-icons/react";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ModelMegaMenu } from "@/components/ModelMegaMenu";
@@ -147,22 +147,13 @@ export function Nav() {
         </nav>
 
         <div className="relative z-50 hidden items-center gap-5 lg:flex">
-          <a
-            href={`https://wa.me/${contact.whatsapp}`}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 text-[13px] font-bold text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)]"
-          >
-            <WhatsappLogo size={16} weight="bold" />
-            WhatsApp
-          </a>
           <Link
             href="/contact/"
             onClick={closeAfterNavigation}
             className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-[var(--color-ink)] px-6 py-3 text-[13px] font-bold text-white shadow-lg transition-shadow hover:shadow-xl"
           >
             <span className="absolute inset-0 origin-left scale-x-0 bg-[var(--color-green-deep)] transition-transform duration-300 group-hover:scale-x-100" />
-            <span className="relative z-10">Request information</span>
+            <span className="relative z-10">Contact Us</span>
             <ArrowRight className="relative z-10 transition-transform group-hover:translate-x-1" size={14} weight="bold" />
           </Link>
         </div>
@@ -241,16 +232,13 @@ export function Nav() {
             className="group relative mt-8 flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-[var(--color-ink)] px-8 py-4 text-[15px] font-bold text-white shadow-xl"
           >
             <span className="absolute inset-0 origin-left scale-x-0 bg-[var(--color-green-deep)] transition-transform duration-300 group-hover:scale-x-100" />
-            <span className="relative z-10">Request information</span>
+            <span className="relative z-10">Contact Us</span>
             <ArrowRight className="relative z-10" size={16} weight="bold" />
           </Link>
 
           <div className="mt-5 flex items-center gap-5 text-[12px] font-semibold text-[var(--color-muted)]">
             <a href={`tel:${contact.phones[0].replace(/\s/g, "")}`} className="flex items-center gap-1.5 hover:text-[var(--color-ink)]">
               <Phone size={14} weight="bold" /> Call
-            </a>
-            <a href={`https://wa.me/${contact.whatsapp}`} className="flex items-center gap-1.5 hover:text-[var(--color-ink)]">
-              <WhatsappLogo size={14} weight="bold" /> WhatsApp
             </a>
           </div>
         </div>

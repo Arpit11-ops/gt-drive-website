@@ -23,8 +23,8 @@ const channels: Channel[] = [
   {
     Icon: EnvelopeSimple,
     title: "Email Us",
-    lines: ["info@gtdrive.in"],
-    href: "mailto:info@gtdrive.in",
+    lines: ["info@gtdrivepro.com"],
+    href: "mailto:info@gtdrivepro.com",
   },
 ];
 

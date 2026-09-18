@@ -31,7 +31,8 @@ export function DealerHero() {
               <ArrowRight size={15} weight="bold" className="transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="#brochure"
+              href="/assets/gt-drive/brochure/gt-drive-dealership.pdf"
+              download="gt-drive-dealership-brochure.pdf"
               className="group inline-flex items-center gap-2 text-[13px] font-bold text-[var(--color-ink)] transition-colors hover:text-[var(--color-green-deep)]"
             >
               Download Brochure

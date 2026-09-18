@@ -21,10 +21,11 @@ export function DealerBrochureJourney() {
               WANT TO KNOW MORE?
             </h2>
             <p className="mt-6 max-w-md text-[14px] leading-relaxed text-[var(--color-body)]">
-              Download the GT Drive Dealership Brochure for complete information about the opportunity, requirements and process.
+              Download the GT Drive dealership brochure for complete information about the opportunity, requirements and process.
             </p>
             <a
               href="/assets/gt-drive/brochure/gt-drive-dealership.pdf"
+              download="gt-drive-dealership-brochure.pdf"
               className="group mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-[var(--color-ink)] px-5 text-[12.5px] font-bold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-white"
             >
               Download Brochure

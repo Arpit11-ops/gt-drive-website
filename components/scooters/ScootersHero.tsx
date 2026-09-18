@@ -10,6 +10,8 @@ type Props = {
   tagline: string;
   /** Path (already relative to /public) for the scooter image. */
   image: string;
+  /** Optional hero video. When provided, it replaces the hero image. */
+  video?: string;
   /** Alt text for the hero image. */
   alt: string;
   /** Primary CTA — href + label. */
@@ -18,16 +20,22 @@ type Props = {
   secondary?: { href: string; label: string } | null;
   /** Kicker override — defaults to "01 · Hero Product". */
   kicker?: string;
+  /** Small product metadata shown beneath the hero actions. */
+  colors?: string[];
+  featureCount?: number;
 };
 
 export function ScootersHero({
   name,
   tagline,
   image,
+  video,
   alt,
   cta,
   secondary = { href: "/models/", label: "Explore All Models" },
   kicker = "Hero Product",
+  colors = [],
+  featureCount,
 }: Props) {
   const parts = name.trim().split(/\s+/);
   const lead = parts.slice(0, -1).join(" ");
@@ -71,6 +79,23 @@ export function ScootersHero({
                 {secondary.label}
               </Link>
             )}
+
+            {(colors.length > 0 || featureCount) && (
+              <div className="mt-2 grid max-w-sm grid-cols-2 gap-5 border-t border-black/10 pt-5 text-[11px]">
+                {colors.length > 0 && (
+                  <div>
+                    <p className="font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">Colour options</p>
+                    <p className="mt-2 leading-relaxed text-[var(--color-body)]">{colors.length} finishes · {colors.slice(0, 2).join(" · ")}{colors.length > 2 ? " · +more" : ""}</p>
+                  </div>
+                )}
+                {featureCount && (
+                  <div>
+                    <p className="font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">Built around</p>
+                    <p className="mt-2 leading-relaxed text-[var(--color-body)]">{featureCount} considered features</p>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
@@ -88,15 +113,33 @@ export function ScootersHero({
             GT
           </div>
 
-          <div className="relative z-[1] h-full w-full">
-            <Image
-              src={asset(image)}
-              alt={alt}
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 58vw"
-              className="object-contain object-center"
-            />
+          <div className={video ? "relative z-[1] flex h-full w-full items-center px-6 pb-10 md:px-8 md:py-12 lg:px-12" : "relative z-[1] h-full w-full"}>
+            {video ? (
+              <div className="aspect-video w-full overflow-hidden rounded-[1.5rem] border border-black/5 bg-[var(--color-stage)] shadow-[0_20px_60px_rgba(17,17,17,0.12)] md:rounded-[2rem]">
+              <video
+                className="block h-full w-full object-cover object-center"
+                src={video}
+                poster={asset(image)}
+                autoPlay
+                muted
+                loop
+                playsInline
+                disablePictureInPicture
+                disableRemotePlayback
+                preload="metadata"
+                aria-label={alt}
+              />
+              </div>
+            ) : (
+              <Image
+                src={asset(image)}
+                alt={alt}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 58vw"
+                className="object-contain object-center"
+              />
+            )}
           </div>
 
           <div

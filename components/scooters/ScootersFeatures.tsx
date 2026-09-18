@@ -20,7 +20,8 @@ const hotspots: Hotspot[] = [
     id: "digital-display",
     title: "Digital Display",
     body: "All essential ride info at a glance.",
-    dot: { x: 46, y: 32 },
+    // Side-profile studio views place the display just below the handlebar cluster.
+    dot: { x: 39, y: 20 },
     label: { x: 2, y: 6 },
     side: "left",
   },
@@ -28,7 +29,8 @@ const hotspots: Hotspot[] = [
     id: "led-headlamp",
     title: "LED Headlamp",
     body: "High visibility for safer rides.",
-    dot: { x: 32, y: 52 },
+    // The lamp sits on the leading edge of the front cowl, above the front wheel.
+    dot: { x: 31, y: 27 },
     label: { x: 2, y: 44 },
     side: "left",
   },
@@ -36,7 +38,8 @@ const hotspots: Hotspot[] = [
     id: "front-disc-brake",
     title: "Front Disc Brake",
     body: "Better control, greater safety.",
-    dot: { x: 24, y: 82 },
+    // The disc and caliper are visible at the centre of the front wheel.
+    dot: { x: 18, y: 76 },
     label: { x: 2, y: 82 },
     side: "left",
   },
@@ -44,7 +47,7 @@ const hotspots: Hotspot[] = [
     id: "spacious-seat",
     title: "Spacious Seat",
     body: "Comfortable for you and your pillion.",
-    dot: { x: 72, y: 34 },
+    dot: { x: 68, y: 35 },
     label: { x: 98, y: 12 },
     side: "right",
   },
@@ -52,8 +55,8 @@ const hotspots: Hotspot[] = [
     id: "large-storage",
     title: "Large Storage",
     body: "More space for your everyday needs.",
-    dot: { x: 82, y: 66 },
-    label: { x: 98, y: 70 },
+    dot: { x: 78, y: 57 },
+    label: { x: 98, y: 64 },
     side: "right",
   },
 ];
@@ -118,10 +121,10 @@ export function ScootersFeatures({
                       y1={h.label.y + 3}
                       x2={h.dot.x}
                       y2={h.dot.y}
-                      stroke="var(--color-green)"
-                      strokeWidth="0.15"
-                      strokeOpacity={isActive ? 0.9 : 0.35}
-                      strokeDasharray="0.4 0.4"
+                      stroke="var(--color-green-deep)"
+                      strokeWidth={isActive ? "0.32" : "0.24"}
+                      strokeOpacity={isActive ? 1 : 0.78}
+                      strokeDasharray="0.8 0.45"
                     />
                   );
                 })}
@@ -162,7 +165,7 @@ export function ScootersFeatures({
                     key={`label-${h.id}`}
                     onMouseEnter={() => setActiveId(h.id)}
                     onMouseLeave={() => setActiveId(null)}
-                    className={`absolute z-[3] max-w-[150px] px-2 transition-opacity ${
+                    className={`absolute z-[3] max-w-[165px] rounded-md bg-white/95 px-3 py-2 shadow-[0_4px_14px_rgba(17,17,17,0.08)] backdrop-blur-sm transition-opacity ${
                       h.side === "left" ? "-translate-x-0" : "-translate-x-full"
                     } ${isActive ? "opacity-100" : "opacity-90"}`}
                     style={{
@@ -172,7 +175,7 @@ export function ScootersFeatures({
                     }}
                   >
                     <div
-                      className={`flex items-center gap-1.5 font-display text-[11px] font-extrabold uppercase tracking-[0.08em] text-[var(--color-ink)] ${
+                      className={`flex items-center gap-1.5 font-display text-[11px] font-extrabold uppercase leading-tight tracking-[0.08em] text-[var(--color-ink)] ${
                         h.side === "right" ? "justify-end" : ""
                       }`}
                     >
@@ -184,7 +187,7 @@ export function ScootersFeatures({
                         <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
                       )}
                     </div>
-                    <p className="mt-1.5 text-[11px] leading-snug text-[var(--color-body)]">
+                    <p className="mt-1.5 text-[11px] leading-snug text-[var(--color-ink)]/75">
                       {h.body}
                     </p>
                   </div>

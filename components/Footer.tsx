@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { EnvelopeSimple, Phone, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, FacebookLogo, InstagramLogo, Phone, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 import { contact, models } from "@/lib/models";
 import { asset } from "@/lib/asset";
 
@@ -50,6 +50,22 @@ export function Footer() {
           <h3 className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-green-deep)]">
             Connect
           </h3>
+          <a
+            href="https://www.instagram.com/gtdrivepro/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
+          >
+            <InstagramLogo size={16} /> Instagram
+          </a>
+          <a
+            href="https://www.facebook.com/p/GT-DRIVE-PRO-61587639792258/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
+          >
+            <FacebookLogo size={16} /> Facebook
+          </a>
           <a
             href={`https://wa.me/${contact.whatsapp}`}
             target="_blank"

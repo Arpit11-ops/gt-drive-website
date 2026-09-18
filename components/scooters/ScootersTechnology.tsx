@@ -107,7 +107,7 @@ function TechVisual({ kind }: { kind: Card["visual"] }) {
   );
 }
 
-export function ScootersTechnology() {
+export function ScootersTechnology({ step = "04" }: { step?: string } = {}) {
   return (
     <section className="bg-white py-20 md:py-24">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
@@ -115,7 +115,7 @@ export function ScootersTechnology() {
           {/* LEFT — copy */}
           <div className="md:col-span-4">
             <p className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--color-green-deep)]">
-              <span className="font-display text-[15px] font-extrabold italic leading-none text-[var(--color-green)]">04</span>
+              <span className="font-display text-[15px] font-extrabold italic leading-none text-[var(--color-green)]">{step}</span>
               <span className="h-[2px] w-6 bg-[var(--color-green)]" />
               Technology
             </p>
