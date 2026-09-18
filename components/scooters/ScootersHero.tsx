@@ -118,7 +118,7 @@ export function ScootersHero({
               <div className="aspect-video w-full overflow-hidden rounded-[1.5rem] border border-black/5 bg-[var(--color-stage)] shadow-[0_20px_60px_rgba(17,17,17,0.12)] md:rounded-[2rem]">
               <video
                 className="block h-full w-full object-cover object-center"
-                src={video}
+                src={asset(video)}
                 poster={asset(image)}
                 autoPlay
                 muted
