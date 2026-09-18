@@ -94,7 +94,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
       <ScootersSpecTable image={tableImage} alt={`${model.shortName}, ${views ? "front view" : "front and side views"}`} />
       <ScootersFeatures image={featureImage} alt={`${model.shortName}, ${views ? "left-facing side profile" : "front and side views"} showing features`} />
       {model.gallery && <ScootersGallery images={model.gallery} name={model.shortName} />}
-      <ScootersTechnology step={model.gallery ? "05" : "04"} />
+      <ScootersTechnology />
       <ContactClose defaultModel={model.slug} />
     </>
   );

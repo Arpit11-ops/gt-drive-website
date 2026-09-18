@@ -2,7 +2,6 @@ import Image from "next/image";
 import { asset } from "@/lib/asset";
 
 type Block = {
-  n: string;
   title: string;
   body: string;
   visual: React.ReactNode;
@@ -10,21 +9,19 @@ type Block = {
 
 const blocks: Block[] = [
   {
-    n: "01",
     title: "A GROWING\nPRODUCT PORTFOLIO",
     body: "A range of electric scooters designed for different customer needs.",
     visual: (
       <Image
-        src={asset("/assets/gt-drive/cleaned/Flying_E4_IMG_4002_clean.webp")}
+        src={asset("/assets/gt-drive/cleaned/Flying_E4_IMG_4006_clean.webp")}
         alt="GT Drive scooter"
         fill
         sizes="(max-width: 768px) 100vw, 33vw"
-        className="object-cover object-bottom"
+        className="object-cover object-center"
       />
     ),
   },
   {
-    n: "02",
     title: "IN-HOUSE\nBATTERY CAPABILITY",
     body: "Battery technology developed to strengthen GT's electric mobility ecosystem.",
     visual: (
@@ -47,7 +44,6 @@ const blocks: Block[] = [
     ),
   },
   {
-    n: "03",
     title: "A GROWING\nEV OPPORTUNITY",
     body: "Be part of India's shift towards electric mobility.",
     visual: (
@@ -92,15 +88,15 @@ export function DealerOpportunity() {
                 // Last tile: diagonal left, straight right.
                 const clipPath =
                   i === 0
-                    ? "polygon(0 0, 88% 0, 100% 100%, 0 100%)"
+                    ? "polygon(0 0, 100% 0, 88% 100%, 0 100%)"
                     : i === blocks.length - 1
                       ? "polygon(12% 0, 100% 0, 100% 100%, 0 100%)"
                       : "polygon(12% 0, 100% 0, 88% 100%, 0 100%)";
                 return (
                   <div
-                    key={b.n}
+                    key={b.title}
                     className={`relative aspect-[3/4] overflow-hidden bg-[var(--color-stage)] ${
-                      i > 0 ? "sm:-ml-[8%]" : ""
+                      i > 0 ? "sm:-ml-[13%]" : ""
                     }`}
                     style={{ clipPath }}
                   >
@@ -112,13 +108,10 @@ export function DealerOpportunity() {
 
                     {/* Text sits in a translucent panel so it remains readable at every breakpoint. */}
                     <div
-                      className={`absolute top-5 z-[1] max-w-[84%] rounded-lg border border-white/15 bg-black/35 px-4 py-4 shadow-lg backdrop-blur-[2px] md:top-6 md:px-5 md:py-5 ${
+                      className={`absolute top-5 z-[1] max-w-[84%] bg-black/60 px-4 py-4 shadow-lg md:top-6 md:px-5 md:py-5 ${
                         i === 0 ? "left-0 md:pl-6" : "left-[10%] md:pl-4"
                       }`}
                     >
-                      <span className="font-display text-[26px] font-extrabold italic text-[var(--color-green)] [text-shadow:0_1px_2px_rgba(255,255,255,0.6)]">
-                        {b.n}
-                      </span>
                       <h3 className="mt-2 whitespace-pre-line font-display text-[15px] font-extrabold uppercase leading-[1.15] tracking-[-0.005em] text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.55)]">
                         {b.title}
                       </h3>

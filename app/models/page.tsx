@@ -39,7 +39,7 @@ export default function ModelsPage() {
             One range, tuned for different kinds of everyday movement.
           </p>
           <div className="flex items-center gap-8 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)]">
-            <span><strong className="mr-2 text-2xl font-semibold tracking-[-0.04em] text-[var(--color-ink)]">09</strong> models</span>
+            <span>models</span>
             <span className="hidden h-4 w-px bg-black/15 sm:block" />
             <span>2025 / 26 range</span>
           </div>

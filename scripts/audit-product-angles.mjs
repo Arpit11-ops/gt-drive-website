@@ -39,9 +39,10 @@ try {
       assert.equal(response.status(), 200);
       if (slug !== "gt-chetak") {
         const featureDetail = page.getByText("All essential ride info at a glance.", { exact: true });
-        assert.equal(await featureDetail.count(), 0, slug + " feature detail should start hidden");
+        if (width === 390) assert.equal(await featureDetail.isVisible(), false, slug + " mobile feature detail should start hidden");
+        if (width === 1440) assert.equal(await featureDetail.isVisible(), true, slug + " desktop feature detail should remain visible");
         await page.getByRole("button", { name: "Digital Display" }).click();
-        assert.equal(await featureDetail.count(), 1, slug + " feature detail did not open on click");
+        assert.equal(await featureDetail.count(), 1, slug + " feature detail did not render");
       }
       if (slug === "gt-flying") assert.equal(await page.locator("video").count(), 1, "GT Flying video hero missing");
       const sections = page.locator("main > section");

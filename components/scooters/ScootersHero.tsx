@@ -61,7 +61,6 @@ export function ScootersHero({
         <div className="relative z-10 flex min-h-[calc(100svh-5rem)] items-end px-6 pb-10 md:px-12 md:pb-14 lg:px-16 lg:pb-16">
           <div className="max-w-2xl">
             <p className="mb-4 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-white/75">
-              <span className="font-display text-[15px] font-extrabold italic leading-none text-[var(--color-green)]">01</span>
               <span className="h-[2px] w-6 bg-[var(--color-green)]" />
               {kicker}
             </p>
@@ -86,7 +85,6 @@ export function ScootersHero({
         {/* LEFT — copy */}
         <div className="relative z-10 col-span-1 flex flex-col justify-center px-6 py-14 md:col-span-5 md:px-12 md:py-16 lg:px-16">
           <p className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--color-green-deep)]">
-            <span className="font-display text-[15px] font-extrabold italic leading-none text-[var(--color-green)]">01</span>
             <span className="h-[2px] w-6 bg-[var(--color-green)]" />
             {kicker}
           </p>

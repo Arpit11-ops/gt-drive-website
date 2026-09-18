@@ -13,7 +13,6 @@ export function ScootersGallery({ images, name }: Props) {
         <div className="mb-10 flex items-end justify-between gap-6 md:mb-14">
           <div>
             <p className="mb-5 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--color-green-deep)]">
-              <span className="font-display text-[15px] font-extrabold italic leading-none text-[var(--color-green)]">04</span>
               <span className="h-[2px] w-6 bg-[var(--color-green)]" />
               The range
             </p>

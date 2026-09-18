@@ -37,7 +37,6 @@ export function ScootersSpecHighlight({
           {/* LEFT — kicker + scooter image */}
           <div className="relative md:col-span-6 md:pl-12 lg:pl-16">
             <p className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--color-green-deep)]">
-              <span className="font-display text-[15px] font-extrabold italic leading-none text-[var(--color-green)]">02</span>
               <span className="h-[2px] w-6 bg-[var(--color-green)]" />
               Specifications
             </p>

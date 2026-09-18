@@ -1,10 +1,10 @@
 import { ArrowRight, DownloadSimple } from "@phosphor-icons/react/dist/ssr";
 
 const steps = [
-  { n: "01", title: "APPLY", body: "Share your details." },
-  { n: "02", title: "CONNECT", body: "Our team gets in touch." },
-  { n: "03", title: "EVALUATE", body: "Business and location are reviewed." },
-  { n: "04", title: "PARTNER", body: "Complete the dealership onboarding." },
+  { title: "APPLY", body: "Share your details." },
+  { title: "CONNECT", body: "Our team gets in touch." },
+  { title: "EVALUATE", body: "Business and location are reviewed." },
+  { title: "PARTNER", body: "Complete the dealership onboarding." },
 ];
 
 export function DealerBrochureJourney() {
@@ -69,11 +69,8 @@ export function DealerBrochureJourney() {
 
             <ol className="mt-12 grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
               {steps.map((s, i) => (
-                <li key={s.n} className="relative flex flex-col items-start">
-                  <div className="flex items-center gap-3">
-                    <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-[var(--color-green)] font-display text-[13px] font-extrabold text-[var(--color-ink)]">
-                      {s.n}
-                    </span>
+                <li key={s.title} className="relative flex flex-col items-start">
+                  <div className="flex h-11 items-center gap-3">
                     {i < steps.length - 1 && (
                       <ArrowRight size={16} weight="bold" className="hidden text-[var(--color-green)] md:block" />
                     )}
