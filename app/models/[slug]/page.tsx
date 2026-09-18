@@ -69,31 +69,29 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
     );
   }
 
-  const gallery = model.gallery ?? [model.image];
-  // Keep each section on a different angle. For the cleaned sets, gallery[1] is
-  // the second side profile, which keeps the feature hardware visible without
-  // reusing the hero image. The later views provide different detail and rear/front
-  // perspectives for the specification sections.
-  const specImage = gallery[2] ?? gallery[1] ?? model.image;
-  const tableImage = gallery[3] ?? gallery[1] ?? model.image;
-  const featureImage = gallery[1] ?? gallery[0] ?? model.image;
+  // Select audited angles by purpose, independently of gallery ordering.
+  const views = model.sectionImages;
+  const heroImage = views?.hero ?? model.image;
+  const specImage = views?.specifications ?? model.image;
+  const tableImage = views?.details ?? model.image;
+  const featureImage = views?.features ?? model.image;
 
   return (
     <>
       <ScootersHero
         name={model.shortName}
         tagline={model.lead}
-        image={model.image}
-        alt={`${model.shortName} electric scooter`}
+        image={heroImage}
+        alt={`${model.shortName} electric scooter, ${views ? "right-facing side profile" : "front and side views"}`}
         cta={{ href: "/contact/", label: "Book a Test Ride" }}
         secondary={{ href: "/models/", label: "Explore All Models" }}
         kicker={model.code ? `Model ${model.code}` : "Hero Product"}
         colors={model.colors}
         featureCount={model.features.length}
       />
-      <ScootersSpecHighlight image={specImage} alt={`${model.shortName} specifications view`} />
-      <ScootersSpecTable image={tableImage} alt={`${model.shortName} side view`} />
-      <ScootersFeatures image={featureImage} alt={`${model.shortName} features view`} />
+      <ScootersSpecHighlight image={specImage} alt={`${model.shortName}, ${views ? "rear view" : "front and side views"}`} />
+      <ScootersSpecTable image={tableImage} alt={`${model.shortName}, ${views ? "front view" : "front and side views"}`} />
+      <ScootersFeatures image={featureImage} alt={`${model.shortName}, ${views ? "left-facing side profile" : "front and side views"} showing features`} />
       {model.gallery && <ScootersGallery images={model.gallery} name={model.shortName} />}
       <ScootersTechnology step={model.gallery ? "05" : "04"} />
       <ContactClose defaultModel={model.slug} />
