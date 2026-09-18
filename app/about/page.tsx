@@ -4,6 +4,7 @@ import { AboutFinalCTA } from "@/components/about/AboutFinalCTA";
 import { AboutHero } from "@/components/about/AboutHero";
 import { AboutManufacturing } from "@/components/about/AboutManufacturing";
 import { AboutWhoAndMission } from "@/components/about/AboutWhoAndMission";
+import { ContactClose } from "@/components/ContactClose";
 
 export const metadata: Metadata = {
   title: "About",
@@ -19,6 +20,7 @@ export default function AboutPage() {
       <AboutManufacturing />
       <AboutDirectorAndNetwork />
       <AboutFinalCTA />
+      <ContactClose />
     </>
   );
 }

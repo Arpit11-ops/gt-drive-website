@@ -2,6 +2,7 @@
 
 import { FormEvent, useId, useState } from "react";
 import { models } from "@/lib/models";
+import { asset } from "@/lib/asset";
 
 type Props = { defaultModel?: string; defaultType?: string };
 
@@ -9,17 +10,29 @@ export function InquiryForm({
   defaultModel = "",
   defaultType = "dealership",
 }: Props) {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const messageId = useId();
   const consentId = useId();
 
-  function submit(event: FormEvent<HTMLFormElement>) {
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    const form = event.currentTarget;
+    if (!form.reportValidity()) return;
+    setStatus("sending");
+    try {
+      const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error("Request failed");
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
-    <form onSubmit={submit} className="flex flex-col gap-8">
+    <form action={asset("/api/contact.php")} method="post" onSubmit={submit} className="flex flex-col gap-8">
+      <input type="hidden" name="source" value="GT Drive website" />
+      <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-px w-px opacity-0" />
       <div className="grid gap-6 md:grid-cols-2">
         <Field
           label="Your name"
@@ -120,10 +133,11 @@ export function InquiryForm({
         >
           Send business enquiry
         </button>
-        {submitted && (
+        {status !== "idle" && (
           <p role="status" className="text-sm text-[var(--color-green-deep)]">
-            Thanks — form delivery isn&apos;t wired yet. Please call, WhatsApp,
-            or email us for an immediate response.
+            {status === "sending" && "Sending your enquiry…"}
+            {status === "success" && "Thanks — your enquiry has been sent. We’ll be in touch shortly."}
+            {status === "error" && "We couldn’t send this right now. Please call, WhatsApp, or email us directly."}
           </p>
         )}
       </div>

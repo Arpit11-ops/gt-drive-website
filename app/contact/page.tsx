@@ -3,6 +3,7 @@ import { ContactChoices } from "@/components/contact/ContactChoices";
 import { ContactFinalCTA } from "@/components/contact/ContactFinalCTA";
 import { ContactFindUs } from "@/components/contact/ContactFindUs";
 import { ContactHero } from "@/components/contact/ContactHero";
+import { ContactClose } from "@/components/ContactClose";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -17,6 +18,7 @@ export default function ContactPage() {
       <ContactChoices />
       <ContactFindUs />
       <ContactFinalCTA />
+      <ContactClose defaultType="other" />
     </>
   );
 }

@@ -10,6 +10,7 @@ import { ScootersSpecHighlight } from "@/components/scooters/ScootersSpecHighlig
 import { ScootersSpecTable } from "@/components/scooters/ScootersSpecTable";
 import { ScootersTechnology } from "@/components/scooters/ScootersTechnology";
 import { asset } from "@/lib/asset";
+import { ContactClose } from "@/components/ContactClose";
 import { getModel, models } from "@/lib/models";
 
 export function generateStaticParams() {
@@ -28,6 +29,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
   // Coming-soon models keep a minimal teaser page until they launch.
   if (model.status === "coming-soon") {
     return (
+      <>
       <section className="relative overflow-hidden bg-white pt-24 pb-20 md:pt-32 md:pb-28">
         <div className="mx-auto grid max-w-[var(--container-page)] gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-10">
           <div className="relative flex items-center justify-center bg-[var(--color-stage)]">
@@ -62,6 +64,8 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
           </div>
         </div>
       </section>
+      <ContactClose defaultModel={model.slug} defaultType="other" />
+      </>
     );
   }
 
@@ -92,6 +96,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
       <ScootersFeatures image={featureImage} alt={`${model.shortName} features view`} />
       {model.gallery && <ScootersGallery images={model.gallery} name={model.shortName} />}
       <ScootersTechnology step={model.gallery ? "05" : "04"} />
+      <ContactClose defaultModel={model.slug} />
     </>
   );
 }

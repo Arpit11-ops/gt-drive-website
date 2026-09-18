@@ -5,6 +5,7 @@ import { ScootersSpecHighlight } from "@/components/scooters/ScootersSpecHighlig
 import { ScootersSpecTable } from "@/components/scooters/ScootersSpecTable";
 import { ScootersTechnology } from "@/components/scooters/ScootersTechnology";
 import { getModel } from "@/lib/models";
+import { ContactClose } from "@/components/ContactClose";
 
 export const metadata: Metadata = {
   title: "GT Drive — Electric two-wheeler brand from Houstan Innovations LLP",
@@ -31,6 +32,7 @@ export default function HomePage() {
       <ScootersSpecTable image={image} alt={`${name} side view`} />
       <ScootersFeatures image={image} alt={`${name} features`} />
       <ScootersTechnology />
+      <ContactClose />
     </>
   );
 }

@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   description:
     "GT Drive is the electric two-wheeler brand from Houstan Innovations LLP — nine scooters, engineered and built in India, sold through a growing pan-India dealer network.",
   metadataBase: new URL("https://gtdrivepro.com"),
+  alternates: { canonical: "/" },
+  keywords: ["electric scooters India", "electric two wheelers", "GT Drive", "electric scooter dealership", "electric mobility Uttar Pradesh"],
+  openGraph: {
+    type: "website", siteName: "GT Drive", locale: "en_IN",
+    title: "GT Drive electric scooters", description: "Explore GT Drive electric scooters, dealership opportunities and service support across India.",
+    url: "https://gtdrivepro.com/",
+  },
+  twitter: { card: "summary_large_image", title: "GT Drive electric scooters", description: "Electric scooters engineered and built in India." },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -35,6 +43,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Nav />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org", "@type": "Organization", name: "GT Drive", legalName: "Houstan Innovations LLP", url: "https://gtdrivepro.com", email: "info@gtdrivepro.com", telephone: "+91 9811712171", sameAs: ["https://www.instagram.com/gtdrivepro/", "https://www.facebook.com/p/GT-DRIVE-PRO-61587639792258/"],
+        }) }} />
       </body>
     </html>
   );
