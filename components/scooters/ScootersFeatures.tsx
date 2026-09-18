@@ -114,7 +114,7 @@ export function ScootersFeatures({
               >
                 {hotspots.map((h) => {
                   const isActive = activeId === h.id;
-                  return isActive ? (
+                  return (
                     <line
                       key={h.id}
                       x1={h.side === "left" ? h.label.x + 14 : h.label.x - 14}
@@ -125,8 +125,9 @@ export function ScootersFeatures({
                       strokeWidth={isActive ? "0.32" : "0.24"}
                       strokeOpacity={isActive ? 1 : 0.78}
                       strokeDasharray="0.8 0.45"
+                      className={isActive ? "block" : "hidden md:block"}
                     />
-                  ) : null;
+                  );
                 })}
               </svg>
 
@@ -158,12 +159,12 @@ export function ScootersFeatures({
               {/* labels */}
               {hotspots.map((h) => {
                 const isActive = activeId === h.id;
-                return isActive ? (
+                return (
                   <div
                     key={`label-${h.id}`}
                     className={`absolute z-[3] max-w-[165px] rounded-md bg-white/95 px-3 py-2 shadow-[0_4px_14px_rgba(17,17,17,0.08)] backdrop-blur-sm transition-opacity ${
                       h.side === "left" ? "-translate-x-0" : "-translate-x-full"
-                    } ${isActive ? "opacity-100" : "opacity-90"}`}
+                    } ${isActive ? "block opacity-100" : "hidden opacity-90 md:block"}`}
                     style={{
                       left: `${h.label.x}%`,
                       top: `${h.label.y}%`,
@@ -187,7 +188,7 @@ export function ScootersFeatures({
                       {h.body}
                     </p>
                   </div>
-                ) : null;
+                );
               })}
             </div>
           </div>
