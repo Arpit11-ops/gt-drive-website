@@ -41,6 +41,45 @@ export function ScootersHero({
   const lead = parts.slice(0, -1).join(" ");
   const highlight = parts[parts.length - 1];
 
+  if (video) {
+    return (
+      <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-black text-white">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          src={asset(video)}
+          poster={asset(image)}
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+          disableRemotePlayback
+          preload="auto"
+          aria-label={alt}
+        />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10" />
+        <div className="relative z-10 flex min-h-[calc(100svh-5rem)] items-end px-6 pb-10 md:px-12 md:pb-14 lg:px-16 lg:pb-16">
+          <div className="max-w-2xl">
+            <p className="mb-4 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-white/75">
+              <span className="font-display text-[15px] font-extrabold italic leading-none text-[var(--color-green)]">01</span>
+              <span className="h-[2px] w-6 bg-[var(--color-green)]" />
+              {kicker}
+            </p>
+            <h1 className="font-display text-[clamp(52px,10vw,144px)] font-extrabold uppercase leading-[0.86] tracking-[-0.055em] text-white">
+              {lead && <>{lead} </>}
+              <span className="text-[var(--color-green)]">{highlight}.</span>
+            </h1>
+            <p className="mt-5 max-w-md whitespace-pre-line text-[15px] leading-relaxed text-white/80 md:text-base">{tagline}</p>
+            <Link href={cta.href} className="mt-7 inline-flex h-11 items-center gap-2 rounded-full bg-[var(--color-green)] px-5 text-[12px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)]">
+              {cta.label}
+              <ArrowRight size={15} weight="bold" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="relative isolate overflow-hidden bg-white pt-20">
       <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-[var(--container-page)] grid-cols-1 md:grid-cols-12">

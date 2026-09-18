@@ -114,7 +114,7 @@ export function ScootersFeatures({
               >
                 {hotspots.map((h) => {
                   const isActive = activeId === h.id;
-                  return (
+                  return isActive ? (
                     <line
                       key={h.id}
                       x1={h.side === "left" ? h.label.x + 14 : h.label.x - 14}
@@ -126,7 +126,7 @@ export function ScootersFeatures({
                       strokeOpacity={isActive ? 1 : 0.78}
                       strokeDasharray="0.8 0.45"
                     />
-                  );
+                  ) : null;
                 })}
               </svg>
 
@@ -137,10 +137,8 @@ export function ScootersFeatures({
                   <button
                     key={`dot-${h.id}`}
                     type="button"
-                    onMouseEnter={() => setActiveId(h.id)}
-                    onMouseLeave={() => setActiveId(null)}
-                    onFocus={() => setActiveId(h.id)}
-                    onBlur={() => setActiveId(null)}
+                    onClick={() => setActiveId((current) => (current === h.id ? null : h.id))}
+                    aria-expanded={isActive}
                     aria-label={h.title}
                     className="absolute z-[2] -translate-x-1/2 -translate-y-1/2 outline-none"
                     style={{ left: `${h.dot.x}%`, top: `${h.dot.y}%` }}
@@ -160,11 +158,9 @@ export function ScootersFeatures({
               {/* labels */}
               {hotspots.map((h) => {
                 const isActive = activeId === h.id;
-                return (
+                return isActive ? (
                   <div
                     key={`label-${h.id}`}
-                    onMouseEnter={() => setActiveId(h.id)}
-                    onMouseLeave={() => setActiveId(null)}
                     className={`absolute z-[3] max-w-[165px] rounded-md bg-white/95 px-3 py-2 shadow-[0_4px_14px_rgba(17,17,17,0.08)] backdrop-blur-sm transition-opacity ${
                       h.side === "left" ? "-translate-x-0" : "-translate-x-full"
                     } ${isActive ? "opacity-100" : "opacity-90"}`}
@@ -191,7 +187,7 @@ export function ScootersFeatures({
                       {h.body}
                     </p>
                   </div>
-                );
+                ) : null;
               })}
             </div>
           </div>

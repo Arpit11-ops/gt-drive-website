@@ -139,7 +139,14 @@ export const models: ScooterModel[] = [
   },
   {
     slug: "gt-drive-pro", name: "GT - DRIVE PRO", shortName: "GT Drive Pro",
-    image: "/assets/gt-drive/gt-drive-pro-real.webp",
+    image: "/assets/gt-drive/gallery/gt-drive-pro-side.webp",
+    sectionImages: {
+      hero: "/assets/gt-drive/gallery/gt-drive-pro-side.webp",
+      specifications: "/assets/gt-drive/gallery/gt-drive-pro-front.webp",
+      details: "/assets/gt-drive/gallery/gt-drive-pro-side.webp",
+      features: "/assets/gt-drive/gallery/gt-drive-pro-side.webp",
+    },
+    gallery: ["/assets/gt-drive/gallery/gt-drive-pro-side.webp", "/assets/gt-drive/gallery/gt-drive-pro-front.webp"],
     lead: "The flagship Drive Pro. Every GT Drive feature, in a single machine.",
     colors: ["Color may vary depending on availability"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },

@@ -37,16 +37,24 @@ try {
     for (const [slug, family, ids] of cases) {
       const response = await page.goto("http://127.0.0.1:3022" + prefix + "/models/" + slug + "/", { waitUntil: "networkidle" });
       assert.equal(response.status(), 200);
+      if (slug !== "gt-chetak") {
+        const featureDetail = page.getByText("All essential ride info at a glance.", { exact: true });
+        assert.equal(await featureDetail.count(), 0, slug + " feature detail should start hidden");
+        await page.getByRole("button", { name: "Digital Display" }).click();
+        assert.equal(await featureDetail.count(), 1, slug + " feature detail did not open on click");
+      }
+      if (slug === "gt-flying") assert.equal(await page.locator("video").count(), 1, "GT Flying video hero missing");
       const sections = page.locator("main > section");
       const count = family || slug === "gt-drive-pro" ? 4 : 1;
       for (let i = 0; i < count; i++) {
         const section = sections.nth(i);
         await section.scrollIntoViewIfNeeded();
-        const photo = section.locator("img").first();
-        await photo.evaluate(img => img.decode());
-        assert(await photo.evaluate(img => img.naturalWidth > 0), slug + " broken image");
+        const photo = section.locator("img, video").first();
+        await photo.evaluate(media => media.tagName === "IMG" ? media.decode() : new Promise(resolve => media.readyState >= 2 ? resolve() : media.addEventListener("loadeddata", resolve, { once: true })));
+        assert(await photo.evaluate(media => media.tagName === "VIDEO" ? media.videoWidth > 0 : media.naturalWidth > 0), slug + " broken media");
         if (family) {
-          assert.equal(await photo.getAttribute("src"), prefix + "/assets/gt-drive/cleaned/" + family + "_IMG_" + ids[i] + "_clean.webp");
+          const expected = prefix + "/assets/gt-drive/cleaned/" + family + "_IMG_" + ids[i] + "_clean.webp";
+          assert.equal(await photo.getAttribute(i === 0 && slug === "gt-flying" ? "poster" : "src"), expected);
           assert.equal(new Set(ids).size, 4);
         }
         await section.screenshot({ path: "artifacts/product-angle-audit/" + slug + "-" + width + "-section-" + (i + 1) + ".png" });

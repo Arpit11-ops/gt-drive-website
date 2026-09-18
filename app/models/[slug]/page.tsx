@@ -82,6 +82,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
         name={model.shortName}
         tagline={model.lead}
         image={heroImage}
+        video={model.slug === "gt-flying" ? "/assets/gt-drive/video/gt-flying-hero.mp4" : undefined}
         alt={`${model.shortName} electric scooter, ${views ? "right-facing side profile" : "front and side views"}`}
         cta={{ href: "/contact/", label: "Book a Test Ride" }}
         secondary={{ href: "/models/", label: "Explore All Models" }}
