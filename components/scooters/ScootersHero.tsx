@@ -45,7 +45,7 @@ export function ScootersHero({
     return (
       <section className="relative isolate min-h-[100svh] overflow-hidden bg-[#dfe5e7] text-white">
         <video
-          className="absolute inset-0 h-full w-full object-contain object-center"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           src={asset(video)}
           poster={asset(image)}
           autoPlay
