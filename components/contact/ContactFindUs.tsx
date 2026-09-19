@@ -52,8 +52,8 @@ export function ContactFindUs() {
             Find Us
           </p>
           <h2 className="mt-4 font-display text-[clamp(30px,3.6vw,50px)] font-extrabold uppercase leading-[1.05] tracking-[-0.035em] text-[var(--color-ink)]">
-            <span className="block">We&apos;re here.</span>
-            <span className="block text-[var(--color-green)]">Let&apos;s meet.</span>
+            <span className="block">Find the GT Drive</span>
+            <span className="block text-[var(--color-green)]">team near you.</span>
           </h2>
           <div className="mt-5 flex items-center gap-2">
             <span className="h-[3px] w-[110px] bg-[var(--color-green)]" />

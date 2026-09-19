@@ -22,8 +22,9 @@ export function AboutHero() {
           </div>
 
           <p className="mt-8 max-w-md text-[15px] leading-relaxed text-[var(--color-body)] md:text-base">
-            GT Drive is India&apos;s trusted electric two-wheeler brand committed to a cleaner
-            tomorrow through innovation, quality and sustainability.
+            GT Drive is the electric two-wheeler brand of Houstan Innovations LLP, headquartered in
+            Greater Noida. We are building electric scooters backed by in-house battery capabilities,
+            strong manufacturing infrastructure and a growing network across India.
           </p>
 
           <div className="mt-10">

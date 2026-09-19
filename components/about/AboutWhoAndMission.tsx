@@ -19,15 +19,15 @@ export function AboutWhoAndMission() {
               <p className="mt-6 max-w-md text-[14px] leading-relaxed text-[var(--color-body)]">
                 GT Drive, a brand of{" "}
                 <span className="font-semibold text-[var(--color-green-deep)]">Houstan Innovations LLP</span>
-                , headquartered in Greater Noida, is building India&apos;s future of mobility with smart
-                electric scooters, cutting-edge technology and a strong nationwide network.
+                , headquartered in Greater Noida, is building electric scooters backed by in-house
+                battery capabilities, strong manufacturing infrastructure and a growing network across India.
               </p>
               <div className="mt-8">
                 <Link
                   href="#manufacturing"
                   className="group inline-flex h-10 items-center gap-2 rounded-full border border-[var(--color-ink)] px-5 text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-white"
                 >
-                  Know More
+                  See How We Build
                   <ArrowRight size={13} weight="bold" className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
@@ -88,8 +88,7 @@ export function AboutWhoAndMission() {
                 </h3>
                 <p className="mt-4 max-w-[200px] text-[12.5px] leading-relaxed text-[var(--color-body)]">
                   To build a trusted Indian electric mobility brand with a strong product,
-                  manufacturing and dealership ecosystem that makes EV adoption simpler and more
-                  accessible.
+                  manufacturing and dealership ecosystem that makes EV adoption simpler and more accessible.
                 </p>
               </div>
             </div>

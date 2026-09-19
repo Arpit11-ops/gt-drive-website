@@ -55,7 +55,7 @@ export const models: ScooterModel[] = [
       features: "/assets/gt-drive/cleaned/GT_SOUL_IMG_4014_clean.webp",
     },
     gallery: ["/assets/gt-drive/cleaned/GT_SOUL_IMG_4014_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_IMG_4016_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_IMG_4020_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_IMG_4018_clean.webp", "/assets/gt-drive/cleaned/Soul_IMG_4054_clean.webp", "/assets/gt-drive/cleaned/Soul_IMG_4057_clean.webp", "/assets/gt-drive/cleaned/Soul_IMG_4051_clean.webp", "/assets/gt-drive/cleaned/Soul_IMG_4055_clean.webp"],
-    lead: "The everyday Soul. Three colours, one dependable ride.",
+    lead: "A dependable everyday scooter, available in three versatile colours.",
     colors: ["White", "Black", "Grey"], specs: commonSpecs("90-100 - 10"), features: sharedFeatures,
   },
   {
@@ -68,7 +68,7 @@ export const models: ScooterModel[] = [
       features: "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4032_clean.webp",
     },
     gallery: ["/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4026_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4032_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4034_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4028_clean.webp"],
-    lead: "The Soul NXT. Same Soul foundation, sharper city stance.",
+    lead: "The practical Soul platform with a sharper, more contemporary city stance.",
     colors: ["White", "Black", "Grey"], specs: commonSpecs("90-100 - 10"), features: sharedFeatures,
   },
   {
@@ -81,7 +81,7 @@ export const models: ScooterModel[] = [
       features: "/assets/gt-drive/cleaned/Flying_ryd_IMG_4096_clean.webp",
     },
     gallery: ["/assets/gt-drive/cleaned/Flying_ryd_IMG_4096_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4097_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4099_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4090_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4088_clean.webp"],
-    lead: "The RYD. Six colours across the widest palette in the range.",
+    lead: "An easygoing city scooter with the widest colour palette in the GT Drive range.",
     colors: ["White", "Black", "Orange", "Honda Grey", "Maroon/White", "Silver Grey"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
@@ -94,7 +94,7 @@ export const models: ScooterModel[] = [
       features: "/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4077_clean.webp",
     },
     gallery: ["/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4077_clean.webp", "/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4078_clean.webp", "/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4079_clean.webp", "/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4076_clean.webp", "/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4074_clean.webp"],
-    lead: "The RYD Plus. Five colours, planted stance, everyday range.",
+    lead: "A planted stance, five colour choices and the practicality your daily ride needs.",
     colors: ["White", "Black", "Honda Grey", "Orange", "Silver Grey"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
@@ -107,7 +107,7 @@ export const models: ScooterModel[] = [
       features: "/assets/gt-drive/cleaned/Flying_plus_IMG_4063_clean.webp",
     },
     gallery: ["/assets/gt-drive/cleaned/Flying_plus_IMG_4063_clean.webp", "/assets/gt-drive/cleaned/Flying_plus_IMG_4065_clean.webp", "/assets/gt-drive/cleaned/Flying_plus_IMG_4064_clean.webp", "/assets/gt-drive/cleaned/Flying_plus_IMG_4066_clean.webp"],
-    lead: "The One Plus. Compact, contemporary, three-colour lineup.",
+    lead: "Compact proportions and contemporary styling for everyday city movement.",
     note: "Model code will be confirmed ahead of launch.",
     colors: ["Green", "Black", "Grey"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
@@ -121,7 +121,7 @@ export const models: ScooterModel[] = [
       features: "/assets/gt-drive/cleaned/Champion_IMG_4043_clean.webp",
     },
     gallery: ["/assets/gt-drive/cleaned/Champion_IMG_4043_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4044_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4047_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4045_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4046_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4048_clean.webp"],
-    lead: "The Champion. Extra-long wheelbase, five colour options.",
+    lead: "An extra-long wheelbase and five distinctive colour options for a confident road presence.",
     colors: ["Matte Shale Green/Black", "Matte Coffee Brown/Black", "Tyrant Gold/Black", "White/Black", "Black"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
@@ -134,7 +134,7 @@ export const models: ScooterModel[] = [
       features: "/assets/gt-drive/cleaned/Flying_E4_IMG_4002_clean.webp",
     },
     gallery: ["/assets/gt-drive/cleaned/Flying_E4_IMG_4002_clean.webp", "/assets/gt-drive/cleaned/Flying_E4_IMG_4004_clean.webp", "/assets/gt-drive/cleaned/Flying_E4_IMG_4003_clean.webp", "/assets/gt-drive/cleaned/Flying_E4_IMG_4006_clean.webp", "/assets/gt-drive/cleaned/Flying_E4_IMG_4005_clean.webp"],
-    lead: "The Flying. Five bold two-tone finishes and a sporty stance.",
+    lead: "Sporty proportions and five bold two-tone finishes made to stand out in the city.",
     colors: ["Red/Black", "Peacock Blue/Black", "Orange/Black", "Silver Grey/Black", "Yellow/Black"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
@@ -147,13 +147,13 @@ export const models: ScooterModel[] = [
       features: "/assets/gt-drive/gallery/gt-drive-pro-side.webp",
     },
     gallery: ["/assets/gt-drive/gallery/gt-drive-pro-side.webp", "/assets/gt-drive/gallery/gt-drive-pro-front.webp"],
-    lead: "The flagship Drive Pro. Every GT Drive feature, in a single machine.",
+    lead: "The flagship GT Drive experience, bringing the range’s key features together in one scooter.",
     colors: ["Color may vary depending on availability"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
     slug: "gt-chetak", name: "GT - CHETAK", shortName: "GT Chetak",
     image: "/assets/gt-drive/gt-chetak.webp",
-    lead: "The Chetak. Next on the road — full details closer to launch.", status: "coming-soon",
+    lead: "Coming soon. Full specifications, colours and availability will be announced closer to launch.", status: "coming-soon",
     colors: ["Color may vary depending on availability"], specs: [],
     features: ["Eco Friendly", "Safe and Reliable", "Zero Pollution", "Long Range"],
   },

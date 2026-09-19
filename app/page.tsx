@@ -10,7 +10,7 @@ import { ContactClose } from "@/components/ContactClose";
 export const metadata: Metadata = {
   title: "GT Drive — Electric two-wheeler brand from Houstan Innovations LLP",
   description:
-    "Explore the GT Drive electric scooter range — GT Flying leads a lineup designed for the city and built for the future.",
+    "Discover GT Drive electric scooters for everyday city travel, led by the sporty GT Flying.",
 };
 
 export default function HomePage() {
@@ -23,7 +23,7 @@ export default function HomePage() {
     <>
       <ScootersHero
         name={name}
-        tagline={"Designed for the city.\nBuilt for the future."}
+        tagline={"Built for everyday city rides.\nReady for what’s next."}
         image={image}
         video="/assets/gt-drive/video/gt-flying-hero-2026.mp4"
         alt={`${name} electric scooter`}

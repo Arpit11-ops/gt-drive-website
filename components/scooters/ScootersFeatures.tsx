@@ -20,7 +20,7 @@ const hotspots: Hotspot[] = [
   {
     id: "digital-display",
     title: "Digital Display",
-    body: "All essential ride info at a glance.",
+    body: "Speed, charge and key ride information in one clear view.",
     // Side-profile studio views place the display just below the handlebar cluster.
     dot: { x: 39, y: 20 },
     label: { x: 2, y: 6 },
@@ -29,7 +29,7 @@ const hotspots: Hotspot[] = [
   {
     id: "led-headlamp",
     title: "LED Headlamp",
-    body: "High visibility for safer rides.",
+    body: "Clear, focused illumination for better visibility after dark.",
     // The lamp sits on the leading edge of the front cowl, above the front wheel.
     dot: { x: 31, y: 27 },
     label: { x: 2, y: 44 },
@@ -38,7 +38,7 @@ const hotspots: Hotspot[] = [
   {
     id: "front-disc-brake",
     title: "Front Disc Brake",
-    body: "Better control, greater safety.",
+    body: "Confident braking response when city traffic changes quickly.",
     // The disc and caliper are visible at the centre of the front wheel.
     dot: { x: 18, y: 76 },
     label: { x: 2, y: 82 },
@@ -47,7 +47,7 @@ const hotspots: Hotspot[] = [
   {
     id: "spacious-seat",
     title: "Spacious Seat",
-    body: "Comfortable for you and your pillion.",
+    body: "Room for a more comfortable ride, with or without a pillion.",
     dot: { x: 68, y: 35 },
     label: { x: 98, y: 12 },
     side: "right",
@@ -55,7 +55,7 @@ const hotspots: Hotspot[] = [
   {
     id: "large-storage",
     title: "Large Storage",
-    body: "More space for your everyday needs.",
+    body: "Useful space for the things you carry through the day.",
     dot: { x: 78, y: 57 },
     label: { x: 98, y: 64 },
     side: "right",
@@ -89,7 +89,7 @@ export function ScootersFeatures({
             </h2>
             <span className="mt-5 block h-[3px] w-16 bg-[var(--color-green)]" />
             <p className="mt-6 max-w-xs text-[13.5px] leading-relaxed text-[var(--color-body)]">
-              Hover / Tap on the scooter to explore its features.
+              Select a hotspot to see how each feature supports your everyday ride.
             </p>
           </div>
 

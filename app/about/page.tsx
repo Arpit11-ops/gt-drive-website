@@ -9,7 +9,7 @@ import { ContactClose } from "@/components/ContactClose";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About GT Drive and Houstan Innovations LLP — an Indian electric two-wheeler brand headquartered in Greater Noida, with manufacturing across five states and a nine-model catalogue.",
+    "GT Drive is the electric two-wheeler brand of Houstan Innovations LLP, headquartered in Greater Noida, with in-house battery capabilities, strong manufacturing infrastructure and a growing network across India.",
 };
 
 export default function AboutPage() {

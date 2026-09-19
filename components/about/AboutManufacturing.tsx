@@ -9,10 +9,10 @@ type Pillar = {
 };
 
 const pillars: Pillar[] = [
-  { Icon: Factory, title: "Advanced\nManufacturing\nFacility" },
-  { Icon: BatteryCharging, title: "In-House\nBattery\nCapability" },
-  { Icon: Gear, title: "R&D\nTechnology\nInnovation" },
-  { Icon: ShieldCheck, title: "Quality & Safety\nAt Every\nStep" },
+  { Icon: Factory, title: "Advanced\nManufacturing" },
+  { Icon: BatteryCharging, title: "In-House\nLithium Battery" },
+  { Icon: Gear, title: "Wide Dealer\nNetwork" },
+  { Icon: ShieldCheck, title: "Reliable Service\nSupport" },
 ];
 
 export function AboutManufacturing() {
@@ -27,7 +27,8 @@ export function AboutManufacturing() {
               Manufacturing Excellence
             </h2>
             <p className="mt-6 max-w-md text-[14px] leading-relaxed text-[var(--color-body)]">
-              In-house capability. Advanced technology. Built for India. Made for the future.
+              In-house lithium battery capability, advanced manufacturing, a wide dealer network
+              and reliable service support—built to serve riders across India.
             </p>
 
             {/* 4 icon pillars in a row */}

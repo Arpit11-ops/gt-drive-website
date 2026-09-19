@@ -11,19 +11,19 @@ const cards: Card[] = [
   {
     Icon: BatteryHigh,
     title: "Lithium-ion Battery",
-    body: "High performance and longer life.",
+    body: "Designed for consistent performance across everyday rides.",
     visual: "battery",
   },
   {
     Icon: Lightning,
     title: "Powerful Motor",
-    body: "Instant torque for a smooth ride.",
+    body: "Responsive pickup and smooth power delivery in city traffic.",
     visual: "motor",
   },
   {
     Icon: Cpu,
     title: "Smart BMS",
-    body: "Intelligent protection for better efficiency.",
+    body: "Monitors key battery functions to support safety and efficiency.",
     visual: "bms",
   },
 ];
@@ -124,7 +124,7 @@ export function ScootersTechnology() {
             </h2>
             <span className="mt-5 block h-[3px] w-16 bg-[var(--color-green)]" />
             <p className="mt-6 max-w-xs text-[13.5px] leading-relaxed text-[var(--color-body)]">
-              Advanced battery and motor technology delivering efficiency, reliability and power.
+              Battery, motor and management systems designed to work together for a smooth, dependable ride.
             </p>
           </div>
 

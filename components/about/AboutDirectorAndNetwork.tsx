@@ -48,12 +48,12 @@ export function AboutDirectorAndNetwork() {
               <Quotes size={38} weight="fill" className="mt-8 text-[var(--color-green)]" />
 
               <p className="mt-4 max-w-md text-[13.5px] leading-relaxed text-[var(--color-body)]">
-                At GT Drive, our vision is simple yet powerful — to build a cleaner, smarter and
-                more sustainable India through electric mobility.
+                We started GT Drive with a clear purpose: make electric mobility practical for
+                more people and more businesses across India.
               </p>
               <p className="mt-4 max-w-md text-[13.5px] leading-relaxed text-[var(--color-body)]">
-                We are driven by innovation, guided by responsibility and committed to creating
-                value for our customers, partners and society.
+                That means building products people can use with confidence and partnerships that
+                continue long after a scooter leaves the showroom.
               </p>
 
               {/* signature (script placeholder — swap for a real signature SVG later) */}
@@ -91,7 +91,7 @@ export function AboutDirectorAndNetwork() {
             </h2>
 
             <p className="mt-4 max-w-md text-[13px] leading-relaxed text-[var(--color-body)]">
-              A robust network that powers our presence and brings GT Drive closer to you.
+              Sales, service and channel partners help bring GT Drive closer to riders across India.
             </p>
 
             {/* 2×2 stat grid */}

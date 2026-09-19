@@ -15,17 +15,17 @@ const pillars: Pillar[] = [
   {
     Icon: Megaphone,
     title: "Marketing Support",
-    body: "Brand communication, marketing assets and campaign support.",
+    body: "Marketing and branding support for your local market.",
   },
   {
     Icon: GraduationCap,
     title: "Training",
-    body: "Product and process training for you and your team.",
+    body: "Training and operational guidance for you and your team.",
   },
   {
     Icon: Wrench,
     title: "Sales & Service Support",
-    body: "Guidance and support across sales and after-sales operations.",
+    body: "Service and technical support across sales and after-sales operations.",
   },
 ];
 

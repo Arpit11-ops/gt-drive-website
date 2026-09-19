@@ -8,7 +8,7 @@ import { DealerApplicationForm } from "@/components/dealers/DealerApplicationFor
 export const metadata: Metadata = {
   title: "Join Dealership",
   description:
-    "Bring GT Drive to your city. Partner with us and build your business in India's growing electric mobility market — product, marketing, training and after-sales support included.",
+    "Apply for a GT Drive dealership and build your electric mobility business with product, training, marketing and after-sales support.",
 };
 
 export default function DealersPage() {

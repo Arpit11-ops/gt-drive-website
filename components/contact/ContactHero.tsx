@@ -25,8 +25,8 @@ export function ContactHero() {
           </div>
 
           <p className="mt-8 max-w-sm text-[15px] leading-relaxed text-[var(--color-body)]">
-            We&apos;re here to listen,<br />
-            help and drive you forward.
+            Questions about a scooter, dealership or service?<br />
+            Start with the team that can help.
           </p>
         </div>
 

@@ -8,7 +8,7 @@ import { ContactClose } from "@/components/ContactClose";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact GT Drive — call, WhatsApp or email us, or find the head office and plant locations across India.",
+    "Call, WhatsApp or email GT Drive about scooters, dealerships, fleet enquiries, service partnerships or media requests.",
 };
 
 export default function ContactPage() {

@@ -34,10 +34,10 @@ export function ContactChoices() {
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="text-center">
           <p className="text-[11px] font-bold tracking-[0.24em] text-[var(--color-green-deep)] uppercase">
-            Choose Your Way
+            Contact GT Drive
           </p>
           <h2 className="mx-auto mt-4 max-w-2xl font-display text-[clamp(28px,3.2vw,44px)] font-extrabold uppercase leading-[1.05] tracking-[-0.03em] text-[var(--color-ink)]">
-            We&apos;re just a <span className="text-[var(--color-green)]">message</span> away.
+            Choose the <span className="text-[var(--color-green)]">quickest way</span> to reach us.
           </h2>
         </div>
 

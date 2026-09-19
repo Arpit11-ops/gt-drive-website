@@ -153,7 +153,7 @@ export function Nav() {
             className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-[var(--color-ink)] px-6 py-3 text-[13px] font-bold text-white shadow-lg transition-shadow hover:shadow-xl"
           >
             <span className="absolute inset-0 origin-left scale-x-0 bg-[var(--color-green-deep)] transition-transform duration-300 group-hover:scale-x-100" />
-            <span className="relative z-10">Contact Us</span>
+            <span className="relative z-10">Talk to Us</span>
             <ArrowRight className="relative z-10 transition-transform group-hover:translate-x-1" size={14} weight="bold" />
           </Link>
         </div>
@@ -232,7 +232,7 @@ export function Nav() {
             className="group relative mt-8 flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-[var(--color-ink)] px-8 py-4 text-[15px] font-bold text-white shadow-xl"
           >
             <span className="absolute inset-0 origin-left scale-x-0 bg-[var(--color-green-deep)] transition-transform duration-300 group-hover:scale-x-100" />
-            <span className="relative z-10">Contact Us</span>
+            <span className="relative z-10">Talk to Us</span>
             <ArrowRight className="relative z-10" size={16} weight="bold" />
           </Link>
 

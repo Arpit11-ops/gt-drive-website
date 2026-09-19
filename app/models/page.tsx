@@ -9,7 +9,7 @@ import { models } from "@/lib/models";
 
 export const metadata: Metadata = {
   title: "Electric scooter range",
-  description: "Explore every GT Drive electric scooter — full specifications, features and colour options across the range.",
+  description: "Compare GT Drive electric scooters by specifications, features and available colours.",
 };
 
 export default function ModelsPage() {
@@ -27,16 +27,16 @@ export default function ModelsPage() {
               className="block text-[var(--color-green)]"
               delay={140}
             >
-              The full range.
+              Find your GT Drive.
             </MaskReveal>
           </>
         }
-        lead="The full GT Drive range. Nine scooters in production, one on the way — with complete specifications, features and real colour options for each."
+        lead="Compare the complete GT Drive range by design, features, specifications and available colours—then choose the scooter that fits your everyday ride."
       />
       <section className="mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-16 md:px-10 md:pb-36 md:pt-24">
         <div className="mb-12 flex flex-col justify-between gap-8 border-y border-black/10 py-5 text-sm md:mb-16 md:flex-row md:items-center">
           <p className="max-w-md leading-[1.55] text-[var(--color-body)]">
-            One range, tuned for different kinds of everyday movement.
+            From short daily errands to longer city commutes, there is a GT Drive built for the way you move.
           </p>
           <div className="flex items-center gap-8 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)]">
             <span>models</span>

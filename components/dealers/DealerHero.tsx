@@ -19,7 +19,7 @@ export function DealerHero() {
           </h1>
 
           <p className="mt-8 max-w-md text-[15px] leading-relaxed text-[var(--color-body)] md:text-base">
-            Partner with GT Drive and build your business in the growing electric mobility market.
+            Partner with GT Drive and be a part of India&apos;s growing electric mobility revolution.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
@@ -27,7 +27,7 @@ export function DealerHero() {
               href="#dealer-apply"
               className="group inline-flex h-12 items-center gap-2 rounded-full bg-[var(--color-green)] px-6 text-[13px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)]"
             >
-              Apply for Dealership
+              Apply for a Dealership
               <ArrowRight size={15} weight="bold" className="transition-transform group-hover:translate-x-1" />
             </Link>
             <a

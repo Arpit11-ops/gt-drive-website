@@ -10,7 +10,7 @@ export function ContactFinalCTA() {
           className="mx-auto mb-5 text-[var(--color-green)]"
         />
         <h2 className="font-display text-[clamp(22px,2.6vw,34px)] font-extrabold uppercase leading-[1.1] tracking-[-0.025em] text-[var(--color-ink)]">
-          Have a question? <span className="text-[var(--color-green)]">We&apos;re here.</span>
+          Not sure where to start? <span className="text-[var(--color-green)]">Send us a message.</span>
         </h2>
       </div>
     </section>
