@@ -21,6 +21,7 @@ export function Nav() {
   const mobileButtonRef = useRef<HTMLButtonElement>(null);
   const modelsOpenBeforePointerDownRef = useRef(false);
   const pathname = usePathname();
+  const isHome = pathname === "/";
   const previousPathname = useRef(pathname);
 
   const closeAll = useCallback(() => {
@@ -84,6 +85,8 @@ export function Nav() {
       <header
         ref={headerRef}
         className={`fixed inset-x-0 top-0 z-50 h-20 border-b transition-all duration-300 ${
+          isHome && !scrolled && !modelsOpen && !mobileOpen ? "opacity-0" : "translate-y-0 opacity-100"
+        } ${
           scrolled || modelsOpen
             ? "border-black/[0.06] bg-white/90 shadow-[0_8px_35px_rgba(20,30,24,0.08)] backdrop-blur-xl"
             : "border-white/30 bg-white/45 shadow-[0_4px_30px_rgba(0,0,0,0.035)] backdrop-blur-md"
