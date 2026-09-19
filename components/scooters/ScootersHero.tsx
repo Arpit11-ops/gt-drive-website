@@ -58,18 +58,18 @@ export function ScootersHero({
           aria-label={alt}
         />
         <div aria-hidden className="absolute inset-0 bg-[linear-gradient(135deg,rgba(250,252,252,0.72)_0%,rgba(250,252,252,0.34)_20%,transparent_42%),linear-gradient(to_top,rgba(0,0,0,0.2),transparent_38%)]" />
-        <div className="relative z-10 flex min-h-[100svh] items-start px-5 pt-24 md:px-10 md:pt-28 lg:px-14 lg:pt-32">
-          <div className="max-w-[12.5rem] rounded-lg border border-white/45 bg-white/35 p-3 shadow-[0_10px_24px_rgba(17,17,17,0.05)] backdrop-blur-[2px] md:max-w-[14rem] md:p-3.5">
+        <div className="relative z-10 flex min-h-[100svh] items-end px-4 pb-6 md:items-start md:px-10 md:pb-0 md:pt-28 lg:px-14 lg:pt-32">
+          <div className="ml-auto max-w-[11rem] rounded-lg border border-white/45 bg-white/35 p-2.5 shadow-[0_10px_24px_rgba(17,17,17,0.05)] backdrop-blur-[2px] md:ml-0 md:max-w-[14rem] md:p-3.5">
             <p className="mb-1.5 flex items-center gap-2 text-[8px] font-bold uppercase tracking-[0.18em] text-[var(--color-green-deep)]">
               <span className="h-px w-4 bg-[var(--color-green)]" />
               {kicker}
             </p>
-            <h1 className="font-display text-[clamp(29px,3.25vw,48px)] font-extrabold uppercase leading-[0.88] tracking-[-0.055em] text-[var(--color-ink)]">
+            <h1 className="font-display text-[clamp(26px,3.25vw,48px)] font-extrabold uppercase leading-[0.88] tracking-[-0.055em] text-[var(--color-ink)]">
               {lead && <>{lead} </>}
               <span className="text-[var(--color-green)]">{highlight}.</span>
             </h1>
-            <p className="mt-2 max-w-[11rem] whitespace-pre-line text-[10px] leading-relaxed text-[var(--color-body)] md:text-[11px]">{tagline}</p>
-            <Link href={cta.href} className="mt-3 inline-flex h-8 items-center gap-1.5 rounded-full bg-[var(--color-green)] px-3 text-[9px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)]">
+            <p className="mt-2 hidden max-w-[11rem] whitespace-pre-line text-[10px] leading-relaxed text-[var(--color-body)] sm:block md:text-[11px]">{tagline}</p>
+            <Link href={cta.href} className="mt-2 inline-flex h-7 items-center gap-1.5 rounded-full bg-[var(--color-green)] px-2.5 text-[8px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)] sm:mt-3 md:h-8 md:px-3 md:text-[9px]">
               {cta.label}
               <ArrowRight size={15} weight="bold" />
             </Link>
