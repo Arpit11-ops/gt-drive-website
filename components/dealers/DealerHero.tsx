@@ -62,11 +62,6 @@ export function DealerHero() {
             sizes="(max-width: 768px) 100vw, 60vw"
             className="object-cover object-center"
           />
-          {/* soft fade into left copy column on desktop */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 hidden w-40 bg-gradient-to-r from-white to-transparent md:block"
-          />
         </div>
       </div>
     </section>
