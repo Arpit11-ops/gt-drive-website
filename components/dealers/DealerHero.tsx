@@ -55,8 +55,8 @@ export function DealerHero() {
         {/* RIGHT — showroom image */}
         <div className="relative col-span-1 min-h-[360px] md:col-span-6 md:min-h-0">
           <Image
-            src={asset("/assets/gt-drive/gt-drive-hero-showroom-ai-v1.webp")}
-            alt="GT Drive showroom with electric scooter lineup"
+            src={asset("/assets/gt-drive/dealer-banner.jpeg")}
+            alt="GT Drive dealership partnership"
             fill
             priority
             sizes="(max-width: 768px) 100vw, 60vw"

@@ -64,22 +64,8 @@ export function AboutWhoAndMission() {
                 className="pointer-events-none absolute inset-y-2 left-1/2 -translate-x-1/2 w-px bg-[var(--color-line)]"
               />
 
-              {/* MISSION */}
-              <div className="flex flex-col items-center pr-2 text-center">
-                <span className="mb-4 grid h-14 w-14 place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-green)_10%,white)]">
-                  <Target size={26} weight="regular" className="text-[var(--color-green-deep)]" />
-                </span>
-                <h3 className="font-display text-[12px] font-extrabold uppercase tracking-[0.15em] text-[var(--color-green-deep)]">
-                  Our Mission
-                </h3>
-                <p className="mt-4 max-w-[200px] text-[12.5px] leading-relaxed text-[var(--color-body)]">
-                  To make electric mobility more accessible with reliable products, strong technology
-                  and dependable support for riders and business partners across India.
-                </p>
-              </div>
-
               {/* VISION */}
-              <div className="flex flex-col items-center pl-2 text-center">
+              <div className="flex flex-col items-center pr-2 text-center">
                 <span className="mb-4 grid h-14 w-14 place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-green)_10%,white)]">
                   <Eye size={26} weight="regular" className="text-[var(--color-green-deep)]" />
                 </span>
@@ -89,6 +75,20 @@ export function AboutWhoAndMission() {
                 <p className="mt-4 max-w-[200px] text-[12.5px] leading-relaxed text-[var(--color-body)]">
                   To build a trusted Indian electric mobility brand with a strong product,
                   manufacturing and dealership ecosystem that makes EV adoption simpler and more accessible.
+                </p>
+              </div>
+
+              {/* MISSION */}
+              <div className="flex flex-col items-center pl-2 text-center">
+                <span className="mb-4 grid h-14 w-14 place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-green)_10%,white)]">
+                  <Target size={26} weight="regular" className="text-[var(--color-green-deep)]" />
+                </span>
+                <h3 className="font-display text-[12px] font-extrabold uppercase tracking-[0.15em] text-[var(--color-green-deep)]">
+                  Our Mission
+                </h3>
+                <p className="mt-4 max-w-[200px] text-[12.5px] leading-relaxed text-[var(--color-body)]">
+                  To make electric mobility more accessible with reliable products, strong technology
+                  and dependable support for riders and business partners across India.
                 </p>
               </div>
             </div>
