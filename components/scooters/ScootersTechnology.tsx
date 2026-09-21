@@ -1,4 +1,6 @@
 import { BatteryHigh, Cpu, Lightning } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 type Card = {
   Icon: typeof BatteryHigh;
@@ -31,78 +33,42 @@ const cards: Card[] = [
 function TechVisual({ kind }: { kind: Card["visual"] }) {
   if (kind === "battery") {
     return (
-      <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-[#0f1a13] p-4">
-        <div className="relative h-[72%] w-[80%] rounded-md bg-gradient-to-b from-[#1c2a22] to-[#050a07] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-          <div className="absolute inset-x-3 top-3 flex items-center justify-between">
-            <span className="font-display text-[8px] font-bold tracking-[0.22em] text-white/85">GT DRIVE</span>
-            <span className="h-1 w-1 rounded-full bg-[var(--color-green)] shadow-[0_0_6px_var(--color-green)]" />
-          </div>
-          <div className="absolute inset-x-3 top-1/2 -translate-y-1/2 space-y-1">
-            <div className="h-px bg-white/12" />
-            <div className="h-px bg-white/12" />
-            <div className="h-px bg-white/12" />
-          </div>
-          <div className="absolute inset-x-3 bottom-3 text-center">
-            <span className="font-display text-[9px] font-extrabold tracking-[0.18em] text-white">LITHIUM-ION</span>
-          </div>
-        </div>
+      <div className="relative h-full w-full overflow-hidden rounded-lg bg-[#f3f6f4]">
+        <Image
+          src={asset("/assets/gt-drive/technology/gt-drive-battery-clean.png")}
+          alt="GT Drive lithium-ion battery pack"
+          fill
+          sizes="300px"
+          className="object-contain p-3"
+        />
       </div>
     );
   }
 
   if (kind === "motor") {
     return (
-      <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-[#0f1a13] p-4">
-        <div className="relative grid h-[80%] w-[80%] place-items-center rounded-full bg-gradient-to-br from-[#1c2a22] via-[#0a120c] to-[#050a07] shadow-[inset_0_2px_0_rgba(255,255,255,0.08),inset_0_-20px_40px_rgba(0,0,0,0.6)]">
-            <div className="grid h-2/3 w-2/3 place-items-center rounded-full bg-[radial-gradient(circle_at_30%_30%,#2a3a30,#050a07)] shadow-[inset_0_0_20px_rgba(0,0,0,0.7)]">
-              <div className="grid h-1/2 w-1/2 place-items-center rounded-full border border-white/10 bg-black">
-                <Lightning size={18} weight="fill" className="text-[var(--color-green)]" />
-              </div>
-            </div>
-            {/* fin marks */}
-            {[...Array(12)].map((_, i) => (
-              <span
-                key={i}
-                className="absolute inset-0 flex items-start justify-center"
-                style={{ transform: `rotate(${i * 30}deg)` }}
-              >
-                <span className="mt-1.5 h-2 w-px bg-white/20" />
-              </span>
-            ))}
-        </div>
+      <div className="relative h-full w-full overflow-hidden rounded-lg bg-[#f3f6f4]">
+        <Image
+          src={asset("/assets/gt-drive/technology/gt-drive-motor-clean.png")}
+          alt="GT Drive electric hub motor"
+          fill
+          sizes="300px"
+          className="object-contain p-2"
+        />
       </div>
     );
   }
 
   // bms
   return (
-    <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-[#0f1a13] p-4">
-      <div className="relative h-[78%] w-[80%] rounded-md bg-[#0a1410] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-        {/* circuit traces */}
-        <svg
-          aria-hidden
-          viewBox="0 0 100 100"
-          className="absolute inset-0 h-full w-full"
-          preserveAspectRatio="none"
-        >
-          <path d="M8 22 H40 V50 H70 V80 H92" stroke="var(--color-green)" strokeWidth="0.5" strokeOpacity="0.55" fill="none" />
-          <path d="M8 70 H30 V38 H60 V60 H88" stroke="var(--color-green)" strokeWidth="0.5" strokeOpacity="0.35" fill="none" />
-          {[
-            [8, 22],
-            [40, 50],
-            [70, 80],
-            [30, 38],
-            [60, 60],
-            [88, 60],
-          ].map(([x, y], i) => (
-            <circle key={i} cx={x} cy={y} r="1.4" fill="var(--color-green)" />
-          ))}
-        </svg>
-        {/* center chip */}
-        <div className="absolute left-1/2 top-1/2 grid h-[38%] w-[38%] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-md border border-white/10 bg-gradient-to-br from-[#1a2820] to-[#050a07]">
-          <span className="font-display text-[9px] font-extrabold tracking-[0.2em] text-[var(--color-green)]">BMS</span>
-        </div>
-      </div>
+    <div className="relative h-full w-full overflow-hidden rounded-lg bg-[#f3f6f4]">
+      <Image
+        src={asset("/assets/gt-drive/technology/gt-drive-bms-clean.png")}
+        alt="GT Drive smart battery management system"
+        fill
+        sizes="300px"
+        className="object-contain p-3"
+      />
     </div>
   );
 }
