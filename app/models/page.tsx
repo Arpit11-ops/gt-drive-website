@@ -33,7 +33,8 @@ export default function ModelsPage() {
         }
         lead="Compare the complete GT Drive range by design, features, specifications and available colours—then choose the scooter that fits your everyday ride."
       />
-      <section className="mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-16 md:px-10 md:pb-36 md:pt-24">
+      <section className="bg-[var(--color-surface)]">
+        <div className="mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-16 md:px-10 md:pb-36 md:pt-24">
         <div className="mb-12 flex flex-col justify-between gap-8 border-y border-black/10 py-5 text-sm md:mb-16 md:flex-row md:items-center">
           <p className="max-w-md leading-[1.55] text-[var(--color-body)]">
             From short daily errands to longer city commutes, there is a GT Drive built for the way you move.
@@ -50,6 +51,7 @@ export default function ModelsPage() {
               <ModelCard model={model} featured={index === 0} priority={index < 3} />
             </Reveal>
           ))}
+        </div>
         </div>
       </section>
       <TaglineMarquee />

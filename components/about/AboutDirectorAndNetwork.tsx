@@ -34,7 +34,7 @@ const networkDots = [
 
 export function AboutDirectorAndNetwork() {
   return (
-    <section className="bg-white py-20 md:py-24">
+    <section className="bg-[var(--color-surface)] py-20 md:py-24">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-14">
           {/* 04 — DIRECTOR */}
