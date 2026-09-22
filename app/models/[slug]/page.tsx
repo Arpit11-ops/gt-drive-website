@@ -91,7 +91,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
         featureCount={model.features.length}
       />
       <ScootersSpecHighlight specs={model.rideSpecs} image={specImage} alt={`${model.shortName}, ${views ? "rear view" : "front and side views"}`} />
-      <ScootersSpecTable specs={model.rideSpecs} image={tableImage} alt={`${model.shortName}, ${views ? "front view" : "front and side views"}`} />
+      <ScootersSpecTable features={model.features} image={tableImage} alt={`${model.shortName}, ${views ? "front view" : "front and side views"}`} />
       <ScootersFeatures image={featureImage} alt={`${model.shortName}, ${views ? "left-facing side profile" : "front and side views"} showing features`} />
       {model.gallery && <ScootersGallery images={model.gallery} name={model.shortName} />}
       <ScootersTechnology />

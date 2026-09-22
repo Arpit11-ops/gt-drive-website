@@ -30,7 +30,7 @@ export default function HomePage() {
         cta={{ href: `/models/${flagship?.slug ?? "gt-flying"}/`, label: `Explore ${name}` }}
       />
       <ScootersSpecHighlight specs={flagship?.rideSpecs} image={views?.specifications ?? image} alt={`${name} rear three-quarter view`} />
-      <ScootersSpecTable specs={flagship?.rideSpecs} image={views?.details ?? image} alt={`${name} side view`} />
+      <ScootersSpecTable features={flagship?.features} image={views?.details ?? image} alt={`${name} side view`} />
       <ScootersFeatures image={views?.features ?? image} alt={`${name} features`} />
       <ScootersTechnology />
       <ContactClose />

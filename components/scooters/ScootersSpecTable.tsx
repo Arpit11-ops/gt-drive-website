@@ -1,68 +1,40 @@
 import Image from "next/image";
-import {
-  BatteryHigh,
-  Gauge,
-  Path,
-  PlugCharging,
-} from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
 import { isPortraitProductImage } from "@/lib/productImage";
-import type { ModelRideSpecs } from "@/lib/models";
-
-type Spec = {
-  Icon: typeof Gauge;
-  label: string;
-  value: string;
-  sub?: string;
-};
 
 type Props = {
   image?: string;
   alt?: string;
-  specs?: ModelRideSpecs;
+  features?: string[];
 };
 
 export function ScootersSpecTable({
   image = "/assets/gt-drive/gt-flying-e4-real.webp",
   alt = "GT Drive scooter, side view",
-  specs: rideSpecs,
+  features = [],
 }: Props = {}) {
-  const specs: Spec[] = [
-    { Icon: Path, label: "Range", value: rideSpecs?.range ?? "Not provided", sub: "Per charge" },
-    { Icon: Gauge, label: "Top Speed", value: rideSpecs?.topSpeed ?? "Not provided" },
-    { Icon: BatteryHigh, label: "Battery", value: rideSpecs?.battery ?? "Not provided" },
-    { Icon: PlugCharging, label: "Charging Time", value: rideSpecs?.chargingTime ?? "Not provided" },
-  ];
-
   return (
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-0">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-0">
-          {/* LEFT — stacked spec list */}
+          {/* LEFT — brochure feature badges */}
           <div className="md:col-span-6 md:pl-12 md:pr-10 lg:pl-16 lg:pr-14">
-            <ul className="flex flex-col">
-              {specs.map(({ Icon, label, value, sub }, i) => (
-                <li
-                  key={label}
-                  className={`grid grid-cols-[56px_1fr_auto] items-center gap-6 py-5 ${
-                    i > 0 ? "border-t border-[var(--color-line)]" : ""
-                  }`}
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-green-deep)]">
+              Brochure features
+            </p>
+            <h2 className="mt-4 max-w-md font-display text-[clamp(28px,3vw,42px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
+              Everything built into your ride<span className="text-[var(--color-green)]">.</span>
+            </h2>
+            <div className="mt-8 flex flex-wrap gap-2.5">
+              {features.map((feature) => (
+                <span
+                  key={feature}
+                  className="inline-flex items-center rounded-full border border-[var(--color-green)]/35 bg-[color-mix(in_srgb,var(--color-green)_11%,white)] px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--color-green-deep)]"
                 >
-                  <Icon size={30} weight="regular" className="text-[var(--color-green)]" />
-                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--color-ink)]">
-                    {label}
-                  </span>
-                  <div className="text-right">
-                    <div className="font-display text-[20px] font-extrabold leading-none tracking-[-0.02em] text-[var(--color-ink)]">
-                      {value}
-                    </div>
-                    {sub && (
-                      <div className="mt-1.5 text-[11px] text-[var(--color-body)]">{sub}</div>
-                    )}
-                  </div>
-                </li>
+                  {feature}
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* RIGHT — scooter image with subtle diagonal green accent */}
