@@ -7,6 +7,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
 import { isPortraitProductImage } from "@/lib/productImage";
+import type { ModelRideSpecs } from "@/lib/models";
 
 type Spec = {
   Icon: typeof Gauge;
@@ -15,22 +16,24 @@ type Spec = {
   sub?: string;
 };
 
-const specs: Spec[] = [
-  { Icon: Path, label: "Range", value: "100 km", sub: "Per Charge" },
-  { Icon: Gauge, label: "Top Speed", value: "70 km/h" },
-  { Icon: BatteryHigh, label: "Battery", value: "2.5 kWh", sub: "Lithium-ion" },
-  { Icon: PlugCharging, label: "Charging Time", value: "4-5 hrs", sub: "(0-100%)" },
-];
-
 type Props = {
   image?: string;
   alt?: string;
+  specs?: ModelRideSpecs;
 };
 
 export function ScootersSpecTable({
   image = "/assets/gt-drive/gt-flying-e4-real.webp",
   alt = "GT Drive scooter, side view",
+  specs: rideSpecs,
 }: Props = {}) {
+  const specs: Spec[] = [
+    { Icon: Path, label: "Range", value: rideSpecs?.range ?? "Not provided", sub: "Per charge" },
+    { Icon: Gauge, label: "Top Speed", value: rideSpecs?.topSpeed ?? "Not provided" },
+    { Icon: BatteryHigh, label: "Battery", value: rideSpecs?.battery ?? "Not provided" },
+    { Icon: PlugCharging, label: "Charging Time", value: rideSpecs?.chargingTime ?? "Not provided" },
+  ];
+
   return (
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-0">

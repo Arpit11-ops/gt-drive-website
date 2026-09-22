@@ -29,8 +29,8 @@ export default function HomePage() {
         alt={`${name} electric scooter`}
         cta={{ href: `/models/${flagship?.slug ?? "gt-flying"}/`, label: `Explore ${name}` }}
       />
-      <ScootersSpecHighlight image={views?.specifications ?? image} alt={`${name} rear three-quarter view`} />
-      <ScootersSpecTable image={views?.details ?? image} alt={`${name} side view`} />
+      <ScootersSpecHighlight specs={flagship?.rideSpecs} image={views?.specifications ?? image} alt={`${name} rear three-quarter view`} />
+      <ScootersSpecTable specs={flagship?.rideSpecs} image={views?.details ?? image} alt={`${name} side view`} />
       <ScootersFeatures image={views?.features ?? image} alt={`${name} features`} />
       <ScootersTechnology />
       <ContactClose />

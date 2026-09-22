@@ -21,12 +21,6 @@ export function AboutHero() {
             <Plug size={16} weight="fill" className="-ml-1 text-[var(--color-green)]" />
           </div>
 
-          <p className="mt-8 max-w-md text-[15px] leading-relaxed text-[var(--color-body)] md:text-base">
-            GT Drive is the electric two-wheeler brand of Houstan Innovations LLP, headquartered in
-            Greater Noida. We are building electric scooters backed by in-house battery capabilities,
-            strong manufacturing infrastructure and a growing network across India.
-          </p>
-
           <div className="mt-10">
             <Link
               href="/models/"
@@ -38,11 +32,11 @@ export function AboutHero() {
           </div>
         </div>
 
-        {/* RIGHT — showroom image with the diagonal cut on the far right */}
+        {/* RIGHT — Greater Noida plant image with the diagonal cut on the far right */}
         <div className="relative col-span-1 min-h-[380px] md:col-span-6 md:min-h-0">
           <Image
-            src={asset("/assets/gt-drive/gt-drive-hero-showroom-ai-v1.webp")}
-            alt="GT Drive electric scooter in showroom"
+            src={asset("/assets/gt-drive/factory-banner.jpeg")}
+            alt="GT Drive Greater Noida manufacturing plant"
             fill
             priority
             sizes="(max-width: 768px) 100vw, 50vw"

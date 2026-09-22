@@ -1,5 +1,12 @@
 export type ProductSpec = { label: string; value: string };
 
+export type ModelRideSpecs = {
+  range: string;
+  topSpeed: string;
+  battery: string;
+  chargingTime: string;
+};
+
 export type ScooterModel = {
   slug: string;
   name: string;
@@ -13,6 +20,7 @@ export type ScooterModel = {
   note?: string;
   status?: "coming-soon";
   colors: string[];
+  rideSpecs?: ModelRideSpecs;
   specs: ProductSpec[];
   features: string[];
 };
@@ -44,6 +52,13 @@ const commonSpecs = (rearTyre: string): ProductSpec[] => [
   { label: "Controller", value: "48-60-72V" },
 ];
 
+const verifiedRideSpecs = (range: string): ModelRideSpecs => ({
+  range,
+  topSpeed: "25 km/h",
+  battery: "60V / 32Ah",
+  chargingTime: "8 hours",
+});
+
 export const models: ScooterModel[] = [
   {
     slug: "gt-soul", name: "GT - SOUL", shortName: "GT Soul", code: "SL",
@@ -56,7 +71,7 @@ export const models: ScooterModel[] = [
     },
     gallery: ["/assets/gt-drive/cleaned/GT_SOUL_IMG_4014_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_IMG_4016_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_IMG_4020_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_IMG_4018_clean.webp", "/assets/gt-drive/cleaned/Soul_IMG_4054_clean.webp", "/assets/gt-drive/cleaned/Soul_IMG_4057_clean.webp", "/assets/gt-drive/cleaned/Soul_IMG_4051_clean.webp", "/assets/gt-drive/cleaned/Soul_IMG_4055_clean.webp"],
     lead: "A dependable everyday scooter, available in three versatile colours.",
-    colors: ["White", "Black", "Grey"], specs: commonSpecs("90-100 - 10"), features: sharedFeatures,
+    colors: ["White", "Black", "Grey"], rideSpecs: verifiedRideSpecs("75–80 km"), specs: commonSpecs("90-100 - 10"), features: sharedFeatures,
   },
   {
     slug: "gt-soul-nxt", name: "GT - SOUL NXT", shortName: "GT Soul NXT", code: "DL",
@@ -69,7 +84,7 @@ export const models: ScooterModel[] = [
     },
     gallery: ["/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4026_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4032_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4034_clean.webp", "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4028_clean.webp"],
     lead: "The practical Soul platform with a sharper, more contemporary city stance.",
-    colors: ["White", "Black", "Grey"], specs: commonSpecs("90-100 - 10"), features: sharedFeatures,
+    colors: ["White", "Black", "Grey"], rideSpecs: verifiedRideSpecs("75–80 km"), specs: commonSpecs("90-100 - 10"), features: sharedFeatures,
   },
   {
     slug: "gt-ryd", name: "GT - RYD", shortName: "GT RYD", code: "CS",
@@ -82,7 +97,7 @@ export const models: ScooterModel[] = [
     },
     gallery: ["/assets/gt-drive/cleaned/Flying_ryd_IMG_4096_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4097_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4099_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4090_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4088_clean.webp"],
     lead: "An easygoing city scooter with the widest colour palette in the GT Drive range.",
-    colors: ["White", "Black", "Orange", "Honda Grey", "Maroon/White", "Silver Grey"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
+    colors: ["White", "Black", "Orange", "Honda Grey", "Maroon/White", "Silver Grey"], rideSpecs: verifiedRideSpecs("70–75 km"), specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
     slug: "gt-ryd-plus", name: "GT - RYD PLUS", shortName: "GT RYD Plus", code: "FH",
@@ -95,7 +110,7 @@ export const models: ScooterModel[] = [
     },
     gallery: ["/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4077_clean.webp", "/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4078_clean.webp", "/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4079_clean.webp", "/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4076_clean.webp", "/assets/gt-drive/cleaned/Flying_Ryd_plus_IMG_4074_clean.webp"],
     lead: "A planted stance, five colour choices and the practicality your daily ride needs.",
-    colors: ["White", "Black", "Honda Grey", "Orange", "Silver Grey"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
+    colors: ["White", "Black", "Honda Grey", "Orange", "Silver Grey"], rideSpecs: verifiedRideSpecs("70–75 km"), specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
     slug: "gt-one-plus", name: "GT - ONE PLUS", shortName: "GT One Plus",
@@ -109,7 +124,7 @@ export const models: ScooterModel[] = [
     gallery: ["/assets/gt-drive/cleaned/Flying_plus_IMG_4063_clean.webp", "/assets/gt-drive/cleaned/Flying_plus_IMG_4065_clean.webp", "/assets/gt-drive/cleaned/Flying_plus_IMG_4064_clean.webp", "/assets/gt-drive/cleaned/Flying_plus_IMG_4066_clean.webp"],
     lead: "Compact proportions and contemporary styling for everyday city movement.",
     note: "Model code will be confirmed ahead of launch.",
-    colors: ["Green", "Black", "Grey"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
+    colors: ["Green", "Black", "Grey"], rideSpecs: verifiedRideSpecs("70–75 km"), specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
     slug: "gt-champion", name: "GT - CHAMPION", shortName: "GT Champion", code: "CJ",
@@ -122,7 +137,7 @@ export const models: ScooterModel[] = [
     },
     gallery: ["/assets/gt-drive/cleaned/Champion_IMG_4043_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4044_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4047_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4045_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4046_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4048_clean.webp"],
     lead: "An extra-long wheelbase and five distinctive colour options for a confident road presence.",
-    colors: ["Matte Shale Green/Black", "Matte Coffee Brown/Black", "Tyrant Gold/Black", "White/Black", "Black"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
+    colors: ["Matte Shale Green/Black", "Matte Coffee Brown/Black", "Tyrant Gold/Black", "White/Black", "Black"], rideSpecs: verifiedRideSpecs("65–70 km"), specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
     slug: "gt-flying", name: "GT - FLYING", shortName: "GT Flying", code: "E4",
@@ -135,7 +150,7 @@ export const models: ScooterModel[] = [
     },
     gallery: ["/assets/gt-drive/cleaned/Flying_E4_IMG_4002_clean.webp", "/assets/gt-drive/cleaned/Flying_E4_IMG_4004_clean.webp", "/assets/gt-drive/cleaned/Flying_E4_IMG_4003_clean.webp", "/assets/gt-drive/cleaned/Flying_E4_IMG_4006_clean.webp", "/assets/gt-drive/cleaned/Flying_E4_IMG_4005_clean.webp"],
     lead: "Sporty proportions and five bold two-tone finishes made to stand out in the city.",
-    colors: ["Red/Black", "Peacock Blue/Black", "Orange/Black", "Silver Grey/Black", "Yellow/Black"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
+    colors: ["Red/Black", "Peacock Blue/Black", "Orange/Black", "Silver Grey/Black", "Yellow/Black"], rideSpecs: verifiedRideSpecs("65–70 km"), specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
     slug: "gt-drive-pro", name: "GT - DRIVE PRO", shortName: "GT Drive Pro",
