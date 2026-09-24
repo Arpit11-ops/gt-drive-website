@@ -44,7 +44,7 @@ const MAP_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=$
 
 export function ContactFindUs() {
   return (
-    <section className="bg-white py-20 md:py-24">
+    <section className="bg-[var(--color-surface)] py-20 md:py-24">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         {/* header */}
         <div>

@@ -5,7 +5,7 @@ import { asset } from "@/lib/asset";
 
 export function DealerHero() {
   return (
-    <section className="relative isolate overflow-hidden bg-white pt-20">
+    <section className="relative isolate overflow-hidden bg-[color-mix(in_srgb,var(--color-green)_5%,white)] pt-20">
       <div className="relative mx-auto grid min-h-[calc(100vh-5rem)] max-w-[var(--container-page)] grid-cols-1 md:grid-cols-12">
         {/* LEFT — copy */}
         <div className="relative z-10 col-span-1 flex flex-col justify-center px-6 py-12 md:col-span-6 md:px-12 md:py-16 lg:px-16">
@@ -13,9 +13,9 @@ export function DealerHero() {
             GT Drive <span className="mx-2 text-[var(--color-line)]">|</span> Dealership Partnership
           </p>
 
-          <h1 className="font-display text-[clamp(40px,5.4vw,78px)] font-extrabold leading-[0.95] tracking-[-0.045em] text-[var(--color-ink)]">
-            <span className="block whitespace-nowrap">OPEN A GT</span>
-            <span className="block whitespace-nowrap">DRIVE <span className="text-[var(--color-green)]">SHOWROOM.</span></span>
+          <h1 className="max-w-[10ch] font-display text-[clamp(40px,4.8vw,70px)] font-extrabold leading-[0.95] tracking-[-0.045em] text-[var(--color-ink)]">
+            <span className="block">OPEN A GT</span>
+            <span className="block">DRIVE <span className="text-[var(--color-green)]">SHOWROOM.</span></span>
           </h1>
 
           <p className="mt-8 max-w-md text-[15px] leading-relaxed text-[var(--color-body)] md:text-base">

@@ -16,7 +16,7 @@ export function PageHero({ eyebrow, headline, lead, children, theme = "light" }:
       ? "bg-[#111111] text-white"
       : theme === "green"
       ? "bg-[var(--color-green-deep)] text-white"
-      : "bg-white text-[var(--color-ink)]";
+      : "bg-[color-mix(in_srgb,var(--color-green)_5%,white)] text-[var(--color-ink)]";
   const eyebrowColor =
     theme === "light" ? "text-[var(--color-green-deep)]" : "text-[var(--color-green)]";
   const leadColor = theme === "light" ? "text-[var(--color-body)]" : "text-white/70";

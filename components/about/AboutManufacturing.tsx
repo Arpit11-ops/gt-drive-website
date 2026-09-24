@@ -17,7 +17,7 @@ const pillars: Pillar[] = [
 
 export function AboutManufacturing() {
   return (
-    <section id="manufacturing" className="bg-white py-20 md:py-24">
+    <section id="manufacturing" className="bg-[var(--color-stage)] py-20 md:py-24">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-0">
         <div className="grid grid-cols-1 items-stretch gap-12 md:grid-cols-12 md:gap-0">
           {/* LEFT — copy + pillars */}

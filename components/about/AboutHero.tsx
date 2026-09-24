@@ -5,7 +5,7 @@ import { asset } from "@/lib/asset";
 
 export function AboutHero() {
   return (
-    <section className="relative isolate overflow-hidden bg-white pt-20">
+    <section className="relative isolate overflow-hidden bg-[color-mix(in_srgb,var(--color-green)_5%,white)] pt-20">
       <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-[var(--container-page)] grid-cols-1 md:grid-cols-12">
         {/* LEFT — copy */}
         <div className="relative z-10 col-span-1 flex flex-col justify-center px-6 py-14 md:col-span-6 md:px-12 md:py-16 lg:px-16">

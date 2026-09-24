@@ -75,7 +75,7 @@ function TechVisual({ kind }: { kind: Card["visual"] }) {
 
 export function ScootersTechnology() {
   return (
-    <section className="bg-white py-20 md:py-24">
+    <section className="bg-[color-mix(in_srgb,var(--color-green)_4%,white)] py-20 md:py-24">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8">
           {/* LEFT — copy */}
@@ -97,8 +97,8 @@ export function ScootersTechnology() {
           {/* RIGHT — infinite marquee of the 3 tech cards */}
           <div className="group/marquee relative overflow-hidden md:col-span-8">
             {/* soft fade masks on the edges so cards enter/exit gracefully */}
-            <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent" />
-            <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent" />
+            <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[color-mix(in_srgb,var(--color-green)_4%,white)] to-transparent" />
+            <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[color-mix(in_srgb,var(--color-green)_4%,white)] to-transparent" />
 
             <div className="flex w-max gap-5 motion-safe:animate-[marquee_28s_linear_infinite] group-hover/marquee:[animation-play-state:paused]">
               {[...cards, ...cards].map((c, i) => (
