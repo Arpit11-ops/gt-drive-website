@@ -170,6 +170,9 @@
     opacity var(--dur-reveal) var(--ease-signature);
   transition-delay: calc(var(--mr-i, 0) * 70ms);
 }
+.mr-word-space {
+  margin-right: 0.22em;
+}
 .mr-on .mr-word {
   clip-path: inset(0 0 0 0);
   transform: translateY(0);
@@ -206,6 +209,28 @@
   will-change: auto;
 }
 
+/* Section motion starts when its wrapper reaches the lower 12% viewport line.
+   The wrapper settles after 650ms; headings and cards finish shortly after. */
+@keyframes gt-heading-enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes gt-card-enter {
+  from { opacity: 0; transform: translateY(20px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.site-reveal[data-visible="true"] h1,
+.site-reveal[data-visible="true"] h2 {
+  animation: gt-heading-enter 700ms var(--ease-signature) both;
+}
+.site-reveal[data-visible="true"] [data-motion-card] {
+  animation: gt-card-enter 650ms var(--ease-signature) both;
+  animation-delay: calc(var(--motion-order, 0) * 85ms);
+}
+.site-reveal[data-visible="true"] [data-motion-card]:hover {
+  transform: translateY(-3px);
+}
+
 /* Nav link underline sweep */
 .nav-link {
   position: relative;
@@ -239,7 +264,12 @@
   }
   .mr-word,
   .scooter-reveal,
-  .charge-line {
+  .charge-line,
+  .site-reveal,
+  .site-reveal h1,
+  .site-reveal h2,
+  .site-reveal [data-motion-card] {
+    animation: none !important;
     clip-path: none !important;
     filter: none !important;
     transform: none !important;

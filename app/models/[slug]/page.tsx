@@ -11,6 +11,7 @@ import { ScootersSpecTable } from "@/components/scooters/ScootersSpecTable";
 import { ScootersTechnology } from "@/components/scooters/ScootersTechnology";
 import { asset } from "@/lib/asset";
 import { ContactClose } from "@/components/ContactClose";
+import { Reveal } from "@/components/Reveal";
 import { getModel, models } from "@/lib/models";
 
 export function generateStaticParams() {
@@ -30,7 +31,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
   if (model.status === "coming-soon") {
     return (
       <>
-      <section className="relative overflow-hidden bg-white pt-24 pb-20 md:pt-32 md:pb-28">
+      <Reveal className="motion-page-enter"><section className="relative overflow-hidden bg-white pt-24 pb-20 md:pt-32 md:pb-28">
         <div className="mx-auto grid max-w-[var(--container-page)] gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-10">
           <div className="relative flex items-center justify-center bg-[var(--color-stage)]">
             <Image
@@ -63,8 +64,8 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
             </div>
           </div>
         </div>
-      </section>
-      <ContactClose defaultModel={model.slug} defaultType="other" />
+      </section></Reveal>
+      <Reveal delay={80}><ContactClose defaultModel={model.slug} defaultType="other" /></Reveal>
       </>
     );
   }
@@ -78,7 +79,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
 
   return (
     <>
-      <ScootersHero
+      <Reveal className="motion-page-enter"><ScootersHero
         name={model.shortName}
         tagline={model.lead}
         image={heroImage}
@@ -89,13 +90,13 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
         kicker={model.code ? `Model ${model.code}` : "GT Drive range"}
         colors={model.colors}
         featureCount={model.features.length}
-      />
-      <ScootersSpecHighlight specs={model.specs} image={specImage} alt={`${model.shortName}, ${views ? "rear view" : "front and side views"}`} />
-      <ScootersSpecTable features={model.features} image={tableImage} alt={`${model.shortName}, ${views ? "front view" : "front and side views"}`} />
-      <ScootersFeatures image={featureImage} alt={`${model.shortName}, ${views ? "left-facing side profile" : "front and side views"} showing features`} />
-      {model.gallery && <ScootersGallery images={model.gallery} name={model.shortName} />}
-      <ScootersTechnology />
-      <ContactClose defaultModel={model.slug} />
+      /></Reveal>
+      <Reveal delay={80}><ScootersSpecHighlight specs={model.specs} image={specImage} alt={`${model.shortName}, ${views ? "rear view" : "front and side views"}`} /></Reveal>
+      <Reveal delay={80}><ScootersSpecTable features={model.features} image={tableImage} alt={`${model.shortName}, ${views ? "front view" : "front and side views"}`} /></Reveal>
+      <Reveal delay={80}><ScootersFeatures image={featureImage} alt={`${model.shortName}, ${views ? "left-facing side profile" : "front and side views"} showing features`} /></Reveal>
+      {model.gallery && <Reveal delay={80}><ScootersGallery images={model.gallery} name={model.shortName} /></Reveal>}
+      <Reveal delay={80}><ScootersTechnology /></Reveal>
+      <Reveal delay={80}><ContactClose defaultModel={model.slug} /></Reveal>
     </>
   );
 }

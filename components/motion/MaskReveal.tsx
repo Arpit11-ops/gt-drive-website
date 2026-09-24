@@ -37,11 +37,10 @@ export function MaskReveal({
       {nodes.map((node, i) => (
         <span
           key={i}
-          className={`mr-word ${node.className ?? ""}`}
+          className={`mr-word ${node.trailingSpace ? "mr-word-space" : ""} ${node.className ?? ""}`}
           style={{ ["--mr-i" as never]: i } as never}
         >
           {node.text}
-          {node.trailingSpace ? " " : ""}
         </span>
       ))}
     </Tag>

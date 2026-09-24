@@ -5,6 +5,7 @@ import { AboutHero } from "@/components/about/AboutHero";
 import { AboutManufacturing } from "@/components/about/AboutManufacturing";
 import { AboutWhoAndMission } from "@/components/about/AboutWhoAndMission";
 import { ContactClose } from "@/components/ContactClose";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About",
@@ -15,12 +16,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <AboutHero />
-      <AboutWhoAndMission />
-      <AboutManufacturing />
-      <AboutDirectorAndNetwork />
-      <AboutFinalCTA />
-      <ContactClose />
+      <Reveal className="motion-page-enter"><AboutHero /></Reveal>
+      <Reveal delay={80}><AboutWhoAndMission /></Reveal>
+      <Reveal delay={80}><AboutManufacturing /></Reveal>
+      <Reveal delay={80}><AboutDirectorAndNetwork /></Reveal>
+      <Reveal delay={80}><AboutFinalCTA /></Reveal>
+      <Reveal delay={80}><ContactClose /></Reveal>
     </>
   );
 }

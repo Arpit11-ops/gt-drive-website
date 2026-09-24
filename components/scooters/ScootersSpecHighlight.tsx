@@ -53,7 +53,7 @@ export function ScootersSpecHighlight({
           {/* RIGHT — spec highlight panel */}
           <div className="relative md:col-span-6 md:border-l md:border-[var(--color-line)] md:pl-10 md:pr-12 lg:pl-14 lg:pr-16">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
-              Brochure-listed
+              At a glance
             </p>
             <h2 className="mt-3 font-display text-[clamp(28px,3.2vw,44px)] font-extrabold uppercase leading-[1.05] tracking-[-0.03em] text-[var(--color-ink)]">
               Specifications<span className="text-[var(--color-green)]">.</span>

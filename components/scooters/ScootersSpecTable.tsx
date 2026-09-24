@@ -20,7 +20,7 @@ export function ScootersSpecTable({
           {/* LEFT — brochure feature badges */}
           <div className="md:col-span-6 md:pl-12 md:pr-10 lg:pl-16 lg:pr-14">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-green-deep)]">
-              Brochure features
+              Features
             </p>
             <h2 className="mt-4 max-w-md font-display text-[clamp(28px,3vw,42px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
               The shared GT Drive feature set<span className="text-[var(--color-green)]">.</span>

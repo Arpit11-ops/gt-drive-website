@@ -95,6 +95,7 @@ export function DealerOpportunity() {
                 return (
                   <div
                     key={b.title}
+                    data-motion-card
                     className={`relative aspect-[3/4] overflow-hidden bg-[var(--color-stage)] ${
                       i > 0 ? "sm:-ml-[13%]" : ""
                     }`}

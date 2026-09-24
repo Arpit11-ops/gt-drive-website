@@ -22,7 +22,7 @@ export function ScootersGallery({ images, name }: Props) {
             </h2>
           </div>
           <p className="hidden max-w-xs text-right text-sm leading-relaxed text-[var(--color-body)] md:block">
-            {images.length} cleaned product views of the {name} range, prepared for the GT Drive catalogue.
+            {images.length} product views of the {name} range, prepared for closer inspection.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">

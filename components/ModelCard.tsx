@@ -16,6 +16,7 @@ export function ModelCard({
   return (
     <Link
       href={`/models/${model.slug}/`}
+      data-motion-card
       className="group flex h-full flex-col gap-4"
     >
       <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-[var(--color-stage)] transition-all duration-500 ease-[var(--ease-signature)] group-hover:bg-[#eff2ef] group-hover:shadow-[0_18px_40px_rgba(17,17,17,0.10)]">

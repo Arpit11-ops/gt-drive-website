@@ -31,8 +31,9 @@ export default function ModelsPage() {
             </MaskReveal>
           </>
         }
-        lead="Explore nine electric scooters from the GT Drive catalogue. See each model’s design, brochure-listed features, specifications and colours."
+        lead="Explore nine electric scooters from the GT Drive range. Compare each model’s design, features, specifications and colours."
       />
+      <Reveal>
       <section className="bg-[var(--color-surface)]">
         <div className="mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-16 md:px-10 md:pb-36 md:pt-24">
         <div className="mb-12 flex flex-col justify-between gap-8 border-y border-black/10 py-5 text-sm md:mb-16 md:flex-row md:items-center">
@@ -54,8 +55,9 @@ export default function ModelsPage() {
         </div>
         </div>
       </section>
-      <TaglineMarquee />
-      <ContactClose />
+      </Reveal>
+      <Reveal delay={80}><TaglineMarquee /></Reveal>
+      <Reveal delay={80}><ContactClose /></Reveal>
     </>
   );
 }

@@ -4,6 +4,7 @@ import { ContactFinalCTA } from "@/components/contact/ContactFinalCTA";
 import { ContactFindUs } from "@/components/contact/ContactFindUs";
 import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactClose } from "@/components/ContactClose";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -14,11 +15,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <ContactHero />
-      <ContactChoices />
-      <ContactFindUs />
-      <ContactFinalCTA />
-      <ContactClose defaultType="other" />
+      <Reveal className="motion-page-enter"><ContactHero /></Reveal>
+      <Reveal delay={80}><ContactChoices /></Reveal>
+      <Reveal delay={80}><ContactFindUs /></Reveal>
+      <Reveal delay={80}><ContactFinalCTA /></Reveal>
+      <Reveal delay={80}><ContactClose defaultType="other" /></Reveal>
     </>
   );
 }

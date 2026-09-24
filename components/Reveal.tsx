@@ -34,7 +34,7 @@ export function Reveal({ children, delay = 0, className = "" }: Props) {
           observer.disconnect();
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px -20px 0px" },
+      { threshold: 0, rootMargin: "0px 0px -12% 0px" },
     );
     observer.observe(node);
     return () => observer.disconnect();
@@ -43,15 +43,15 @@ export function Reveal({ children, delay = 0, className = "" }: Props) {
   const style: CSSProperties = {
     transitionDelay: `${delay}ms`,
     transitionProperty: "transform, opacity",
-    transitionDuration: "700ms",
+    transitionDuration: "650ms",
     transitionTimingFunction: "cubic-bezier(0.2, 0.8, 0.2, 1)",
-    transform: visible ? "translateY(0)" : "translateY(24px)",
+    transform: visible ? "translateY(0)" : "translateY(28px)",
     opacity: visible ? 1 : 0,
     willChange: "transform, opacity",
   };
 
   return (
-    <div ref={ref} className={className} style={style}>
+    <div ref={ref} className={`site-reveal ${className}`} data-visible={visible} style={style}>
       {children}
     </div>
   );

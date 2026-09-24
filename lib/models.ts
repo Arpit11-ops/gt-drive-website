@@ -81,7 +81,7 @@ export const models: ScooterModel[] = [
       features: "/assets/gt-drive/cleaned/Flying_ryd_IMG_4096_clean.webp",
     },
     gallery: ["/assets/gt-drive/cleaned/Flying_ryd_IMG_4096_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4097_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4099_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4090_clean.webp", "/assets/gt-drive/cleaned/Flying_ryd_IMG_4088_clean.webp"],
-    lead: "Six brochure-listed colours—the widest choice in the GT Drive range.",
+    lead: "Six colour options—the widest choice in the GT Drive range.",
     colors: ["White", "Black", "Orange", "Honda Grey", "Maroon/White", "Silver Grey"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {

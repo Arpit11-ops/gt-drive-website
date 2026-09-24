@@ -4,6 +4,7 @@ import { DealerOpportunity } from "@/components/dealers/DealerOpportunity";
 import { DealerSupport } from "@/components/dealers/DealerSupport";
 import { DealerBrochureJourney } from "@/components/dealers/DealerBrochureJourney";
 import { DealerApplicationForm } from "@/components/dealers/DealerApplicationForm";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Join Dealership",
@@ -14,11 +15,11 @@ export const metadata: Metadata = {
 export default function DealersPage() {
   return (
     <>
-      <DealerHero />
-      <DealerOpportunity />
-      <DealerSupport />
-      <DealerBrochureJourney />
-      <DealerApplicationForm />
+      <Reveal className="motion-page-enter"><DealerHero /></Reveal>
+      <Reveal delay={80}><DealerOpportunity /></Reveal>
+      <Reveal delay={80}><DealerSupport /></Reveal>
+      <Reveal delay={80}><DealerBrochureJourney /></Reveal>
+      <Reveal delay={80}><DealerApplicationForm /></Reveal>
     </>
   );
 }

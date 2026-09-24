@@ -45,6 +45,7 @@ export function ContactChoices() {
           {channels.map(({ Icon, title, lines, href }) => (
             <a
               key={title}
+              data-motion-card
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noreferrer" : undefined}

@@ -13,13 +13,13 @@ const cards: Card[] = [
   {
     Icon: BatteryHigh,
     title: "Lithium-ion Battery",
-    body: "In-house lithium battery capability, as described in the brochure.",
+    body: "In-house lithium battery capability for the GT Drive electric range.",
     visual: "battery",
   },
   {
     Icon: Lightning,
     title: "Hub Motor",
-    body: "The brochure lists a powerful BLDC hub motor across the range.",
+    body: "A powerful BLDC hub motor across the GT Drive electric range.",
     visual: "motor",
   },
   {
@@ -90,7 +90,7 @@ export function ScootersTechnology() {
             </h2>
             <span className="mt-5 block h-[3px] w-16 bg-[var(--color-green)]" />
             <p className="mt-6 max-w-xs text-[13.5px] leading-relaxed text-[var(--color-body)]">
-              The brochure’s technology story centres on lithium battery capability, hub motor performance and practical electric mobility.
+              Lithium battery capability, hub motor performance and practical electric mobility come together across the range.
             </p>
           </div>
 
@@ -104,6 +104,7 @@ export function ScootersTechnology() {
               {[...cards, ...cards].map((c, i) => (
                 <div
                   key={`${c.title}-${i}`}
+                  data-motion-card
                   aria-hidden={i >= cards.length}
                   className="group flex w-[300px] shrink-0 flex-col overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white p-5 shadow-[0_2px_10px_rgba(17,17,17,0.03)]"
                 >

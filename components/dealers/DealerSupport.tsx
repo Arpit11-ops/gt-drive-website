@@ -44,7 +44,7 @@ export function DealerSupport() {
             </h2>
             <span className="mt-6 block h-0.5 w-16 bg-[var(--color-green)]" />
             <p className="mt-8 max-w-xs text-[14px] leading-relaxed text-[var(--color-body)]">
-              The brochure lists support across product, marketing, inventory, service and training.
+              GT Drive supports dealer partners across product, marketing, inventory, service and training.
             </p>
           </div>
 
@@ -54,6 +54,7 @@ export function DealerSupport() {
               {pillars.map((p, i) => (
                 <div
                   key={p.title}
+                  data-motion-card
                   className={`relative flex flex-col items-center px-4 text-center md:px-6 ${
                     i > 0 ? "md:border-l md:border-[var(--color-line)]" : ""
                   }`}
