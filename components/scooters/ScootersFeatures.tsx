@@ -84,12 +84,12 @@ export function ScootersFeatures({
               Features
             </p>
             <h2 className="font-display text-[clamp(30px,3.4vw,46px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
-              <span className="block">Built Around</span>
-              <span className="block text-[var(--color-green)]">Your Ride.</span>
+              <span className="block">Features for</span>
+              <span className="block text-[var(--color-green)]">daily riding.</span>
             </h2>
             <span className="mt-5 block h-[3px] w-16 bg-[var(--color-green)]" />
             <p className="mt-6 max-w-xs text-[13.5px] leading-relaxed text-[var(--color-body)]">
-              Select a hotspot to see how each feature supports your everyday ride.
+              Select a hotspot to explore the visible details on this scooter.
             </p>
           </div>
 

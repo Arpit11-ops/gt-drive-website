@@ -18,17 +18,17 @@ export function DealerBrochureJourney() {
               Get The Details
             </p>
             <h2 className="font-display text-[clamp(30px,3.4vw,44px)] font-extrabold leading-[0.98] tracking-[-0.035em] text-[var(--color-ink)]">
-              WANT TO KNOW MORE?
+              READY TO EXPLORE THE OPPORTUNITY?
             </h2>
             <p className="mt-6 max-w-md text-[14px] leading-relaxed text-[var(--color-body)]">
-              Download the GT Drive dealership brochure for complete information about the opportunity, requirements and process.
+              Download the GT Drive dealership brochure for the opportunity, support areas and next steps.
             </p>
             <a
               href="/assets/gt-drive/brochure/gt-drive-dealership.pdf"
               download="gt-drive-dealership-brochure.pdf"
               className="group mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-[var(--color-ink)] px-5 text-[12.5px] font-bold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-white"
             >
-              Download Brochure
+              Download the brochure
               <DownloadSimple size={14} weight="bold" className="transition-transform group-hover:translate-y-0.5" />
             </a>
 
@@ -64,7 +64,7 @@ export function DealerBrochureJourney() {
               Your GT Journey
             </p>
             <h2 className="font-display text-[clamp(30px,3.4vw,44px)] font-extrabold leading-[0.98] tracking-[-0.035em] text-[var(--color-ink)]">
-              FROM INTEREST TO PARTNERSHIP.
+              FROM ENQUIRY TO PARTNERSHIP.
             </h2>
 
             <ol className="mt-12 grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">

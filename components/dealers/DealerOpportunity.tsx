@@ -10,7 +10,7 @@ type Block = {
 const blocks: Block[] = [
   {
     title: "A GROWING\nPRODUCT PORTFOLIO",
-    body: "A range of electric scooters designed for different customer needs.",
+    body: "A nine-model electric scooter catalogue for different customer needs.",
     visual: (
       <Image
         src={asset("/assets/gt-drive/cleaned/Flying_E4_IMG_4006_clean.webp")}
@@ -23,7 +23,7 @@ const blocks: Block[] = [
   },
   {
     title: "IN-HOUSE\nBATTERY CAPABILITY",
-    body: "Battery technology developed to strengthen GT's electric mobility ecosystem.",
+    body: "In-house lithium battery capability within the GT Drive ecosystem.",
     visual: (
       <div className="absolute inset-0 flex items-end justify-center bg-[#0f1a13] p-6">
         <div className="relative h-[55%] w-[85%] rounded-md bg-gradient-to-b from-[#1a2820] to-[#050a07] shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_20px_40px_rgba(0,0,0,0.5)]">
@@ -45,7 +45,7 @@ const blocks: Block[] = [
   },
   {
     title: "A GROWING\nEV OPPORTUNITY",
-    body: "Be part of India's shift towards electric mobility.",
+    body: "Partner with GT Drive as electric mobility grows across India.",
     visual: (
       <Image
         src={asset("/assets/gt-drive/one-india-atmosphere.webp")}
@@ -73,7 +73,7 @@ export function DealerOpportunity() {
             </h2>
             <span className="mt-6 block h-0.5 w-16 bg-[var(--color-green)]" />
             <p className="mt-8 max-w-xs text-[14px] leading-relaxed text-[var(--color-body)]">
-              Join GT Drive and be part of India&apos;s evolving electric mobility journey.
+              Partner with GT Drive and be part of India&apos;s growing electric mobility revolution.
             </p>
           </div>
 

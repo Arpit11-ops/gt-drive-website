@@ -17,17 +17,17 @@ export function AboutWhoAndMission() {
                 Who We Are
               </h2>
               <p className="mt-6 max-w-md text-[14px] leading-relaxed text-[var(--color-body)]">
-                GT Drive, a brand of{" "}
+                GT Drive is the electric two-wheeler brand of{" "}
                 <span className="font-semibold text-[var(--color-green-deep)]">Houstan Innovations LLP</span>
-                , headquartered in Greater Noida, is building electric scooters backed by in-house
-                battery capabilities, strong manufacturing infrastructure and a growing network across India.
+                , headquartered in Greater Noida. The brand is building electric scooters backed by in-house
+                lithium battery capability, manufacturing infrastructure and a growing network across India.
               </p>
               <div className="mt-8">
                 <Link
                   href="#manufacturing"
                   className="group inline-flex h-10 items-center gap-2 rounded-full border border-[var(--color-ink)] px-5 text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-white"
                 >
-                  See How We Build
+                  See how we build
                   <ArrowRight size={13} weight="bold" className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>

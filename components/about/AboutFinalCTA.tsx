@@ -11,9 +11,9 @@ export function AboutFinalCTA() {
           {/* LEFT — headline + green flourish */}
           <div className="md:col-span-5">
             <h2 className="font-display text-[clamp(30px,3.4vw,46px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
-              <span className="block">Choose Your Next</span>
+              <span className="block">Find your next</span>
               <span className="block">
-                GT Drive <span className="text-[var(--color-green)]">Move.</span>
+                GT Drive <span className="text-[var(--color-green)]">scooter.</span>
               </span>
             </h2>
 
@@ -30,14 +30,14 @@ export function AboutFinalCTA() {
               href="/models/"
               className="group inline-flex h-12 items-center gap-2 rounded-full bg-[var(--color-green)] px-6 text-[12px] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-[var(--color-green-deep)]"
             >
-              Explore Scooters
+              Explore the range
               <ArrowRight size={14} weight="bold" className="transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="/dealers/"
               className="group inline-flex h-12 items-center gap-2 rounded-full border border-[var(--color-ink)] px-6 text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-white"
             >
-              Become a Dealer
+              Explore dealership
               <ArrowRight size={14} weight="bold" className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

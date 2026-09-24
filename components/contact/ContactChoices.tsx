@@ -37,7 +37,7 @@ export function ContactChoices() {
             Contact GT Drive
           </p>
           <h2 className="mx-auto mt-4 max-w-2xl font-display text-[clamp(28px,3.2vw,44px)] font-extrabold uppercase leading-[1.05] tracking-[-0.03em] text-[var(--color-ink)]">
-            Choose the <span className="text-[var(--color-green)]">quickest way</span> to reach us.
+            Choose a <span className="text-[var(--color-green)]">direct channel</span> to reach us.
           </h2>
         </div>
 

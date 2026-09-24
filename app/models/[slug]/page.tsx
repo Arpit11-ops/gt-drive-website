@@ -57,7 +57,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
                 href="/contact/"
                 className="group inline-flex h-12 items-center gap-2 rounded-full bg-[var(--color-green)] px-6 text-[13px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)]"
               >
-                Register your interest
+                Ask about {model.shortName}
                 <ArrowRight size={15} weight="bold" className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
@@ -84,13 +84,13 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
         image={heroImage}
         video={model.slug === "gt-flying" ? "/assets/gt-drive/video/gt-flying-hero.mp4" : undefined}
         alt={`${model.shortName} electric scooter, ${views ? "right-facing side profile" : "front and side views"}`}
-        cta={{ href: "/contact/", label: "Book a Test Ride" }}
+        cta={{ href: "/contact/", label: `Ask about ${model.shortName}` }}
         secondary={{ href: "/models/", label: "Explore All Models" }}
-        kicker={model.code ? `Model ${model.code}` : "Hero Product"}
+        kicker={model.code ? `Model ${model.code}` : "GT Drive range"}
         colors={model.colors}
         featureCount={model.features.length}
       />
-      <ScootersSpecHighlight specs={model.rideSpecs} image={specImage} alt={`${model.shortName}, ${views ? "rear view" : "front and side views"}`} />
+      <ScootersSpecHighlight specs={model.specs} image={specImage} alt={`${model.shortName}, ${views ? "rear view" : "front and side views"}`} />
       <ScootersSpecTable features={model.features} image={tableImage} alt={`${model.shortName}, ${views ? "front view" : "front and side views"}`} />
       <ScootersFeatures image={featureImage} alt={`${model.shortName}, ${views ? "left-facing side profile" : "front and side views"} showing features`} />
       {model.gallery && <ScootersGallery images={model.gallery} name={model.shortName} />}

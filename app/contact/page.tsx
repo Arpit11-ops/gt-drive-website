@@ -8,7 +8,7 @@ import { ContactClose } from "@/components/ContactClose";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Call, WhatsApp or email GT Drive about scooters, dealerships, fleet enquiries, service partnerships or media requests.",
+    "Call, WhatsApp or email GT Drive with questions about electric scooters and dealership opportunities.",
 };
 
 export default function ContactPage() {

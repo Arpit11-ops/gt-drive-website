@@ -9,12 +9,12 @@ export function ContactHero() {
         {/* LEFT — copy */}
         <div className="relative z-10 col-span-1 flex flex-col justify-center px-6 py-14 md:col-span-5 md:px-12 md:py-16 lg:px-16">
           <p className="mb-6 text-[11px] font-bold tracking-[0.24em] text-[var(--color-green-deep)] uppercase">
-            Contact Us
+            Reach GT Drive
           </p>
 
           <h1 className="font-display text-[clamp(40px,5.4vw,78px)] font-extrabold leading-[0.95] tracking-[-0.045em] text-[var(--color-ink)]">
             <span className="block">LET&apos;S</span>
-            <span className="block text-[var(--color-green)]">CONNECT.</span>
+            <span className="block text-[var(--color-green)]">TALK.</span>
           </h1>
 
           {/* green underline flourish with plug at the tip */}
@@ -25,8 +25,8 @@ export function ContactHero() {
           </div>
 
           <p className="mt-8 max-w-sm text-[15px] leading-relaxed text-[var(--color-body)]">
-            Questions about a scooter, dealership or service?<br />
-            Start with the team that can help.
+            Product questions or dealership enquiries?<br />
+            Choose the channel that suits you.
           </p>
         </div>
 

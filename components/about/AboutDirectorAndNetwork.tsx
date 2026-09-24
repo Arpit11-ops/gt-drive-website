@@ -1,20 +1,7 @@
 import Image from "next/image";
-import { HeartStraight, MapPin, Quotes, UsersThree, Wrench } from "@phosphor-icons/react/dist/ssr";
+import { Quotes } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
 import { SectionKicker } from "@/components/about/SectionKicker";
-
-type Stat = {
-  Icon: typeof UsersThree;
-  value: string;
-  label: string;
-};
-
-const stats: Stat[] = [
-  { Icon: UsersThree, value: "500+", label: "Channel\nPartners" },
-  { Icon: MapPin, value: "100+", label: "Cities\nCovered" },
-  { Icon: Wrench, value: "50+", label: "Service\nCenters" },
-  { Icon: HeartStraight, value: "5000+", label: "Happy\nCustomers" },
-];
 
 // Green network dots dropped over the India map silhouette (percentages).
 const networkDots = [
@@ -48,12 +35,12 @@ export function AboutDirectorAndNetwork() {
               <Quotes size={38} weight="fill" className="mt-8 text-[var(--color-green)]" />
 
               <p className="mt-4 max-w-md text-[13.5px] leading-relaxed text-[var(--color-body)]">
-                We started GT Drive with a clear purpose: make electric mobility practical for
-                more people and more businesses across India.
+                GT Drive is building an electric mobility brand for riders and business partners
+                across India.
               </p>
               <p className="mt-4 max-w-md text-[13.5px] leading-relaxed text-[var(--color-body)]">
-                That means building products people can use with confidence and partnerships that
-                continue long after a scooter leaves the showroom.
+                The aim is straightforward: reliable products, strong technology and dependable
+                support from the first conversation onward.
               </p>
 
               {/* signature (script placeholder — swap for a real signature SVG later) */}
@@ -93,24 +80,6 @@ export function AboutDirectorAndNetwork() {
             <p className="mt-4 max-w-md text-[13px] leading-relaxed text-[var(--color-body)]">
               Sales, service and channel partners help bring GT Drive closer to riders across India.
             </p>
-
-            {/* 2×2 stat grid */}
-            <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
-              {stats.map(({ Icon, value, label }) => (
-                <div
-                  key={label}
-                  className="flex flex-col items-center rounded-xl bg-[color-mix(in_srgb,var(--color-green)_6%,white)] px-3 py-5 text-center"
-                >
-                  <Icon size={26} weight="regular" className="mb-3 text-[var(--color-green-deep)]" />
-                  <div className="font-display text-[22px] font-extrabold leading-none tracking-[-0.02em] text-[var(--color-ink)]">
-                    {value}
-                  </div>
-                  <div className="mt-2 whitespace-pre-line text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--color-body)]">
-                    {label}
-                  </div>
-                </div>
-              ))}
-            </div>
 
             {/* India network map */}
             <div className="relative mt-10 aspect-[4/3] w-full overflow-hidden">

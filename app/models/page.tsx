@@ -31,18 +31,18 @@ export default function ModelsPage() {
             </MaskReveal>
           </>
         }
-        lead="Compare the complete GT Drive range by design, features, specifications and available colours—then choose the scooter that fits your everyday ride."
+        lead="Explore nine electric scooters from the GT Drive catalogue. See each model’s design, brochure-listed features, specifications and colours."
       />
       <section className="bg-[var(--color-surface)]">
         <div className="mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-16 md:px-10 md:pb-36 md:pt-24">
         <div className="mb-12 flex flex-col justify-between gap-8 border-y border-black/10 py-5 text-sm md:mb-16 md:flex-row md:items-center">
           <p className="max-w-md leading-[1.55] text-[var(--color-body)]">
-            From short daily errands to longer city commutes, there is a GT Drive built for the way you move.
+            Start with the details that matter to you, then contact GT Drive for more information about a model.
           </p>
           <div className="flex items-center gap-8 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)]">
             <span>models</span>
             <span className="hidden h-4 w-px bg-black/15 sm:block" />
-            <span>2025 / 26 range</span>
+            <span>GT Drive catalogue</span>
           </div>
         </div>
         <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-24">

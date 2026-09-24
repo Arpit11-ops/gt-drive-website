@@ -23,7 +23,7 @@ export function ScootersSpecTable({
               Brochure features
             </p>
             <h2 className="mt-4 max-w-md font-display text-[clamp(28px,3vw,42px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
-              Everything built into your ride<span className="text-[var(--color-green)]">.</span>
+              The shared GT Drive feature set<span className="text-[var(--color-green)]">.</span>
             </h2>
             <div className="mt-8 flex flex-wrap gap-2.5">
               {features.map((feature) => (

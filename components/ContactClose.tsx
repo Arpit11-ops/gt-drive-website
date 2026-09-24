@@ -41,7 +41,7 @@ export function ContactClose({
           <Reveal delay={100}>
             <p className="mt-8 max-w-sm text-[15px] leading-[1.6] text-[var(--color-body)] md:text-base">
               {intro ??
-                "Looking for a scooter, dealership, fleet solution or service partnership? Tell us what you need and the right GT Drive team will get back to you."}
+                "Looking for a scooter or dealership information? Tell us what you need and the GT Drive team will get back to you."}
             </p>
           </Reveal>
           <Reveal delay={200}>

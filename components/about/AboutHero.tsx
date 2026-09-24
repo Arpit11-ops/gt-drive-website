@@ -26,7 +26,7 @@ export function AboutHero() {
               href="/models/"
               className="group inline-flex h-12 items-center gap-2 rounded-full bg-[var(--color-green)] px-6 text-[13px] font-bold tracking-[0.05em] text-white uppercase transition-colors hover:bg-[var(--color-green-deep)]"
             >
-              Explore Scooters
+              Explore the range
               <ArrowRight size={15} weight="bold" className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

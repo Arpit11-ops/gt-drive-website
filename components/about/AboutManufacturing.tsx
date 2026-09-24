@@ -24,11 +24,11 @@ export function AboutManufacturing() {
           <div className="flex flex-col justify-center md:col-span-5 md:pl-12 md:pr-10 lg:pl-16">
             <SectionKicker n="03" />
             <h2 className="font-display text-[clamp(28px,2.8vw,40px)] font-extrabold uppercase leading-[1] tracking-[-0.025em] text-[var(--color-ink)]">
-              Manufacturing Excellence
+              Built to support the range
             </h2>
             <p className="mt-6 max-w-md text-[14px] leading-relaxed text-[var(--color-body)]">
-              In-house lithium battery capability, advanced manufacturing, a wide dealer network
-              and reliable service support—built to serve riders across India.
+              Four parts of the GT Drive proposition: in-house lithium battery capability, advanced
+              manufacturing, a wide dealer network and reliable service support.
             </p>
 
             {/* 4 icon pillars in a row */}
@@ -62,7 +62,7 @@ export function AboutManufacturing() {
             {/* placeholder badge */}
             <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full bg-[color-mix(in_srgb,var(--color-ink)_82%,transparent)] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
               <Factory size={12} weight="bold" className="text-[var(--color-green)]" />
-              Assembly floor
+              GT Drive manufacturing
             </div>
           </div>
         </div>

@@ -80,7 +80,7 @@ export function InquiryForm({
           <option value="fleet">Fleet or bulk enquiry</option>
           <option value="service">Service partnership</option>
           <option value="media">Media or press</option>
-          <option value="other">Other business enquiry</option>
+          <option value="other">Other enquiry</option>
         </SelectField>
         <SelectField
           label="Model of interest (optional)"
@@ -108,7 +108,7 @@ export function InquiryForm({
           name="message"
           rows={4}
           required
-          placeholder="Tell us about your business and how you'd like to work with GT Drive."
+          placeholder="Tell us what you would like to know about GT Drive."
           className="border-b border-[var(--color-line)] bg-transparent py-2 text-base leading-[1.5] text-[var(--color-ink)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-green)]"
         />
       </div>
@@ -121,8 +121,7 @@ export function InquiryForm({
           className="mt-1 h-4 w-4 accent-[var(--color-green)]"
         />
         <label htmlFor={consentId} className="text-sm text-[var(--color-body)]">
-          I&apos;m enquiring on behalf of a business or dealership and agree to be
-          contacted regarding this enquiry.
+          I agree to be contacted about this enquiry.
         </label>
       </div>
 
@@ -131,7 +130,7 @@ export function InquiryForm({
           type="submit"
           className="inline-flex h-[52px] items-center justify-center rounded-sm bg-[var(--color-green)] px-6 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-green-deep)]"
         >
-          Send business enquiry
+          Send enquiry
         </button>
         {status !== "idle" && (
           <p role="status" className="text-sm text-[var(--color-green-deep)]">

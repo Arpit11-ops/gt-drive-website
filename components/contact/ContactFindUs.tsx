@@ -49,11 +49,11 @@ export function ContactFindUs() {
         {/* header */}
         <div>
           <p className="text-[11px] font-bold tracking-[0.24em] text-[var(--color-green-deep)] uppercase">
-            Find Us
+            GT Drive locations
           </p>
           <h2 className="mt-4 font-display text-[clamp(30px,3.6vw,50px)] font-extrabold uppercase leading-[1.05] tracking-[-0.035em] text-[var(--color-ink)]">
-            <span className="block">Find the GT Drive</span>
-            <span className="block text-[var(--color-green)]">team near you.</span>
+            <span className="block">Find GT Drive</span>
+            <span className="block text-[var(--color-green)]">across India.</span>
           </h2>
           <div className="mt-5 flex items-center gap-2">
             <span className="h-[3px] w-[110px] bg-[var(--color-green)]" />

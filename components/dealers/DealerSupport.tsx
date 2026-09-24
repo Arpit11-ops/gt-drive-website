@@ -10,12 +10,12 @@ const pillars: Pillar[] = [
   {
     Icon: Motorcycle,
     title: "Product Support",
-    body: "Access to GT's electric scooter portfolio.",
+    body: "Access to the GT Drive electric scooter portfolio.",
   },
   {
     Icon: Megaphone,
     title: "Marketing Support",
-    body: "Marketing and branding support for your local market.",
+    body: "Marketing and branding support for your showroom.",
   },
   {
     Icon: GraduationCap,
@@ -25,7 +25,7 @@ const pillars: Pillar[] = [
   {
     Icon: Wrench,
     title: "Sales & Service Support",
-    body: "Service and technical support across sales and after-sales operations.",
+    body: "Service and technical support for your operations.",
   },
 ];
 
@@ -40,11 +40,11 @@ export function DealerSupport() {
               Our Support
             </p>
             <h2 className="font-display text-[clamp(36px,4.5vw,60px)] font-extrabold leading-[0.95] tracking-[-0.035em] text-[var(--color-ink)]">
-              WE GROW<br />TOGETHER.
+              BUILD WITH<br />GT DRIVE.
             </h2>
             <span className="mt-6 block h-0.5 w-16 bg-[var(--color-green)]" />
             <p className="mt-8 max-w-xs text-[14px] leading-relaxed text-[var(--color-body)]">
-              From product to after-sales, we provide the support you need to establish and grow your GT dealership.
+              The brochure lists support across product, marketing, inventory, service and training.
             </p>
           </div>
 

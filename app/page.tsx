@@ -10,7 +10,7 @@ import { ContactClose } from "@/components/ContactClose";
 export const metadata: Metadata = {
   title: "GT Drive — Electric two-wheeler brand from Houstan Innovations LLP",
   description:
-    "Discover GT Drive electric scooters for everyday city travel, led by the sporty GT Flying.",
+    "Explore GT Drive electric scooters, including the sporty GT Flying, and learn about the brand behind the range.",
 };
 
 export default function HomePage() {
@@ -23,13 +23,13 @@ export default function HomePage() {
     <>
       <ScootersHero
         name={name}
-        tagline={"Built for everyday city rides.\nReady for what’s next."}
+        tagline={"A sporty electric scooter from GT Drive’s nine-model range."}
         image={image}
         video="/assets/gt-drive/video/gt-flying-hero-2026.mp4"
         alt={`${name} electric scooter`}
         cta={{ href: `/models/${flagship?.slug ?? "gt-flying"}/`, label: `Explore ${name}` }}
       />
-      <ScootersSpecHighlight specs={flagship?.rideSpecs} image={views?.specifications ?? image} alt={`${name} rear three-quarter view`} />
+      <ScootersSpecHighlight specs={flagship?.specs} image={views?.specifications ?? image} alt={`${name} rear three-quarter view`} />
       <ScootersSpecTable features={flagship?.features} image={views?.details ?? image} alt={`${name} side view`} />
       <ScootersFeatures image={views?.features ?? image} alt={`${name} features`} />
       <ScootersTechnology />

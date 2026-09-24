@@ -13,19 +13,19 @@ const cards: Card[] = [
   {
     Icon: BatteryHigh,
     title: "Lithium-ion Battery",
-    body: "Designed for consistent performance across everyday rides.",
+    body: "In-house lithium battery capability, as described in the brochure.",
     visual: "battery",
   },
   {
     Icon: Lightning,
-    title: "Powerful Motor",
-    body: "Responsive pickup and smooth power delivery in city traffic.",
+    title: "Hub Motor",
+    body: "The brochure lists a powerful BLDC hub motor across the range.",
     visual: "motor",
   },
   {
     Icon: Cpu,
-    title: "Smart BMS",
-    body: "Monitors key battery functions to support safety and efficiency.",
+    title: "Electric mobility",
+    body: "A shared feature set designed around everyday electric mobility.",
     visual: "bms",
   },
 ];
@@ -85,12 +85,12 @@ export function ScootersTechnology() {
               Technology
             </p>
             <h2 className="font-display text-[clamp(28px,3vw,42px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
-              <span className="block">Smart Technology.</span>
-              <span className="block">Smoother Performance.</span>
+              <span className="block">Technology in</span>
+              <span className="block">the catalogue.</span>
             </h2>
             <span className="mt-5 block h-[3px] w-16 bg-[var(--color-green)]" />
             <p className="mt-6 max-w-xs text-[13.5px] leading-relaxed text-[var(--color-body)]">
-              Battery, motor and management systems designed to work together for a smooth, dependable ride.
+              The brochure’s technology story centres on lithium battery capability, hub motor performance and practical electric mobility.
             </p>
           </div>
 

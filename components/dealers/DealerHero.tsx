@@ -14,8 +14,8 @@ export function DealerHero() {
           </p>
 
           <h1 className="font-display text-[clamp(40px,5.4vw,78px)] font-extrabold leading-[0.95] tracking-[-0.045em] text-[var(--color-ink)]">
-            <span className="block whitespace-nowrap">BRING GT</span>
-            <span className="block whitespace-nowrap">TO YOUR <span className="text-[var(--color-green)]">CITY.</span></span>
+            <span className="block whitespace-nowrap">OPEN A GT</span>
+            <span className="block whitespace-nowrap">DRIVE <span className="text-[var(--color-green)]">SHOWROOM.</span></span>
           </h1>
 
           <p className="mt-8 max-w-md text-[15px] leading-relaxed text-[var(--color-body)] md:text-base">
@@ -27,7 +27,7 @@ export function DealerHero() {
               href="#dealer-apply"
               className="group inline-flex h-12 items-center gap-2 rounded-full bg-[var(--color-green)] px-6 text-[13px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)]"
             >
-              Apply for a Dealership
+              Start a dealership enquiry
               <ArrowRight size={15} weight="bold" className="transition-transform group-hover:translate-x-1" />
             </Link>
             <a
@@ -35,7 +35,7 @@ export function DealerHero() {
               download="gt-drive-dealership-brochure.pdf"
               className="group inline-flex items-center gap-2 text-[13px] font-bold text-[var(--color-ink)] transition-colors hover:text-[var(--color-green-deep)]"
             >
-              Download Brochure
+              Download the brochure
               <DownloadSimple size={15} weight="bold" className="transition-transform group-hover:translate-y-0.5" />
             </a>
           </div>
