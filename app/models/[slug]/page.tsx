@@ -91,7 +91,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
         colors={model.colors}
         featureCount={model.features.length}
       /></Reveal>
-      <Reveal delay={80}><ScootersSpecHighlight specs={model.specs} image={specImage} alt={`${model.shortName}, ${views ? "rear view" : "front and side views"}`} /></Reveal>
+      <Reveal delay={80}><ScootersSpecHighlight specs={model.rideSpecs} image={specImage} alt={`${model.shortName}, ${views ? "rear view" : "front and side views"}`} /></Reveal>
       <Reveal delay={80}><ScootersSpecTable features={model.features} image={tableImage} alt={`${model.shortName}, ${views ? "front view" : "front and side views"}`} /></Reveal>
       <Reveal delay={80}><ScootersFeatures image={featureImage} alt={`${model.shortName}, ${views ? "left-facing side profile" : "front and side views"} showing features`} /></Reveal>
       {model.gallery && <Reveal delay={80}><ScootersGallery images={model.gallery} name={model.shortName} /></Reveal>}

@@ -1,11 +1,16 @@
 import Image from "next/image";
-import { ClipboardText } from "@phosphor-icons/react/dist/ssr";
+import {
+  BatteryHigh,
+  Gauge,
+  Path,
+  PlugCharging,
+} from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
 import { isPortraitProductImage } from "@/lib/productImage";
-import type { ProductSpec } from "@/lib/models";
+import type { ModelRideSpecs } from "@/lib/models";
 
 type Spec = {
-  Icon: typeof ClipboardText;
+  Icon: typeof Gauge;
   label: string;
   value: string;
   sub?: string;
@@ -14,19 +19,20 @@ type Spec = {
 type Props = {
   image?: string;
   alt?: string;
-  specs?: ProductSpec[];
+  specs?: ModelRideSpecs;
 };
 
 export function ScootersSpecHighlight({
   image = "/assets/gt-drive/gt-flying-e4-real.webp",
   alt = "GT Drive scooter",
-  specs: productSpecs,
+  specs: rideSpecs,
 }: Props = {}) {
-  const specs: Spec[] = (productSpecs ?? []).slice(0, 4).map(({ label, value }) => ({
-    Icon: ClipboardText,
-    label,
-    value,
-  }));
+  const specs: Spec[] = [
+    { Icon: Path, label: "Range", value: rideSpecs?.range ?? "Not provided", sub: "Per charge" },
+    { Icon: Gauge, label: "Top Speed", value: rideSpecs?.topSpeed ?? "Not provided" },
+    { Icon: BatteryHigh, label: "Battery", value: rideSpecs?.battery ?? "Not provided" },
+    { Icon: PlugCharging, label: "Charging Time", value: rideSpecs?.chargingTime ?? "Not provided" },
+  ];
 
   return (
     <section className="bg-[var(--color-surface)] py-16 md:py-20">
@@ -53,10 +59,10 @@ export function ScootersSpecHighlight({
           {/* RIGHT — spec highlight panel */}
           <div className="relative md:col-span-6 md:border-l md:border-[var(--color-line)] md:pl-10 md:pr-12 lg:pl-14 lg:pr-16">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
-              At a glance
+              Everything That
             </p>
             <h2 className="mt-3 font-display text-[clamp(28px,3.2vw,44px)] font-extrabold uppercase leading-[1.05] tracking-[-0.03em] text-[var(--color-ink)]">
-              Specifications<span className="text-[var(--color-green)]">.</span>
+              Powers Your Ride<span className="text-[var(--color-green)]">.</span>
             </h2>
             <span className="mt-4 block h-[3px] w-16 bg-[var(--color-green)]" />
 

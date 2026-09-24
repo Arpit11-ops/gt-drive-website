@@ -32,7 +32,7 @@ export default function HomePage() {
         cta={{ href: `/models/${flagship?.slug ?? "gt-flying"}/`, label: `Explore ${name}` }}
       />
       </Reveal>
-      <Reveal delay={100}><ScootersSpecHighlight specs={flagship?.specs} image={views?.specifications ?? image} alt={`${name} rear three-quarter view`} /></Reveal>
+      <Reveal delay={100}><ScootersSpecHighlight specs={flagship?.rideSpecs} image={views?.specifications ?? image} alt={`${name} rear three-quarter view`} /></Reveal>
       <Reveal delay={80}><ScootersSpecTable features={flagship?.features} image={views?.details ?? image} alt={`${name} side view`} /></Reveal>
       <Reveal delay={80}><ScootersFeatures image={views?.features ?? image} alt={`${name} features`} /></Reveal>
       <Reveal delay={80}><ScootersTechnology /></Reveal>
