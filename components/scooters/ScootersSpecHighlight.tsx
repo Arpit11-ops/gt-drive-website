@@ -57,7 +57,7 @@ export function ScootersSpecHighlight({
           </div>
 
           {/* RIGHT — spec highlight panel */}
-          <div className="relative rounded-[1.5rem] bg-white p-7 shadow-[0_12px_30px_rgba(17,17,17,0.05)] md:col-span-7 md:p-10 lg:p-12">
+          <div className="gt-card relative rounded-[1.5rem] bg-white p-7 shadow-[0_12px_30px_rgba(17,17,17,0.05)] md:col-span-7 md:p-10 lg:p-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
               Everything That
             </p>

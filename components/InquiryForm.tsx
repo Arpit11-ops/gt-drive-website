@@ -30,7 +30,7 @@ export function InquiryForm({
   }
 
   return (
-    <form action={asset("/api/contact.php")} method="post" onSubmit={submit} className="flex flex-col gap-8 rounded-[1.5rem] border border-[var(--color-line)] bg-white p-6 shadow-[0_16px_40px_rgba(17,17,17,0.07)] md:p-10">
+    <form action={asset("/api/contact.php")} method="post" onSubmit={submit} className="gt-card flex flex-col gap-8 rounded-[1.5rem] bg-white p-6 shadow-[0_16px_40px_rgba(17,17,17,0.07)] md:p-10">
       <input type="hidden" name="source" value="GT Drive website" />
       <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-px w-px opacity-0" />
       <div className="grid gap-6 md:grid-cols-2">

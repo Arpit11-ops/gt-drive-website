@@ -118,6 +118,13 @@
   }
 }
 
+@layer components {
+  .gt-card,
+  [data-motion-card] {
+    border: 1px solid color-mix(in srgb, var(--color-green) 34%, var(--color-line));
+  }
+}
+
 @keyframes dealer-card-float {
   0%,
   100% {

@@ -66,7 +66,7 @@ export function ContactFindUs() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
           {/* LEFT — Head Office */}
           <div>
-            <div className="flex items-start gap-4 rounded-2xl border border-[var(--color-line)] bg-white p-6 shadow-[0_2px_10px_rgba(17,17,17,0.03)]">
+            <div className="gt-card flex items-start gap-4 rounded-2xl bg-white p-6 shadow-[0_2px_10px_rgba(17,17,17,0.03)]">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-green)_10%,white)]">
                 <MapPin size={22} weight="regular" className="text-[var(--color-green-deep)]" />
               </span>
@@ -86,7 +86,7 @@ export function ContactFindUs() {
             {plants.map((p) => (
               <div
                 key={p.n}
-                className="flex items-start gap-4 rounded-2xl border border-[var(--color-line)] bg-white p-5 shadow-[0_2px_10px_rgba(17,17,17,0.03)]"
+                className="gt-card flex items-start gap-4 rounded-2xl bg-white p-5 shadow-[0_2px_10px_rgba(17,17,17,0.03)]"
               >
                 <div className="relative shrink-0">
                   <span className="grid h-10 w-10 place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-green)_10%,white)]">
