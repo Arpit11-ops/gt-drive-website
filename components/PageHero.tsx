@@ -23,7 +23,7 @@ export function PageHero({ eyebrow, headline, lead, children, theme = "light" }:
 
   return (
     <section className={`relative overflow-hidden ${bg}`}>
-      <div className="mx-auto max-w-[var(--container-page)] px-6 pb-20 pt-20 md:px-10 md:pb-28 md:pt-24">
+      <div className="mx-auto max-w-[var(--container-page)] px-6 pb-16 pt-20 md:px-10 md:pb-20 md:pt-24">
         {eyebrow && (
           <Reveal className={`flex items-center gap-4 text-sm font-medium ${eyebrowColor}`}>
             <ChargeLine
@@ -34,7 +34,7 @@ export function PageHero({ eyebrow, headline, lead, children, theme = "light" }:
           </Reveal>
         )}
         <Reveal delay={80} className="mt-6">
-          <h1 className="text-[clamp(48px,7vw,132px)] leading-[0.94] tracking-[-0.035em]">
+          <h1 className="max-w-5xl text-[clamp(44px,6.2vw,104px)] leading-[0.98] tracking-[-0.045em]">
             {headline}
           </h1>
         </Reveal>

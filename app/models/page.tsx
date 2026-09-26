@@ -34,9 +34,9 @@ export default function ModelsPage() {
         lead="Explore nine electric scooters from the GT Drive range. Compare each model’s design, features, specifications and colours."
       />
       <Reveal>
-      <section className="bg-[var(--color-surface)]">
-        <div className="mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-16 md:px-10 md:pb-36 md:pt-24">
-        <div className="mb-12 flex flex-col justify-between gap-8 border-y border-black/10 py-5 text-sm md:mb-16 md:flex-row md:items-center">
+      <section className="bg-white">
+        <div className="mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-12 md:px-10 md:pb-32 md:pt-16">
+        <div className="mb-12 flex flex-col justify-between gap-8 rounded-2xl border border-black/[0.08] bg-[var(--color-stage)] px-5 py-5 text-sm shadow-[0_8px_24px_rgba(17,17,17,0.03)] md:mb-16 md:flex-row md:items-center md:px-7">
           <p className="max-w-md leading-[1.55] text-[var(--color-body)]">
             Start with the details that matter to you, then contact GT Drive for more information about a model.
           </p>
@@ -46,10 +46,17 @@ export default function ModelsPage() {
             <span>GT Drive catalogue</span>
           </div>
         </div>
-        <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-24">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--color-green-deep)]">The range</p>
+            <h2 className="mt-2 font-display text-3xl font-extrabold tracking-[-0.04em] md:text-4xl">Choose your everyday ride.</h2>
+          </div>
+          <span className="hidden text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)] sm:block">09 models</span>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {models.map((model, index) => (
-            <Reveal key={model.slug} delay={(index % 3) * 100} className={index === 0 ? "lg:col-span-2" : ""}>
-              <ModelCard model={model} featured={index === 0} priority={index < 3} />
+            <Reveal key={model.slug} delay={(index % 3) * 70}>
+              <ModelCard model={model} priority={index < 3} />
             </Reveal>
           ))}
         </div>

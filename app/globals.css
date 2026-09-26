@@ -55,6 +55,11 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  :focus-visible {
+    outline: 3px solid var(--color-green);
+    outline-offset: 4px;
+  }
+
   ::selection {
     color: var(--color-white);
     background: var(--color-green-deep);
