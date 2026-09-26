@@ -31,7 +31,7 @@ const pillars: Pillar[] = [
 
 export function DealerSupport() {
   return (
-    <section className="bg-[var(--color-green)] py-20 md:py-28">
+    <section className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8">
           {/* LEFT — intro */}

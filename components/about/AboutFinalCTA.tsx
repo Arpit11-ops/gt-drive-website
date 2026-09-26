@@ -10,17 +10,17 @@ export function AboutFinalCTA() {
         <div className="relative grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-8">
           {/* LEFT — headline + green flourish */}
           <div className="md:col-span-5">
-            <h2 className="font-display text-[clamp(30px,3.4vw,46px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
+            <h2 className="font-display text-[clamp(30px,3.4vw,46px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-white">
               <span className="block">Find your next</span>
               <span className="block">
-                GT Drive <span className="text-[var(--color-green)]">scooter.</span>
+                GT Drive <span className="text-white/80">scooter.</span>
               </span>
             </h2>
 
             <div className="mt-5 flex items-center gap-2">
-              <span className="h-[3px] w-[110px] bg-[var(--color-green)]" />
-              <span className="h-[3px] w-[22px] bg-[var(--color-green)]" />
-              <Plug size={15} weight="fill" className="-ml-1 text-[var(--color-green)]" />
+              <span className="h-[3px] w-[110px] bg-white" />
+              <span className="h-[3px] w-[22px] bg-white/70" />
+              <Plug size={15} weight="fill" className="-ml-1 text-white" />
             </div>
           </div>
 
