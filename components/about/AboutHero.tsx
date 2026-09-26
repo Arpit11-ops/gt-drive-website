@@ -21,6 +21,10 @@ export function AboutHero() {
             <Plug size={16} weight="fill" className="-ml-1 text-[var(--color-green)]" />
           </div>
 
+          <p className="mt-5 text-[12px] font-bold uppercase tracking-[0.28em] text-[var(--color-muted)]">
+            It starts here.
+          </p>
+
           <div className="mt-10">
             <Link
               href="/models/"
@@ -33,7 +37,7 @@ export function AboutHero() {
         </div>
 
         {/* RIGHT — Greater Noida plant image with the diagonal cut on the far right */}
-        <div className="relative col-span-1 min-h-[380px] md:col-span-6 md:min-h-0">
+        <div className="relative col-span-1 min-h-[380px] overflow-hidden md:col-span-6 md:min-h-0 md:[clip-path:polygon(30%_0,100%_0,100%_100%,0_100%)]">
           <Image
             src={asset("/assets/gt-drive/factory-banner.jpeg")}
             alt="GT Drive Greater Noida manufacturing plant"
@@ -41,17 +45,6 @@ export function AboutHero() {
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-center"
-          />
-          {/* soft white fade into the left copy column */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 hidden w-32 bg-gradient-to-r from-white to-transparent md:block"
-          />
-          {/* diagonal white wedge on the far right — the "creative angled cut" */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 hidden w-24 bg-white md:block"
-            style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }}
           />
         </div>
       </div>
