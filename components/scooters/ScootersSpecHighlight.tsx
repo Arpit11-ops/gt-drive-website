@@ -45,7 +45,7 @@ export function ScootersSpecHighlight({
               Specifications
             </p>
 
-            <div className={`relative mt-0 w-full max-w-[24rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] md:mt-12 ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+            <div className={`relative mt-0 w-full max-w-[24rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] md:mt-0 ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
               <Image
                 src={asset(image)}
                 alt={alt}
@@ -57,7 +57,7 @@ export function ScootersSpecHighlight({
           </div>
 
           {/* RIGHT — spec highlight panel */}
-          <div className="gt-card relative rounded-[1.5rem] bg-white p-7 shadow-[0_12px_30px_rgba(17,17,17,0.05)] md:col-span-7 md:p-10 lg:p-12">
+          <div className="gt-card relative rounded-[1.5rem] bg-white p-7 shadow-[0_12px_30px_rgba(17,17,17,0.05)] md:col-span-7 md:mt-12 md:p-10 lg:p-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
               Everything That
             </p>
