@@ -45,7 +45,7 @@ export function ScootersSpecHighlight({
               Specifications
             </p>
 
-            <div className={`relative w-full max-w-[30rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+            <div className={`relative w-full max-w-[24rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
               <Image
                 src={asset(image)}
                 alt={alt}

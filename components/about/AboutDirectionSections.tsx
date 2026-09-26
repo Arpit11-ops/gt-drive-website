@@ -28,7 +28,7 @@ export function AboutDirectionSections() {
               <ArrowRight size={15} weight="bold" className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
-          <div className="gt-card relative aspect-square overflow-hidden rounded-[1.5rem] bg-[var(--color-stage)] md:col-span-7">
+          <div className="gt-card relative aspect-[4/3] w-full max-w-[34rem] justify-self-end overflow-hidden rounded-[1.5rem] bg-[var(--color-stage)] md:col-span-7">
             <Image
               src={asset("/assets/gt-drive/about-green-route.png")}
               alt="A scooter travelling along a tree-lined road"
@@ -42,7 +42,7 @@ export function AboutDirectionSections() {
 
       <section className="bg-[var(--color-stage)] py-20 md:py-28">
         <div className="mx-auto grid max-w-[var(--container-page)] items-center gap-12 px-6 md:grid-cols-12 md:gap-16 md:px-12 lg:px-16">
-          <div className="gt-card relative order-2 aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-white md:order-1 md:col-span-7">
+          <div className="gt-card relative order-2 aspect-[4/3] w-full max-w-[34rem] overflow-hidden rounded-[1.5rem] bg-white md:order-1 md:col-span-7">
             <Image
               src={asset("/assets/gt-drive/about-change-direction.png")}
               alt="A green road turning away from a petrol route"
