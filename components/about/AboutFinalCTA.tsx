@@ -5,7 +5,7 @@ import { asset } from "@/lib/asset";
 
 export function AboutFinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-[color-mix(in_srgb,var(--color-green)_7%,white)] py-16 md:py-20">
+    <section className="relative overflow-hidden bg-[var(--color-green)] py-16 md:py-20">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="relative grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-8">
           {/* LEFT — headline + green flourish */}

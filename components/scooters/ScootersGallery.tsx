@@ -9,7 +9,7 @@ type Props = {
 
 export function ScootersGallery({ images, name }: Props) {
   return (
-    <section className="bg-[color-mix(in_srgb,var(--color-green)_7%,white)] py-20 md:py-28">
+    <section className="bg-[var(--color-green)] py-20 md:py-28">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-10">
         <div className="mb-10 flex items-end justify-between gap-6 md:mb-14">
           <div>
