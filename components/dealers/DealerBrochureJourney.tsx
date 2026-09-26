@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { ArrowRight, DownloadSimple } from "@phosphor-icons/react/dist/ssr";
+import { asset } from "@/lib/asset";
 
 const steps = [
   { title: "APPLY", body: "Share your details." },
@@ -32,29 +34,15 @@ export function DealerBrochureJourney() {
               <DownloadSimple size={14} weight="bold" className="transition-transform group-hover:translate-y-0.5" />
             </a>
 
-            {/* stylised brochure mockup */}
-            <div className="relative mt-12 hidden h-[240px] w-[300px] rotate-[-8deg] md:block">
-              <div className="absolute inset-0 rounded-md bg-white shadow-[0_20px_50px_rgba(17,17,17,0.14)]">
-                <div className="flex h-full flex-col justify-between p-5">
-                  <div>
-                    <span className="font-display text-[13px] font-extrabold tracking-tight text-[var(--color-ink)]">
-                      GT<span className="text-[var(--color-green)]">DRIVE</span>
-                    </span>
-                    <div className="mt-1 h-px w-10 bg-[var(--color-green)]" />
-                  </div>
-                  <div>
-                    <div className="h-1 w-14 bg-[var(--color-green)]" />
-                    <p className="mt-3 font-display text-[15px] font-extrabold uppercase leading-tight text-[var(--color-ink)]">
-                      Dealership<br />Opportunity
-                    </p>
-                    <p className="mt-4 text-[9px] font-bold tracking-[0.2em] text-[var(--color-green-deep)] uppercase">
-                      Drive Clean · Go Green
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* second sheet peek */}
-              <div className="absolute -bottom-3 -right-3 -z-10 h-full w-full rounded-md bg-[var(--color-stage)] shadow-[0_10px_30px_rgba(17,17,17,0.08)]" />
+            {/* supplied dealership brochure artwork */}
+            <div className="relative mt-12 hidden aspect-square w-[300px] rotate-[-4deg] overflow-hidden rounded-xl bg-white shadow-[0_20px_50px_rgba(17,17,17,0.16)] md:block">
+              <Image
+                src={asset("/assets/gt-drive/brochure/dealership-opportunity-cover.png")}
+                alt="GT Drive dealership opportunity brochure cover"
+                fill
+                sizes="300px"
+                className="object-cover"
+              />
             </div>
           </div>
 
@@ -70,9 +58,9 @@ export function DealerBrochureJourney() {
             <ol className="mt-12 grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
               {steps.map((s, i) => (
                 <li key={s.title} className="relative flex flex-col items-start">
-                  <div className="flex h-11 items-center gap-3">
-                    {i < steps.length - 1 && (
-                      <ArrowRight size={16} weight="bold" className="hidden text-[var(--color-green)] md:block" />
+                  <div className="flex h-8 items-center gap-3">
+                    {i > 0 && (
+                      <ArrowRight size={24} weight="bold" className="text-[var(--color-green)]" />
                     )}
                   </div>
                   <div className="mt-4 font-display text-[12px] font-extrabold uppercase tracking-[0.1em] text-[var(--color-ink)]">
