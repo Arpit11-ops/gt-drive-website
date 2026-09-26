@@ -56,12 +56,10 @@ export function DealerBrochureJourney() {
             </h2>
 
             <ol className="mt-12 grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
-              {steps.map((s, i) => (
+              {steps.map((s) => (
                 <li key={s.title} className="relative flex flex-col items-start">
                   <div className="flex h-8 items-center gap-3">
-                    {i > 0 && (
-                      <ArrowRight size={24} weight="bold" className="text-[var(--color-green)]" />
-                    )}
+                    <ArrowRight size={24} weight="bold" className="text-[var(--color-green)]" />
                   </div>
                   <div className="mt-4 font-display text-[12px] font-extrabold uppercase tracking-[0.1em] text-[var(--color-ink)]">
                     {s.title}
