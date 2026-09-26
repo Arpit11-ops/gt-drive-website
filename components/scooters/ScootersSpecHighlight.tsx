@@ -29,7 +29,7 @@ export function ScootersSpecHighlight({
 }: Props = {}) {
   const specs: Spec[] = [
     { Icon: Path, label: "Range", value: rideSpecs?.range ?? "Not provided", sub: "Per charge" },
-    { Icon: Gauge, label: "Low Speed Non-RTO", value: rideSpecs?.topSpeed ?? "Not provided" },
+    { Icon: Gauge, label: "Low Speed\nNon-RTO", value: "" },
     { Icon: BatteryHigh, label: "Battery", value: rideSpecs?.battery ?? "Not provided" },
     { Icon: PlugCharging, label: "Charging Time", value: rideSpecs?.chargingTime ?? "Not provided" },
   ];
@@ -45,7 +45,7 @@ export function ScootersSpecHighlight({
               Specifications
             </p>
 
-            <div className={`relative mt-0 w-full max-w-[24rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] md:mt-8 ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+            <div className={`relative mt-0 w-full max-w-[24rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] md:mt-12 ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
               <Image
                 src={asset(image)}
                 alt={alt}
@@ -70,12 +70,14 @@ export function ScootersSpecHighlight({
               {specs.map(({ Icon, label, value, sub }) => (
                 <div key={label} className="flex flex-col items-center text-center">
                   <Icon size={30} weight="regular" className="mb-4 text-[var(--color-green)]" />
-                  <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">
+                  <div className="whitespace-pre-line text-[10px] font-bold uppercase leading-tight tracking-[0.16em] text-[var(--color-muted)]">
                     {label}
                   </div>
-                  <div className="mt-3 font-display text-[20px] font-extrabold leading-none tracking-[-0.02em] text-[var(--color-ink)]">
-                    {value}
-                  </div>
+                  {value && (
+                    <div className="mt-3 font-display text-[20px] font-extrabold leading-none tracking-[-0.02em] text-[var(--color-ink)]">
+                      {value}
+                    </div>
+                  )}
                   {sub && (
                     <div className="mt-2 text-[11px] text-[var(--color-body)]">{sub}</div>
                   )}
