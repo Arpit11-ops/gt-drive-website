@@ -21,7 +21,7 @@ export function AboutManufacturing() {
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-0">
         <div className="grid grid-cols-1 items-stretch gap-12 md:grid-cols-12 md:gap-0">
           {/* LEFT — copy + pillars */}
-          <div className="flex flex-col justify-center md:col-span-5 md:pl-12 md:pr-10 lg:pl-16">
+          <div className="flex flex-col md:col-span-5 md:pl-12 md:pr-10 lg:pl-16">
             <SectionKicker n="03" />
             <h2 className="font-display text-[clamp(28px,2.8vw,40px)] font-extrabold uppercase leading-[1] tracking-[-0.025em] text-[var(--color-ink)]">
               Built to support the range

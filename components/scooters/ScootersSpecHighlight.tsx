@@ -37,7 +37,7 @@ export function ScootersSpecHighlight({
   return (
     <section className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-10">
-        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-10">
+        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-12 md:gap-10">
           {/* LEFT — kicker + scooter image */}
           <div className="relative md:col-span-5">
             <p className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--color-green-deep)]">

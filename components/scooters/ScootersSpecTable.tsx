@@ -16,7 +16,7 @@ export function ScootersSpecTable({
   return (
     <section className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-10">
-        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-0">
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-0">
           {/* LEFT — brochure feature badges */}
           <div className="rounded-[1.5rem] bg-[var(--color-stage)] p-7 md:col-span-6 md:p-10 lg:p-12">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-green-deep)]">
