@@ -10,7 +10,7 @@ export function AboutWhoAndMission() {
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-14">
           {/* 01 — WHO WE ARE */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 md:gap-6">
+          <div className="grid grid-cols-1 gap-8 rounded-[1.5rem] border border-[var(--color-line)] bg-white p-6 shadow-[0_10px_30px_rgba(17,17,17,0.04)] md:grid-cols-5 md:gap-6 md:p-8">
             <div className="md:col-span-3">
               <SectionKicker n="01" />
               <h2 className="font-display text-[clamp(28px,2.6vw,36px)] font-extrabold uppercase leading-[1] tracking-[-0.025em] text-[var(--color-ink)]">
@@ -51,7 +51,7 @@ export function AboutWhoAndMission() {
           </div>
 
           {/* 02 — OUR MISSION & VISION */}
-          <div>
+          <div className="rounded-[1.5rem] border border-[var(--color-line)] bg-white p-6 shadow-[0_10px_30px_rgba(17,17,17,0.04)] md:p-8">
             <SectionKicker n="02" />
             <h2 className="font-display text-[clamp(28px,2.6vw,36px)] font-extrabold uppercase leading-[1] tracking-[-0.025em] text-[var(--color-ink)]">
               Our Mission &amp; Vision

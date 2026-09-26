@@ -50,14 +50,12 @@ export function DealerSupport() {
 
           {/* RIGHT — 4 pillars */}
           <div className="md:col-span-8">
-            <div className="grid grid-cols-2 border-y border-[var(--color-line)] py-8 gap-y-10 md:grid-cols-4 md:gap-y-0 md:py-0">
-              {pillars.map((p, i) => (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+              {pillars.map((p) => (
                 <div
                   key={p.title}
                   data-motion-card
-                  className={`relative flex flex-col items-center px-4 text-center md:px-6 ${
-                    i > 0 ? "md:border-l md:border-[var(--color-line)]" : ""
-                  }`}
+                  className="relative flex min-h-[210px] flex-col items-center rounded-[1.25rem] border border-[var(--color-line)] bg-white px-5 py-8 text-center shadow-[0_8px_24px_rgba(17,17,17,0.04)] transition-all hover:-translate-y-1 hover:border-[var(--color-green)]/40 hover:shadow-[0_16px_34px_rgba(17,17,17,0.08)]"
                 >
                   <p.Icon size={44} weight="regular" className="mb-6 text-[var(--color-green)]" />
                   <h3 className="font-display text-[13px] font-extrabold uppercase tracking-[0.05em] text-[var(--color-ink)]">
