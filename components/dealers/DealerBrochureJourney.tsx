@@ -9,7 +9,7 @@ const steps = [
 
 export function DealerBrochureJourney() {
   return (
-    <section id="brochure" className="bg-[var(--color-stage)] py-20 md:py-28">
+    <section id="brochure" className="bg-[color-mix(in_srgb,var(--color-green)_7%,white)] py-20 md:py-28">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-12">
           {/* LEFT — brochure */}

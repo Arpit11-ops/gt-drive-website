@@ -6,7 +6,7 @@ import { SectionKicker } from "@/components/about/SectionKicker";
 
 export function AboutWhoAndMission() {
   return (
-    <section className="bg-[var(--color-surface)] py-20 md:py-24">
+    <section className="bg-[color-mix(in_srgb,var(--color-green)_7%,white)] py-20 md:py-24">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-14">
           {/* 01 — WHO WE ARE */}

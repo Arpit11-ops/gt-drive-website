@@ -2,7 +2,7 @@ import { ChatCircleDots } from "@phosphor-icons/react/dist/ssr";
 
 export function ContactFinalCTA() {
   return (
-    <section className="bg-[var(--color-stage)] py-14 md:py-16">
+    <section className="bg-[color-mix(in_srgb,var(--color-green)_7%,white)] py-14 md:py-16">
       <div className="mx-auto max-w-[var(--container-page)] px-6 text-center md:px-12 lg:px-16">
         <ChatCircleDots
           size={40}

@@ -75,7 +75,7 @@ function TechVisual({ kind }: { kind: Card["visual"] }) {
 
 export function ScootersTechnology() {
   return (
-    <section className="bg-white py-20 md:py-24">
+    <section className="bg-[color-mix(in_srgb,var(--color-green)_7%,white)] py-20 md:py-24">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8">
           {/* LEFT — copy */}

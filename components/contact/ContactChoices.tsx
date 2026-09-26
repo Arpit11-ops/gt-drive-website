@@ -30,7 +30,7 @@ const channels: Channel[] = [
 
 export function ContactChoices() {
   return (
-    <section className="bg-[var(--color-stage)] py-16 md:py-20">
+    <section className="bg-[color-mix(in_srgb,var(--color-green)_7%,white)] py-16 md:py-20">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="text-center">
           <p className="text-[11px] font-bold tracking-[0.24em] text-[var(--color-green-deep)] uppercase">
