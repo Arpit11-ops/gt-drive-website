@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { AboutDirectorAndNetwork } from "@/components/about/AboutDirectorAndNetwork";
-import { AboutFinalCTA } from "@/components/about/AboutFinalCTA";
+import { AboutDirectionSections } from "@/components/about/AboutDirectionSections";
 import { AboutHero } from "@/components/about/AboutHero";
 import { AboutManufacturing } from "@/components/about/AboutManufacturing";
 import { AboutWhoAndMission } from "@/components/about/AboutWhoAndMission";
@@ -19,8 +18,7 @@ export default function AboutPage() {
       <Reveal className="motion-page-enter"><AboutHero /></Reveal>
       <Reveal delay={80}><AboutWhoAndMission /></Reveal>
       <Reveal delay={80}><AboutManufacturing /></Reveal>
-      <Reveal delay={80}><AboutDirectorAndNetwork /></Reveal>
-      <Reveal delay={80}><AboutFinalCTA /></Reveal>
+      <Reveal delay={80}><AboutDirectionSections /></Reveal>
       <Reveal delay={80}><ContactClose /></Reveal>
     </>
   );
