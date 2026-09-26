@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Buildings, Eye, Target } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, Eye, Target, Wind } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
 import { SectionKicker } from "@/components/about/SectionKicker";
 
@@ -33,19 +33,18 @@ export function AboutWhoAndMission() {
               </div>
             </div>
 
-            {/* HQ image — placeholder until real photo lands */}
+            {/* Clean-air image and message */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-stage)] md:col-span-2 md:aspect-auto md:min-h-[280px]">
               <Image
-                src={asset("/assets/gt-drive/one-india-atmosphere.webp")}
-                alt="GT Drive headquarters, Greater Noida"
+                src={asset("/assets/gt-drive/about-clean-air-mirror.png")}
+                alt="A greener city journey reflected in a scooter mirror"
                 fill
                 sizes="(max-width: 768px) 100vw, 25vw"
-                className="object-cover object-center"
+                className="object-cover object-[62%_center]"
               />
-              {/* placeholder badge — remove when real HQ photo lands */}
-              <div className="absolute inset-x-0 bottom-0 flex items-center gap-2 bg-[color-mix(in_srgb,var(--color-ink)_86%,transparent)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
-                <Buildings size={13} weight="bold" className="text-[var(--color-green)]" />
-                GT Drive HQ · Greater Noida
+              <div className="absolute inset-x-0 bottom-0 flex items-center gap-2.5 bg-[color-mix(in_srgb,var(--color-ink)_88%,transparent)] px-4 py-3 text-[10px] font-semibold leading-snug tracking-[0.08em] text-white">
+                <Wind size={17} weight="bold" className="shrink-0 text-[var(--color-green)]" />
+                <span>Let’s clean air be a part of every journey.</span>
               </div>
             </div>
           </div>
