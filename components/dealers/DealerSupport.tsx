@@ -50,7 +50,7 @@ export function DealerSupport() {
 
           {/* RIGHT — 4 pillars */}
           <div className="md:col-span-8">
-            <div className="grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
+            <div className="grid grid-cols-2 border-y border-[var(--color-line)] py-8 gap-y-10 md:grid-cols-4 md:gap-y-0 md:py-0">
               {pillars.map((p, i) => (
                 <div
                   key={p.title}

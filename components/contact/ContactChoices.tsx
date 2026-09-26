@@ -30,7 +30,7 @@ const channels: Channel[] = [
 
 export function ContactChoices() {
   return (
-    <section className="bg-[var(--color-surface)] py-16 md:py-20">
+    <section className="bg-[var(--color-stage)] py-16 md:py-20">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="text-center">
           <p className="text-[11px] font-bold tracking-[0.24em] text-[var(--color-green-deep)] uppercase">
@@ -41,7 +41,7 @@ export function ContactChoices() {
           </h2>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 border-y border-[var(--color-line)] md:grid-cols-3">
           {channels.map(({ Icon, title, lines, href }) => (
             <a
               key={title}
@@ -49,7 +49,7 @@ export function ContactChoices() {
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noreferrer" : undefined}
-              className="group relative flex flex-col items-center gap-6 rounded-2xl border border-[var(--color-line)] bg-white px-6 py-10 text-center shadow-[0_2px_10px_rgba(17,17,17,0.03)] transition-all hover:-translate-y-1 hover:border-[var(--color-green)]/40 hover:shadow-[0_18px_40px_rgba(17,17,17,0.08)]"
+              className="group relative flex min-h-[220px] flex-col items-center justify-center gap-5 border-b border-[var(--color-line)] px-6 py-10 text-center transition-colors hover:bg-white/60 md:border-b-0 md:border-l md:first:border-l-0"
             >
               <span className="grid h-16 w-16 place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-green)_10%,white)]">
                 <Icon size={28} weight="regular" className="text-[var(--color-green-deep)]" />
