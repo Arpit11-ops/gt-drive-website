@@ -31,19 +31,19 @@ const pillars: Pillar[] = [
 
 export function DealerSupport() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-[var(--color-green)] py-16 md:py-20">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8">
           {/* LEFT — intro */}
           <div className="md:col-span-4">
-            <p className="mb-6 text-[11px] font-bold tracking-[0.2em] text-[var(--color-green-deep)] uppercase">
+            <p className="mb-6 text-[11px] font-bold tracking-[0.2em] text-white/85 uppercase">
               Our Support
             </p>
-            <h2 className="font-display text-[clamp(36px,4.5vw,60px)] font-extrabold leading-[0.95] tracking-[-0.035em] text-[var(--color-ink)]">
+            <h2 className="font-display text-[clamp(36px,4.5vw,60px)] font-extrabold leading-[0.95] tracking-[-0.035em] text-white">
               BUILD WITH<br />GT DRIVE.
             </h2>
-            <span className="mt-6 block h-0.5 w-16 bg-[var(--color-green)]" />
-            <p className="mt-8 max-w-xs text-[14px] leading-relaxed text-[var(--color-body)]">
+            <span className="mt-6 block h-0.5 w-16 bg-white" />
+            <p className="mt-8 max-w-xs text-[14px] leading-relaxed text-white/85">
               GT Drive supports dealer partners across product, marketing, inventory, service and training.
             </p>
           </div>
