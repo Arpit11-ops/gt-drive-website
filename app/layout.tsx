@@ -44,7 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main className="min-h-screen">{children}</main>
         <Footer />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org", "@type": "Organization", name: "GT Drive", legalName: "Houstan Innovations LLP", url: "https://gtdrivepro.com", email: "info@gtdrivepro.com", telephone: "+91 9811712171", sameAs: ["https://www.instagram.com/gtdrivepro/", "https://www.facebook.com/p/GT-DRIVE-PRO-61587639792258/"],
+          "@context": "https://schema.org", "@type": "Organization", name: "GT Drive", legalName: "Houstan Innovations LLP", url: "https://gtdrivepro.com", email: "info@gtdrivepro.com", telephone: "+91 70112 06686", sameAs: ["https://www.instagram.com/gtdrivepro/", "https://www.facebook.com/p/GT-DRIVE-PRO-61587639792258/"],
         }) }} />
       </body>
     </html>

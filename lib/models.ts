@@ -154,15 +154,17 @@ export const models: ScooterModel[] = [
   },
   {
     slug: "gt-drive-pro", name: "GT - DRIVE PRO", shortName: "GT Drive Pro",
-    image: "/assets/gt-drive/gallery/gt-drive-pro-side.webp",
+    image: "/assets/gt-drive/gallery/gt-drive-pro-side-clean.png",
+    status: "coming-soon",
     sectionImages: {
-      hero: "/assets/gt-drive/gallery/gt-drive-pro-side.webp",
+      hero: "/assets/gt-drive/gallery/gt-drive-pro-side-clean.png",
       specifications: "/assets/gt-drive/gallery/gt-drive-pro-front.webp",
-      details: "/assets/gt-drive/gallery/gt-drive-pro-side.webp",
-      features: "/assets/gt-drive/gallery/gt-drive-pro-side.webp",
+      details: "/assets/gt-drive/gallery/gt-drive-pro-side-clean.png",
+      features: "/assets/gt-drive/gallery/gt-drive-pro-side-clean.png",
     },
-    gallery: ["/assets/gt-drive/gallery/gt-drive-pro-side.webp", "/assets/gt-drive/gallery/gt-drive-pro-front.webp"],
-    lead: "GT Drive Pro brings the catalogue’s shared electric scooter features together in a clean, modern design.",
+    gallery: ["/assets/gt-drive/gallery/gt-drive-pro-side-clean.png", "/assets/gt-drive/gallery/gt-drive-pro-front.webp"],
+    lead: "An Indian-developed electric scooter currently under development, bringing GT Drive’s clean, modern design to the next chapter.",
+    note: "Coming soon. Proudly developed in India.",
     colors: ["Color may vary depending on availability"], specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
   {
@@ -183,7 +185,7 @@ export const locations = [
 ];
 
 export const contact = {
-  phones: ["+91 9811712171", "+91 9217901112", "+91 9217901113", "+91 9217901114"],
+  phones: ["+91 70112 06686", "+91 92179 00435"],
   email: "info@gtdrivepro.com",
   whatsapp: "919811712171",
 };

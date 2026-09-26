@@ -53,7 +53,7 @@ export function AboutWhoAndMission() {
           <div className="gt-card rounded-[1.5rem] bg-white p-6 shadow-[0_10px_30px_rgba(17,17,17,0.04)] md:p-8">
             <SectionKicker n="02" />
             <h2 className="font-display text-[clamp(28px,2.6vw,36px)] font-extrabold uppercase leading-[1] tracking-[-0.025em] text-[var(--color-ink)]">
-              Our Mission &amp; Vision
+              Our Vision &amp; Mission
             </h2>
 
             <div className="relative mt-10 grid grid-cols-2 gap-8">

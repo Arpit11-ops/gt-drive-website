@@ -11,8 +11,8 @@ const channels: Channel[] = [
   {
     Icon: Phone,
     title: "Call Us",
-    lines: ["+91 9811712171", "+91 9217901112"],
-    href: "tel:+919811712171",
+    lines: ["+91 70112 06686", "+91 92179 00435"],
+    href: "tel:+917011206686",
   },
   {
     Icon: WhatsappLogo,
