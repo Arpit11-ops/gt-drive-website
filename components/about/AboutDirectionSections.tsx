@@ -42,7 +42,7 @@ export function AboutDirectionSections() {
 
       <section className="bg-[var(--color-stage)] py-20 md:py-28">
         <div className="mx-auto grid max-w-[var(--container-page)] items-center gap-12 px-6 md:grid-cols-12 md:gap-16 md:px-12 lg:px-16">
-          <div className="gt-card relative order-2 aspect-[4/3] w-full max-w-[34rem] overflow-hidden rounded-[1.5rem] bg-white md:order-1 md:col-span-7">
+          <div className="gt-card relative order-2 aspect-[16/9] w-full max-w-[34rem] overflow-hidden rounded-[1.5rem] bg-white md:order-1 md:col-span-7">
             <Image
               src={asset("/assets/gt-drive/about-change-direction.png")}
               alt="A green road turning away from a petrol route"
