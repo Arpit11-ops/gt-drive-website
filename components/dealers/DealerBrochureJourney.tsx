@@ -15,7 +15,7 @@ export function DealerBrochureJourney() {
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-12">
           {/* LEFT — brochure */}
-          <div className="flex flex-col items-start justify-center">
+          <div className="flex flex-col items-start">
             <p className="mb-6 text-[11px] font-bold tracking-[0.2em] text-[var(--color-green-deep)] uppercase">
               Get The Details
             </p>
@@ -47,7 +47,7 @@ export function DealerBrochureJourney() {
           </div>
 
           {/* RIGHT — journey */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col">
             <p className="mb-6 text-[11px] font-bold tracking-[0.2em] text-[var(--color-green-deep)] uppercase">
               Your GT Journey
             </p>
