@@ -26,7 +26,7 @@ export function ModelCard({
           fill
           sizes={featured ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 32vw, (min-width: 640px) 50vw, 100vw"}
           priority={priority}
-          className="object-contain p-8 mix-blend-multiply transition-transform duration-[500ms] ease-[var(--ease-signature)] group-hover:scale-[1.035] group-hover:rotate-[-1deg] md:p-10"
+          className="object-contain p-0 mix-blend-multiply transition-transform duration-[500ms] ease-[var(--ease-signature)] group-hover:scale-[1.035] group-hover:rotate-[-1deg]"
         />
         {model.status === "coming-soon" && (
           <span className="absolute left-4 top-4 rounded-sm bg-[var(--color-green-deep)] px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
