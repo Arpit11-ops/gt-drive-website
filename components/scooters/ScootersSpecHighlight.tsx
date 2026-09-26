@@ -51,7 +51,7 @@ export function ScootersSpecHighlight({
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-contain object-center p-10 md:p-12"
+                className="object-cover object-center"
               />
             </div>
           </div>
