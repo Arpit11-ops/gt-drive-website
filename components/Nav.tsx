@@ -177,7 +177,7 @@ export function Nav() {
         aria-label="Mobile"
         aria-hidden={!mobileOpen}
         inert={!mobileOpen}
-        className={`fixed inset-0 z-[60] overflow-y-auto bg-[#fafafa]/95 backdrop-blur-xl transition-[transform,opacity] duration-500 ease-[var(--ease-signature)] lg:hidden ${
+        className={`fixed inset-0 z-[60] overflow-y-auto bg-white/95 backdrop-blur-xl transition-[transform,opacity] duration-500 ease-[var(--ease-signature)] lg:hidden ${
           mobileOpen ? "translate-x-0 opacity-100" : "pointer-events-none translate-x-full opacity-0"
         }`}
       >
