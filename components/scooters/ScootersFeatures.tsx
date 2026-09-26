@@ -94,15 +94,15 @@ export function ScootersFeatures({
           </div>
 
           {/* RIGHT — interactive feature explorer */}
-          <div className="md:col-span-8 md:-mr-10 lg:-mr-16">
-            <div className={`relative w-full overflow-hidden rounded-l-2xl bg-[var(--color-stage)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+          <div className="md:col-span-8">
+            <div className={`relative ml-auto w-full max-w-[36rem] overflow-hidden rounded-[1.25rem] bg-[var(--color-stage)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
               {/* scooter image */}
               <Image
                 src={asset(image)}
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 66vw"
-                className="object-contain object-center p-8 md:p-14"
+                className="object-contain object-center p-7 md:p-10"
               />
 
               {/* SVG connector lines from label to dot */}
