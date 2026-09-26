@@ -29,7 +29,7 @@ export function ScootersSpecHighlight({
 }: Props = {}) {
   const specs: Spec[] = [
     { Icon: Path, label: "Range", value: rideSpecs?.range ?? "Not provided", sub: "Per charge" },
-    { Icon: Gauge, label: "Top Speed", value: rideSpecs?.topSpeed ?? "Not provided" },
+    { Icon: Gauge, label: "Low Speed Non-RTO", value: rideSpecs?.topSpeed ?? "Not provided" },
     { Icon: BatteryHigh, label: "Battery", value: rideSpecs?.battery ?? "Not provided" },
     { Icon: PlugCharging, label: "Charging Time", value: rideSpecs?.chargingTime ?? "Not provided" },
   ];
@@ -45,7 +45,7 @@ export function ScootersSpecHighlight({
               Specifications
             </p>
 
-            <div className={`relative w-full max-w-[24rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+            <div className={`relative mt-0 w-full max-w-[24rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] md:mt-8 ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
               <Image
                 src={asset(image)}
                 alt={alt}

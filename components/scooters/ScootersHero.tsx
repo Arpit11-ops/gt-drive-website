@@ -1,7 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import type { CSSProperties } from "react";
 import { asset } from "@/lib/asset";
+
+const colourValues: Record<string, string> = {
+  white: "#f5f5f2",
+  black: "#17191a",
+  grey: "#8b8f93",
+  "honda grey": "#737982",
+  orange: "#e97822",
+  maroon: "#762536",
+  "silver grey": "#c5c9ce",
+  green: "#2f9f54",
+  "matte shale green": "#617568",
+  "matte coffee brown": "#80604c",
+  "tyrant gold": "#c9a53f",
+  red: "#b82731",
+  "peacock blue": "#24728a",
+  yellow: "#e1bd2e",
+};
+
+function colourSwatchStyle(label: string): CSSProperties {
+  const parts = label.split("/").map((part) => part.trim().toLowerCase());
+  if (parts.length > 1) {
+    const first = colourValues[parts[0]] ?? "#b8b8b8";
+    const second = colourValues[parts[1]] ?? "#242424";
+    return { background: `linear-gradient(135deg, ${first} 0 50%, ${second} 50% 100%)` };
+  }
+
+  const value = colourValues[parts[0]];
+  return value
+    ? { backgroundColor: value }
+    : { background: "linear-gradient(135deg, #f2f2f0 0 50%, #b8b8b8 50% 100%)" };
+}
 
 type Props = {
   /** Full display name, e.g. "GT Flying" or "GT Soul NXT". Last word is highlighted green. */
@@ -115,7 +147,21 @@ export function ScootersHero({
                 {colors.length > 0 && (
                   <div>
                     <p className="font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">Colour options</p>
-                    <p className="mt-2 leading-relaxed text-[var(--color-body)]">{colors.length} finishes · {colors.slice(0, 2).join(" · ")}{colors.length > 2 ? " · +more" : ""}</p>
+                    <div className="mt-2 flex items-center gap-2.5">
+                      <div className="flex flex-wrap gap-1.5" aria-label={`${colors.length} colour options`}>
+                        {colors.map((colour) => (
+                          <span
+                            key={colour}
+                            role="img"
+                            aria-label={`${colour} finish`}
+                            title={colour}
+                            className="h-5 w-5 rounded-full border border-black/15 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.22)]"
+                            style={colourSwatchStyle(colour)}
+                          />
+                        ))}
+                      </div>
+                      <span className="text-[11px] text-[var(--color-body)]">{colors.length} finish{colors.length === 1 ? "" : "es"}</span>
+                    </div>
                   </div>
                 )}
                 {featureCount && (

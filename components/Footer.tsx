@@ -16,30 +16,30 @@ export function Footer() {
             height={54}
             className="h-auto w-52"
           />
-          <p className="mt-6 max-w-xs text-sm leading-relaxed text-[var(--color-body)]">
+          <p className="mt-6 max-w-xs text-[15px] font-medium leading-relaxed text-[var(--color-body)]">
             The electric two-wheeler brand from Houstan Innovations LLP, headquartered in Greater Noida.
           </p>
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-green-deep)]">
+          <h3 className="text-[11px] font-bold uppercase tracking-wider text-[var(--color-green-deep)]">
             Explore
           </h3>
-          <Link href="/models/" className="text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Models</Link>
-          <Link href="/dealers/" className="text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]">For Dealers</Link>
-          <Link href="/about/" className="text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]">About</Link>
-          <Link href="/contact/" className="text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Contact</Link>
+          <Link href="/models/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Models</Link>
+          <Link href="/dealers/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">For Dealers</Link>
+          <Link href="/about/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">About</Link>
+          <Link href="/contact/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Contact</Link>
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-green-deep)]">
+          <h3 className="text-[11px] font-bold uppercase tracking-wider text-[var(--color-green-deep)]">
             Range
           </h3>
           {models.slice(0, 6).map((model) => (
             <Link
               key={model.slug}
               href={`/models/${model.slug}/`}
-              className="text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
+              className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
             >
               {model.shortName}
             </Link>
@@ -47,14 +47,14 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-green-deep)]">
+          <h3 className="text-[11px] font-bold uppercase tracking-wider text-[var(--color-green-deep)]">
             Connect
           </h3>
           <a
             href="https://www.instagram.com/gtdrivepro/"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
+            className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
           >
             <InstagramLogo size={16} /> Instagram
           </a>
@@ -62,7 +62,7 @@ export function Footer() {
             href="https://www.facebook.com/p/GT-DRIVE-PRO-61587639792258/"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
+            className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
           >
             <FacebookLogo size={16} /> Facebook
           </a>
@@ -70,7 +70,7 @@ export function Footer() {
             href={`https://wa.me/${contact.whatsapp}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
+            className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
           >
             <WhatsappLogo size={16} /> WhatsApp
           </a>
@@ -78,14 +78,14 @@ export function Footer() {
             <a
               key={phone}
               href={`tel:${phone.replace(/\s/g, "")}`}
-              className="inline-flex items-center gap-2 text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
+              className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
             >
               <Phone size={16} /> {phone}
             </a>
           ))}
           <a
             href={`mailto:${contact.email}`}
-            className="inline-flex items-center gap-2 text-sm text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
+            className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]"
           >
             <EnvelopeSimple size={16} /> {contact.email}
           </a>
@@ -93,8 +93,8 @@ export function Footer() {
       </div>
 
       <div className="mx-auto flex max-w-[var(--container-page)] items-center justify-between border-t border-[var(--color-line)] px-6 py-6">
-        <span className="text-xs text-[var(--color-muted)]">© 2026 Houstan Innovations LLP</span>
-        <span className="text-xs text-[var(--color-muted)]">Drive Clean · Go Green</span>
+        <span className="text-xs font-medium text-[var(--color-muted)]">© 2026 Houstan Innovations LLP</span>
+        <span className="text-xs font-medium text-[var(--color-muted)]">Drive Clean · Go Green</span>
       </div>
     </footer>
   );
