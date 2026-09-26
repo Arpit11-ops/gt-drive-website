@@ -9,7 +9,7 @@ export function DealerApplicationForm() {
           <h2 className="font-display text-[clamp(38px,4vw,60px)] font-extrabold leading-[0.96] tracking-[-0.035em] text-[var(--color-ink)]">Ready to bring GT Drive to your city?</h2>
           <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-[var(--color-body)]">Tell us about your business, experience and preferred location. Our partnership team will review your details and contact you about the next step.</p>
         </div>
-        <div className="rounded-lg bg-[color-mix(in_srgb,var(--color-green)_6%,white)] p-6 md:p-10">
+        <div>
           <InquiryForm defaultType="dealership" />
         </div>
       </div>
