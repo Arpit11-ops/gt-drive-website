@@ -38,7 +38,7 @@ export function ScootersSpecTable({
           </div>
 
           {/* RIGHT — scooter image with subtle diagonal green accent */}
-          <div className="relative rounded-[1.5rem] border border-black/[0.08] bg-[var(--color-stage)] p-5 md:col-span-6 md:min-h-[380px] md:p-8">
+          <div className="relative -mr-6 rounded-l-[1.5rem] border border-r-0 border-black/[0.08] bg-[var(--color-stage)] p-8 md:-mr-10 md:col-span-6 md:min-h-[380px] md:p-12 lg:-mr-16">
             {/* subtle diagonal light-grey wedge behind the scooter */}
             <div
               aria-hidden
@@ -57,7 +57,7 @@ export function ScootersSpecTable({
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-contain object-center p-4"
+                className="object-contain object-center p-8 md:p-14"
               />
             </div>
           </div>

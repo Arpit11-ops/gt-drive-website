@@ -39,19 +39,19 @@ export function ScootersSpecHighlight({
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-10">
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-10">
           {/* LEFT — kicker + scooter image */}
-          <div className="relative md:col-span-5">
+          <div className="relative md:-ml-10 md:col-span-5 lg:-ml-16">
             <p className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--color-green-deep)]">
               <span className="h-[2px] w-6 bg-[var(--color-green)]" />
               Specifications
             </p>
 
-            <div className={`relative w-full overflow-hidden rounded-[1.5rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+            <div className={`relative w-full overflow-hidden rounded-r-[1.5rem] border border-l-0 border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
               <Image
                 src={asset(image)}
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-contain object-center p-8"
+                className="object-contain object-center p-12 md:p-16"
               />
             </div>
           </div>
