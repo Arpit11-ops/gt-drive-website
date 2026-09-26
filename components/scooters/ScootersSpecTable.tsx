@@ -14,11 +14,11 @@ export function ScootersSpecTable({
   features = [],
 }: Props = {}) {
   return (
-    <section className="bg-[var(--color-stage)] py-16 md:py-20">
-      <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-0">
+    <section className="bg-white py-16 md:py-24">
+      <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-10">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-0">
           {/* LEFT — brochure feature badges */}
-          <div className="md:col-span-6 md:pl-12 md:pr-10 lg:pl-16 lg:pr-14">
+          <div className="rounded-[1.5rem] bg-[var(--color-stage)] p-7 md:col-span-6 md:p-10 lg:p-12">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-green-deep)]">
               Features
             </p>
@@ -38,7 +38,7 @@ export function ScootersSpecTable({
           </div>
 
           {/* RIGHT — scooter image with subtle diagonal green accent */}
-          <div className="relative md:col-span-6 md:min-h-[380px]">
+          <div className="relative rounded-[1.5rem] border border-black/[0.08] bg-[var(--color-stage)] p-5 md:col-span-6 md:min-h-[380px] md:p-8">
             {/* subtle diagonal light-grey wedge behind the scooter */}
             <div
               aria-hidden
@@ -57,7 +57,7 @@ export function ScootersSpecTable({
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center"
+                className="object-contain object-center p-4"
               />
             </div>
           </div>

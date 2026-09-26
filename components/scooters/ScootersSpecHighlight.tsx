@@ -35,29 +35,29 @@ export function ScootersSpecHighlight({
   ];
 
   return (
-    <section className="bg-[var(--color-surface)] py-16 md:py-20">
-      <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-0">
-        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-0">
+    <section className="bg-[var(--color-stage)] py-16 md:py-24">
+      <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-10">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-10">
           {/* LEFT — kicker + scooter image */}
-          <div className="relative md:col-span-6 md:pl-12 lg:pl-16">
+          <div className="relative md:col-span-5">
             <p className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--color-green-deep)]">
               <span className="h-[2px] w-6 bg-[var(--color-green)]" />
               Specifications
             </p>
 
-            <div className={`relative w-full overflow-hidden rounded-2xl bg-[var(--color-stage)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+            <div className={`relative w-full overflow-hidden rounded-[1.5rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
               <Image
                 src={asset(image)}
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center"
+                className="object-contain object-center p-8"
               />
             </div>
           </div>
 
           {/* RIGHT — spec highlight panel */}
-          <div className="relative md:col-span-6 md:border-l md:border-[var(--color-line)] md:pl-10 md:pr-12 lg:pl-14 lg:pr-16">
+          <div className="relative rounded-[1.5rem] bg-white p-7 shadow-[0_12px_30px_rgba(17,17,17,0.05)] md:col-span-7 md:p-10 lg:p-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
               Everything That
             </p>

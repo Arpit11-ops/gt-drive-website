@@ -43,7 +43,30 @@ export function ScootersHero({
 
   if (video) {
     return (
-      <section className="relative isolate min-h-[100svh] overflow-hidden bg-[#dfe5e7] text-white">
+      <section className="relative isolate overflow-hidden bg-white pt-20">
+        <div className="mx-auto grid min-h-[calc(100svh-5rem)] max-w-[var(--container-page)] grid-cols-1 md:grid-cols-12">
+          <div className="relative z-10 flex flex-col justify-center px-6 py-14 md:col-span-5 md:px-12 md:py-20 lg:px-16">
+            <p className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--color-green-deep)]">
+              <span className="h-[2px] w-6 bg-[var(--color-green)]" />
+              {kicker}
+            </p>
+            <h1 className="font-display text-[clamp(48px,6.4vw,96px)] font-extrabold uppercase leading-[0.9] tracking-[-0.055em] text-[var(--color-ink)]">
+              {lead && <>{lead} </>}
+              <span className="text-[var(--color-green)]">{highlight}.</span>
+            </h1>
+            <p className="mt-6 max-w-sm whitespace-pre-line text-[16px] leading-relaxed text-[var(--color-body)]">{tagline}</p>
+            <Link href={cta.href} className="group mt-9 inline-flex h-12 w-fit items-center gap-2 rounded-full bg-[var(--color-green)] px-6 text-[13px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)]">
+              {cta.label}
+              <ArrowRight size={15} weight="bold" className="transition-transform group-hover:translate-x-1" />
+            </Link>
+            <div className="mt-10 grid max-w-sm grid-cols-2 gap-5 border-t border-black/10 pt-5 text-[11px]">
+              <div><p className="font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">Range</p><p className="mt-2 text-[var(--color-body)]">Everyday city riding</p></div>
+              <div><p className="font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">GT Drive</p><p className="mt-2 text-[var(--color-body)]">Electric mobility</p></div>
+            </div>
+          </div>
+          <div className="relative flex items-center bg-[var(--color-stage)] px-5 py-8 md:col-span-7 md:px-8 md:py-12 lg:px-12">
+            <div aria-hidden className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-[var(--color-green)] opacity-90 [clip-path:polygon(100%_0,0_15%,0_85%,100%_100%)]" />
+            <div className="relative z-[1] aspect-[4/3] w-full overflow-hidden rounded-[1.75rem] border border-black/5 bg-[#dfe5e7] shadow-[0_24px_70px_rgba(17,17,17,0.14)]">
         <video
           className="absolute inset-0 h-full w-full object-cover object-center"
           src={asset(video)}
@@ -57,22 +80,7 @@ export function ScootersHero({
           preload="auto"
           aria-label={alt}
         />
-        <div aria-hidden className="absolute inset-0 bg-[linear-gradient(135deg,rgba(250,252,252,0.72)_0%,rgba(250,252,252,0.34)_20%,transparent_42%),linear-gradient(to_top,rgba(0,0,0,0.2),transparent_38%)]" />
-        <div className="relative z-10 flex min-h-[100svh] items-end px-4 pb-6 md:items-start md:px-10 md:pb-0 md:pt-28 lg:px-14 lg:pt-32">
-          <div className="ml-auto max-w-[11rem] rounded-lg border border-white/45 bg-white/35 p-2.5 shadow-[0_10px_24px_rgba(17,17,17,0.05)] backdrop-blur-[2px] md:ml-0 md:max-w-[14rem] md:p-3.5">
-            <p className="mb-1.5 flex items-center gap-2 text-[8px] font-bold uppercase tracking-[0.18em] text-[var(--color-green-deep)]">
-              <span className="h-px w-4 bg-[var(--color-green)]" />
-              {kicker}
-            </p>
-            <h1 className="font-display text-[clamp(26px,3.25vw,48px)] font-extrabold uppercase leading-[0.88] tracking-[-0.055em] text-[var(--color-ink)]">
-              {lead && <>{lead} </>}
-              <span className="text-[var(--color-green)]">{highlight}.</span>
-            </h1>
-            <p className="mt-2 hidden max-w-[11rem] whitespace-pre-line text-[10px] leading-relaxed text-[var(--color-body)] sm:block md:text-[11px]">{tagline}</p>
-            <Link href={cta.href} className="mt-2 inline-flex h-7 items-center gap-1.5 rounded-full bg-[var(--color-green)] px-2.5 text-[8px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)] sm:mt-3 md:h-8 md:px-3 md:text-[9px]">
-              {cta.label}
-              <ArrowRight size={15} weight="bold" />
-            </Link>
+            </div>
           </div>
         </div>
       </section>
