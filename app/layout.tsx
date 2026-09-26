@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Archivo, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
-const display = Archivo({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+const display = localFont({
+  src: "./fonts/archivo-latin.woff2",
+  weight: "100 900",
   variable: "--font-archivo",
   display: "swap",
 });
 
-const body = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const body = localFont({
+  src: "./fonts/inter-latin.woff2",
+  weight: "100 900",
   variable: "--font-inter",
   display: "swap",
 });
