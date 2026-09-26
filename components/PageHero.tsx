@@ -8,9 +8,10 @@ type Props = {
   lead?: string;
   children?: ReactNode;
   theme?: "light" | "dark" | "green";
+  density?: "default" | "compact";
 };
 
-export function PageHero({ eyebrow, headline, lead, children, theme = "light" }: Props) {
+export function PageHero({ eyebrow, headline, lead, children, theme = "light", density = "default" }: Props) {
   const bg =
     theme === "dark"
       ? "bg-[#111111] text-white"
@@ -20,10 +21,13 @@ export function PageHero({ eyebrow, headline, lead, children, theme = "light" }:
   const eyebrowColor =
     theme === "light" ? "text-[var(--color-green-deep)]" : "text-[var(--color-green)]";
   const leadColor = theme === "light" ? "text-[var(--color-body)]" : "text-white/70";
+  const spacing = density === "compact"
+    ? "px-6 pb-10 pt-16 md:px-10 md:pb-12 md:pt-20"
+    : "px-6 pb-16 pt-20 md:px-10 md:pb-20 md:pt-24";
 
   return (
     <section className={`relative overflow-hidden ${bg}`}>
-      <div className="mx-auto max-w-[var(--container-page)] px-6 pb-16 pt-20 md:px-10 md:pb-20 md:pt-24">
+      <div className={`mx-auto max-w-[var(--container-page)] ${spacing}`}>
         {eyebrow && (
           <Reveal className={`flex items-center gap-4 text-sm font-medium ${eyebrowColor}`}>
             <ChargeLine

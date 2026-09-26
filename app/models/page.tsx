@@ -17,6 +17,7 @@ export default function ModelsPage() {
     <>
       <PageHero
         eyebrow="The GT Drive electric range"
+        density="compact"
         headline={
           <>
             <MaskReveal as="span" className="block">
@@ -34,9 +35,9 @@ export default function ModelsPage() {
         lead="Explore nine electric scooters from the GT Drive range. Compare each model’s design, features, specifications and colours."
       />
       <Reveal>
-      <section className="bg-white">
-        <div className="mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-12 md:px-10 md:pb-32 md:pt-16">
-        <div className="mb-12 flex flex-col justify-between gap-8 rounded-2xl border border-black/[0.08] bg-[var(--color-stage)] px-5 py-5 text-sm shadow-[0_8px_24px_rgba(17,17,17,0.03)] md:mb-16 md:flex-row md:items-center md:px-7">
+      <section className="relative bg-[linear-gradient(180deg,var(--color-stage)_0%,#ffffff_30%)]">
+        <div className="mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-0 md:px-10 md:pb-32">
+        <div className="gt-card relative -mt-2 mb-10 flex flex-col justify-between gap-6 rounded-2xl border-t-2 border-t-[var(--color-green)] bg-white px-5 py-5 text-sm shadow-[0_12px_30px_rgba(17,17,17,0.06)] md:mb-14 md:flex-row md:items-center md:px-7">
           <p className="max-w-md leading-[1.55] text-[var(--color-body)]">
             Start with the details that matter to you, then contact GT Drive for more information about a model.
           </p>
