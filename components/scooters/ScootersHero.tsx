@@ -147,20 +147,27 @@ export function ScootersHero({
                 {colors.length > 0 && (
                   <div>
                     <p className="font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">Colour options</p>
-                    <div className="mt-2 flex items-center gap-2.5">
-                      <div className="flex flex-wrap gap-1.5" aria-label={`${colors.length} colour options`}>
+                    <div className="mt-2">
+                      <div className="flex flex-wrap items-center gap-1.5" aria-label={`${colors.length} colour options`}>
                         {colors.map((colour) => (
                           <span
                             key={colour}
-                            role="img"
-                            aria-label={`${colour} finish`}
-                            title={colour}
-                            className="h-5 w-5 rounded-full border border-black/15 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.22)]"
-                            style={colourSwatchStyle(colour)}
-                          />
+                            className="group relative inline-flex h-5 w-5 rounded-full outline-none"
+                          >
+                            <span
+                              role="img"
+                              tabIndex={0}
+                              aria-label={`${colour} finish`}
+                              className="h-5 w-5 rounded-full border border-black/15 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.22)] focus-visible:ring-2 focus-visible:ring-[var(--color-green)] focus-visible:ring-offset-2"
+                              style={colourSwatchStyle(colour)}
+                            />
+                            <span className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[var(--color-ink)] px-2 py-1 text-[10px] font-semibold normal-case tracking-normal text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100">
+                              {colour}
+                            </span>
+                          </span>
                         ))}
                       </div>
-                      <span className="text-[11px] text-[var(--color-body)]">{colors.length} finish{colors.length === 1 ? "" : "es"}</span>
+                      <span className="mt-2 block text-[11px] text-[var(--color-body)]">{colors.length} finish{colors.length === 1 ? "" : "es"}</span>
                     </div>
                   </div>
                 )}
