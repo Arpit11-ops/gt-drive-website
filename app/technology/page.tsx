@@ -74,7 +74,7 @@ export default function TechnologyPage() {
   return (
     <div className="bg-[#f5f7f3] text-[var(--color-ink)]">
       <section className="relative isolate overflow-hidden bg-[#001d17] bg-cover bg-[66%_center] text-white md:bg-center" style={{ backgroundImage: `linear-gradient(90deg, rgba(0,24,18,.98) 0%, rgba(0,24,18,.9) 35%, rgba(0,24,18,.3) 74%, rgba(0,24,18,.04) 100%), url(${asset("/assets/technology/hero-banner.webp")})` }}>
-        <div className="mx-auto flex min-h-[310px] w-full flex-col justify-center px-5 py-12 sm:px-8 md:min-h-[390px] md:px-12 lg:px-16">
+        <div className="mx-auto flex min-h-[460px] w-full flex-col justify-center px-5 py-16 sm:px-8 md:min-h-[560px] md:px-12 md:py-24 lg:px-16">
           <Reveal className="text-[11px] font-bold uppercase tracking-[0.34em] text-[#70db91] md:text-sm">Our technology</Reveal>
           <Reveal delay={80} className="mt-3 max-w-[950px]"><h1 className="text-[clamp(36px,6vw,86px)] font-extrabold uppercase leading-[0.98] tracking-[-0.045em]">Built for a<br /><span className="text-[#5ddc8b]">cleaner tomorrow</span></h1></Reveal>
           <Reveal delay={160} className="mt-5 max-w-xl"><p className="text-sm leading-relaxed text-white/90 sm:text-base md:text-xl">Advanced components. Superior performance.<br />A smarter, greener ride with GT Drive.</p></Reveal>
