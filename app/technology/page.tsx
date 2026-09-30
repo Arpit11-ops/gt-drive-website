@@ -65,8 +65,11 @@ const technology: TechnologyItem[] = [
 export default function TechnologyPage() {
   return (
     <div className="bg-[#f5f7f3] text-[var(--color-ink)]">
-      <section className="relative overflow-hidden bg-[#111] text-white">
-        <div className="absolute -right-24 -top-48 h-[36rem] w-[36rem] rounded-full bg-[var(--color-green)]/15 blur-3xl" />
+      <section
+        className="relative overflow-hidden bg-[#111] bg-cover bg-center text-white"
+        style={{ backgroundImage: `linear-gradient(90deg, rgba(17,17,17,.98) 0%, rgba(17,17,17,.94) 34%, rgba(17,17,17,.42) 64%, rgba(17,17,17,.12) 100%), url(${asset("/assets/technology/hero-banner.webp")})` }}
+      >
+        <div className="absolute -right-24 -top-48 h-[36rem] w-[36rem] rounded-full bg-[var(--color-green)]/10 blur-3xl" />
         <div className="relative mx-auto max-w-[var(--container-page)] px-6 pb-20 pt-36 md:px-10 md:pb-28 md:pt-44">
           <Reveal className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-green)]">
             <span className="h-px w-12 bg-[var(--color-green)]" /> GT Drive technology

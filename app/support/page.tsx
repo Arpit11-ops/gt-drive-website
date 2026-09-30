@@ -58,7 +58,10 @@ const warranty = [
 export default function SupportPage() {
   return (
     <div className="bg-[#f5f8f5] text-[var(--color-ink)]">
-      <section className="bg-[#111] text-white">
+      <section
+        className="relative overflow-hidden bg-[#111] bg-cover bg-center text-white"
+        style={{ backgroundImage: `linear-gradient(90deg, rgba(17,17,17,.98) 0%, rgba(17,17,17,.94) 34%, rgba(17,17,17,.46) 66%, rgba(17,17,17,.14) 100%), url(${asset("/assets/support/hero-banner.webp")})` }}
+      >
         <div className="mx-auto max-w-[var(--container-page)] px-6 pb-16 pt-36 md:px-10 md:pb-24 md:pt-44">
           <Reveal className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-green)]"><span className="h-px w-12 bg-[var(--color-green)]" /> GT Drive care</Reveal>
           <Reveal delay={80} className="mt-7 max-w-4xl"><h1 className="text-[clamp(52px,8vw,116px)] leading-[0.88] tracking-[-0.06em]">Support that keeps<br /><span className="text-[var(--color-green)]">you moving.</span></h1></Reveal>
