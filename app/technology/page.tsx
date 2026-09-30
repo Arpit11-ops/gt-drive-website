@@ -89,20 +89,20 @@ export default function TechnologyPage() {
       <main className="mx-auto max-w-[var(--container-page)] bg-white px-6 py-12 md:px-10 md:py-20">
         <div className="grid gap-14 md:gap-24">
           {technology.map((item, index) => (
-            <Reveal key={item.name} delay={index * 35} className={`group grid overflow-hidden rounded-[2rem] shadow-[0_18px_60px_rgba(17,17,17,0.08)] md:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] ${index % 2 === 1 ? "bg-[#edf8ef]" : "bg-white"}`}>
-              <div className={`relative min-h-[330px] overflow-hidden bg-[#e9ede8] md:min-h-[510px] ${index % 2 ? "md:order-2" : ""}`}>
+            <Reveal key={item.name} delay={index * 35} className={`group grid grid-cols-[42%_58%] overflow-hidden rounded-[1.25rem] shadow-[0_12px_36px_rgba(17,17,17,0.08)] md:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] md:rounded-[2rem] md:shadow-[0_18px_60px_rgba(17,17,17,0.08)] ${index % 2 === 1 ? "bg-[#edf8ef]" : "bg-white"}`}>
+              <div className={`relative aspect-square min-h-0 overflow-hidden bg-[#e9ede8] md:aspect-auto md:min-h-[510px] ${index % 2 ? "md:order-2" : ""}`}>
                 <Image src={asset(item.image)} alt={`${item.name} used in a GT Drive electric scooter`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
-                <div className="absolute left-5 top-5 rounded-full bg-[#111]/85 px-4 py-2 font-display text-xs font-bold tracking-[0.14em] text-white">{item.number}</div>
+                <div className="absolute left-2.5 top-2.5 rounded-full bg-[#111]/85 px-2 py-1 font-display text-[9px] font-bold tracking-[0.12em] text-white md:left-5 md:top-5 md:px-4 md:py-2 md:text-xs md:tracking-[0.14em]">{item.number}</div>
               </div>
-              <div className={`flex flex-col justify-center p-8 md:p-14 lg:p-20 ${index % 2 ? "md:order-1" : ""}`}>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-green-deep)]">{item.label}</p>
-                <h2 className="mt-4 text-[clamp(42px,5vw,76px)] leading-[0.9]">{item.name}</h2>
-                <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[var(--color-body)]">{item.description}</p>
-                <ul className="mt-8 grid gap-2 border-t border-[var(--color-line)] pt-7">
+              <div className={`flex min-w-0 flex-col justify-center p-3.5 md:p-14 lg:p-20 ${index % 2 ? "md:order-1" : ""}`}>
+                <p className="text-[8px] font-bold uppercase leading-tight tracking-[0.12em] text-[var(--color-green-deep)] md:text-xs md:tracking-[0.2em]">{item.label}</p>
+                <h2 className="mt-2 text-[clamp(25px,5vw,76px)] leading-[0.9] md:mt-4">{item.name}</h2>
+                <p className="mt-3 max-w-md text-[10px] leading-[1.35] text-[var(--color-body)] md:mt-6 md:text-[15px] md:leading-relaxed">{item.description}</p>
+                <ul className="mt-4 grid gap-1.5 border-t border-[var(--color-line)] pt-4 md:mt-8 md:gap-2 md:pt-7">
                   {item.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3 rounded-full bg-[color-mix(in_srgb,var(--color-green)_8%,white)] px-4 py-2.5 text-sm font-semibold text-[var(--color-body)]">
-                      <span aria-hidden className="relative grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-[var(--color-green)] shadow-[0_0_0_3px_color-mix(in_srgb,var(--color-green)_16%,transparent)]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                    <li key={feature} className="flex items-center gap-1.5 rounded-full bg-[color-mix(in_srgb,var(--color-green)_8%,white)] px-2.5 py-1.5 text-[9px] font-semibold leading-tight text-[var(--color-body)] md:gap-3 md:px-4 md:py-2.5 md:text-sm">
+                      <span aria-hidden className="relative grid h-2.5 w-2.5 shrink-0 place-items-center rounded-full bg-[var(--color-green)] shadow-[0_0_0_2px_color-mix(in_srgb,var(--color-green)_16%,transparent)] md:h-3.5 md:w-3.5 md:shadow-[0_0_0_3px_color-mix(in_srgb,var(--color-green)_16%,transparent)]">
+                        <span className="h-1 w-1 rounded-full bg-white md:h-1.5 md:w-1.5" />
                       </span>
                       {feature}
                     </li>
