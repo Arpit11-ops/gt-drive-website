@@ -31,6 +31,7 @@ export function Footer() {
           <Link href="/technology/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Technology</Link>
           <Link href="/support/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Support</Link>
           <Link href="/contact/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Contact</Link>
+          <Link href="/privacy-policy/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Privacy Policy</Link>
         </div>
 
         <div className="flex flex-col gap-3">
