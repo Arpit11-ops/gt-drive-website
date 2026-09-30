@@ -28,6 +28,7 @@ export function Footer() {
           <Link href="/models/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Models</Link>
           <Link href="/dealers/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">For Dealers</Link>
           <Link href="/about/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">About</Link>
+          <Link href="/technology/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Technology</Link>
           <Link href="/contact/" className="text-[15px] font-medium text-[var(--color-body)] hover:text-[var(--color-green-deep)]">Contact</Link>
         </div>
 
