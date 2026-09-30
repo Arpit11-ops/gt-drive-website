@@ -1,0 +1,91 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Check, EnvelopeSimple, Phone, ShieldCheck, Wrench } from "@phosphor-icons/react/dist/ssr";
+import { Reveal } from "@/components/Reveal";
+import { asset } from "@/lib/asset";
+
+export const metadata: Metadata = {
+  title: "Support",
+  description: "Product, customer, warranty and spare-parts support for GT Drive owners and dealers.",
+};
+
+const supportPaths = [
+  { id: "product-support", title: "Product support", text: "Get practical help with your GT Drive scooter, its features, and day-to-day ownership.", icon: Wrench },
+  { id: "customer-support", title: "Customer support", text: "Raise a question or complaint and our team will help connect you with the right assistance.", icon: Phone },
+  { id: "warranty-support", title: "Warranty support", text: "Understand component coverage and request help through your GT Drive dealer.", icon: ShieldCheck },
+  { id: "spare-parts-support", title: "Spare parts support", text: "Ask for genuine GT Drive parts and we will help with availability through the dealer network.", icon: Check },
+];
+
+const faqs = [
+  ["How can I get support for my GT Drive scooter?", "You can raise a support request through our website with your product and contact details. Our team will assist you with your concern."],
+  ["How can I register a product-related complaint?", "Submit the support form with your scooter details, chassis number and issue description. Our support team will review your request."],
+  ["Where can I find my scooter’s chassis number?", "The chassis number is marked on your scooter and can be checked directly on the vehicle."],
+  ["How can I get technical assistance for my scooter?", "Submit your technical concern through our support form, and our team will guide you with the required assistance."],
+  ["How can I request repair or maintenance assistance?", "Contact your GT Drive dealer or submit a support request through our website for repair and maintenance assistance."],
+  ["Where can I get genuine GT Drive spare parts?", "Genuine spare parts can be arranged through the GT Drive dealer network. Contact your dealer for availability and assistance."],
+  ["How can I contact my nearest GT Drive dealer?", "You can contact the GT Drive dealer from whom you purchased your scooter for product and service-related assistance."],
+  ["Do GT Drive dealers receive marketing support?", "Yes. GT Drive provides marketing support to dealers through promotional materials, branding assets and other marketing resources."],
+  ["Do I need to pay any security amount to get a GT Drive dealership?", "No. GT Drive does not take any security amount for providing a dealership."],
+  ["How can I apply for a GT Drive dealership?", "You can submit your dealership enquiry through our website, and our team will connect with you regarding the next steps."],
+  ["What kind of support does GT Drive provide to its dealers?", "GT Drive provides dealership, marketing, technical and product support to help dealers grow and operate efficiently."],
+  ["How can I contact GT Drive for dealership-related queries?", "You can submit your enquiry through the website or contact the GT Drive team directly for dealership-related assistance."],
+];
+
+const privacySections = [
+  ["1. Information we collect", "Depending on how you interact with our website, we may collect your full name, mobile or phone number, email address, chassis number, product or scooter details, purchase or dealership details, support or complaint information, dealership enquiry information, and any other information you voluntarily provide through our forms. We may also collect basic technical information such as IP address, browser type, device information, and website usage data."],
+  ["2. How we use your information", "We may use the information provided by you to respond to product and customer support queries; provide technical assistance; process service, maintenance, and warranty requests; assist with genuine spare-parts enquiries; respond to dealership enquiries; connect customers with the relevant GT Drive dealer; improve our products, services, and customer experience; communicate with you regarding your enquiry or request; and maintain records and comply with applicable legal requirements."],
+  ["3. Sharing of information", "We do not sell or rent your personal information. Where necessary to provide our services, your information may be shared with authorised GT Drive dealers, service or support personnel, technology or communication service providers, or other parties working with us for legitimate business purposes. We may also disclose information where required by applicable law or a lawful government request."],
+  ["4. Data security", "We take reasonable technical and organisational measures to protect your personal information from unauthorised access, misuse, alteration, disclosure, or loss. However, no method of transmitting or storing information electronically can be guaranteed to be completely secure."],
+  ["5. Data retention", "We retain personal information only for as long as reasonably necessary to fulfil the purposes for which it was collected, provide services, resolve requests, maintain business records, and meet applicable legal or regulatory requirements."],
+  ["6. Cookies and website technologies", "Our website may use cookies or similar technologies to improve website functionality, understand website usage, and enhance your browsing experience. You may manage or disable cookies through your browser settings. Certain website features may not function properly if cookies are disabled."],
+  ["7. Third-party links", "Our website may contain links to third-party websites or services. GT Drive is not responsible for the privacy practices or content of those third-party websites. We recommend reviewing their respective privacy policies before providing personal information."],
+  ["8. Your privacy rights", "Subject to applicable law, you may request information about the personal data we hold about you and may request correction or other appropriate action regarding your personal information. You may also contact us regarding concerns about the use of your personal information."],
+  ["9. Children’s privacy", "Our website is not intended to knowingly collect personal information from children. If we become aware that personal information has been submitted by a child without appropriate consent, we will take reasonable steps to address the situation."],
+  ["10. Changes to this privacy policy", "We may update this Privacy Policy from time to time to reflect changes in our services, technology, or applicable laws. Any updated version will be published on this page with the revised effective date."],
+];
+
+const warranty = [
+  ["Motor", "1 Year", "/assets/technology/motor.jpeg"],
+  ["Controller", "1 Year", "/assets/technology/controller.jpeg"],
+  ["Chassis", "1 Year", "/assets/support/chassis.jpeg"],
+  ["Superior Graphine Battery", "1 Year", "/assets/support/graphene-battery.jpeg"],
+  ["Lithium Battery", "3 Years", "/assets/technology/battery.jpeg"],
+  ["Charger", "1 Year", "/assets/technology/charger.jpeg"],
+];
+
+export default function SupportPage() {
+  return (
+    <div className="bg-[#f5f8f5] text-[var(--color-ink)]">
+      <section className="bg-[#111] text-white">
+        <div className="mx-auto max-w-[var(--container-page)] px-6 pb-16 pt-36 md:px-10 md:pb-24 md:pt-44">
+          <Reveal className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-green)]"><span className="h-px w-12 bg-[var(--color-green)]" /> GT Drive care</Reveal>
+          <Reveal delay={80} className="mt-7 max-w-4xl"><h1 className="text-[clamp(52px,8vw,116px)] leading-[0.88] tracking-[-0.06em]">Support that keeps<br /><span className="text-[var(--color-green)]">you moving.</span></h1></Reveal>
+          <Reveal delay={160} className="mt-8 max-w-xl"><p className="text-base leading-relaxed text-white/65 md:text-lg">From your first question to long-term ownership, GT Drive support is here to make every step clear.</p></Reveal>
+        </div>
+      </section>
+
+      <main className="mx-auto max-w-[var(--container-page)] px-6 py-14 md:px-10 md:py-24">
+        <Reveal><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{supportPaths.map(({ id, title, text, icon: Icon }) => <a key={id} href={`#${id}`} className="group rounded-2xl border border-black/[0.06] bg-white p-6 shadow-[0_12px_35px_rgba(17,17,17,0.04)] transition hover:-translate-y-1 hover:border-[var(--color-green)]/40"><span className="grid h-11 w-11 place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-green)_12%,white)] text-[var(--color-green-deep)]"><Icon size={21} weight="bold" /></span><h2 className="mt-5 font-display text-xl font-bold">{title}</h2><p className="mt-2 text-sm leading-relaxed text-[var(--color-body)]">{text}</p><span className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--color-green-deep)]">Explore <ArrowRight size={13} /></span></a>)}</div></Reveal>
+
+        <section id="product-support" className="scroll-mt-28 py-20 md:py-28"><div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20"><div><p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-green-deep)]">Product support</p><h2 className="mt-4 text-4xl leading-[0.95] md:text-6xl">Tell us what<br /><span className="text-[var(--color-green-deep)]">you need.</span></h2><p className="mt-6 max-w-md text-[15px] leading-relaxed text-[var(--color-body)]">Share your scooter details and issue. Our support team will review your request and connect you with the right assistance.</p></div><SupportForm /></div></section>
+
+        <section id="customer-support" className="scroll-mt-28 border-t border-black/[0.08] py-20 md:py-28"><div className="mb-10"><p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-green-deep)]">Customer support</p><h2 className="mt-4 text-4xl leading-[0.95] md:text-6xl">Answers for the<br /><span className="text-[var(--color-green-deep)]">road ahead.</span></h2></div><div className="grid gap-3 md:grid-cols-2">{faqs.map(([q, a]) => <details key={q} className="group rounded-xl border border-black/[0.07] bg-white px-5 py-4"><summary className="cursor-pointer list-none pr-6 text-sm font-bold marker:hidden">{q}<span className="float-right text-lg font-normal text-[var(--color-green-deep)] transition group-open:rotate-45">+</span></summary><p className="mt-3 border-t border-black/[0.06] pt-3 text-sm leading-relaxed text-[var(--color-body)]">{a}</p></details>)}</div></section>
+
+        <section id="warranty-support" className="scroll-mt-28 border-t border-black/[0.08] py-20 md:py-28"><div className="mb-10 max-w-3xl"><p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-green-deep)]">Warranty support</p><h2 className="mt-4 text-4xl leading-[0.95] md:text-6xl">Peace of mind,<br />backed by <span className="text-[var(--color-green-deep)]">GT Drive.</span></h2><p className="mt-6 text-base leading-relaxed text-[var(--color-body)]">We provide warranty coverage on key components so you can ride with confidence.</p></div><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{warranty.map(([name, years, image]) => <div key={name} className="grid grid-cols-[0.9fr_1.1fr] items-center overflow-hidden rounded-2xl bg-white p-4 shadow-[0_12px_35px_rgba(17,17,17,0.05)]"><div className="relative aspect-square overflow-hidden rounded-xl bg-[#f3f7f2]"><Image src={asset(image)} alt={name} fill sizes="180px" className="object-contain" /></div><div className="pl-4"><h3 className="font-display text-lg font-bold leading-tight">{name}</h3><span className="mt-3 inline-flex rounded-full bg-[color-mix(in_srgb,var(--color-green)_12%,white)] px-3 py-1.5 font-display text-xl font-bold text-[var(--color-green-deep)]">{years}</span><p className="mt-1 text-xs text-[var(--color-body)]">Warranty</p></div></div>)}</div><div className="mt-8 flex items-center gap-4 rounded-2xl bg-[color-mix(in_srgb,var(--color-green)_10%,white)] px-6 py-5 text-sm text-[var(--color-body)]"><ShieldCheck size={28} className="shrink-0 text-[var(--color-green-deep)]" /><p>For warranty assistance, please contact your GT Drive dealer or submit a support request through our website.</p></div></section>
+
+        <section id="spare-parts-support" className="scroll-mt-28 border-t border-black/[0.08] py-20 md:py-28"><div className="rounded-[2rem] bg-[#111] px-8 py-12 text-white md:px-14 md:py-16"><p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-green)]">Spare parts support</p><div className="mt-4 grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><div><h2 className="max-w-2xl text-4xl leading-[0.95] md:text-6xl">Keep it genuine.<br /><span className="text-[var(--color-green)]">Keep it moving.</span></h2><p className="mt-6 max-w-xl text-[15px] leading-relaxed text-white/65">Genuine spare parts can be arranged through the GT Drive dealer network. Contact your dealer for availability and assistance.</p></div><Link href="#product-support" className="inline-flex items-center gap-2 rounded-full bg-[var(--color-green)] px-6 py-3.5 text-sm font-bold text-white hover:bg-[var(--color-green-deep)]">Request parts help <ArrowRight size={16} /></Link></div></div></section>
+
+        <section id="privacy-policy" className="scroll-mt-28 border-t border-black/[0.08] py-20 md:py-28"><div className="mb-10 max-w-3xl"><p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-green-deep)]">Privacy policy</p><h2 className="mt-4 text-4xl leading-[0.95] md:text-6xl">Your information,<br /><span className="text-[var(--color-green-deep)]">handled with care.</span></h2><p className="mt-5 text-sm text-[var(--color-muted)]">Effective date: 30 September 2026</p></div><div className="grid gap-8 lg:grid-cols-2">{privacySections.map(([heading, text]) => <article key={heading} className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(17,17,17,0.04)]"><h3 className="font-display text-lg font-bold">{heading}</h3><p className="mt-3 text-sm leading-relaxed text-[var(--color-body)]">{text}</p></article>)}</div><div className="mt-8 rounded-2xl bg-white p-6"><h3 className="font-display text-lg font-bold">11. Contact us</h3><p className="mt-3 text-sm leading-relaxed text-[var(--color-body)]">For questions, concerns, or requests regarding this Privacy Policy or your personal information, contact:</p><div className="mt-5 grid gap-2 text-sm font-semibold text-[var(--color-body)] sm:grid-cols-3"><span>HOUSTAN INNOVATIONS LLP<br /><small className="font-normal">Brand: GT Drive</small></span><a href="mailto:info@gtdrivepro.com" className="inline-flex items-center gap-2 hover:text-[var(--color-green-deep)]"><EnvelopeSimple size={16} /> info@gtdrivepro.com</a><a href="tel:+917011206686" className="inline-flex items-center gap-2 hover:text-[var(--color-green-deep)]"><Phone size={16} /> 7011206686</a></div></div></section>
+      </main>
+    </div>
+  );
+}
+
+function SupportForm() {
+  return <form action={process.env.NEXT_PUBLIC_CONTACT_ENDPOINT || asset("/api/contact.php")} method="post" className="rounded-[1.5rem] bg-white p-6 shadow-[0_16px_50px_rgba(17,17,17,0.08)] md:p-9"><input type="hidden" name="source" value="GT Drive support page" /><input type="hidden" name="type" value="support" /><input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-px w-px opacity-0" /><div className="grid gap-5 md:grid-cols-2"><SupportField label="Name" name="name" required /><SupportField label="Email address" name="email" type="email" required /><SupportField label="Phone number" name="phone" type="tel" required /><SupportField label="Chassis number" name="chassis" required /><SupportField label="Product / scooter" name="model" required /><SupportField label="Purchase location" name="city" required /></div><label className="mt-5 block text-xs font-bold uppercase tracking-wider text-[var(--color-muted)]">Tell us about your issue<textarea name="message" rows={5} required placeholder="Describe your problem or query in detail." className="mt-2 w-full rounded-xl border border-black/[0.09] bg-[#fafcf9] p-4 text-sm font-normal normal-case tracking-normal outline-none focus:border-[var(--color-green)]" /></label><label className="mt-4 flex items-start gap-2 text-xs text-[var(--color-muted)]"><input type="checkbox" name="consent" value="yes" required className="mt-0.5 accent-[var(--color-green)]" /> I have read the <a href="#privacy-policy" className="font-semibold text-[var(--color-green-deep)] underline">Privacy Policy</a> and agree to the processing of my personal data.</label><button type="submit" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--color-green-deep)] px-6 py-3.5 text-sm font-bold text-white hover:bg-[var(--color-green)]">Submit support request <ArrowRight size={16} /></button></form>;
+}
+
+function SupportField({ label, name, type = "text", required = false }: { label: string; name: string; type?: string; required?: boolean }) {
+  return <label className="block text-xs font-bold uppercase tracking-wider text-[var(--color-muted)]">{label}<input name={name} type={type} required={required} className="mt-2 w-full rounded-lg border border-black/[0.09] bg-[#fafcf9] px-3 py-3 text-sm font-normal normal-case tracking-normal outline-none focus:border-[var(--color-green)]" /></label>;
+}

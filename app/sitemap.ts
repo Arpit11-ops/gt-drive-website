@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 const base = "https://gtdrivepro.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "about", "technology", "models", "dealers", "contact"].map((path) => ({
+  const pages = ["", "about", "technology", "support", "models", "dealers", "contact"].map((path) => ({
     url: path ? `${base}/${path}/` : `${base}/`,
     lastModified: new Date(),
     changeFrequency: path === "models" ? "weekly" as const : "monthly" as const,
