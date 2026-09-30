@@ -25,7 +25,7 @@ const technology: TechnologyItem[] = [
     name: "Battery",
     label: "Energy, engineered for every day",
     image: "/assets/technology/battery.jpeg",
-    description: "High-energy lithium technology gives your ride dependable range, consistent output, and the confidence to go further.",
+    description: "High-energy lithium technology gives you dependable range, steady output, and the confidence to go further.",
     features: ["High-Energy Lithium Technology", "Reliable Long-Lasting Performance", "Advanced Battery Protection", "Efficient Power Delivery", "Built For Everyday Reliability"],
   },
   {
@@ -33,7 +33,7 @@ const technology: TechnologyItem[] = [
     name: "Controller",
     label: "The intelligence behind the ride",
     image: "/assets/technology/controller.jpeg",
-    description: "A precision control system balances power, protection, and response for a smooth ride in every mode.",
+    description: "A precision control system balances power, protection, and response so every mode feels smooth and controlled.",
     features: ["Precision Power Management", "Advanced Motor Control", "Intelligent Safety Protection", "Smooth, Responsive Performance"],
   },
   {
@@ -41,7 +41,7 @@ const technology: TechnologyItem[] = [
     name: "Motor",
     label: "Quiet strength, instant response",
     image: "/assets/technology/motor.jpeg",
-    description: "Our high-torque drive motors turn every twist of the throttle into efficient, quiet forward motion.",
+    description: "High-torque drive motors turn every twist of the throttle into quiet, efficient forward motion.",
     features: ["High-Torque Power Delivery", "Efficient Energy Conversion", "Smooth & Silent Operation", "Built For Long-Term Reliability"],
   },
   {
@@ -49,7 +49,7 @@ const technology: TechnologyItem[] = [
     name: "Charger",
     label: "Ready when you are",
     image: "/assets/technology/charger.jpeg",
-    description: "Compact, durable charging hardware makes topping up simple, clear, and reliable wherever you park.",
+    description: "Compact, durable charging hardware makes topping up clear and reliable wherever you park.",
     features: ["Fast & Efficient Charging", "Smart LED Status Indicators", "Compact & Durable Design", "Reliable Charging Performance"],
   },
   {
@@ -57,7 +57,7 @@ const technology: TechnologyItem[] = [
     name: "Tyre",
     label: "Confidence in every contact patch",
     image: "/assets/technology/tyre.jpeg",
-    description: "A road-ready tyre and braking package keeps the scooter composed through city streets and changing conditions.",
+    description: "Road-ready tyres and braking keep the scooter composed through city streets and changing conditions.",
     features: ["Superior Road Grip", "Heavy-Duty Tread", "Enhanced Stability", "Long-Lasting Durability"],
   },
 ];
@@ -78,7 +78,7 @@ export default function TechnologyPage() {
             <h1 className="text-[clamp(52px,9vw,132px)] leading-[0.88] tracking-[-0.06em]">Built for the<br /><span className="text-[var(--color-green)]">everyday electric.</span></h1>
           </Reveal>
           <Reveal delay={160} className="mt-8 max-w-xl">
-            <p className="text-base leading-relaxed text-white/65 md:text-lg">Every GT Drive scooter is a system of considered parts. Meet the technology that makes every ride feel simple, dependable, and ready.</p>
+            <p className="text-base leading-relaxed text-white/65 md:text-lg">Every GT Drive scooter is built from parts that work together. Explore the technology behind a ride that feels simple, dependable, and ready.</p>
           </Reveal>
           <Reveal delay={240} className="mt-14 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white/60">
             <ArrowDown size={16} className="text-[var(--color-green)]" /> Explore the five essentials
@@ -86,10 +86,10 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-[var(--container-page)] px-6 py-16 md:px-10 md:py-24">
+      <main className="mx-auto max-w-[var(--container-page)] bg-white px-6 py-12 md:px-10 md:py-20">
         <div className="grid gap-14 md:gap-24">
           {technology.map((item, index) => (
-            <Reveal key={item.name} delay={index * 35} className="group grid overflow-hidden rounded-[2rem] bg-white shadow-[0_18px_60px_rgba(17,17,17,0.08)] md:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)]">
+            <Reveal key={item.name} delay={index * 35} className={`group grid overflow-hidden rounded-[2rem] shadow-[0_18px_60px_rgba(17,17,17,0.08)] md:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] ${index % 2 === 1 ? "bg-[#edf8ef]" : "bg-white"}`}>
               <div className={`relative min-h-[330px] overflow-hidden bg-[#e9ede8] md:min-h-[510px] ${index % 2 ? "md:order-2" : ""}`}>
                 <Image src={asset(item.image)} alt={`${item.name} used in a GT Drive electric scooter`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
                 <div className="absolute left-5 top-5 rounded-full bg-[#111]/85 px-4 py-2 font-display text-xs font-bold tracking-[0.14em] text-white">{item.number}</div>
