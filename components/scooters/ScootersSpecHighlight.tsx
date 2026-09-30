@@ -29,7 +29,7 @@ export function ScootersSpecHighlight({
 }: Props = {}) {
   const specs: Spec[] = [
     { Icon: Path, label: "Range", value: rideSpecs?.range ?? "Not provided", sub: "Per charge" },
-    { Icon: Gauge, label: "Low Speed\nNon-RTO", value: "" },
+    { Icon: Gauge, label: "Low Speed", value: "Non-RTO" },
     { Icon: BatteryHigh, label: "Battery", value: rideSpecs?.battery ?? "Not provided" },
     { Icon: PlugCharging, label: "Charging Time", value: rideSpecs?.chargingTime ?? "Not provided" },
   ];

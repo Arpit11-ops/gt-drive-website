@@ -86,20 +86,15 @@ export function DealerOpportunity() {
                 // First tile: straight left, diagonal right.
                 // Middle tiles: parallelogram (diagonal both sides, same slope).
                 // Last tile: diagonal left, straight right.
-                const clipPath =
-                  i === 0
-                    ? "polygon(0 0, 100% 0, 88% 100%, 0 100%)"
-                    : i === blocks.length - 1
-                      ? "polygon(12% 0, 100% 0, 100% 100%, 0 100%)"
-                      : "polygon(12% 0, 100% 0, 88% 100%, 0 100%)";
+                const tileShape = i === 0 ? "first" : i === blocks.length - 1 ? "last" : "middle";
                 return (
                   <div
                     key={b.title}
                     data-motion-card
-                    className={`relative aspect-[3/4] overflow-hidden bg-[var(--color-stage)] ${
+                    data-opportunity-tile={tileShape}
+                    className={`relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-stage)] sm:aspect-[3/4] sm:rounded-none ${
                       i > 0 ? "sm:-ml-[13%]" : ""
                     }`}
-                    style={{ clipPath }}
                   >
                     {/* full-bleed image — fills the parallelogram edge to edge */}
                     {b.visual}

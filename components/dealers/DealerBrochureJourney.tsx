@@ -26,7 +26,7 @@ export function DealerBrochureJourney() {
               Download the GT Drive dealership brochure for the opportunity, support areas and next steps.
             </p>
             <a
-              href="/assets/gt-drive/brochure/gt-drive-dealership.pdf"
+              href={asset("/assets/gt-drive/brochure/gt-drive-dealership.pdf")}
               download="gt-drive-dealership-brochure.pdf"
               className="group mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-[var(--color-ink)] px-5 text-[12.5px] font-bold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-white"
             >

@@ -55,7 +55,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
             </p>
             <div className="mt-10">
               <Link
-                href="/contact/"
+                href="#inquiry"
                 className="group inline-flex h-12 items-center gap-2 rounded-full bg-[var(--color-green)] px-6 text-[13px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)]"
               >
                 Ask about {model.shortName}
@@ -65,7 +65,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
           </div>
         </div>
       </section></Reveal>
-      <Reveal delay={80}><ContactClose defaultModel={model.slug} defaultType="other" /></Reveal>
+      <Reveal delay={80}><ContactClose id="inquiry" defaultModel={model.slug} defaultType="other" /></Reveal>
       </>
     );
   }
@@ -85,7 +85,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
         image={heroImage}
         video={model.slug === "gt-flying" ? "/assets/gt-drive/video/gt-flying-hero.mp4" : undefined}
         alt={`${model.shortName} electric scooter, ${views ? "right-facing side profile" : "front and side views"}`}
-        cta={{ href: "/contact/", label: `Ask about ${model.shortName}` }}
+        cta={{ href: "#inquiry", label: `Ask about ${model.shortName}` }}
         secondary={{ href: "/models/", label: "Explore All Models" }}
         kicker={model.code ? `Model ${model.code}` : "GT Drive range"}
         colors={model.colors}
@@ -96,7 +96,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
       <Reveal delay={80}><ScootersFeatures image={featureImage} alt={`${model.shortName}, ${views ? "left-facing side profile" : "front and side views"} showing features`} /></Reveal>
       {model.gallery && <Reveal delay={80}><ScootersGallery images={model.gallery} name={model.shortName} /></Reveal>}
       <Reveal delay={80}><ScootersTechnology /></Reveal>
-      <Reveal delay={80}><ContactClose defaultModel={model.slug} /></Reveal>
+      <Reveal delay={80}><ContactClose id="inquiry" defaultModel={model.slug} defaultType="other" /></Reveal>
     </>
   );
 }

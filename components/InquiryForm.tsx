@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useId, useState } from "react";
+import { FormEvent, useId, useRef, useState } from "react";
 import { models } from "@/lib/models";
 import { asset } from "@/lib/asset";
 
@@ -13,24 +13,31 @@ export function InquiryForm({
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const messageId = useId();
   const consentId = useId();
+  const submitting = useRef(false);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitting.current) return;
     const form = event.currentTarget;
     if (!form.reportValidity()) return;
+    submitting.current = true;
     setStatus("sending");
     try {
-      const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" }, signal: AbortSignal.timeout(25000) });
       if (!response.ok) throw new Error("Request failed");
+      const result = await response.json();
+      if (result.success !== true) throw new Error("Delivery was not confirmed");
       setStatus("success");
       form.reset();
     } catch {
       setStatus("error");
+    } finally {
+      submitting.current = false;
     }
   }
 
   return (
-    <form action={asset("/api/contact.php")} method="post" onSubmit={submit} className="gt-card flex flex-col gap-8 rounded-[1.5rem] bg-white p-6 shadow-[0_16px_40px_rgba(17,17,17,0.07)] md:p-10">
+    <form action={process.env.NEXT_PUBLIC_CONTACT_ENDPOINT || asset("/api/contact.php")} method="post" onSubmit={submit} aria-busy={status === "sending"} className="gt-card flex flex-col gap-8 rounded-[1.5rem] bg-white p-6 shadow-[0_16px_40px_rgba(17,17,17,0.07)] md:p-10">
       <input type="hidden" name="source" value="GT Drive website" />
       <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-px w-px opacity-0" />
       <div className="grid gap-6 md:grid-cols-2">
@@ -117,6 +124,8 @@ export function InquiryForm({
         <input
           id={consentId}
           type="checkbox"
+          name="consent"
+          value="yes"
           required
           className="mt-1 h-4 w-4 accent-[var(--color-green)]"
         />
@@ -128,9 +137,10 @@ export function InquiryForm({
       <div className="flex flex-wrap items-center gap-6">
         <button
           type="submit"
+          disabled={status === "sending"}
           className="inline-flex h-[52px] items-center justify-center rounded-sm bg-[var(--color-green)] px-6 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-green-deep)]"
         >
-          Send enquiry
+          {status === "sending" ? "Sending…" : "Send enquiry"}
         </button>
         {status !== "idle" && (
           <p role="status" className="text-sm text-[var(--color-green-deep)]">

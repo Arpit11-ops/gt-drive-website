@@ -141,7 +141,7 @@ export function ScootersFeatures({
                     onClick={() => setActiveId((current) => (current === h.id ? null : h.id))}
                     aria-expanded={isActive}
                     aria-label={h.title}
-                    className="absolute z-[2] -translate-x-1/2 -translate-y-1/2 outline-none"
+                    className="absolute z-[2] grid h-11 w-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full outline-none"
                     style={{ left: `${h.dot.x}%`, top: `${h.dot.y}%` }}
                   >
                     <span

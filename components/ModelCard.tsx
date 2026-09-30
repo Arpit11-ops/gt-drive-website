@@ -21,7 +21,7 @@ export function ModelCard({
     >
       <div className="relative aspect-[1.25/1] overflow-hidden bg-[var(--color-stage)] transition-colors duration-500 ease-[var(--ease-signature)] group-hover:bg-[#eff2ef]">
         <Image
-          src={asset(model.image)}
+          src={asset(model.cardImage ?? model.image)}
           alt={model.shortName}
           fill
           sizes={featured ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 32vw, (min-width: 640px) 50vw, 100vw"}

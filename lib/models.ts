@@ -13,6 +13,7 @@ export type ScooterModel = {
   shortName: string;
   code?: string;
   image: string;
+  cardImage?: string;
   gallery?: string[];
   /** Visually audited angles for the four main product sections. */
   sectionImages?: { hero: string; specifications: string; details: string; features: string };
@@ -76,6 +77,7 @@ export const models: ScooterModel[] = [
   {
     slug: "gt-soul-nxt", name: "GT - SOUL NXT", shortName: "GT Soul NXT", code: "DL",
     image: "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4026_clean.webp",
+    cardImage: "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4032_clean.webp",
     sectionImages: {
       hero: "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4026_clean.webp",
       specifications: "/assets/gt-drive/cleaned/GT_SOUL_NXT_IMG_4028_clean.webp",

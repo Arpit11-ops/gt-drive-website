@@ -4,6 +4,10 @@ out/
 *.log
 .DS_Store
 .worktrees/
+public/api/vendor/
+public/api/config.php
+.env*
+!.env.example
 
 # TS incremental build cache
 tsconfig.tsbuildinfo
