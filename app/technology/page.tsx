@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, Check } from "@phosphor-icons/react/dist/ssr";
+import { ArrowDown, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
 import { Reveal } from "@/components/Reveal";
 
@@ -95,8 +95,15 @@ export default function TechnologyPage() {
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-green-deep)]">{item.label}</p>
                 <h2 className="mt-4 text-[clamp(42px,5vw,76px)] leading-[0.9]">{item.name}</h2>
                 <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[var(--color-body)]">{item.description}</p>
-                <ul className="mt-8 grid gap-3 border-t border-[var(--color-line)] pt-7">
-                  {item.features.map((feature) => <li key={feature} className="flex items-start gap-3 text-sm font-semibold text-[var(--color-body)]"><Check size={17} weight="bold" className="mt-0.5 shrink-0 text-[var(--color-green-deep)]" /> {feature}</li>)}
+                <ul className="mt-8 grid gap-2 border-t border-[var(--color-line)] pt-7">
+                  {item.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-3 rounded-full bg-[color-mix(in_srgb,var(--color-green)_8%,white)] px-4 py-2.5 text-sm font-semibold text-[var(--color-body)]">
+                      <span aria-hidden className="relative grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-[var(--color-green)] shadow-[0_0_0_3px_color-mix(in_srgb,var(--color-green)_16%,transparent)]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </Reveal>
