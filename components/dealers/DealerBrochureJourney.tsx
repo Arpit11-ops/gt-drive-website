@@ -28,7 +28,7 @@ export function DealerBrochureJourney() {
             <a
               href={asset("/assets/gt-drive/brochure/gt-drive-dealership.pdf")}
               download="gt-drive-dealership-brochure.pdf"
-              className="group mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-[var(--color-ink)] px-5 text-[12.5px] font-bold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-white"
+              className="group mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-[var(--color-green)] bg-white px-5 text-[12.5px] font-bold text-[var(--color-green-deep)] transition-colors hover:bg-[#f0faf2]"
             >
               Download the brochure
               <DownloadSimple size={14} weight="bold" className="transition-transform group-hover:translate-y-0.5" />

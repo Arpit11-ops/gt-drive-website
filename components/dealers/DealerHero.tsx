@@ -22,7 +22,7 @@ export function DealerHero() {
             Partner with GT Drive and be a part of India&apos;s growing electric mobility revolution.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-6">
+          <div className="mt-10 flex flex-wrap items-center gap-3">
             <Link
               href="#dealer-apply"
               className="group inline-flex h-12 items-center gap-2 rounded-full bg-[var(--color-green)] px-6 text-[13px] font-bold text-white transition-colors hover:bg-[var(--color-green-deep)]"
@@ -33,7 +33,7 @@ export function DealerHero() {
             <a
               href={asset("/assets/gt-drive/brochure/gt-drive-dealership.pdf")}
               download="gt-drive-dealership-brochure.pdf"
-              className="group inline-flex items-center gap-2 text-[13px] font-bold text-[var(--color-ink)] transition-colors hover:text-[var(--color-green-deep)]"
+              className="group inline-flex h-12 items-center gap-2 rounded-full border border-[var(--color-green)] bg-white px-6 text-[13px] font-bold text-[var(--color-green-deep)] transition-colors hover:bg-[#f0faf2]"
             >
               Download the brochure
               <DownloadSimple size={15} weight="bold" className="transition-transform group-hover:translate-y-0.5" />
