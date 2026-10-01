@@ -14,7 +14,7 @@ export function ScootersSpecTable({
   features = [],
 }: Props = {}) {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-white py-10 md:py-16">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-10">
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-0">
           {/* LEFT — brochure feature badges */}
@@ -51,7 +51,7 @@ export function ScootersSpecTable({
               className="pointer-events-none absolute inset-y-8 left-0 hidden w-[3px] bg-[var(--color-green)] md:block"
             />
 
-            <div className={`relative w-full overflow-hidden rounded-2xl bg-[var(--color-stage)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+            <div className={`relative w-full overflow-hidden rounded-2xl bg-[var(--color-stage)] ${isPortraitProductImage(image) ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
               <Image
                 src={asset(image)}
                 alt={alt}

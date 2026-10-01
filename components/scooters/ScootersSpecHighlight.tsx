@@ -35,7 +35,7 @@ export function ScootersSpecHighlight({
   ];
 
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-white py-10 md:py-16">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-10">
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-12 md:gap-10">
           {/* LEFT — kicker + scooter image */}
@@ -45,7 +45,7 @@ export function ScootersSpecHighlight({
               Specifications
             </p>
 
-            <div className={`relative mt-0 w-full max-w-[24rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] md:mt-0 ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+            <div className={`relative mt-0 w-full max-w-[22rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] md:mt-0 ${isPortraitProductImage(image) ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
               <Image
                 src={asset(image)}
                 alt={alt}
@@ -57,7 +57,7 @@ export function ScootersSpecHighlight({
           </div>
 
           {/* RIGHT — spec highlight panel */}
-          <div className="gt-card relative rounded-[1.5rem] bg-white p-7 shadow-[0_12px_30px_rgba(17,17,17,0.05)] md:col-span-7 md:mt-12 md:p-10 lg:p-12">
+          <div className="gt-card relative rounded-[1.5rem] bg-white p-6 shadow-[0_12px_30px_rgba(17,17,17,0.05)] md:col-span-7 md:mt-8 md:p-8 lg:p-10">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
               Everything That
             </p>
@@ -66,7 +66,7 @@ export function ScootersSpecHighlight({
             </h2>
             <span className="mt-4 block h-[3px] w-16 bg-[var(--color-green)]" />
 
-            <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 sm:gap-x-4">
+            <div className="mt-8 grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-4 sm:gap-x-3">
               {specs.map(({ Icon, label, value, sub }) => (
                 <div key={label} className="flex flex-col items-center text-center">
                   <Icon size={30} weight="regular" className="mb-4 text-[var(--color-green)]" />

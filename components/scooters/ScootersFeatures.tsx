@@ -74,7 +74,7 @@ export function ScootersFeatures({
   const [activeId, setActiveId] = useState<string | null>(null);
 
   return (
-    <section className="bg-white py-20 md:py-24">
+    <section className="bg-white py-10 md:py-16">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-6">
           {/* LEFT — copy */}
