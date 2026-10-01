@@ -63,7 +63,7 @@ export function ScootersHero({
         </div>
         <div aria-hidden className="pointer-events-none absolute right-0 top-20 z-[2] hidden h-[calc(100%-5rem)] w-8 bg-[var(--color-green)] opacity-90 [clip-path:polygon(100%_0,0_15%,0_85%,100%_100%)] md:block" />
         <div className="relative z-10 mx-auto flex max-w-[var(--container-page)] items-start px-4 pb-8 pt-4 md:min-h-[calc(100svh-5rem)] md:px-12 md:pb-16 md:pt-16 lg:px-16 lg:pt-20">
-          <div className="w-full max-w-[22rem] rounded-[1rem] border border-white/60 bg-white/70 p-4 text-[var(--color-ink)] shadow-[0_14px_34px_rgba(17,17,17,0.1)] backdrop-blur-md md:max-w-[17rem] md:bg-white/60 lg:max-w-[19rem]">
+          <div className="w-full max-w-[22rem] rounded-[1rem] border border-white/60 bg-white/70 p-4 text-[var(--color-ink)] shadow-[0_14px_34px_rgba(17,17,17,0.1)] backdrop-blur-md md:-translate-x-4 md:max-w-[17rem] md:bg-white/60 lg:-translate-x-6 lg:max-w-[19rem]">
             <p className="mb-4 flex items-center gap-2.5 text-[9px] font-bold uppercase tracking-[0.2em] text-[var(--color-green-deep)] md:mb-3"><span className="h-[2px] w-5 bg-[var(--color-green)]" />{kicker}</p>
             <h1 className="font-display text-[clamp(38px,4.5vw,64px)] font-extrabold uppercase leading-[0.9] tracking-[-0.055em] md:text-[clamp(32px,3vw,46px)]">{lead && <>{lead} </>}<span className="text-[var(--color-green)]">{highlight}.</span></h1>
             <p className="mt-4 max-w-xs whitespace-pre-line text-[12px] leading-relaxed text-[var(--color-body)] md:mt-3">{tagline}</p>
