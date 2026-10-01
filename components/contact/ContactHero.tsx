@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Plug } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
+import { PlugLine } from "@/components/PlugLine";
 
 export function ContactHero() {
   return (
@@ -17,12 +17,7 @@ export function ContactHero() {
             <span className="block text-[var(--color-green)]">TALK.</span>
           </h1>
 
-          {/* green underline flourish with plug at the tip */}
-          <div className="mt-6 flex items-center gap-2">
-            <span className="h-[3px] w-[120px] bg-[var(--color-green)]" />
-            <span className="h-[3px] w-[26px] bg-[var(--color-green)]" />
-            <Plug size={16} weight="fill" className="-ml-1 text-[var(--color-green)]" />
-          </div>
+          <PlugLine label="Let's connect." className="mt-6" />
 
           <p className="mt-8 max-w-sm text-[15px] leading-relaxed text-[var(--color-body)]">
             Product questions or dealership enquiries?<br />

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowsClockwise, BatteryCharging, ChartLineUp, CheckCircle, Cpu, Footprints, Gauge, GearSix, Lightning, Lightbulb, PlugCharging, RoadHorizon, ShieldCheck, SpeakerSlash, Waveform } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
 import { Reveal } from "@/components/Reveal";
+import { ContactClose } from "@/components/ContactClose";
 
 export const metadata: Metadata = {
   title: "Technology",
@@ -23,7 +24,7 @@ const technology: TechnologyItem[] = [
   {
     number: "01",
     name: "Motor",
-    label: "Quiet strength, instant response",
+    label: "Efficient power, smooth acceleration",
     image: "/assets/technology/motor.jpeg",
     description: "High-torque drive motors turn every twist of the throttle into quiet, efficient forward motion.",
     features: ["High-Torque Power Delivery", "Efficient Energy Conversion", "Smooth & Silent Operation", "Built For Long-Term Reliability"],
@@ -55,7 +56,7 @@ const technology: TechnologyItem[] = [
   {
     number: "05",
     name: "Tyre",
-    label: "Confidence in every contact patch",
+    label: "Made for grip. Built for the road.",
     image: "/assets/technology/tyre.jpeg",
     description: "Road-ready tyres and braking keep the scooter composed through city streets and changing conditions.",
     features: ["Superior Road Grip", "Heavy-Duty Tread", "Enhanced Stability", "Long-Lasting Durability"],
@@ -98,6 +99,12 @@ export default function TechnologyPage() {
           <Link href="/models/" className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-[var(--color-ink)] transition-transform hover:-translate-y-0.5 md:mt-0">Explore models <ArrowRight size={16} weight="bold" /></Link>
         </Reveal>
       </main>
+      <ContactClose
+        id="technology-enquiry"
+        defaultType="other"
+        headline={<>Talk technology with <span className="text-[var(--color-green)]">GT Drive.</span></>}
+        intro="Have a question about our battery, motor, controller, charger or tyre technology? Send us your enquiry and our team will help."
+      />
     </div>
   );
 }

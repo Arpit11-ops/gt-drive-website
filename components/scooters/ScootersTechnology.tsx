@@ -85,8 +85,8 @@ export function ScootersTechnology() {
               Technology
             </p>
             <h2 className="font-display text-[clamp(28px,3vw,42px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
-              <span className="block">Technology in</span>
-              <span className="block">the catalogue.</span>
+              <span className="block">Technology that</span>
+              <span className="block">powers every ride.</span>
             </h2>
             <span className="mt-5 block h-[3px] w-16 bg-[var(--color-green)]" />
             <p className="mt-6 max-w-xs text-[13.5px] leading-relaxed text-[var(--color-body)]">

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Plug } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
+import { PlugLine } from "@/components/PlugLine";
 
 export function AboutHero() {
   return (
@@ -14,16 +15,7 @@ export function AboutHero() {
             <span className="block whitespace-nowrap text-[var(--color-green)]">GO GREEN.</span>
           </h1>
 
-          {/* green underline flourish with plug at the tip */}
-          <div className="mt-6 flex items-center gap-2">
-            <span className="h-[3px] w-[120px] bg-[var(--color-green)]" />
-            <span className="h-[3px] w-[26px] bg-[var(--color-green)]" />
-            <Plug size={16} weight="fill" className="-ml-1 text-[var(--color-green)]" />
-          </div>
-
-          <p className="mt-5 text-[12px] font-bold uppercase tracking-[0.28em] text-[var(--color-muted)]">
-            It starts here.
-          </p>
+          <PlugLine label="It starts here." className="mt-7" />
 
           <div className="mt-10">
             <Link

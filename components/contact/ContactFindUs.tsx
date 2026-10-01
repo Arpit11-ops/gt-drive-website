@@ -1,4 +1,5 @@
-import { ArrowRight, Factory, MapPin, NavigationArrow, Plug } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, Factory, MapPin, NavigationArrow } from "@phosphor-icons/react/dist/ssr";
+import { PlugLine } from "@/components/PlugLine";
 
 type Plant = {
   n: string;
@@ -55,11 +56,7 @@ export function ContactFindUs() {
             <span className="block">Find GT Drive</span>
             <span className="block text-[var(--color-green)]">across India.</span>
           </h2>
-          <div className="mt-5 flex items-center gap-2">
-            <span className="h-[3px] w-[110px] bg-[var(--color-green)]" />
-            <span className="h-[3px] w-[22px] bg-[var(--color-green)]" />
-            <Plug size={15} weight="fill" className="-ml-1 text-[var(--color-green)]" />
-          </div>
+          <PlugLine label="Find us here." className="mt-5" />
         </div>
 
         {/* locations */}

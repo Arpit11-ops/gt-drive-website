@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Plug } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
+import { PlugLine } from "@/components/PlugLine";
 
 export function AboutFinalCTA() {
   return (
@@ -17,11 +18,7 @@ export function AboutFinalCTA() {
               </span>
             </h2>
 
-            <div className="mt-5 flex items-center gap-2">
-              <span className="h-[3px] w-[110px] bg-white" />
-              <span className="h-[3px] w-[22px] bg-white/70" />
-              <Plug size={15} weight="fill" className="-ml-1 text-white" />
-            </div>
+            <PlugLine label="Start here." tone="white" className="mt-5" />
           </div>
 
           {/* CENTER — CTAs */}
