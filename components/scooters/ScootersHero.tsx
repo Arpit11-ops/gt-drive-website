@@ -12,7 +12,7 @@ const colourValues: Record<string, string> = {
   orange: "#e97822",
   maroon: "#762536",
   "silver grey": "#c5c9ce",
-  green: "#2f9f54",
+  green: "#b8d8cc",
   "matte shale green": "#617568",
   "matte coffee brown": "#80604c",
   "tyrant gold": "#c9a53f",
