@@ -126,7 +126,7 @@ export function ScootersFeatures({
                       strokeWidth={isActive ? "0.32" : "0.24"}
                       strokeOpacity={isActive ? 1 : 0.78}
                       strokeDasharray="0.8 0.45"
-                      className={isActive ? "block" : "hidden md:block"}
+                      className="hidden md:block"
                     />
                   );
                 })}
