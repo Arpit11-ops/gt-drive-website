@@ -52,9 +52,26 @@ $state = clean_line($_POST['state'] ?? '');
 $type = clean_line($_POST['type'] ?? 'other');
 $model = clean_line($_POST['model'] ?? '');
 $message = is_string($_POST['message'] ?? null) ? trim($_POST['message']) : '';
+$partRequirement = clean_line($_POST['part_requirement'] ?? '');
+$quantity = clean_line($_POST['quantity'] ?? '');
+$isSpareParts = $type === 'spare-parts';
+$isSupport = $type === 'support';
+
+// The support pages use purpose-built forms with a smaller field set.
+// Normalize those fields into the same enquiry email format used by the main form.
+if ($isSpareParts) {
+    $organisation = $organisation ?: 'Spare parts support request';
+    $state = $state ?: 'Not provided';
+    $message = $message ?: $partRequirement;
+    $email = $email ?: (getenv('GT_DRIVE_CONTACT_EMAIL') ?: 'info@gtdrivepro.com');
+}
+if ($isSupport) {
+    $organisation = $organisation ?: 'GT Drive support request';
+    $state = $state ?: 'Not provided';
+}
 
 if ($name === '' || $email === '' || $message === '' || $organisation === '' || $phone === '' || $city === '' || $state === '') respond(422, 'Please complete all required fields.');
-if (($_POST['consent'] ?? '') !== 'yes') respond(422, 'Please agree to be contacted about this enquiry.');
+if (!$isSpareParts && ($_POST['consent'] ?? '') !== 'yes') respond(422, 'Please agree to be contacted about this enquiry.');
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) || text_length($email) > 254) respond(422, 'Please enter a valid email address.');
 foreach ([[$name, 120], [$organisation, 160], [$phone, 40], [$city, 100], [$state, 100], [$type, 80], [$model, 100], [$message, 5000]] as [$value, $limit]) {
     if (text_length($value) > $limit) respond(422, 'One of the fields is too long. Please shorten it and try again.');
@@ -74,6 +91,7 @@ $body = implode("\r\n", [
     'Business / dealership: ' . ($organisation ?: 'Not provided'), 'Phone: ' . ($phone ?: 'Not provided'),
     'City: ' . ($city ?: 'Not provided'), 'State: ' . ($state ?: 'Not provided'), 'Enquiry type: ' . $type,
     'Model: ' . ($model ?: 'No specific model'), '', 'Message:', $message, '', 'Submitted: ' . gmdate('Y-m-d H:i:s') . ' UTC',
+    $isSpareParts ? 'Quantity: ' . ($quantity ?: 'Not provided') : '',
 ]);
 
 try {

@@ -21,7 +21,7 @@ const privacySections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="bg-[#f5f8f5] px-4 py-14 text-[var(--color-ink)] md:px-10 md:py-24">
+    <section className="bg-[#f5f8f5] px-4 py-14 text-[var(--color-ink)] md:px-10 md:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-green-deep)]">Privacy policy</p>
@@ -48,6 +48,6 @@ export default function PrivacyPolicyPage() {
           </div>
         </section>
       </div>
-    </main>
+    </section>
   );
 }

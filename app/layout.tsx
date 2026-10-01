@@ -26,12 +26,11 @@ export const metadata: Metadata = {
   description:
     "Explore GT Drive electric scooters, dealership opportunities and service support across India.",
   metadataBase: new URL("https://gtdrivepro.com"),
-  alternates: { canonical: "/" },
   keywords: ["electric scooters India", "electric two wheelers", "GT Drive", "electric scooter dealership", "electric mobility Uttar Pradesh"],
   openGraph: {
     type: "website", siteName: "GT Drive", locale: "en_IN",
     title: "GT Drive electric scooters", description: "Electric scooters for everyday city travel, backed by dealership and service support across India.",
-    url: "https://gtdrivepro.com/",
+    images: [{ url: "/assets/gt-drive/gt-drive-hero-showroom-ai-v1.webp", width: 1600, height: 900, alt: "GT Drive electric scooters" }],
   },
   twitter: { card: "summary_large_image", title: "GT Drive electric scooters", description: "Explore electric scooters made for everyday city travel." },
 };

@@ -162,9 +162,9 @@ export function ScootersFeatures({
                 return (
                   <div
                     key={`label-${h.id}`}
-                    className={`absolute z-[3] max-w-[165px] rounded-md bg-white/95 px-3 py-2 shadow-[0_4px_14px_rgba(17,17,17,0.08)] backdrop-blur-sm transition-opacity ${
+                    className={`absolute z-[3] hidden max-w-[165px] rounded-md bg-white/95 px-3 py-2 shadow-[0_4px_14px_rgba(17,17,17,0.08)] backdrop-blur-sm transition-opacity md:block ${
                       h.side === "left" ? "-translate-x-0" : "-translate-x-full"
-                    } ${isActive ? "block opacity-100" : "hidden opacity-90 md:block"}`}
+                    } ${isActive ? "opacity-100" : "opacity-90"}`}
                     style={{
                       left: `${h.label.x}%`,
                       top: `${h.label.y}%`,
@@ -191,6 +191,25 @@ export function ScootersFeatures({
                 );
               })}
             </div>
+
+            {/* On narrow screens the image clips positioned labels. Keep the selected
+                detail in normal flow so the complete explanation remains readable. */}
+            {activeId && (() => {
+              const active = hotspots.find((hotspot) => hotspot.id === activeId);
+              if (!active) return null;
+              return (
+                <div className="mt-3 flex items-start justify-between gap-4 rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 shadow-[0_4px_14px_rgba(17,17,17,0.06)] md:hidden" aria-live="polite">
+                  <div>
+                    <div className="flex items-center gap-1.5 font-display text-[12px] font-extrabold uppercase leading-tight tracking-[0.08em] text-[var(--color-ink)]">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-green)]" />
+                      {active.title}
+                    </div>
+                    <p className="mt-1.5 text-[12px] leading-snug text-[var(--color-ink)]/75">{active.body}</p>
+                  </div>
+                  <button type="button" onClick={() => setActiveId(null)} className="shrink-0 rounded-full px-2 py-1 text-[11px] font-bold text-[var(--color-muted)]" aria-label="Close feature details">Close</button>
+                </div>
+              );
+            })()}
           </div>
         </div>
       </div>

@@ -10,7 +10,9 @@ type Props = {
 
 export function Reveal({ children, delay = 0, className = "" }: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  // The first viewport must be usable even while the observer is starting up.
+  // This also prevents a slow mobile browser from leaving the primary hero hidden.
+  const [visible, setVisible] = useState(className.includes("motion-page-enter"));
 
   useEffect(() => {
     const node = ref.current;

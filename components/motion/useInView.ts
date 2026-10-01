@@ -15,6 +15,11 @@ export function useInView<T extends Element>(
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
+    const bounds = node.getBoundingClientRect();
+    if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+      setInView(true);
+      return;
+    }
     if (
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
