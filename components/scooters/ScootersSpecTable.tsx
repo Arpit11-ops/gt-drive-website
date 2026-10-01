@@ -22,10 +22,10 @@ export function ScootersSpecTable({
             <h2 className="mt-4 max-w-2xl font-display text-[clamp(28px,3vw,42px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
               GT Drive features<span className="text-[var(--color-green)]">.</span>
             </h2>
-            <ul className="mt-7 grid grid-cols-2 gap-x-4 sm:gap-x-8" aria-label="Scooter features">
+            <ul className="mt-7 grid grid-cols-2 gap-2 sm:gap-3 sm:gap-x-5" aria-label="Scooter features">
               {features.map((feature) => (
-                <li key={feature} className="flex min-h-11 items-center gap-2 border-b border-[var(--color-line)] py-2 text-[11px] font-bold uppercase leading-snug tracking-[0.06em] text-[var(--color-ink)] sm:text-xs">
-                  <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-green)]" />
+                <li key={feature} className="flex min-h-11 items-center gap-2 rounded-lg border border-[var(--color-line)] border-l-2 border-l-[var(--color-green)] bg-[#f7fbf8] px-3 py-2 text-[10px] font-bold uppercase leading-snug tracking-[0.05em] text-[var(--color-ink)] shadow-[0_3px_12px_rgba(17,17,17,0.035)] sm:text-xs">
+                  <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-[var(--color-green)] ring-2 ring-[color-mix(in_srgb,var(--color-green)_18%,white)]" />
                   {feature}
                 </li>
               ))}
