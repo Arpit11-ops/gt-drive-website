@@ -55,16 +55,18 @@ export function DealerBrochureJourney() {
               FROM ENQUIRY TO PARTNERSHIP.
             </h2>
 
-            <ol className="mt-12 grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
+            <ol className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-3">
               {steps.map((s) => (
-                <li key={s.title} className="relative flex flex-col items-start">
+                <li key={s.title} className="relative flex min-h-[142px] flex-col items-start rounded-2xl border border-[var(--color-green)]/20 bg-[#f5faf6] p-4 shadow-[0_8px_24px_rgba(17,17,17,0.04)] transition-transform hover:-translate-y-0.5 md:min-h-[160px] md:p-5">
                   <div className="flex h-8 items-center gap-3">
-                    <ArrowRight size={24} weight="bold" className="text-[var(--color-green)]" />
+                    <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-[var(--color-green-deep)] shadow-sm">
+                      <ArrowRight size={18} weight="bold" />
+                    </span>
                   </div>
                   <div className="mt-4 font-display text-[12px] font-extrabold uppercase tracking-[0.1em] text-[var(--color-ink)]">
                     {s.title}
                   </div>
-                  <p className="mt-2 max-w-[130px] text-[12px] leading-snug text-[var(--color-body)]">
+                  <p className="mt-2 max-w-[130px] text-[11px] leading-snug text-[var(--color-body)] md:text-[12px]">
                     {s.body}
                   </p>
                 </li>
