@@ -76,9 +76,9 @@ export function ScootersHero({
   if (video) {
     return (
       <section className="relative isolate overflow-hidden bg-[#dfe5e7] pt-20 text-white md:min-h-[calc(100svh-5rem)]">
-        <div className="relative h-[62svh] min-h-[430px] w-full md:absolute md:inset-0 md:h-full md:min-h-0">
+        <div className="relative h-[62svh] min-h-[430px] w-full overflow-hidden md:absolute md:inset-0 md:h-full md:min-h-0">
           <video
-            className="block h-full w-full object-cover object-[50%_38%] md:absolute md:inset-0 md:object-center"
+            className="block h-full min-h-0 w-full max-w-full object-cover object-[50%_38%] md:absolute md:inset-0 md:object-center"
             src={asset(video)}
             poster={asset(image)}
             autoPlay
@@ -107,9 +107,9 @@ export function ScootersHero({
 
   return (
     <section className="relative isolate overflow-hidden bg-white pt-20">
-      <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-[var(--container-page)] grid-cols-1 md:grid-cols-12">
+      <div className="mx-auto grid min-h-0 max-w-[var(--container-page)] grid-cols-1 md:min-h-[calc(100vh-5rem)] md:grid-cols-12">
         {/* LEFT — copy */}
-        <div className="relative z-10 col-span-1 flex flex-col justify-center px-6 py-14 md:col-span-5 md:px-12 md:py-16 lg:px-16">
+        <div className="relative z-10 col-span-1 flex flex-col justify-center px-6 py-10 md:col-span-5 md:px-12 md:py-16 lg:px-16">
           <p className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--color-green-deep)]">
             <span className="h-[2px] w-6 bg-[var(--color-green)]" />
             {kicker}
@@ -184,7 +184,7 @@ export function ScootersHero({
         </div>
 
         {/* RIGHT — image with diagonal green accent + faded GT watermark */}
-        <div className="relative col-span-1 min-h-[420px] md:col-span-7 md:min-h-0">
+        <div className="relative col-span-1 h-[min(86vw,30rem)] min-h-[280px] md:col-span-7 md:h-auto md:min-h-0">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-y-0 right-14 hidden w-[42%] bg-[var(--color-stage)] md:block"

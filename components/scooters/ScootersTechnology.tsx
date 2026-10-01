@@ -75,7 +75,7 @@ function TechVisual({ kind }: { kind: Card["visual"] }) {
 
 export function ScootersTechnology() {
   return (
-    <section className="bg-white py-20 md:py-24">
+    <section className="bg-white py-12 md:py-20">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8">
           {/* LEFT — copy */}
@@ -100,13 +100,13 @@ export function ScootersTechnology() {
             <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[color-mix(in_srgb,var(--color-green)_4%,white)] to-transparent" />
             <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[color-mix(in_srgb,var(--color-green)_4%,white)] to-transparent" />
 
-            <div className="flex w-max gap-5 motion-safe:animate-[marquee_28s_linear_infinite] group-hover/marquee:[animation-play-state:paused]">
+            <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory md:w-max md:gap-5 md:overflow-visible md:pb-0 md:motion-safe:animate-[marquee_28s_linear_infinite] md:group-hover/marquee:[animation-play-state:paused]">
               {[...cards, ...cards].map((c, i) => (
                 <div
                   key={`${c.title}-${i}`}
                   data-motion-card
                   aria-hidden={i >= cards.length}
-                  className="group flex w-[300px] shrink-0 flex-col overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white p-5 shadow-[0_2px_10px_rgba(17,17,17,0.03)]"
+                  className="group flex w-[calc(100vw-3rem)] max-w-[22rem] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white p-4 shadow-[0_2px_10px_rgba(17,17,17,0.03)] md:w-[300px] md:max-w-none md:snap-none md:p-5"
                 >
                   <div className="flex items-start gap-3">
                     <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-green)_10%,white)]">
