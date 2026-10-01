@@ -14,52 +14,32 @@ export function ScootersSpecTable({
   features = [],
 }: Props = {}) {
   return (
-    <section className="bg-white py-10 md:py-16">
+    <section className="bg-white py-10 md:py-14">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-10">
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-0">
-          {/* LEFT — brochure feature badges */}
-          <div className="rounded-[1.5rem] bg-[var(--color-stage)] p-7 md:col-span-6 md:p-10 lg:p-12">
-            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-green-deep)]">
-              Features
-            </p>
-            <h2 className="mt-4 max-w-md font-display text-[clamp(28px,3vw,42px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
-              The shared GT Drive feature set<span className="text-[var(--color-green)]">.</span>
+        <div className="grid items-center gap-8 md:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] md:gap-10 lg:gap-16">
+          <div className="min-w-0">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-green-deep)]">Features</p>
+            <h2 className="mt-4 max-w-2xl font-display text-[clamp(28px,3vw,42px)] font-extrabold uppercase leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]">
+              GT Drive features<span className="text-[var(--color-green)]">.</span>
             </h2>
-            <div className="mt-8 flex flex-wrap gap-2.5">
+            <ul className="mt-7 grid grid-cols-2 gap-x-4 sm:gap-x-8" aria-label="Scooter features">
               {features.map((feature) => (
-                <span
-                  key={feature}
-                  className="inline-flex items-center rounded-full border border-[var(--color-green)]/35 bg-[color-mix(in_srgb,var(--color-green)_11%,white)] px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--color-green-deep)]"
-                >
+                <li key={feature} className="flex min-h-11 items-center gap-2 border-b border-[var(--color-line)] py-2 text-[11px] font-bold uppercase leading-snug tracking-[0.06em] text-[var(--color-ink)] sm:text-xs">
+                  <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-green)]" />
                   {feature}
-                </span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* RIGHT — scooter image with subtle diagonal green accent */}
-          <div className="relative w-full max-w-[28rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-[var(--color-stage)] md:col-span-6 md:ml-auto md:min-h-[340px]">
-            {/* subtle diagonal light-grey wedge behind the scooter */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-y-0 left-0 hidden w-16 bg-[var(--color-stage)] md:block"
-              style={{ clipPath: "polygon(0 0, 100% 30%, 100% 70%, 0 100%)" }}
+          <div className={`relative mx-auto w-full max-w-[22rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-[var(--color-stage)] shadow-[0_12px_30px_rgba(17,17,17,0.05)] md:justify-self-end ${isPortraitProductImage(image) ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
+            <Image
+              src={asset(image)}
+              alt={alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 35vw"
+              className="object-cover object-center"
             />
-            {/* green vertical accent stripe just before the image */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-y-8 left-0 hidden w-[3px] bg-[var(--color-green)] md:block"
-            />
-
-            <div className={`relative w-full overflow-hidden rounded-2xl bg-[var(--color-stage)] ${isPortraitProductImage(image) ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
-              <Image
-                src={asset(image)}
-                alt={alt}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center"
-              />
-            </div>
           </div>
         </div>
       </div>
