@@ -54,6 +54,7 @@ $model = clean_line($_POST['model'] ?? '');
 $message = is_string($_POST['message'] ?? null) ? trim($_POST['message']) : '';
 $partRequirement = clean_line($_POST['part_requirement'] ?? '');
 $quantity = clean_line($_POST['quantity'] ?? '');
+$photo = $_FILES['photo'] ?? null;
 $isSpareParts = $type === 'spare-parts';
 $isSupport = $type === 'support';
 
@@ -68,6 +69,20 @@ if ($isSpareParts) {
 if ($isSupport) {
     $organisation = $organisation ?: 'GT Drive support request';
     $state = $state ?: 'Not provided';
+}
+
+if ($isSpareParts && is_array($photo) && (($photo['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_NO_FILE)) {
+    if (($photo['error'] ?? UPLOAD_ERR_OK) !== UPLOAD_ERR_OK || !is_uploaded_file($photo['tmp_name'] ?? '')) {
+        respond(422, 'The uploaded photo could not be read. Please try again.');
+    }
+    if (($photo['size'] ?? 0) > 5 * 1024 * 1024) {
+        respond(422, 'Please upload a photo smaller than 5 MB.');
+    }
+    $photoInfo = new finfo(FILEINFO_MIME_TYPE);
+    $photoMime = $photoInfo->file($photo['tmp_name']);
+    if (!in_array($photoMime, ['image/jpeg', 'image/png'], true)) {
+        respond(422, 'Please upload a JPG or PNG photo.');
+    }
 }
 
 if ($name === '' || $email === '' || $message === '' || $organisation === '' || $phone === '' || $city === '' || $state === '') respond(422, 'Please complete all required fields.');
@@ -108,6 +123,10 @@ try {
     $mailer->setFrom($mailer->Username, 'GT Drive Website');
     $mailer->addAddress($recipient, 'GT Drive');
     $mailer->addReplyTo($email, $name);
+    if ($isSpareParts && is_array($photo) && (($photo['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_OK)) {
+        $extension = ($photoMime ?? '') === 'image/png' ? 'png' : 'jpg';
+        $mailer->addAttachment($photo['tmp_name'], 'spare-parts-photo.' . $extension);
+    }
     $mailer->Subject = 'Website enquiry from ' . $name;
     $mailer->Body = $body;
     $mailer->send();
