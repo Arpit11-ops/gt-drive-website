@@ -14,8 +14,10 @@ export function PlugLine({ label, className = "", tone = "green" }: Props) {
   return (
     <div className={`flex w-full max-w-md items-center gap-3 ${className}`}>
       <p className={`shrink-0 text-[11px] font-semibold uppercase tracking-[0.26em] sm:text-xs ${labelColor}`}>{label}</p>
-      <span className={`h-[2px] min-w-8 flex-1 ${lineColor}`} aria-hidden="true" />
-      <Plug size={24} weight="fill" className={`-ml-3 shrink-0 ${color}`} aria-hidden="true" />
+      <span className="flex min-w-8 flex-1 items-center" aria-hidden="true">
+        <span className={`h-[2px] flex-1 ${lineColor}`} />
+        <Plug size={24} weight="fill" className={`-ml-2 shrink-0 ${color}`} />
+      </span>
     </div>
   );
 }
