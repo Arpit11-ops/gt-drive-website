@@ -17,7 +17,6 @@ const featuredModelSlugs = [
   "gt-drive-pro",
   "gt-soul-nxt",
   "gt-ryd-plus",
-  "gt-flying",
 ] as const;
 
 export const featuredModels: ScooterModel[] = featuredModelSlugs.map((slug) => {

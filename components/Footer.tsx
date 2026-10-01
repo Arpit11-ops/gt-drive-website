@@ -38,7 +38,7 @@ export function Footer() {
           <h3 className="text-[11px] font-bold uppercase tracking-wider text-[var(--color-green-deep)]">
             Range
           </h3>
-          {models.slice(0, 6).map((model) => (
+          {models.filter((model) => model.status !== "coming-soon").map((model) => (
             <Link
               key={model.slug}
               href={`/models/${model.slug}/`}

@@ -6,6 +6,7 @@ import {
   PlugCharging,
 } from "@phosphor-icons/react/dist/ssr";
 import { asset } from "@/lib/asset";
+import { colourSwatchStyle } from "@/lib/colour";
 import { isPortraitProductImage } from "@/lib/productImage";
 import type { ModelRideSpecs } from "@/lib/models";
 
@@ -20,12 +21,14 @@ type Props = {
   image?: string;
   alt?: string;
   specs?: ModelRideSpecs;
+  colors?: string[];
 };
 
 export function ScootersSpecHighlight({
   image = "/assets/gt-drive/gt-flying-e4-real.webp",
   alt = "GT Drive scooter",
   specs: rideSpecs,
+  colors = [],
 }: Props = {}) {
   const specs: Spec[] = [
     { Icon: Path, label: "Range", value: rideSpecs?.range ?? "Not provided", sub: "Per charge" },
@@ -84,6 +87,25 @@ export function ScootersSpecHighlight({
                 </div>
               ))}
             </div>
+
+            {colors.length > 0 && (
+              <div className="mt-8 rounded-xl border border-[var(--color-green)]/25 bg-[#f4faf5] px-4 py-4 sm:px-5">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--color-green-deep)]">Colour options</p>
+                    <p className="mt-1 text-xs text-[var(--color-body)]">Available GT Drive finishes</p>
+                  </div>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)]">{colors.length} finishes</span>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  {colors.map((color) => (
+                    <span key={color} className="group relative inline-flex h-8 w-8 rounded-full border border-black/15 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.3)]" style={colourSwatchStyle(color)} role="img" aria-label={`${color} finish`} tabIndex={0}>
+                      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[var(--color-ink)] px-2 py-1 text-[10px] font-semibold text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">{color}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
