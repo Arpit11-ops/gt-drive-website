@@ -197,7 +197,7 @@ export function ScootersHero({
             GT
           </div>
 
-          <div className={video ? "relative z-[1] flex h-full w-full items-center px-6 pb-10 md:px-8 md:py-12 lg:px-12" : "relative z-[1] h-full w-full"}>
+          <div className={video ? "relative z-[1] flex h-full w-full items-center px-6 pb-10 md:px-8 md:py-12 lg:px-12" : "relative z-[1] h-full w-full px-4 pb-4 md:px-8 md:py-12 lg:px-12"}>
             {video ? (
               <div className="aspect-video w-full overflow-hidden rounded-[1.5rem] border border-black/5 bg-[var(--color-stage)] shadow-[0_20px_60px_rgba(17,17,17,0.12)] md:rounded-[2rem]">
               <video
@@ -215,14 +215,16 @@ export function ScootersHero({
               />
               </div>
             ) : (
-              <Image
-                src={asset(image)}
-                alt={alt}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 58vw"
-                className="object-contain object-center"
-              />
+              <div className="relative h-full w-full overflow-hidden rounded-[1.5rem] border border-black/[0.08] bg-[var(--color-stage)] shadow-[0_14px_34px_rgba(17,17,17,0.08)] md:rounded-[2rem]">
+                <Image
+                  src={asset(image)}
+                  alt={alt}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 58vw"
+                  className="object-contain object-center"
+                />
+              </div>
             )}
           </div>
 
