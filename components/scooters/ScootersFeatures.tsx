@@ -96,6 +96,7 @@ export function ScootersFeatures({
           {/* RIGHT — interactive feature explorer */}
           <div className="md:col-span-8">
             <div className={`relative w-full overflow-hidden rounded-2xl bg-[var(--color-stage)] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[5/4] md:aspect-[4/3]"}`}>
+              <div className="absolute inset-0">
               {/* scooter image */}
               <Image
                 src={asset(image)}
@@ -190,9 +191,9 @@ export function ScootersFeatures({
                   </div>
                 );
               })}
-            </div>
+              </div>
 
-            {/* On narrow screens, keep the selected detail inside the enlarged image card. */}
+            {/* Keep the selected detail within the rounded image card on mobile. */}
             {activeId && (() => {
               const active = hotspots.find((hotspot) => hotspot.id === activeId);
               if (!active) return null;
@@ -211,6 +212,7 @@ export function ScootersFeatures({
             })()}
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
