@@ -74,9 +74,9 @@ export function DealerBrochureJourney() {
             </ol>
             <div className="mt-8 overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.08)]">
               <Image
-                src={asset("/assets/gt-drive/dealer/marketing-support.jpeg")}
+                src={asset("/assets/gt-drive/dealer/marketing-support-final.jpeg")}
                 alt="GT Drive marketing support materials for dealer partners"
-                width={1536}
+                width={1535}
                 height={1024}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="h-auto w-full"
