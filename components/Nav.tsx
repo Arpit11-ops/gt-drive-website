@@ -14,6 +14,7 @@ const modelsMenuId = "models-mega-menu";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileViewport, setMobileViewport] = useState(false);
   const [modelsOpen, setModelsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
@@ -38,6 +39,14 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [pathname]);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 1023px)");
+    const onChange = () => setMobileViewport(query.matches);
+    onChange();
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
 
   useEffect(() => {
     if (previousPathname.current && pathname && previousPathname.current !== pathname) closeAll();
@@ -79,7 +88,7 @@ export function Nav() {
     };
   }, [mobileOpen]);
 
-  const headerVisible = pathname !== "/" || scrolled || modelsOpen || mobileOpen;
+  const headerVisible = pathname !== "/" || scrolled || modelsOpen || mobileOpen || mobileViewport;
 
   return (
     <>

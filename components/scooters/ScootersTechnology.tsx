@@ -35,7 +35,7 @@ function TechVisual({ kind }: { kind: Card["visual"] }) {
     return (
       <div className="relative h-full w-full overflow-hidden rounded-lg bg-[#f3f6f4]">
         <Image
-          src={asset("/assets/gt-drive/technology/gt-drive-battery-clean.png")}
+          src={asset("/assets/gt-drive/technology/gt-drive-battery-clean.webp")}
           alt="GT Drive lithium-ion battery pack"
           fill
           sizes="300px"
@@ -49,7 +49,7 @@ function TechVisual({ kind }: { kind: Card["visual"] }) {
     return (
       <div className="relative h-full w-full overflow-hidden rounded-lg bg-[#f3f6f4]">
         <Image
-          src={asset("/assets/gt-drive/technology/gt-drive-motor-clean.png")}
+          src={asset("/assets/gt-drive/technology/gt-drive-motor-clean.webp")}
           alt="GT Drive electric hub motor"
           fill
           sizes="300px"
@@ -63,7 +63,7 @@ function TechVisual({ kind }: { kind: Card["visual"] }) {
   return (
     <div className="relative h-full w-full overflow-hidden rounded-lg bg-[#f3f6f4]">
       <Image
-        src={asset("/assets/gt-drive/technology/gt-drive-bms-clean.png")}
+        src={asset("/assets/gt-drive/technology/gt-drive-bms-clean.webp")}
         alt="GT Drive smart battery management system"
         fill
         sizes="300px"

@@ -36,7 +36,7 @@ export function AboutWhoAndMission() {
             {/* Clean-air image and message */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-stage)] md:col-span-2 md:aspect-auto md:min-h-[280px]">
               <Image
-                src={asset("/assets/gt-drive/about-clean-air-mirror.png")}
+                src={asset("/assets/gt-drive/about-clean-air-mirror.webp")}
                 alt="A greener city journey reflected in a scooter mirror"
                 fill
                 sizes="(max-width: 768px) 100vw, 25vw"

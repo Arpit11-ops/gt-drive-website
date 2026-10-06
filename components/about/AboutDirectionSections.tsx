@@ -30,7 +30,7 @@ export function AboutDirectionSections() {
           </div>
           <div className="gt-card relative aspect-[4/3] w-full max-w-[34rem] justify-self-end overflow-hidden rounded-[1.5rem] bg-[var(--color-stage)] md:col-span-7">
             <Image
-              src={asset("/assets/gt-drive/about-green-route.png")}
+              src={asset("/assets/gt-drive/about-green-route.webp")}
               alt="A scooter travelling along a tree-lined road"
               fill
               sizes="(max-width: 768px) 100vw, 58vw"
@@ -44,7 +44,7 @@ export function AboutDirectionSections() {
         <div className="mx-auto grid max-w-[var(--container-page)] items-center gap-12 px-6 md:grid-cols-12 md:gap-16 md:px-12 lg:px-16">
           <div className="gt-card relative order-2 aspect-[16/9] w-full max-w-[34rem] overflow-hidden rounded-[1.5rem] bg-white md:order-1 md:col-span-7">
             <Image
-              src={asset("/assets/gt-drive/about-change-direction.png")}
+              src={asset("/assets/gt-drive/about-change-direction.webp")}
               alt="A green road turning away from a petrol route"
               fill
               sizes="(max-width: 768px) 100vw, 58vw"
