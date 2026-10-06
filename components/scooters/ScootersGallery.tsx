@@ -7,6 +7,8 @@ type Props = {
   name: string;
 };
 
+const angleLabels = ["Left side", "Right side", "Front", "Back"] as const;
+
 export function ScootersGallery({ images, name }: Props) {
   return (
     <section className="bg-white py-20 md:py-28">
@@ -22,20 +24,25 @@ export function ScootersGallery({ images, name }: Props) {
             </h2>
           </div>
           <p className="hidden max-w-xs text-right text-sm leading-relaxed text-[var(--color-body)] md:block">
-            {images.length} product views of the {name} range, prepared for closer inspection.
+            Four clear views of the {name}: both sides, front and back.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 md:gap-7">
           {images.map((image, index) => (
-            <div key={image} className={`relative overflow-hidden rounded-2xl bg-white ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"} ${index === 0 ? "col-span-2 row-span-2 md:col-span-2 md:row-span-2" : ""}`}>
-              <Image
-                src={asset(image)}
-                alt={`${name} view ${index + 1}`}
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover transition-transform duration-500 hover:scale-[1.02]"
-              />
-            </div>
+            <figure key={image} className="overflow-hidden rounded-2xl border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.05)]">
+              <div className={`relative w-full overflow-hidden bg-[#ececec] ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+                <Image
+                  src={asset(image)}
+                  alt={`${name} ${angleLabels[index]?.toLowerCase() ?? "view"}`}
+                  fill
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="object-contain"
+                />
+              </div>
+              <figcaption className="px-5 py-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-[var(--color-ink)]">
+                {angleLabels[index] ?? `View ${index + 1}`}
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>

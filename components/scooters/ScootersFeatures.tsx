@@ -103,7 +103,7 @@ export function ScootersFeatures({
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 66vw"
-                className="object-cover object-center"
+                className="object-contain object-center"
               />
 
               {/* SVG connector lines from label to dot */}

@@ -11,14 +11,14 @@ import { Reveal } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "GT Drive — Electric two-wheeler brand from Houstan Innovations LLP",
   description:
-    "Explore GT Drive electric scooters, including the sporty GT Flying, and learn about the brand behind the range.",
+    "Explore GT Drive electric scooters, including the sporty GT Flying High, and learn about the brand behind the range.",
 };
 
 export default function HomePage() {
   const flagship = getModel("gt-flying");
   const views = flagship?.sectionImages;
   const image = views?.hero ?? flagship?.image ?? "/assets/gt-drive/gt-flying-e4-real.webp";
-  const name = flagship?.shortName ?? "GT Flying";
+  const name = flagship?.shortName ?? "GT Flying High";
 
   return (
     <>

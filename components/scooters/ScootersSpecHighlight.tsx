@@ -48,13 +48,13 @@ export function ScootersSpecHighlight({
               Specifications
             </p>
 
-            <div className={`relative mt-0 w-full max-w-[22rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] md:mt-0 ${isPortraitProductImage(image) ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
+            <div className={`relative mt-0 w-full max-w-[22rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-white shadow-[0_12px_30px_rgba(17,17,17,0.06)] md:mt-0 ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
               <Image
                 src={asset(image)}
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center"
+                className="object-contain object-center"
               />
             </div>
           </div>

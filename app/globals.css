@@ -305,6 +305,8 @@
     filter: none !important;
     transform: none !important;
     opacity: 1 !important;
+  }
+  .charge-line {
     width: var(--charge-width, 96px) !important;
   }
 }

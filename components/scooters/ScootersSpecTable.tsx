@@ -32,13 +32,13 @@ export function ScootersSpecTable({
             </ul>
           </div>
 
-          <div className={`relative mx-auto w-full max-w-[22rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-[var(--color-stage)] shadow-[0_12px_30px_rgba(17,17,17,0.05)] md:justify-self-end ${isPortraitProductImage(image) ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
+          <div className={`relative mx-auto w-full max-w-[22rem] overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-[var(--color-stage)] shadow-[0_12px_30px_rgba(17,17,17,0.05)] md:justify-self-end ${isPortraitProductImage(image) ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
             <Image
               src={asset(image)}
               alt={alt}
               fill
               sizes="(max-width: 768px) 100vw, 35vw"
-              className="object-cover object-center"
+              className="object-contain object-center"
             />
           </div>
         </div>
