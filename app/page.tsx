@@ -28,6 +28,7 @@ export default function HomePage() {
         tagline={"A sporty electric scooter from GT Drive’s nine-model range."}
         image={image}
         video="/assets/gt-drive/video/gt-flying-hero-2026.mp4"
+        flushTop
         alt={`${name} electric scooter`}
         cta={{ href: `/models/${flagship?.slug ?? "gt-flying"}/`, label: `Explore ${name}` }}
       />

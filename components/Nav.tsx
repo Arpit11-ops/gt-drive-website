@@ -37,7 +37,7 @@ export function Nav() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     if (previousPathname.current && pathname && previousPathname.current !== pathname) closeAll();
@@ -79,11 +79,17 @@ export function Nav() {
     };
   }, [mobileOpen]);
 
+  const headerVisible = pathname !== "/" || scrolled || modelsOpen || mobileOpen;
+
   return (
     <>
       <header
         ref={headerRef}
+        aria-hidden={!headerVisible}
+        inert={!headerVisible}
         className={`fixed inset-x-0 top-0 z-50 h-20 border-b transition-all duration-300 ${
+          headerVisible ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-full opacity-0"
+        } ${
           scrolled || modelsOpen
             ? "border-black/[0.06] bg-white/90 shadow-[0_8px_35px_rgba(20,30,24,0.08)] backdrop-blur-xl"
             : "border-white/30 bg-white/45 shadow-[0_4px_30px_rgba(0,0,0,0.035)] backdrop-blur-md"

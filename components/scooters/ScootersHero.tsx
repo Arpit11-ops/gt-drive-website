@@ -13,6 +13,8 @@ type Props = {
   image: string;
   /** Optional hero video. When provided, it replaces the hero image. */
   video?: string;
+  /** Let the homepage video reach the top of the viewport. */
+  flushTop?: boolean;
   /** Alt text for the hero image. */
   alt: string;
   /** Primary CTA — href + label. */
@@ -31,6 +33,7 @@ export function ScootersHero({
   tagline,
   image,
   video,
+  flushTop = false,
   alt,
   cta,
   secondary = { href: "/models/", label: "Explore All Models" },
@@ -44,7 +47,7 @@ export function ScootersHero({
 
   if (video) {
     return (
-      <section className="relative isolate overflow-hidden bg-[#dfe5e7] pt-20 text-white md:min-h-[calc(100svh-5rem)]">
+      <section className={`relative isolate overflow-hidden bg-[#dfe5e7] text-white ${flushTop ? "md:min-h-svh" : "pt-20 md:min-h-[calc(100svh-5rem)]"}`}>
         <div className="relative h-[62svh] min-h-[430px] w-full overflow-hidden md:absolute md:inset-0 md:h-full md:min-h-0">
           <video
             className="block h-full min-h-0 w-full max-w-full object-cover object-[50%_38%] md:absolute md:inset-0 md:object-center"
@@ -61,8 +64,8 @@ export function ScootersHero({
           />
           <div aria-hidden className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(250,252,252,0.68)_0%,rgba(250,252,252,0.35)_28%,rgba(250,252,252,0.04)_58%,rgba(0,0,0,0.12)_100%),linear-gradient(to_top,rgba(0,0,0,0.18),transparent_42%)] md:block" />
         </div>
-        <div aria-hidden className="pointer-events-none absolute right-0 top-20 z-[2] hidden h-[calc(100%-5rem)] w-8 bg-[var(--color-green)] opacity-90 [clip-path:polygon(100%_0,0_15%,0_85%,100%_100%)] md:block" />
-        <div className="relative z-10 mx-auto flex max-w-[var(--container-page)] items-start px-4 pb-8 pt-4 md:min-h-[calc(100svh-5rem)] md:px-12 md:pb-16 md:pt-16 lg:px-16 lg:pt-20">
+        <div aria-hidden className={`pointer-events-none absolute right-0 z-[2] hidden w-8 bg-[var(--color-green)] opacity-90 [clip-path:polygon(100%_0,0_15%,0_85%,100%_100%)] md:block ${flushTop ? "inset-y-0" : "top-20 h-[calc(100%-5rem)]"}`} />
+        <div className={`relative z-10 mx-auto flex max-w-[var(--container-page)] items-start px-4 pb-8 pt-4 md:px-12 md:pb-16 md:pt-16 lg:px-16 lg:pt-20 ${flushTop ? "md:min-h-svh" : "md:min-h-[calc(100svh-5rem)]"}`}>
           <div className="w-full max-w-[18rem] rounded-[1rem] border border-white/60 bg-white/70 p-3.5 text-[var(--color-ink)] shadow-[0_14px_34px_rgba(17,17,17,0.1)] backdrop-blur-md md:-translate-x-8 md:max-w-[15rem] md:bg-white/60 lg:-translate-x-16 lg:max-w-[13rem] xl:-translate-x-12 xl:max-w-[16rem]">
             <p className="mb-3 flex items-center gap-2 text-[8px] font-bold uppercase tracking-[0.18em] text-[var(--color-green-deep)]"><span className="h-[2px] w-4 bg-[var(--color-green)]" />{kicker}</p>
             <h1 className="font-display text-[clamp(30px,4vw,44px)] font-extrabold uppercase leading-[0.9] tracking-[-0.055em] md:text-[clamp(25px,2.2vw,36px)]">{lead && <>{lead} </>}<span className="text-[var(--color-green)]">{highlight}.</span></h1>

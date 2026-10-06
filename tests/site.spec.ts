@@ -96,12 +96,14 @@ test("homepage renders every section and no console errors", async ({
   expect(errors).toEqual([]);
 });
 
-test("mobile hamburger reveals the primary navigation", async ({ page }) => {
+test("mobile hamburger appears after scrolling and reveals the primary navigation", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/", { waitUntil: "networkidle" });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(1000);
 
   const menuButton = page.getByRole("button", { name: "Open menu" });
+  await expect(menuButton).toBeHidden();
+  await page.evaluate(() => window.scrollTo(0, 100));
   await expect(menuButton).toBeVisible();
   await menuButton.click();
 
@@ -111,7 +113,7 @@ test("mobile hamburger reveals the primary navigation", async ({ page }) => {
     mobileNav.getByRole("link", { name: "For dealers" }),
   ).toBeVisible();
   await expect(
-    mobileNav.getByRole("link", { name: "Locations" }),
+    mobileNav.getByRole("link", { name: "Technology" }),
   ).toBeVisible();
   await expect(mobileNav.getByRole("link", { name: "Contact" })).toBeVisible();
 
