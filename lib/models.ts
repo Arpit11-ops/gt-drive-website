@@ -129,14 +129,14 @@ export const models: ScooterModel[] = [
   },
   {
     slug: "gt-champion", name: "GT - PRIME PRO", shortName: "GT Prime Pro", code: "CJ",
-    image: "/assets/gt-drive/cleaned/Champion_IMG_4043_clean.webp",
+    image: "/assets/gt-drive/cleaned/Champion_IMG_4044_clean.webp",
     sectionImages: {
       hero: "/assets/gt-drive/cleaned/Champion_IMG_4047_clean.webp",
       specifications: "/assets/gt-drive/cleaned/Champion_IMG_4048_clean.webp",
       details: "/assets/gt-drive/cleaned/Champion_IMG_4045_clean.webp",
-      features: "/assets/gt-drive/cleaned/Champion_IMG_4043_clean.webp",
+      features: "/assets/gt-drive/cleaned/Champion_IMG_4044_clean.webp",
     },
-    gallery: ["/assets/gt-drive/cleaned/Champion_IMG_4043_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4047_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4045_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4048_clean.webp"],
+    gallery: ["/assets/gt-drive/cleaned/Champion_IMG_4044_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4047_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4045_clean.webp", "/assets/gt-drive/cleaned/Champion_IMG_4048_clean.webp"],
     lead: "An extra-long wheelbase and five colour options give Prime Pro its distinctive look.",
     colors: ["Matte Shale Green/Black", "Matte Coffee Brown/Black", "Tyrant Gold/Black", "White/Black", "Black"], rideSpecs: verifiedRideSpecs("65–70 km"), specs: commonSpecs("90-90 - 12"), features: sharedFeatures,
   },
