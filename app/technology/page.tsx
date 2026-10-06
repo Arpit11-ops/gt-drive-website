@@ -94,8 +94,8 @@ export default function TechnologyPage() {
           })}
         </div>
 
-        <Reveal className="mt-20 rounded-[2rem] bg-[var(--color-green-deep)] px-8 py-12 text-white md:mt-28 md:flex md:items-center md:justify-between md:px-14 md:py-14">
-          <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-white/70">Find your fit</p><h2 className="mt-3 max-w-xl text-4xl leading-[0.95] md:text-6xl">Technology that moves with you.</h2></div>
+        <Reveal className="mt-20 rounded-[2rem] bg-[var(--color-green)] px-8 py-12 text-[var(--color-ink)] md:mt-28 md:flex md:items-center md:justify-between md:px-14 md:py-14">
+          <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-ink)]">Find your fit</p><h2 className="mt-3 max-w-xl text-4xl leading-[0.95] md:text-6xl">Technology that moves with you.</h2></div>
           <Link href="/models/" className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-[var(--color-ink)] transition-transform hover:-translate-y-0.5 md:mt-0">Explore models <ArrowRight size={16} weight="bold" /></Link>
         </Reveal>
       </main>
