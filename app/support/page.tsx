@@ -56,7 +56,7 @@ export default function SupportPage() {
         </div>
       </section>
 
-      <section className="w-full bg-white px-4 py-10 md:px-10 md:py-20">
+      <section className="w-full bg-white px-4 pt-10 md:px-10 md:pt-20">
         <Reveal><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{supportPaths.map(({ id, title, text, icon: Icon }) => <a key={id} href={`#${id}`} className="group rounded-2xl border border-black/[0.06] bg-white p-6 shadow-[0_12px_35px_rgba(17,17,17,0.04)] transition hover:-translate-y-1 hover:border-[var(--color-green)]/40"><span className="grid h-11 w-11 place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-green)_12%,white)] text-[var(--color-green)]">{id === "spare-parts-support" ? <SparePartsIcon /> : <Icon size={21} weight="bold" />}</span><h2 className="mt-5 font-display text-xl font-bold">{title}</h2><p className="mt-2 text-sm leading-relaxed text-[var(--color-body)]">{text}</p><span className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--color-green)]">Explore <ArrowRight size={13} /></span></a>)}</div></Reveal>
 
         <section id="product-support" className="mt-6 scroll-mt-28 rounded-[2rem] bg-[var(--color-green)] px-5 py-14 md:px-10 md:py-20"><div className="grid items-start gap-8"><div className="mx-auto text-center"><p className="text-xs font-bold uppercase tracking-[0.2em] text-white">Product support</p><h2 className="mt-4 text-4xl leading-[0.95] md:text-6xl">Tell us what<br /><span className="text-white">you need.</span></h2><p className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-white/90">Share your scooter details and issue. Our support team will review your request and connect you with the right assistance.</p></div><SupportForm /></div></section>
@@ -67,7 +67,9 @@ export default function SupportPage() {
 
         <section id="spare-parts-support" className="scroll-mt-28 py-14 md:py-20"><div className="rounded-[2rem] bg-[var(--color-green)] p-4 sm:p-6 md:p-10"><div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8"><SparePartsForm /><div className="rounded-[1.5rem] bg-white p-5 sm:p-7"><div className="text-center"><p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-green)]">Spare parts support</p><h2 className="mt-3 text-3xl leading-[0.95] md:text-5xl">Why choose GT Drive<br /><span className="text-[var(--color-green)]">spare parts support?</span></h2></div><div className="mt-6 grid gap-3 sm:grid-cols-2">{[[ShieldCheck, "Genuine & Compatible Parts", "Original parts for long-lasting performance."], [GearSix, "Quick Assistance", "Our team gets back to you promptly."], [Truck, "Pan India Availability", "Spare parts support across India."], [Headphones, "Dedicated Support Team", "Trained to help with your requirement."]].map(([Icon, title, text]) => <div key={title as string} className="rounded-xl bg-[color-mix(in_srgb,var(--color-green)_9%,white)] p-4"><span className="grid h-9 w-9 place-items-center rounded-full bg-white text-[var(--color-green)]"><Icon size={19} weight="bold" /></span><h3 className="mt-3 text-sm font-bold">{title as string}</h3><p className="mt-1 text-xs leading-relaxed text-[var(--color-body)]">{text as string}</p></div>)}</div><div className="mt-4 flex items-center gap-4 rounded-xl bg-[color-mix(in_srgb,var(--color-green)_9%,white)] p-4"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-black"><Headphones size={24} weight="bold" /></span><div><h3 className="text-sm font-bold">Need immediate help?</h3><p className="text-xs text-[var(--color-body)]">Call our spare parts support team</p><a href="tel:+917065418590" className="mt-1 inline-block text-sm font-bold text-[var(--color-green)]">+91 70654 18590</a></div></div><div className="mt-4 grid grid-cols-3 divide-x divide-black/10 rounded-xl bg-white px-2 py-3 text-center text-[10px] font-semibold text-[var(--color-body)]"><span className="px-2"><Cube size={18} className="mx-auto mb-1 text-[var(--color-green)]" />Reliable Support</span><span className="px-2"><GearSix size={18} className="mx-auto mb-1 text-[var(--color-green)]" />Better Performance</span><span className="px-2"><Leaf size={18} className="mx-auto mb-1 text-[var(--color-green)]" />Longer Scooter Life</span></div></div></div></div></section>
 
-        <section id="general-enquiry" className="scroll-mt-28 border-t border-black/[0.06] bg-[#f5f8f5] py-14 md:py-20">
+      </section>
+
+      <section id="general-enquiry" className="scroll-mt-28 border-t border-black/[0.06] bg-[#f5f8f5] px-4 py-14 md:px-10 md:py-20">
           <div className="mx-auto grid max-w-[var(--container-page)] gap-8 md:grid-cols-[0.7fr_1.3fr] md:items-start md:gap-12">
             <div className="pt-2">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-green)]">General enquiry</p>
@@ -76,8 +78,6 @@ export default function SupportPage() {
             </div>
             <InquiryForm defaultType="other" />
           </div>
-        </section>
-
       </section>
     </div>
   );
