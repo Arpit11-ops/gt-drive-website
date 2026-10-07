@@ -11,7 +11,7 @@ const steps = [
 
 export function DealerBrochureJourney() {
   return (
-    <section id="brochure" className="bg-white py-20 md:py-28">
+    <section id="brochure" className="bg-white pt-20 pb-8 md:pt-28 md:pb-12">
       <div className="mx-auto max-w-[var(--container-page)] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-12">
           {/* LEFT — brochure */}
